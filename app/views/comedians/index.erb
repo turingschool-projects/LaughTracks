@@ -1,3 +1,10 @@
 <h1>Comedian Index</h1>
 
-<% @comedians %>
+<% @comedians.each do |c| %>
+  <ul>
+    <li>Comedian: <%= c.name %></li>
+    <li>Age: <%= c.age %></li>
+    <li>City: <%= c.city %>
+  </ul>
+
+<% end %>

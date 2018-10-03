@@ -6,10 +6,10 @@ RSpec.describe 'Comedian Index Page' do
       visit '/comedians'
 
       expect(page).to have_content(comic_1.name)
-      expect(page).to have_content(comic_1.age)
+      expect(page).to have_content("Age: #{comic_1.age}")
       expect(page).to have_content(comic_1.city)
       expect(page).to have_content(comic_2.name)
-      expect(page).to have_content(comic_2.age)
+      expect(page).to have_content("Age: #{comic_2.age}")
       expect(page).to have_content(comic_2.city)
   end
 

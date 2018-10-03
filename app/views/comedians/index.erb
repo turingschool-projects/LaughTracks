@@ -6,7 +6,9 @@
     <li>Age: <%= c.age %></li>
     <li>City: <%= c.city %>
     <li>Specials: <% c.specials.each do |special| %>
-      <%= special.name %>
+      <li><%= special.name %></li>
+      <li><%= special.run_time %></li>
+      <li><%= special.image_url %></li>
       <br>
     <% end %>
   </ul>

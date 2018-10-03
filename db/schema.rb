@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_10_02_145658) do
   create_table "comedians", force: :cascade do |t|
     t.string "name"
     t.integer "age"
+    t.string "city"
   end
 
   create_table "specials", force: :cascade do |t|

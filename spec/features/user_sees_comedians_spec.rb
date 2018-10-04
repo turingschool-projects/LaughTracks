@@ -1,6 +1,8 @@
 RSpec.describe 'a visitor visits the comedians page' do
   it 'should show a list of all comedians' do
     comedian = Comedian.create(name: "Dave Funny", age: 45, city: "D.C.")
+    special = Special.create(name: "The Original Kings of Comedy", length: 72, url: "image.jpg")
+    comedian.specials << special
     visit '/comedians'
 
     within("#comedian_#{comedian.id}") do
@@ -11,6 +13,9 @@ RSpec.describe 'a visitor visits the comedians page' do
     end
     within("#comedian_#{comedian.id}") do
       expect(page).to have_content('D.C.')
+    end
+    within("#comedian_#{comedian.id}") do
+      expect(page).to have_content("# of Specials: 1")
     end
   end
   it 'should show a list of 34 year old comedians' do

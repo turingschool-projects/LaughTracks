@@ -6,14 +6,16 @@
       <% @comedians.unique_cities.each do |city| %>
       <%= city %><span> </span>
       <% end %>
+    <h5>Total Number of Specials: <%=Special.count%></h5>
     </h5>
 </section>
 
 <% @comedians.each do |comedian| %>
   <ul id="comedian_<%= comedian.id %>">
-    <li><%= comedian.name %></li>
+    <h3><%= comedian.name %></h3>
     <li>Age: <%= comedian.age %></li>
     <li>Born in: <%= comedian.city %></li>
+    <li># of Specials: <%= comedian.specials.count %></li>
     <% comedian.specials.each do |special| %>
       <ul id="special_<%= special.id %>">
         <li><%= special.name %></li>

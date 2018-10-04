@@ -15,7 +15,7 @@ RSpec.describe 'a visitor visits the statistics portion of the comedians page' d
       expect(page).to have_content(66)
     end
     within("#statistics") do
-      expect(page).to have_content("Westfield, Concord")
+      expect(page).to have_content("Westfield Concord")
     end
   end
 end

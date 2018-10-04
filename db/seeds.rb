@@ -1,4 +1,4 @@
-require './app/models/comedian.rb'
+require File.expand_path('../../config/environment.rb', __FILE__)
 
 bernie_mac = Comedian.create(name: "Bernie Mac", age: 65, city: "Chicago")
 sarah_silverman = Comedian.create(name: "Sarah Silverman", age: 48, city: "Bedford")

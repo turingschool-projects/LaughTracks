@@ -1,5 +1,5 @@
-require_relative '../app/models/comedian'
-require_relative '../app/models/special'
+require File.expand_path('../../config/environment.rb', __FILE__)
+
 
 comedian = Comedian.create(...)
 special_1 = comedian.specials.create(...)

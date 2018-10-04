@@ -1,3 +1,3 @@
 class Special < ActiveRecord::Base
-  validate_presence_of :name, :comedian_id
+  validates_presence_of :name, :comedian_id
 end

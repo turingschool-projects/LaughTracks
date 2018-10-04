@@ -1,9 +1,14 @@
 <% @comedians.each do |comedian| %>
   <ul>
-    <li><%= comedian.name %></li>
+    <li id="comedian_section"><%= comedian.name %></li>
     <li>Age: <%= comedian.age %></li>
     <li>Born in: <%= comedian.city %></li>
-    <li><%= comedian.specials.first.name %></li>
-    <li><%= comedian.specials.last.name %></li>
+    <% comedian.specials.each do |special| %>
+      <ul>
+        <li><%= special.name %></li>
+        <li><%= special.length %> minutes</li>
+        <img src=<%= special.url %>>
+      </ul>
+      <% end %>
   </ul>
 <% end %>

@@ -11,5 +11,9 @@ RSpec.describe Comedian do
         expect(comic).to_not be_valid
       end
     end
+    it 'should has_many specials' do
+      association = Comedian.reflect_on_association(:specials)
+      expect(association.macro).to eq :has_many
+    end
   end
 end

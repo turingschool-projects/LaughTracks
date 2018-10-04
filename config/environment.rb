@@ -21,3 +21,5 @@ class LaughTracksApp < Sinatra::Base
   set :public_folder, File.join(APP_ROOT, "app", "public")
 end
 
+
+require 'carrierwave/orm/activerecord'

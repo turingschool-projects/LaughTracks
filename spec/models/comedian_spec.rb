@@ -12,6 +12,11 @@ RSpec.describe Comedian do
         comic = Comedian.create(name: 'Mitch Hedberg')
         expect(comic).to_not be_valid
       end
+
+      it 'should be valid if missing nothing' do
+        comic = Comedian.create(name: 'Mitch Hedberg', age: 48, city: 'Helena, Montana')
+        expect(comic).to be_valid
+      end
     end
   end
 end

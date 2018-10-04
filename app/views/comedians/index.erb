@@ -5,6 +5,18 @@
     <title></title>
   </head>
   <body>
+    <header>
+      Comedians
+    </header>
+
+    <div class="">
+      <p>Statistics</p>
+      <p>Average TV Special Run Time</p>
+      <p>Total TV Specials</p>
+      <p>Average Age </p>
+      <p>Cities</p>
+
+    </div>
     <div class="">
 
       <% @comedians.each do |comedian| %>
@@ -12,7 +24,16 @@
         <li>Name <%= comedian.name %></li>
         <li>Age <%= comedian.age %></li>
         <li>City <%= comedian.city %></li>
+        <li>Specials <% comedian.specials.each do |special| %></li>
+          <ul>
+            <li> <%= special.image_url %> </li>
+            <li> <%= special.name %> </li>
+            <li> <%= special.runtime %> </li>
+            <% end %>
+          </ul>
+
       </ul>
+
       <% end %>
 
     </div>

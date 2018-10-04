@@ -3,7 +3,18 @@
     <li> <%= comedian.name %></li>
     <li> <%= comedian.age %></li>
     <% if comedian.city  %>
-    <li> <%= comedian.city %></li>
+      <li> <%= comedian.city %></li>
     <% end %>
   </ul>
+  <% comedian.specials.each do |special| %>
+    <ul>
+      <li> <%= special.name %> </li>
+      <!-- <% if special.date  %>
+        <li> <%= special.date %></li>
+      <% end %> -->
+      <% if special.run_time  %>
+        <li> <%= special.run_time %></li>
+      <% end %>
+    </ul>
+  <% end %>
 <% end %>

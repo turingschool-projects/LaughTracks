@@ -4,5 +4,5 @@ class Special < ActiveRecord::Base
 
   def self.average_length
     average(:length)
-  end 
+  end
 end

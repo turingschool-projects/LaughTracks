@@ -1,20 +1,36 @@
-<% @comedians.each do |comedian| %>
-  <ul>
-    <li> <%= comedian.name %></li>
-    <li> <%= comedian.age %></li>
-    <% if comedian.city  %>
-      <li> <%= comedian.city %></li>
-    <% end %>
-  </ul>
-  <% comedian.specials.each do |special| %>
-    <ul>
-      <li> <%= special.name %> </li>
-      <!-- <% if special.date  %>
-        <li> <%= special.date %></li>
-      <% end %> -->
-      <% if special.run_time  %>
-        <li> <%= special.run_time %></li>
-      <% end %>
-    </ul>
+<h1>Comedians</h1>
+<div id="statistics" class="page-section">
+  <h2>Statistics</h2>
+  <h4>Average TV Special Run Time</h4>
+  <p> <%= Special.average_run_time %></p>
+  <h4>Total TV Specials</h4>
+  <p> <%= Special.all.count %></p>
+  <h4>Average Age</h4>
+  <p> <%= Comedian.average_age %></p>
+  <h4>Cities</h4>
+  <% Comedian.cities.each do |city| %>
+    <p> <%= city %></p>
   <% end %>
-<% end %>
+</div>
+<div>
+  <% @comedians.each do |comedian| %>
+    <div id="comedian-<%=comedian.id%>" class="page-section">
+      <h3 id="name-<%=comedian.id%>"> <%= comedian.name %></h3>
+      <p>Age: <%= comedian.age %></p>
+      <% if comedian.city  %>
+        <p>From: <%= comedian.city %></p>
+      <% end %>
+      <p>Total Specials: <%= comedian.specials.count %></p>
+      <% comedian.specials.each do |special| %>
+        <div id="special-<%=special.id%>">
+          <h5> <%= special.name %> </h5>
+          <% if special.run_time  %>
+            <p>Run Time: <%= special.run_time %></p>
+          <% end %>
+          <img src= <%= special.image %><br>
+        </div>
+      <% end %>
+    </div>
+
+  <% end %>
+</div>

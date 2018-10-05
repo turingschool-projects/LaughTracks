@@ -1,0 +1,20 @@
+body {
+  background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/V__xp7pUe/microphone-on-the-stand-is-standing-on-the-stage-close-up-microphone-on-the-background-of-the-auditorium-spotlight-backlight-people-gather-in-the-hall-and-sit-on-seats-waiting-for-performances-4k_rxbotiuke_thumbnail-full01.png");
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+}
+
+#statistics {
+  color: black;
+  margin: 30px;
+}
+
+.page-section {
+  background-color: white;
+  border: black, solid, 1px;
+  border-radius: 10px;
+}

@@ -29,7 +29,8 @@ RSpec.describe 'a visitor visits the statistics portion of the comedians page' d
     one_special = Special.create(name: "The Original Kings of Comedy", length: 72, url: "image.jpg")
     two_special = Special.create(name: "A Tribute to Bernie Mac", length: 60, url: "another_image.jpg")
     comedian_1.specials << one_special
-    comedian_1.specials << two_special
+    comedian_2.specials << two_special
+
     visit '/comedians?age=44'
 
     within("#statistics") do
@@ -38,8 +39,11 @@ RSpec.describe 'a visitor visits the statistics portion of the comedians page' d
     within("#statistics") do
       expect(page).to have_content("Westfield")
     end
+    # within("#statistics") do
+    #   expect(page).to have_content("Total Number of Specials: 1")
+    # end
     within("#statistics") do
-      expect(page).to have_content("Total Number of Specials: 2") #edit this after filtering the specials by the filtered comedian list
+      expect(page).to have_content("Average Special Run Length: 72")
     end
   end
 end

@@ -13,7 +13,6 @@ class LaughTracksApp < Sinatra::Base
      else
       @comedians = Comedian.all
     end
-    # @specials = @comedians.specials.where(age: params[:age])
     erb :'comedians/index'
   end
 

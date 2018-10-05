@@ -4,5 +4,9 @@ class Special < ActiveRecord::Base
 
   def self.average_length
     average(:length)
-  end 
+  end
+
+  def self.filter(comedians)
+    where(comedian_id: comedians.pluck(:id))
+  end
 end

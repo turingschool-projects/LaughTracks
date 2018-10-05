@@ -10,5 +10,6 @@ RSpec.describe 'a visitor visits the comedians page' do
     within("#special_#{special.id}") do
       expect(page).to have_content(49)
     end
+    expect(page).to have_css("img[src='#{special.url}']")
   end
 end

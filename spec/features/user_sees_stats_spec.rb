@@ -39,9 +39,9 @@ RSpec.describe 'a visitor visits the statistics portion of the comedians page' d
     within("#statistics") do
       expect(page).to have_content("Westfield")
     end
-    # within("#statistics") do
-    #   expect(page).to have_content("Total Number of Specials: 1")
-    # end
+    within("#statistics") do
+      expect(page).to have_content("Total Number of Specials: 1")
+    end
     within("#statistics") do
       expect(page).to have_content("Average Special Run Length: 72")
     end

@@ -7,6 +7,6 @@ class Comedian < ActiveRecord::Base
   end
 
   def self.unique_cities
-    select(:city).map(&:city).uniq
+    pluck(:city).uniq
   end
 end

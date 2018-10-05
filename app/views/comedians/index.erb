@@ -4,8 +4,8 @@
 <section id="statistics">
   <h1> Statistics </h1>
     <h5>Average Age: <%= @comedians.average_age %> years old</h5>
-    <h5>Total Number of Specials: <%=Special.filter(@comedians).count%></h5>
-    <h5>Average Special Run Length: <%= Special.filter(@comedians).average_length %> minutes</h5>
+    <h5>Total Number of Specials: <%=@specials.count%></h5>
+    <h5>Average Special Run Length: <%= @specials.average_length %> minutes</h5>
     <h5>Comedian Breeding Grounds:
       <% @comedians.unique_cities.each do |city| %>
       <%= city %><span> </span>
@@ -13,11 +13,16 @@
     </h5>
 </section>
 
-<% @comedians.each do |comedian| %>
+<section class="grid-container">
+  <div class="grid_item">
+  <% @comedians.each do |comedian| %>
   <ul id="comedian_<%= comedian.id %>">
     <h3><%= comedian.name %></h3>
     <li>Age: <%= comedian.age %></li>
     <li>Born in: <%= comedian.city %></li>
+  </ul>
+  </div>
+  <div class="grid_item">
     <li># of Specials: <%= comedian.specials.count %></li>
     <% comedian.specials.each do |special| %>
       <ul id="special_<%= special.id %>">
@@ -26,5 +31,6 @@
         <img src=<%= special.url %>>
       </ul>
       <% end %>
-  </ul>
+  </div>
+</section>
 <% end %>

@@ -1,0 +1,28 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+<body>
+
+<h1>Comedians</h1>
+
+<div id="Comedians">
+  <p>Average Age of Comedians In Database: <%=  %>
+  <% comedians.each do |comedian| %>
+    <h3><%= comedian.name  if comedian.name %></h3>
+    <p>Age: <%= comedian.birthdate  if comedian.birthdate %></p>
+    <p>City: <%= comedian.city if comedian.city %></p>
+    <p>Specials:</p>
+    <% comedian.specials.each do |special|  %>
+      <p><%= special.name %><img src=<%=special.image_url%>
+        width="100" height="100"
+        alt=<%=special.name%> /></p>
+      <p>Released on: <%= special.release_date %></p>
+      <p>Runtime: <%= special.runtime_length %> min</p>
+    <% end %>
+  <% end %>
+</div>
+</body>
+</html>

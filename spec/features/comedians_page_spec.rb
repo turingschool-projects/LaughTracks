@@ -8,11 +8,6 @@ RSpec.describe "a visitor visits the comedians page" do
     expect(page).to have_content(comic.city)
   end
 
-  it 'comedian should have many specials' do
-    association = Comedian.reflect_on_association(:specials)
-    expect(association.macro).to eq :has_many
-  end
-
   it 'should show specials information'do
     comic = Comedian.create(name: 'Mitch Hedberg', age: 48, city: 'Helena, Montana')
     special = comic.specials.create(name: "Louis C.K. 2017", runtime: 74,

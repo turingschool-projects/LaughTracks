@@ -42,6 +42,10 @@
         1,
         null,
         1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/jaw/Turing/2module/projects/LaughTracks/app/models/comedian.rb": [
@@ -84,11 +88,6 @@
         null,
         null,
         1,
-        1,
-        1,
-        null,
-        null,
-        1,
         null,
         1,
         1,
@@ -118,6 +117,11 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         null
       ],
@@ -130,10 +134,25 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1538694378
+    "timestamp": 1538701371
   }
 }

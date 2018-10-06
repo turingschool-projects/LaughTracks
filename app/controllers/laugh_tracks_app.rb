@@ -5,8 +5,6 @@ class LaughTracksApp < Sinatra::Base
   set :method_override, true
 
   get '/comedians' do
-    # @comedians = Comedian.all.find_by(params[:age])
-    # @comedians = Comedian.all
     @comedians = Comedian.find_by_age(params[:age])
 
     @specials = Special.by_comedians(@comedians)
@@ -20,9 +18,21 @@ class LaughTracksApp < Sinatra::Base
     @cities = @comedians.cities
 
     erb :"comedians/index"
-    #@comedians = Comedian.where(age: params[:age])
-    #if params
-    #else Comedian.all
+  end
+
+  get '/comedians/new' do
+    erb :"comedians/new"
+  end
+
+  # get '/comedians/:id' do
+  #   @comedian = Comedian.find(params[:id])
+  #   erb :"comedian/show"
+  # end
+
+  post '/comedians' do
+    comedian = Comedian.create(params[:comedian])
+    # redirect "/comedians/#{comedian.id}"
+    redirect "/comedians"
   end
 
 end

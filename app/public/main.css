@@ -1,21 +1,74 @@
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
+  grid-template-areas:
+  'header header header';
+  justify-content: space-evenly;
+  align-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
 
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
+#statistics {
+  grid-area: header;
+  text-align: center;
+  font-size: 20px;
+  background-color: #F9D8D4;
+  border: 50px solid green;
+  padding: 10px;
+  margin: 50px;
+}
+
+.main {
+  background: radial-gradient(circle closest-side at 50px 50px, #FB8B24 3px, transparent 0), radial-gradient(circle closest-side at 40px 60px, #FB8B24 3px, transparent 0), radial-gradient(circle closest-side at 60px 60px, #FB8B24 3px, transparent 0), radial-gradient(circle closest-side at 50px 70px, #FB8B24 3px, transparent 0), radial-gradient(circle closest-side at 150px 165px, #FB8B24 3px, transparent 0), radial-gradient(circle closest-side at 140px 175px, #FB8B24 3px, transparent 0), radial-gradient(circle closest-side at 160px 175px, #FB8B24 3px, transparent 0), radial-gradient(circle closest-side at 150px 185px, #FB8B24 3px, transparent 0), radial-gradient(ellipse closest-side at 50px 60px, #F9A734 18px, transparent 0), radial-gradient(ellipse closest-side at 150px 175px, #F9A734 18px, transparent 0), radial-gradient(circle closest-side at 30px 40px, #F9D8D4 15px, transparent 0), radial-gradient(circle closest-side at 40px 35px, #36964C 15px, transparent 0), radial-gradient(circle closest-side at 70px 40px, #F9D8D4 15px, transparent 0), radial-gradient(circle closest-side at 60px 35px, #286E38 15px, transparent 0), radial-gradient(circle closest-side at 130px 155px, #F9D8D4 15px, transparent 0), radial-gradient(circle closest-side at 140px 150px, #36964C 15px, transparent 0), radial-gradient(circle at 170px 155px, #F9D8D4 15px, transparent 0), radial-gradient(circle at 160px 150px, #286E38 15px, transparent 0);
+  background-color: #F9D8D4;
+  background-size: 180px 210px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 75px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h4 {
+  word-wrap: break-word;
+  width: 200px;
   text-align: center;
 }
 
-.pics {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 150px;
+h5 {
+  text-align: center;
+}
+
+#new_link {
+  display: block;
+  text-align: center;
+}
+
+img {
+  width: 200px;
+}
+
+body {
+  background-color: #F9D8D4;
+}
+
+.item_1 {
+  text-align: center;
+  background-color: #F9D8D4;
+  border: 50px solid green;
+  padding: 10px;
+  margin: 50px;
+}
+
+.item_2 {
+  text-align: center;
+  background-color: #F9D8D4;
+  border: 50px solid green;
+  padding: 10px;
+  margin: 50px;
 }

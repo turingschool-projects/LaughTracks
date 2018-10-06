@@ -1,32 +1,32 @@
 <h1> Comedians are Funny </h1>
-<a href="/comedians/new">Add a Comedian</a>
+<a href="/comedians/new" id="new_link">Add a Comedian</a><br>
 
-<section id="statistics">
-  <h1> Statistics </h1>
-    <h5>Average Age: <%= comedians.average_age %> years old</h5>
-    <h5>Total Number of Specials: <%=specials.count%></h5>
-    <h5>Average Special Run Length: <%= specials.average_length %> minutes</h5>
-    <h5>Comedian Breeding Grounds:
-      <% comedians.unique_cities.each do |city| %>
-      <%= city %><span> </span>
-      <% end %>
-    </h5>
-</section>
+<div class="grid-container">
+  <div id="statistics">
+    <h3> Statistics </h3>
+      <h5>Average Age:<br> <%= comedians.average_age %> years old</h5>
+      <h5>Total Number of Specials:<br> <%=specials.count%></h5>
+      <h5>Average Special Run Length:<br> <%= specials.average_length %> minutes</h5>
+      <h5>Comedian Breeding Grounds:<br>
+        <% comedians.unique_cities.each do |city| %>
+        <%= city %><br>
+        <% end %>
+      </h5>
+  </div>
 
-<section class="grid-container">
   <% comedians.each do |comedian| %>
-  <ul id="comedian_<%= comedian.id %>">
+  <div id="comedian_<%= comedian.id %>" class=item_1>
     <h3><%= comedian.name %></h3>
-    <li>Age: <%= comedian.age %></li>
-    <li>Born in: <%= comedian.city %></li>
-    <li># of Specials: <%= comedian.specials.count %></li>
-  </ul>
+    <h4>Age: <%= comedian.age %></h4>
+    <h4>Born in: <%= comedian.city %></h4>
+    <h4># of Specials: <%= comedian.specials.count %></h4>
+  </div>
     <% comedian.specials.each do |special| %>
-      <ul id="special_<%= special.id %>">
-        <li><%= special.name %></li>
-        <li><%= special.length %> minutes</li>
-        <img class="pics" src=<%= special.url %>>
-      </ul>
+      <div id="special_<%= special.id %>" class=item_2>
+        <h4><%= special.name %></h4>
+        <h5><%= special.length %> minutes<h5>
+        <img src=<%= special.url %>>
+      </div>
       <% end %>
     <% end %>
-</section>
+</div>

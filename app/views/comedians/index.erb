@@ -14,24 +14,29 @@
     <% end %>
   </div>
 </div>
-<div>
+<div class="comedians">
   <% @comedians.each do |comedian| %>
-    <div id="comedian-<%=comedian.id%>" class="page-section">
+    <div id="comedian-<%=comedian.id%>" class="comedian page-section">
       <h3 id="name-<%=comedian.id%>"> <%= comedian.name %></h3>
       <p>Age: <%= comedian.age %></p>
       <% if comedian.city  %>
         <p>From: <%= comedian.city %></p>
       <% end %>
       <p>Total Specials: <%= comedian.specials.count %></p>
-      <% comedian.specials.each do |special| %>
-        <div id="special-<%=special.id%>">
-          <h5> <%= special.name %> </h5>
-          <% if special.run_time  %>
-            <p>Run Time: <%= special.run_time %></p>
-          <% end %>
-          <img src= <%= special.image %><br>
-        </div>
-      <% end %>
+      <div>
+        <% comedian.specials.each do |special| %>
+          <div id="special-<%=special.id%>" >
+            <img class="special-img" src= <%= special.image %>>
+            <div class="special-info">
+              <p> <em><%= special.name %></em> </p>
+              <% if special.run_time  %>
+                <p>Run Time: <%= special.run_time %></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
     </div>
 
   <% end %>

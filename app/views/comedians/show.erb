@@ -1,0 +1,15 @@
+<h1> <%= comedian.name %></h1>
+
+<div class="one_comedian">
+  <h3> <%= comedian.age %> years old</h3>
+  <h3>Born in <%= comedian.city %></h3>
+</div>
+
+<div class="one_special">
+  <h3 id="special">Specials:</h3>
+<% comedian.specials.each do |special| %>
+    <h4><%= special.name %></h4>
+    <h4><%= special.length %> minutes<h4>
+    <img src=<%= special.url %>>
+  <% end %>
+</div>

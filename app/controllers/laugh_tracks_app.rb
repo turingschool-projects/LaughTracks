@@ -7,6 +7,11 @@ class LaughTracksApp < Sinatra::Base
     erb :'/comedians/new'
   end
 
+  get '/comedians/:id' do
+    @comedian = Comedian.find(params[:id])
+    erb :"comedians/show", locals:{comedian: @comedian}
+  end
+
   get '/comedians' do
     if params[:age]
       @comedians = Comedian.where(age: params[:age])

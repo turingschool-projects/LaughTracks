@@ -7,7 +7,6 @@
       <h5>Average Age: <%= comedians.average_age %> years old</h5>
       <h5>Total Number of Specials: <%=specials.count%></h5>
       <h5>Average Special Run Length: <%= specials.average_length %> minutes</h5>
-      <h5>Average Special Run Length: <%= specials.average_length %> minutes</h5>
       <h5>Comedian Breeding Grounds:<br>
         <div class="baby_container">
         <% comedians.unique_cities.each do |city| %>
@@ -19,7 +18,7 @@
 
   <% comedians.each do |comedian| %>
   <div id="comedian_<%= comedian.id %>" class=item_1>
-    <h3><%= comedian.name %></h3>
+    <a href="/comedians/<%=comedian.id%>" id="main_name"><%= comedian.name %></a>
     <h4>Age: <%= comedian.age %></h4>
     <h4>Born in: <%= comedian.city %></h4>
     <h4># of Specials: <%= comedian.specials.count %></h4>

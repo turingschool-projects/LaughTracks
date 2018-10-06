@@ -11,10 +11,55 @@ h1 {
 #statistics {
   color: black;
   margin: 30px;
+  display: grid;
+  grid-template-columns: 4fr 3fr 2fr 5fr;
+  grid-template-rows: 50px 50px auto;
+}
+#stat-title {
+  grid-area: 1 / 1/ span 1 / span 4;
+}
+
+#stat-heading-1 {
+  grid-area: 2 / 1/ span 1 / span 1;
+}
+#stat-heading-2 {
+  grid-area: 2 / 2/ span 1 / span 1;
+}
+#stat-heading-3 {
+  grid-area: 2 / 3/ span 1 / span 1;
+}
+#stat-heading-4 {
+  grid-area: 2 / 4/ span 1 / span 1;
+}
+
+#stat-value-1 {
+  grid-area: 3 / 1/ span 1 / span 1;
+}
+
+#stat-value-2 {
+  grid-area: 3 / 2/ span 1 / span 1;
+}
+
+#stat-value-3 {
+  grid-area: 3 / 3/ span 1 / span 1;
+}
+
+#stat-value-4 {
+  grid-area: 3 / 4/ span 1 / span 1;
+  margin-bottom: 10px;
+}
+
+#stat-value-4-item {
+  display: inline-block;
+  padding: 0 5px;
 }
 
 .page-section {
   background-color: white;
   border: black, solid, 1px;
   border-radius: 10px;
+}
+
+.special-img {
+  width: 100px;
 }

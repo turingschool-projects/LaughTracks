@@ -1,16 +1,19 @@
+<div class="main">
 <h1> Comedians are Funny </h1>
 <a href="/comedians/new" id="new_link">Add a Comedian</a><br>
 
 <div class="grid-container">
   <div id="statistics">
     <h3> Statistics </h3>
-      <h5>Average Age:<br> <%= comedians.average_age %> years old</h5>
-      <h5>Total Number of Specials:<br> <%=specials.count%></h5>
-      <h5>Average Special Run Length:<br> <%= specials.average_length %> minutes</h5>
+      <h5>Average Age: <%= comedians.average_age %> years old</h5>
+      <h5>Total Number of Specials: <%=specials.count%></h5>
+      <h5>Average Special Run Length: <%= specials.average_length %> minutes</h5>
       <h5>Comedian Breeding Grounds:<br>
+        <div class="baby_container">
         <% comedians.unique_cities.each do |city| %>
-        <%= city %><br>
+        <%= city %><span>. </span>
         <% end %>
+        </div>
       </h5>
   </div>
 

@@ -5,7 +5,7 @@
   justify-content: space-evenly;
   align-content: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 10px;
+  grid-column-gap: 0px;
   grid-row-gap: 10px;
 }
 
@@ -65,10 +65,10 @@ body {
   margin: 50px;
 }
 
-.item_2 {
+.item_2, .new-comedian {
   text-align: center;
   background-color: #F9D8D4;
-  border: 50px solid green;
+  border: 10px solid green;
   padding: 10px;
   margin: 50px;
 }

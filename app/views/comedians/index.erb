@@ -1,35 +1,42 @@
 <h1>Comedians</h1>
 <div id="statistics" class="page-section">
-  <h2>Statistics</h2>
-  <h4>Average TV Special Run Time</h4>
-  <p> <%= Special.average_run_time %></p>
-  <h4>Total TV Specials</h4>
-  <p> <%= Special.all.count %></p>
-  <h4>Average Age</h4>
-  <p> <%= Comedian.average_age %></p>
-  <h4>Cities</h4>
-  <% Comedian.cities.each do |city| %>
-    <p> <%= city %></p>
-  <% end %>
+  <h2 id="stat-title">Statistics</h2>
+  <h4 id="stat-heading-1">Average TV Special Run Time</h4>
+  <p id="stat-value-1"> <%= Special.average_run_time %></p>
+  <h4 id="stat-heading-2">Total TV Specials</h4>
+  <p id="stat-value-2"> <%= Special.all.count %></p>
+  <h4 id="stat-heading-3">Average Age</h4>
+  <p id="stat-value-3"> <%= Comedian.average_age %></p>
+  <h4 id="stat-heading-4">Cities</h4>
+  <div id="stat-value-4">
+    <% Comedian.cities.each do |city| %>
+      <p id="stat-value-4-item"> <%= city %></p>
+    <% end %>
+  </div>
 </div>
-<div>
+<div class="comedians">
   <% @comedians.each do |comedian| %>
-    <div id="comedian-<%=comedian.id%>" class="page-section">
+    <div id="comedian-<%=comedian.id%>" class="comedian page-section">
       <h3 id="name-<%=comedian.id%>"> <%= comedian.name %></h3>
       <p>Age: <%= comedian.age %></p>
       <% if comedian.city  %>
         <p>From: <%= comedian.city %></p>
       <% end %>
       <p>Total Specials: <%= comedian.specials.count %></p>
-      <% comedian.specials.each do |special| %>
-        <div id="special-<%=special.id%>">
-          <h5> <%= special.name %> </h5>
-          <% if special.run_time  %>
-            <p>Run Time: <%= special.run_time %></p>
-          <% end %>
-          <img src= <%= special.image %><br>
-        </div>
-      <% end %>
+      <div>
+        <% comedian.specials.each do |special| %>
+          <div id="special-<%=special.id%>" >
+            <img class="special-img" src= <%= special.image %>>
+            <div class="special-info">
+              <p> <em><%= special.name %></em> </p>
+              <% if special.run_time  %>
+                <p>Run Time: <%= special.run_time %></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
     </div>
 
   <% end %>

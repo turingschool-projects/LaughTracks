@@ -7,4 +7,9 @@ class Special < ActiveRecord::Base
     average(:run_time).round(1)
   end
 
+  def self.by_comedians(comedians)
+    com_ids = comedians.pluck(:id)
+    where(comedian_id: com_ids)
+  end
+
 end

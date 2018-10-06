@@ -2,14 +2,14 @@
 <div id="statistics" class="page-section">
   <h2 id="stat-title">Statistics</h2>
   <h4 id="stat-heading-1">Average TV Special Run Time</h4>
-  <p id="stat-value-1"> <%= Special.average_run_time %></p>
+  <p id="stat-value-1"> <%= @average_run_time %></p>
   <h4 id="stat-heading-2">Total TV Specials</h4>
-  <p id="stat-value-2"> <%= Special.all.count %></p>
+  <p id="stat-value-2"> <%= @special_count %></p>
   <h4 id="stat-heading-3">Average Age</h4>
-  <p id="stat-value-3"> <%= Comedian.average_age %></p>
+  <p id="stat-value-3"> <%= @average_age %></p>
   <h4 id="stat-heading-4">Cities</h4>
   <div id="stat-value-4">
-    <% Comedian.cities.each do |city| %>
+    <% @cities.each do |city| %>
       <p id="stat-value-4-item"> <%= city %></p>
     <% end %>
   </div>

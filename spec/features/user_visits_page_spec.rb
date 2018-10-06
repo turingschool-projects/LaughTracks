@@ -70,7 +70,7 @@ RSpec.describe 'as a visitor' do
       @comedian_3 = Comedian.create(name: "Amy Schumer", age: "34", city: "NYC")
       @special_3_1 = @comedian_3.specials.create(name: "The Leather Special", run_time: "57", image: "https://m.media-amazon.com/images/M/MV5BMGMxYWY1MTktZDFlNC00YjdjLTk5MGMtODEwNTZiY2MxZjk1XkEyXkFqcGdeQXVyNTI3NjIyMjI@._V1_UY268_CR4,0,182,268_AL_.jpg")
       @special_3_2 = @comedian_3.specials.create(name: "Amy Schumer: Live at the Apollo", run_time: "61", image: "https://m.media-amazon.com/images/M/MV5BMTkzMzU1MTc3M15BMl5BanBnXkFtZTgwNjYyMjQ5NjE@._V1_UX182_CR0,0,182,268_AL_.jpg")
-      @special_3_3 = @comedian_3.specials.create(name: "Mostly Sexy Stuff", run_time: "61", image: "https://m.media-amazon.com/images/M/MV5BMTQxOTI2ODgxNF5BMl5BanBnXkFtZTgwMzc0NDAxMzE@._V1_UY268_CR9,0,182,268_AL_.jpg")
+      @special_3_3 = @comedian_3.specials.create(name: "Mostly Sexy Stuff", run_time: "62", image: "https://m.media-amazon.com/images/M/MV5BMTQxOTI2ODgxNF5BMl5BanBnXkFtZTgwMzc0NDAxMzE@._V1_UY268_CR9,0,182,268_AL_.jpg")
     end
 
     it 'should show a Comedian\'s info' do

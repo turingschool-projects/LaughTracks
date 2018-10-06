@@ -2,6 +2,7 @@ body {
   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/V__xp7pUe/microphone-on-the-stand-is-standing-on-the-stage-close-up-microphone-on-the-background-of-the-auditorium-spotlight-backlight-people-gather-in-the-hall-and-sit-on-seats-waiting-for-performances-4k_rxbotiuke_thumbnail-full01.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: 100px;
   text-align: center;
   padding: 2%;
   min-width: 1000px;
@@ -62,9 +63,9 @@ h1 {
   border-radius: 10px;
 }
 
-#comedians {
+/* #comedians {
   display: flex;
-}
+} */
 
 .comedian {
   width: 27%;

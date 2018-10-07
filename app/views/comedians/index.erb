@@ -5,33 +5,35 @@
     <title>Norm-Approved Comedians</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-<body>
-<div id="Comedians" class="grid" >
-  <h1>Norm's Comedians Page</h1>
-  <div class="top">
-    <h2>Statistics</h2>
-    <p>Average Age of Comedians In Database: <%= comedians.average_age %></p>
-    <p>Total Number of Comedy Specials: <%= specials.count %></p>
-    <p>Average Comedy Special Runtime Length: <%= specials.average_runtime %></p>
-    <p>Cities Represented: <%= comedians.unique_cities.join("; ") %></p>
-  </div>
-  <div class="col">
-    <% comedians.each do |comedian| %>
-      <h3><%= comedian.name if comedian.name %></h3>
-      <p>Age: <%= comedian.age if comedian.birthdate %></p>
-      <p>City: <%= comedian.city if comedian.city %></p>
-      <p><i>Specials</i></p>
-      <p>Number of Specials: <%= comedian.specials_count %></p>
-      <% comedian.specials.each do |special| %>
-        <p><b><%= special.name %></b></p>
-        <p><img src=<%=special.image_url%>
-          width="100" height="100"
-          alt=<%=special.name%> /></p>
-        <p>Released on: <%= special.release_date %></p>
-        <p>Runtime: <%= special.runtime_length %> min</p>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-</body>
+  <body>
+    <div id="Comedians" >
+      <h1>Norm's Comedians Page</h1>
+      <div class="top">
+        <h2>Statistics</h2>
+        <p>Average Age of Comedians In Database: <%= comedians.average_age %></p>
+        <p>Total Number of Comedy Specials: <%= specials.count %></p>
+        <p>Average Comedy Special Runtime Length: <%= specials.average_runtime %></p>
+        <p>Cities Represented: <%= comedians.unique_cities.join("; ") %></p>
+      </div>
+        <% comedians.each do |comedian| %>
+        <div class="comic">
+            <h3><%= comedian.name if comedian.name %></h3>
+            <p>Age: <%= comedian.age if comedian.birthdate %></p>
+            <p>City: <%= comedian.city if comedian.city %></p>
+            <p><i>Specials</i></p>
+            <p>Number of Specials: <%= comedian.specials_count %></p>
+          <% comedian.specials.each do |special| %>
+            <div class="special">
+              <p><b><%= special.name %></b></p>
+              <p><img src=<%=special.image_url%>
+                width="100" height="100"
+                alt=<%=special.name%> /></p>
+              <p>Released on: <%= special.release_date %></p>
+              <p>Runtime: <%= special.runtime_length %> min</p>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
+    </div>
+  </body>
 </html>

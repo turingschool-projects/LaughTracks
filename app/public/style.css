@@ -3,4 +3,9 @@ body {color: white;
 
 .top { background-color: violet; color: white; }
 
-.col { float: left; }
+.comic { float: left;
+    justify-content: space-around;
+    border-style: solid;
+    border-width: 5px; }
+
+.special { float: right; justify-content: space-around;}

@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-06T20:43:49-06:00">2018-10-06T20:43:49-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-07T12:15:44-06:00">2018-10-07T12:15:44-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>3</b> files in total.
-    <b>83</b> relevant lines. 
-    <span class="green"><b>83</b> lines covered</span> and
+    <b>89</b> relevant lines. 
+    <span class="green"><b>89</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,9 +53,9 @@
       <tr>
         <td class="strong"><a href="#c4c453a030a8f53080c2519240622a17961bd697" class="src_link" title="spec/features/comedians_index_spec.rb">spec/features/comedians_index_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>74</td>
-        <td>39</td>
-        <td>39</td>
+        <td>82</td>
+        <td>45</td>
+        <td>45</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -101,8 +101,8 @@
     <h3>spec/features/comedians_index_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>39</b> relevant lines. 
-      <span class="green"><b>39</b> lines covered</span> and
+      <b>45</b> relevant lines. 
+      <span class="green"><b>45</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -191,7 +191,7 @@
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &quot;displays comedian attributes&quot; do</code>
+          <code class="ruby">      it &quot;displays page statistics&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
@@ -221,334 +221,382 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(page).to have_content(&#39;Washington, DC&#39;)</code>
+          <code class="ruby">        expect(page).to have_content(&#39;Average Age of Comedians In Database: 50&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(page).to have_content(&#39;Elgin, IL&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(page).to have_content(&#39;Canton, MA&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">      it &quot;displays comedian attributes&quot; do</code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Comedian.create(name: &#39;Louis CK&#39;, birthdate: (Date.parse(&#39;1/1/1967&#39;)).jd, city: &#39;Washington, DC&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Comedian.create(name: &#39;Jim Gaffigan&#39;, birthdate: (Date.parse(&#39;1/1/1968&#39;)).jd, city: &#39;Elgin, IL&#39;)</code>
+        </li>
+      
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">        louis = Comedian.create(name: &#39;Louis CK&#39;, birthdate: (Date.parse(&#39;1/1/1967&#39;)).jd, city: &#39;Washington, DC&#39;)</code>
+          <code class="ruby">        Comedian.create(name: &#39;Bill Burr&#39;, birthdate: (Date.parse(&#39;1/1/1969&#39;)).jd, city: &#39;Canton, MA&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">        Special.create(name: &#39;Louis CK&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 88, comedian_id: louis.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Oh My God&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2013&#39;), runtime_length: 94, comedian_id: louis.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="32">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Word: Live at Carnegie Hall&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2012&#39;), runtime_length: 98, comedian_id: louis.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Hilarious&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2011&#39;), runtime_length: 102, comedian_id: louis.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        jim = Comedian.create(name: &#39;Jim Gaffigan&#39;, birthdate: (Date.parse(&#39;1/1/1968&#39;)).jd, city: &#39;Elgin, IL&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="40">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Mr. Universe&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 101, comedian_id: jim.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="43">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;King Baby&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 107, comedian_id: jim.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Beyond The Pale&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 112, comedian_id: jim.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Doing My Time&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 117, comedian_id: jim.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        bill = Comedian.create(name: &#39;Bill Burr&#39;, birthdate: (Date.parse(&#39;1/1/1969&#39;)).jd, city: &#39;Canton, MA&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Walk Your Way Out&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 111, comedian_id: bill.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Im Sorry You Feel That Way&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 108, comedian_id: bill.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Let It Go&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 102, comedian_id: bill.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        Special.create(name: &#39;Why Do I Do This?&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 112, comedian_id: bill.id,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
-          
-          
-          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="66">
-          <span class="hits">1</span>
-          
           <code class="ruby">        visit(&#39;/comedians&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(page).to have_content(&#39;Oh My God&#39;)</code>
+          <code class="ruby">        expect(page).to have_content(&#39;Age: 50&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(page).to have_content(&#39;King Baby&#39;)</code>
+          <code class="ruby">        expect(page).to have_content(&#39;City: Canton, MA&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="69">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(page).to have_content(&#39;Let It Go&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">      end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &quot;displays comedian specials&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        louis = Comedian.create(name: &#39;Louis CK&#39;, birthdate: (Date.parse(&#39;1/1/1967&#39;)).jd, city: &#39;Washington, DC&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Louis CK&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 88, comedian_id: louis.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Oh My God&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2013&#39;), runtime_length: 94, comedian_id: louis.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Word: Live at Carnegie Hall&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2012&#39;), runtime_length: 98, comedian_id: louis.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Hilarious&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2011&#39;), runtime_length: 102, comedian_id: louis.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        jim = Comedian.create(name: &#39;Jim Gaffigan&#39;, birthdate: (Date.parse(&#39;1/1/1968&#39;)).jd, city: &#39;Elgin, IL&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Mr. Universe&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 101, comedian_id: jim.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;King Baby&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 107, comedian_id: jim.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Beyond The Pale&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 112, comedian_id: jim.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Doing My Time&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 117, comedian_id: jim.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        bill = Comedian.create(name: &#39;Bill Burr&#39;, birthdate: (Date.parse(&#39;1/1/1969&#39;)).jd, city: &#39;Canton, MA&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Walk Your Way Out&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 111, comedian_id: bill.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Im Sorry You Feel That Way&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 108, comedian_id: bill.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Let It Go&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 102, comedian_id: bill.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Special.create(name: &#39;Why Do I Do This?&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">          release_date: Date.parse(&#39;1/1/2017&#39;), runtime_length: 112, comedian_id: bill.id,</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">          image_url: &quot;https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        visit(&#39;/comedians&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="74">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(page).to have_content(&#39;King Baby&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(page).to have_content(&#39;Number of Specials: 4&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="76">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(page).to have_content(&#39;Released on: 2017-01-01&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(page).to have_content(&#39;Runtime: 98 min&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">end</code>

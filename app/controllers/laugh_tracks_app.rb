@@ -13,20 +13,14 @@ class LaughTracksApp < Sinatra::Base
   end
 
   get '/comedians' do
-    if params[:age]
-      @comedians = Comedian.where(age: params[:age])
-    elsif params[:sort]
-      @comedians = Comedian.order(params[:sort])
-    else
-      @comedians = Comedian.all
-    end
-    @specials = Special.filter(@comedians)
-    erb :'comedians/index', locals: {comedians: @comedians, specials: @specials}
+    comedians = Comedian.filter(params)
+    specials = Special.filter(comedians)
+    erb :'comedians/index', locals: {comedians: comedians, specials: specials}
   end
 
   post '/comedians' do
-  song = Comedian.create(params[:comedian])
-  redirect '/comedians'
+    Comedian.create(params[:comedian])
+    redirect '/comedians'
   end
 
 end

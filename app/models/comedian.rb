@@ -9,4 +9,14 @@ class Comedian < ActiveRecord::Base
   def self.unique_cities
     pluck(:city).uniq
   end
+
+  def self.filter(params)
+    if params.empty?
+      Comedian.all
+    elsif params[:sort]
+      Comedian.order(params[:sort])
+    else
+      Comedian.where(params)
+    end
+  end
 end

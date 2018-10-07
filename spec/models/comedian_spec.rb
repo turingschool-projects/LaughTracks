@@ -10,6 +10,12 @@ RSpec.describe Comedian do
         comic = Comedian.create(name: 'Mitch Hedberg')
         expect(comic).to_not be_valid
       end
+
+      it 'has_many specials' do
+        association = described_class.reflect_on_association(:specials)
+
+        expect(association.macro).to eq :has_many
+      end
     end
   end
 end

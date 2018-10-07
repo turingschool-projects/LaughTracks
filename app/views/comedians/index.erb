@@ -1,11 +1,13 @@
 <h1>My Favorite Comedians</h1>
 
-<div id="comedians">
-  <% @comedians.each do |comedian| %>
-    <h3><%= comedian.name %></h3>
-    <img src= <%=comedian.thumbnail%>/>
-    <p>Age: <%= comedian.age %></p>
-    <p>Location: <%= comedian.city %></p>
-
-  <% end %>
-</div>
+<% @comedians.each do |c| %>
+  <ul>
+    <li><%= c.name %></li>
+    <li>Age: <%= c.age %></li>
+    <li>City: <%= c.city %>
+     <li>Specials: <% c.specials.each do |special| %>
+      <%= special.name %>
+      <br>
+    <% end %>
+  </ul>
+ <% end %>

@@ -18,7 +18,8 @@
 
   <% comedians.each do |comedian| %>
   <div id="comedian_<%= comedian.id %>" class=item_1>
-    <a href="/comedians/<%=comedian.id%>" id="main_name"><%= comedian.name %></a>
+    <a href="/comedians/<%=comedian.id%>" id="main_name"><%= comedian.name %></a><br>
+    <br>
     <h4>Age: <%= comedian.age %></h4>
     <h4>Born in: <%= comedian.city %></h4>
     <h4># of Specials: <%= comedian.specials.count %></h4>

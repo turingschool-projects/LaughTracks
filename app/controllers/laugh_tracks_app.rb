@@ -4,7 +4,7 @@ class LaughTracksApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
 
   get '/comedians/new' do
-    erb :'/comedians/new'
+    erb :'comedians/new'
   end
 
   get '/comedians/:id' do
@@ -15,8 +15,8 @@ class LaughTracksApp < Sinatra::Base
   get '/comedians' do
     if params[:age]
       @comedians = Comedian.where(age: params[:age])
-    elsif params["sort"]
-      @comedians = Comedian.order(params["sort"].to_sym)
+    elsif params[:sort]
+      @comedians = Comedian.order(params[:sort])
     else
       @comedians = Comedian.all
     end

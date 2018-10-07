@@ -53,16 +53,7 @@ img {
   width: 200px;
 }
 
-.item_1 {
-  text-align: center;
-  background-color: #F9D8D4;
-  opacity: 0.8;
-  border: 10px solid green;
-  padding: 10px;
-  margin: 50px auto;
-}
-
-.item_2, .new-comedian {
+.item_1, .item_2, .new-comedian {
   text-align: center;
   background-color: #F9D8D4;
   opacity: 0.8;

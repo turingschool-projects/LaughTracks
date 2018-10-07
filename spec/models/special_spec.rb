@@ -11,4 +11,17 @@ RSpec.describe Special do
       end
     end
   end
+
+  describe 'Class Methods' do
+    it '.average_length' do
+      mitch = Comedian.create(name: 'Mitch Hedberg', age: 48, city: "Los Angeles")
+      mitch_special_1 = mitch.specials.create(name: "Mitch is funny", thumbnail: "", run_time: 60)
+      mitch_special_2 = mitch.specials.create(name: "Mitch is NOT funny", run_time: 120, thumbnail: "")
+      mitch_special_3 = mitch.specials.create(name: "Mitch is the funniest", run_time: 100, thumbnail: "")
+
+      average_length = Special.average_length.to_f.round(2)
+
+      expect(average_length).to eq(93.33)
+    end
+  end
 end

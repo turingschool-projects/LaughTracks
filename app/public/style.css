@@ -1,1 +1,6 @@
-body {color: #795548;background-color: white;}
+body {color: white;
+      background-image: url(http://1-background.com/images/stars-1/beautiful-blue-stars-fill.jpg)}
+
+.top { background-color: violet; color: white; }
+
+.col { float: left; }

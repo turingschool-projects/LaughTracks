@@ -12,4 +12,18 @@ has_many :specials
     (Date.today.jd - jdavg)/365
   end
 
+  def self.unique_cities
+    select(:city).distinct.pluck(:city)
+  end
+
+  def self.by_age(age_in)
+    high = Date.today.jd - (age_in * 365)
+    low = high - 364
+    where(:birthdate => low..high)
+  end
+
+  def specials_count
+    specials.count
+  end
+
 end

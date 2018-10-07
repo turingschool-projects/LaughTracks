@@ -1,7 +1,7 @@
 require './app/models/special.rb'
 require './app/models/comedian.rb'
 
-freshmeat = Comedian.create(name: 'Louis CK', birthdate: (Date.parse('1/1/1967')).jd, city: 'Washington, DC')
+freshmeat = Comedian.create(name: 'Louis CK', birthdate: (Date.parse('12/9/1967')).jd, city: 'Washington, DC')
 Special.create(name: 'Louis CK',
   release_date: Date.parse('1/1/2017'), runtime_length: 88, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -15,7 +15,7 @@ Special.create(name: 'Hilarious',
   release_date: Date.parse('1/1/2011'), runtime_length: 102, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Bill Burr', birthdate: (Date.parse('1/1/1968')).jd, city: 'Canton, MA')
+freshmeat = Comedian.create(name: 'Bill Burr', birthdate: (Date.parse('10/6/1968')).jd, city: 'Canton, MA')
 Special.create(name: 'Walk Your Way Out',
   release_date: Date.parse('1/1/2017'), runtime_length: 111, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -29,7 +29,7 @@ Special.create(name: 'Why Do I Do This?',
   release_date: Date.parse('1/1/2017'), runtime_length: 112, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Jim Gaffigan', birthdate: (Date.parse('1/1/1968')).jd, city: 'Elgin, IL')
+freshmeat = Comedian.create(name: 'Jim Gaffigan', birthdate: (Date.parse('4/7/1966')).jd, city: 'Elgin, IL')
 Special.create(name: 'Mr. Universe',
   release_date: Date.parse('1/1/2017'), runtime_length: 101, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -43,7 +43,7 @@ Special.create(name: 'Doing My Time',
   release_date: Date.parse('1/1/2017'), runtime_length: 117, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Mitch Hedberg', birthdate: (Date.parse('1/1/1968')).jd, city: 'St. Paul, MN')
+freshmeat = Comedian.create(name: 'Mitch Hedberg', birthdate: (Date.parse('24/2/1968')).jd, city: 'St. Paul, MN')
 Special.create(name: 'Do You Believe in Gosh?',
   release_date: Date.parse('1/1/2017'), runtime_length: 114, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -54,7 +54,7 @@ Special.create(name: 'Strategic Grill Locations',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Russel Peters', birthdate: (Date.parse('1/1/1968')).jd, city: 'Toronto, Canada')
+freshmeat = Comedian.create(name: 'Russel Peters', birthdate: (Date.parse('29/9/1970')).jd, city: 'Toronto, Canada')
 Special.create(name: 'Almost Famous',
   release_date: Date.parse('1/1/2017'), runtime_length: 99, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -68,7 +68,7 @@ Special.create(name: 'Red, White and Brown',
   release_date: Date.parse('1/1/2017'), runtime_length: 97, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Jerry Seinfield', birthdate: (Date.parse('1/1/1968')).jd, city: 'Brooklyn, NY')
+freshmeat = Comedian.create(name: 'Jerry Seinfield', birthdate: (Date.parse('29/4/1954')).jd, city: 'Brooklyn, NY')
 Special.create(name: 'Jerry Before Seinfeld',
   release_date: Date.parse('1/1/2017'), runtime_length: 61, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -76,7 +76,7 @@ Special.create(name: 'Im Telling You for the Last Time',
   release_date: Date.parse('1/1/2017'), runtime_length: 88, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'George Carlin', birthdate: (Date.parse('1/1/1968')).jd, city: 'Santa Monica, CA')
+freshmeat = Comedian.create(name: 'George Carlin', birthdate: (Date.parse('12/5/1937')).jd, city: 'Santa Monica, CA')
 Special.create(name: 'I Kinda Like It When a Lotta People Die',
   release_date: Date.parse('1/1/2017'), runtime_length: 78, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -87,7 +87,7 @@ Special.create(name: 'Carlin on Campus',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Dave Chapelle', birthdate: (Date.parse('1/1/1968')).jd, city: 'Washington, DC')
+freshmeat = Comedian.create(name: 'Dave Chapelle', birthdate: (Date.parse('24/8/1973')).jd, city: 'Washington, DC')
 Special.create(name: 'Dave Chappelle: The Bird Revelation',
   release_date: Date.parse('1/1/2017'), runtime_length: 92, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -95,7 +95,7 @@ Special.create(name: 'Deep in the Heart of Texas: Dave Chappelle Live at Austin 
   release_date: Date.parse('1/1/2017'), runtime_length: 92, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Patton Oswalt', birthdate: (Date.parse('1/1/1968')).jd, city: 'Portsmouth, VA')
+freshmeat = Comedian.create(name: 'Patton Oswalt', birthdate: (Date.parse('27/1/1969')).jd, city: 'Portsmouth, VA')
 Special.create(name: 'The Secret Life of Pets 2',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -106,7 +106,7 @@ Special.create(name: 'Sex Madness Revealed',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Kathy Griffin', birthdate: (Date.parse('1/1/1968')).jd, city: 'Oak Park, IL')
+freshmeat = Comedian.create(name: 'Kathy Griffin', birthdate: (Date.parse('4/11/1960')).jd, city: 'Oak Park, IL')
 Special.create(name: 'Grannie',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -114,7 +114,7 @@ Special.create(name: 'Hall Pass',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Ellen DeGeneres', birthdate: (Date.parse('1/1/1968')).jd, city: 'Metairie, LA')
+freshmeat = Comedian.create(name: 'Ellen DeGeneres', birthdate: (Date.parse('26/1/1958')).jd, city: 'Metairie, LA')
 Special.create(name: 'Ellen DeGeneres: Here and Now',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -122,7 +122,7 @@ Special.create(name: 'Ellen DeGeneres: The Beginning',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Amy Schumer', birthdate: (Date.parse('1/1/1968')).jd, city: 'New York, NY')
+freshmeat = Comedian.create(name: 'Amy Schumer', birthdate: (Date.parse('1/6/1981')).jd, city: 'New York, NY')
 Special.create(name: 'Amy Schumer: The Leather Special',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
@@ -133,7 +133,7 @@ Special.create(name: 'Amy Schumer: Mostly Sex Stuff',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")
 
-freshmeat = Comedian.create(name: 'Maria Bamford', birthdate: (Date.parse('1/1/1968')).jd, city: 'Port Heuneme, CA')
+freshmeat = Comedian.create(name: 'Maria Bamford', birthdate: (Date.parse('3/9/1970')).jd, city: 'Port Heuneme, CA')
 Special.create(name: 'Seven Stages to Achieve Eternal Bliss By Passing Through the Gateway Chosen By the Holy Storsh',
   release_date: Date.parse('1/1/2017'), runtime_length: 89, comedian_id: freshmeat.id,
   image_url: "https://images.freeimages.com/images/large-previews/85a/daisy-s-1375598.jpg")

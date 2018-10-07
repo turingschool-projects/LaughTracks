@@ -1,10 +1,16 @@
 class LaughTracksApp < Sinatra::Base
 
   get '/comedians' do
-    comedians = Comedian.all
-    average_age = comedians.average_age
+    if params["age"]
+      then
+      cutoff = params[:age].to_i
+      comedians = Comedian.all.by_age(cutoff)
+    else
+      comedians = Comedian.all
+    end
+    specials = Special.all
     erb :"comedians/index", locals:{comedians: comedians,
-      average_age: average_age}
+      specials: specials}
   end
 
 # get '/comedians/new' do

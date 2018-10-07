@@ -1,16 +1,17 @@
-require File.expand_path('../../config/environment.rb', __FILE__)
+ 
 
-require "database_cleaner"
-DatabaseCleaner.strategy = :truncation
-DatabaseCleaner.clean
+grace_helbig = Comedian.create(name: "Grace Helbig", age: 33, city: "Los Angeles", thumbnail: "")
+grace_special_1 = grace_helbig.specials.create(name: "This Might Get Weird, Ya'll", thumbnail: "https://i.pinimg.com/originals/88/1d/34/881d3418eab9074a28ddd6ff5a666303.jpg", run_time: 90 )
+grace_special_2 = grace_helbig.specials.create(name: "No Filter", thumbnail: "", run_time: 120)
 
-grace_helbig = Comedian.create(name: "Grace Helbig", age: 33, city: "Los Angeles", thumbnail: "https://www.dailydot.com/wp-content/uploads/942/f5/8e03835a5f0cfe2e-1096x640.com/300x100")
-grace_special_1 = grace_helbig.specials.create(name: "This Might Get Weird, Ya'll", thumbnail: "https://c8.alamy.com/comp/P3GFHB/grace-helbig-mamrie-hart-grace-helbig-and-mamrie-hart-kick-off-stream-con-this-might-get-weird-yall-at-vimeo-theater-located-at-javits-center-P3GFHB.jpg", run_time: 90 )
-grace_special_2 = grace_helbig.specials.create(name: "No Filter", thumbnail: "https://static.tumblr.com/16adf8f1426e52b23d948dd02e3c968e/mlx2xj1/UHrn6oabi/tumblr_static_3wzg5lx0beyos8wowwokcog0g.jpg", run_time: 120)
+nikki_glaser = Comedian.create(name: "Nikki Glaser", age: 34, city: "New York City", thumbnail: "")
+nikki_special_1 = nikki_glaser.specials.create(name: "Perfect", thumbnail: "", run_time: 60)
+nikki_special_2 = nikki_glaser.specials.create(name: "I Am Road Comic", thumbnail: "")
+nikki_special_3 = nikki_glaser.specials.create(name: "Women Who Kill", thumbnail: "")
 
-nikki_glaser = Comedian.create(name: "Nikki Glaser", age: 34, city: "New York City", thumbnail: "https://m.media-amazon.com/images/M/MV5BMTU0OTcwOTUyMl5BMl5BanBnXkFtZTcwMzcyNTczOQ@@._V1_.jpg")
-nikki_special_1 = nikki_glaser.specials.create(name: "Perfect", thumbnail: "https://i.ytimg.com/vi/bm6d8_QTXrY/maxresdefault.jpg", run_time: 60)
-nikki_special_2 = nikki_glaser.specials.create(name: "I Am Road Comic", thumbnail: "https://i1.wp.com/jordanbrady.com/wp-content/uploads/2016/05/ChPoFiyUYAAGnJl.jpg?resize=300%2C250&ssl=1")
+chris_delia = Comedian.create(name: "Chris D'Elia", age: 38, city: "Los Angeles", thumbnail: "https://pbs.twimg.com/profile_images/963083711905333248/Idtokr85_400x400.jpg")
+chris_special_1 = chris_delia.specials.create(name: "Man on Fire", thumbnail:"", run_time: 65)
+chris_special_2 = chris_delia.specials.create(name: "Incorrigible", thumbnail:"", run_time: 83)
 
 
 

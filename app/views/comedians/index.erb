@@ -2,38 +2,78 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Norm-Approved Comedians</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Norm's Comedians Page</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Norm<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="http://www.normanrschultz.com/?i=1">Norm's Homepage</a></li>
+						<li><a href="https://www.facebook.com/normsciphi/">NormSciPhi on Facebook</a></li>
+						<li><a href="https://github.com/normanrs">Norm on GitHub</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="jumbotron">
+	<div class="container">
     <div id="Comedians" >
-      <h1>Norm's Comedians Page</h1>
-      <div class="top">
         <h2>Statistics</h2>
         <p>Average Age of Comedians In Database: <%= comedians.average_age %></p>
         <p>Total Number of Comedy Specials: <%= specials.count %></p>
         <p>Average Comedy Special Runtime Length: <%= specials.average_runtime %></p>
         <p>Cities Represented: <%= comedians.unique_cities.join("; ") %></p>
-      </div>
-        <% comedians.each do |comedian| %>
-        <div class="comic">
-            <h3><%= comedian.name if comedian.name %></h3>
-            <p>Age: <%= comedian.age if comedian.birthdate %></p>
-            <p>City: <%= comedian.city if comedian.city %></p>
-            <p><i>Specials</i></p>
-            <p>Number of Specials: <%= comedian.specials_count %></p>
-          <% comedian.specials.each do |special| %>
-            <div class="special">
-              <p><b><%= special.name %></b></p>
-              <p><img src=<%=special.image_url%>
-                width="100" height="100"
-                alt=<%=special.name%> /></p>
-              <p>Released on: <%= special.release_date %></p>
-              <p>Runtime: <%= special.runtime_length %> min</p>
-            </div>
-          <% end %>
-        </div>
-        <% end %>
     </div>
+  </div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+      <% comedians.each do |comedian| %>
+          <h3><%= comedian.name if comedian.name %></h3>
+          <p>Age: <%= comedian.age if comedian.birthdate %></p>
+          <p>City: <%= comedian.city if comedian.city %></p>
+          <p><i>Specials</i></p>
+          <p>Number of Specials: <%= comedian.specials_count %></p>
+        <% comedian.specials.each do |special| %>
+    </div>
+      <div class="col-md-9">
+        <span>
+        <p><b><%= special.name %></b></p>
+        <p><img src=<%=special.image_url%>
+          width="70" height="70"
+          alt=<%=special.name%> /></p>
+        <p>Released on: <%= special.release_date %></p>
+        <p>Runtime: <%= special.runtime_length %> min</p>
+        <% end %>
+        </span>
+      <% end %>
+		</div>
+	</div>
+</div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

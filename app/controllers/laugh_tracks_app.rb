@@ -5,10 +5,11 @@ class LaughTracksApp < Sinatra::Base
       then
       cutoff = params[:age].to_i
       comedians = Comedian.all.by_age(cutoff)
+      specials = comedians.find_specials
     else
       comedians = Comedian.all
+      specials = Special.all
     end
-    specials = Special.all
     erb :"comedians/index", locals:{comedians: comedians,
       specials: specials}
   end

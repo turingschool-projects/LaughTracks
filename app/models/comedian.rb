@@ -22,6 +22,11 @@ has_many :specials
     where(:birthdate => low..high)
   end
 
+  def self.find_specials
+    comic_ids = Comedian.all.pluck(:id)
+    Special.where(:comedian_id => comic_ids)
+  end
+
   def specials_count
     specials.count
   end

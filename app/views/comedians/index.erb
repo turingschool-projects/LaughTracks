@@ -6,9 +6,11 @@
   <h4> Average Special Length </h4>
   <%= @specials.average_length %>
   <h4> Cities My Favorite Comedians Live </h4>
-  <% @comedians.each do |comic| %>
-    <%= comic.city %>
-  <% end %>
+    <div class='cities'>
+      <% @cities.each do |city| %>
+      <h5><%= city %></h5>
+      <% end %>
+    </div>
 
 <% @comedians.each do |c| %>
   <ul>

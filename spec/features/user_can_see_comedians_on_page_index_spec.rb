@@ -11,7 +11,19 @@ RSpec.describe "visitor visit comedian page" do
     expect(page).to have_content(hannah.age)
   end
 
-  end
+  it 'does not repeat cities for comedians' do
+    mitch = Comedian.create(name: 'Mitch Hedberg', age: 48, city: "Los Angeles")
+    hannah = Comedian.create(name: 'Hannah Hart', age: 32, city: "Los Angeles")
+    mamrie = Comedian.create(name: 'Mamrie Hart', age: 32, city: "New York")
+
+      visit '/comedians'
+
+      within(".cities") do
+        expect(page).to have_content(mitch.city, count: 1)
+        expect(page).to have_content(hannah.city, count: 1)
+      end
+    end
+
 
   it "vistor sees comedians specials listed" do
     mitch = Comedian.create(name: 'Mitch Hedberg', age: 48, city: "Los Angeles")

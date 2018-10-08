@@ -4,7 +4,7 @@ class LaughTracksApp < Sinatra::Base
   get '/comedians' do
     @comedians = Comedian.all
     @specials = Special.all
-    @cities = Comedian.distinct.pluck(:city)
+    @cities = @comedians.uniq_cities
     erb :'comedians/index'
   end
 

@@ -1,4 +1,4 @@
-RSpec.describe "visitor visit comedian page" do
+RSpec.describe "visitor visits comedian page" do
   it "visitor sees a list of comedians and attributes" do
     mitch = Comedian.create(name: 'Mitch Hedberg', age: 48, city: "Los Angeles")
     hannah = Comedian.create(name: 'Hannah Hart', age: 32, city: "Los Angeles")
@@ -39,5 +39,15 @@ RSpec.describe "visitor visit comedian page" do
     expect(page).to have_content(hannah_special.name)
   end
 
+  it 'vistor sees comedians that match age query' do
+    mitch = Comedian.create(name: 'Mitch Hedberg', age: 48, city: "Los Angeles")
+    hannah = Comedian.create(name: 'Hannah Hart', age: 34, city: "Los Angeles")
+    mamrie = Comedian.create(name: 'Mamrie Hart', age: 32, city: "New York")
 
+    visit "/comedians?age=34"
+
+    expect(page).to have_content(hannah.name)
+    expect(page).to_not have_content(mamrie.name)
+    expect(page).to_not have_content(mitch.name)
+  end
 end

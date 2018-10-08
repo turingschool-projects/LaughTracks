@@ -12,6 +12,17 @@ class LaughTracksApp < Sinatra::Base
     @specials = Special.all
     erb :'specials/index'
   end
+
+  get '/comedians/new' do
+    erb :"comedians/new"
+  end
+
+  post '/comedians' do
+    comedian = Comedian.create(params[:comedian])
+    comedian.save
+    redirect "/comedians"
+  end
+
 # To show that shotgun is working. Take out soon.
   get '/' do
     "Hello World"

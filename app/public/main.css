@@ -1,0 +1,41 @@
+body {
+    background: white;
+    background-image: url('');
+    background-position: top;
+    color: white;
+}
+
+h1 {
+  color: white;
+  font-style: bold;
+  text-align: center;
+}
+
+h2 {
+  color: black;
+  font-style: bold;
+  text-align: center;
+}
+
+h3 {
+  color: black;
+  text-align: center;
+}
+
+h4 {
+  color: blue;
+  text-align: center;
+}
+
+h5 {
+  color: blue;
+  text-align: center;
+}
+
+h6 {
+  color: white;
+}
+
+img {
+  height: 100px;
+}

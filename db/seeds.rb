@@ -13,6 +13,21 @@ chris_delia = Comedian.create(name: "Chris D'Elia", age: 38, city: "Los Angeles"
 chris_special_1 = chris_delia.specials.create(name: "Man on Fire", thumbnail:"", run_time: 65)
 chris_special_2 = chris_delia.specials.create(name: "Incorrigible", thumbnail:"", run_time: 83)
 
+iliza_shlesinger = Comedian.create(name: "Iliza Shlesinger", age: 35, city: "Los Angeles")
+iliza_special_1 = iliza_shlesinger.specials.create(name: "War Paint", thumbnail:"", run_time: 83)
+iliza_special_2 = iliza_shlesinger.specials.create(name: "Freezing Hot", thumbnail:"", run_time: 100)
+iliza_special_3 = iliza_shlesinger.specials.create(name: "Confirmed Kills", run_time: 120)
+iliza_special_4 = iliza_shlesinger.specials.create(name: "Elder Millenial", run_time: 99)
+
+hannah_gadsby = Comedian.create(name: "Hannah Gadsby", age: 35, city: "Los Angeles")
+hannah_special_1 = hannah_gadsby.specials.create(name: "Hannah Gadsby is Wrong and Broken", thumbnail:"", run_time: 83)
+hannah_special_2 = hannah_gadsby.specials.create(name: "Hannah Dogmatic", thumbnail:"", run_time: 93)
+hannah_special_3 = hannah_gadsby.specials.create(name: "Nannette", thumbnail:"", run_time: 103)
+
+
+
+
+
 
 
 

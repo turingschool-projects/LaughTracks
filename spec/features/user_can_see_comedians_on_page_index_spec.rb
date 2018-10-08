@@ -11,6 +11,8 @@ RSpec.describe "visitor visit comedian page" do
     expect(page).to have_content(hannah.age)
   end
 
+  end
+
   it "vistor sees comedians specials listed" do
     mitch = Comedian.create(name: 'Mitch Hedberg', age: 48, city: "Los Angeles")
     hannah = Comedian.create(name: 'Hannah Hart', age: 32, city: "Los Angeles")

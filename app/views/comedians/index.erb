@@ -1,0 +1,41 @@
+<h1>Comedians</h1>
+<div id="statistics" class="page-section">
+  <h2 id="stat-title">Statistics</h2>
+  <h4 id="stat-heading-1">Average TV Special Run Time</h4>
+  <p id="stat-value-1"> <%= @average_run_time %></p>
+  <h4 id="stat-heading-2">Total TV Specials</h4>
+  <p id="stat-value-2"> <%= @special_count %></p>
+  <h4 id="stat-heading-3">Average Age</h4>
+  <p id="stat-value-3"> <%= @average_age %></p>
+  <h4 id="stat-heading-4">Cities</h4>
+  <div id="stat-value-4">
+    <% @cities.each do |city| %>
+      <p id="stat-value-4-item"> <%= city %></p>
+    <% end %>
+  </div>
+</div>
+<div class="comedians">
+  <% @comedians.each do |comedian| %>
+    <div id="comedian-<%=comedian.id%>" class="comedian page-section">
+      <h3 id="name-<%=comedian.id%>"> <%= comedian.name %></h3>
+      <p>Age: <%= comedian.age %></p>
+      <% if comedian.city  %>
+        <p>From: <%= comedian.city %></p>
+      <% end %>
+      <p>Total Specials: <%= comedian.specials.count %></p>
+      <div>
+        <% comedian.specials.each do |special| %>
+          <div class="special" id="special-<%=special.id%>" >
+            <img class="special-img" src= <%= special.image %>>
+            <div class="special-info">
+              <p class="special-name"> <em><%= special.name %></em> </p>
+              <p>Run Time: <%= special.run_time %> min</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+
+  <% end %>
+</div>

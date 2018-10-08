@@ -1,5 +1,15 @@
 <h1>My Favorite Comedians</h1>
 
+<h3> Comedian Statistics </h3>
+  <h4> Average Age of Comedians</h4>
+  <%= @comedians.average_age %>
+  <h4> Average Special Length </h4>
+  <%= @specials.average_length %>
+  <h4> Cities My Favorite Comedians Live </h4>
+  <% @comedians.each do |comic| %>
+    <%= comic.city %>
+  <% end %>
+
 <% @comedians.each do |c| %>
   <ul>
     <li><%= c.name %></li>

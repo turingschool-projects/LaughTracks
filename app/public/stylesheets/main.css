@@ -5,10 +5,20 @@ body {
   text-align: center;
   padding: 2%;
   min-width: 1000px;
+  font-family: Arial;
 }
 
 h1 {
   color: white;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  margin: 10px;
 }
 
 #statistics {
@@ -58,25 +68,67 @@ h1 {
 
 .page-section {
   background-color: white;
-  border: black, solid, 1px;
+  border: black solid 2px;
   border-radius: 10px;
 }
-
-/* #comedians {
-  display: flex;
-} */
 
 .comedian {
   width: 27%;
   margin: 30px;
   display: inline-block;
+  padding-bottom: 20px;
 }
 
+.special {
+  padding: 10px 0;
+}
 .special-img {
   width: 50px;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .special-info {
   display: inline-block;
+  vertical-align: middle;
+  ;
+}
+
+.special-name {
+  width: 200px;
+}
+
+.new-comedian {
+  background-color: lightgray;
+  border: black solid 2px;
+  border-radius: 20px;
+  width: 600px;
+  margin: 100px auto;
+  opacity: 90%;
+}
+
+.new-title {
+  font-size: 40px;
+  font-weight: normal;
+  margin: 20px 0;
+}
+
+h6 {
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px;
+}
+
+input[type=text] {
+  width: 300px;
+  font-style: italic;
+  margin: 20px auto 20px 30px;
+}
+
+input[type=submit] {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 14px;
 }

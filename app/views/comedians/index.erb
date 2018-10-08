@@ -25,13 +25,11 @@
       <p>Total Specials: <%= comedian.specials.count %></p>
       <div>
         <% comedian.specials.each do |special| %>
-          <div id="special-<%=special.id%>" >
+          <div class="special" id="special-<%=special.id%>" >
             <img class="special-img" src= <%= special.image %>>
             <div class="special-info">
-              <p> <em><%= special.name %></em> </p>
-              <% if special.run_time  %>
-                <p>Run Time: <%= special.run_time %></p>
-              <% end %>
+              <p class="special-name"> <em><%= special.name %></em> </p>
+              <p>Run Time: <%= special.run_time %> min</p>
             </div>
           </div>
         <% end %>

@@ -16,7 +16,7 @@ RSpec.describe 'as a visitor' do
       fill_in "comedian[name]", with: name
       fill_in "comedian[age]", with: 52
       fill_in "comedian[city]", with: "NYC"
-      click_button "Submit"
+      click_button "Create Comedian"
 
       #expect(current_path).to eq("/comedians/#{Comedian.last.id}")
       expect(page).to have_content(name)

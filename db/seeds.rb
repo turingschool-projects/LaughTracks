@@ -19,7 +19,7 @@ special_3_3 = comedian_3.specials.create(name: "Mostly Sexy Stuff", run_time: "6
 comedian_4 = Comedian.create(name: "Kevin Hart", age: "39", city: "Philadelphia")
 special_4_1 = comedian_4.specials.create(name: "What Now?", run_time: "96", image: "https://m.media-amazon.com/images/M/MV5BNzI2MDk3OTA5N15BMl5BanBnXkFtZTgwMDU1MDgxMDI@._V1_UX182_CR0,0,182,268_AL_.jpg")
 special_4_2 = comedian_4.specials.create(name: "Laugh at My Pain", run_time: "89", image: "https://m.media-amazon.com/images/M/MV5BMjI4NjA5NTI0OV5BMl5BanBnXkFtZTcwMTU0MzI1Ng@@._V1_UY268_CR1,0,182,268_AL_.jpg")
-special_4_3 = comedian_4.specials.create(name: "I'm a Grown Little Man", run_time: "73", image: "https://m.media-amazon.com/images/M/MV5BNzI2MDk3OTA5N15BMl5BanBnXkFtZTgwMDU1MDgxMDI@._V1_UX182_CR0,0,182,268_AL_.jpg")
+special_4_3 = comedian_4.specials.create(name: "I'm a Grown Little Man", run_time: "73", image: "https://m.media-amazon.com/images/M/MV5BMjI4MTYwNTUzMF5BMl5BanBnXkFtZTcwODk1Mjk3Mw@@._V1_UY268_CR4,0,182,268_AL_.jpg")
 
 comedian_5 = Comedian.create(name: "Jeff Dunham", age: "56", city: "Dallas")
 special_5_1 = comedian_5.specials.create(name: "Minding the Monsters", run_time: "80", image: "https://m.media-amazon.com/images/M/MV5BYTU2MTgzMzMtZGIwMy00ZGNiLWEzODAtZGIyMjhiMjQ3NTg2XkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_UY268_CR9,0,182,268_AL_.jpg")

@@ -47,29 +47,30 @@
   </div>
 </div>
 <div class="container">
+  <% comedians.each do |comedian| %>
 	<div class="row">
 		<div class="col-md-2">
-      <% comedians.each do |comedian| %>
           <h3><%= comedian.name if comedian.name %></h3>
           <p>Age: <%= comedian.age if comedian.birthdate %></p>
           <p>City: <%= comedian.city if comedian.city %></p>
           <p><i>Specials</i></p>
           <p>Number of Specials: <%= comedian.specials_count %></p>
     </div>
-    <div class="col-md-10">
+    <% comedian.specials.each do |special| %>
+    <div class="col-md-2">
       <div class="comedians">
-        <% comedian.specials.each do |special| %>
           <p><b><%= special.name %></b></p>
           <p><img src=<%=special.image_url%>
             width="70" height="70"
             alt=<%=special.name%> /></p>
           <p>Released on: <%= special.release_date %></p>
           <p>Runtime: <%= special.runtime_length %> min</p>
-          <% end %>
-        <% end %>
       </div>
 		</div>
+    <% end %>
 	</div>
+  <% end %>
+
 </div>
 
     </div>

@@ -55,17 +55,19 @@
           <p>City: <%= comedian.city if comedian.city %></p>
           <p><i>Specials</i></p>
           <p>Number of Specials: <%= comedian.specials_count %></p>
-        <% comedian.specials.each do |special| %>
     </div>
-      <div class="col-md-10">
-        <p><b><%= special.name %></b></p>
-        <p><img src=<%=special.image_url%>
-          width="70" height="70"
-          alt=<%=special.name%> /></p>
-        <p>Released on: <%= special.release_date %></p>
-        <p>Runtime: <%= special.runtime_length %> min</p>
+    <div class="col-md-10">
+      <div class="comedians">
+        <% comedian.specials.each do |special| %>
+          <p><b><%= special.name %></b></p>
+          <p><img src=<%=special.image_url%>
+            width="70" height="70"
+            alt=<%=special.name%> /></p>
+          <p>Released on: <%= special.release_date %></p>
+          <p>Runtime: <%= special.runtime_length %> min</p>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
 		</div>
 	</div>
 </div>

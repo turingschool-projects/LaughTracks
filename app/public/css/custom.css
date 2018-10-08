@@ -9,3 +9,5 @@
   color: white;
   background-image: url(http://1-background.com/images/stars-1/beautiful-blue-stars-fill.jpg);}
 }
+
+.comedians{ flex-wrap: nowrap; }

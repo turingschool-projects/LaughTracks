@@ -1,0 +1,27 @@
+<h1>My Favorite Comedians</h1>
+
+<h3> Comedian Statistics </h3>
+  <h4> Average Age of Comedians</h4>
+  <%= @comedians.average_age %>
+  <h4> Average Special Length </h4>
+  <%= @specials.average_length %>
+  <h4> Cities My Favorite Comedians Live </h4>
+    <div class='cities'>
+      <% @cities.each do |city| %>
+      <h6><%= city %></h6>
+      <% end %>
+    </div>
+
+<% @comedians.each do |c| %>
+  <ul>
+    <li><%= c.name %></li>
+    <li>Age: <%= c.age %></li>
+    <li>City: <%= c.city %>
+     <li>Specials: <% c.specials.each do |special| %>
+      <p> Title: <%= special.name %> </p>
+      <p> Length: <%= special.run_time %> <p>
+      <img src = <% special.thumbnail %>
+      <br>
+    <% end %>
+  </ul>
+ <% end %>

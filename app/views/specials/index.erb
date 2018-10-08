@@ -1,0 +1,11 @@
+<h1>My Favorite Specials</h1>
+
+<div id="specials">
+  <% @specials.each do |special| %>
+    <h3><%= special.name %></h3>
+    <img src= <%=special.thumbnail%>/>
+    <p>Comedian ID: <%= special.comedian_id %></p>
+    <p>Run Time: <%= special.run_time %></p>
+
+  <% end %>
+</div>

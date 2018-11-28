@@ -13,6 +13,14 @@ RSpec.describe Comedian do
     end
   end
   describe 'Instance Methods' do
+    describe 'name returns correctly' do
+      it 'returns an the right name' do
+
+        comic = Comedian.create(age: 48, firstname: "Bozo Klein")
+        expected_result = "Bozo Klein"
+        expect(comic.name).to eq(expected_result)
+      end
+    end
     describe 'image_path returns correctly' do
       it 'returns an the right image path' do
         comic = Comedian.create(age: 48, firstname: "Bozo")

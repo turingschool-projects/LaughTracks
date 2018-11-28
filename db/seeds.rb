@@ -1,8 +1,10 @@
 require "./app/models/comedian"
+require "./app/models/special"
 
 Comedian.destroy_all
+Special.destroy_all
 
-bob_newhart = Comedian.create(
+Comedian.create([
 {firstname:"Bob",     lastname:"Newhart",   age:89, city:"Los Angeles"},
 {firstname:"Adam",    lastname:"Burke",     age:51, city:"Chicago"},
 {firstname:"Cameron", lastname:"Esposito",  age:38, city:"Los Angeles"},
@@ -15,12 +17,13 @@ bob_newhart = Comedian.create(
 {firstname:"Pete",    lastname:"Holmes",    age:39, city:"Los Angeles"},
 {firstname:"Steve",   lastname:"Martin",    age:73, city:"Los Angeles"},
 {firstname:"Wanda",   lastname:"Sykes",     age:54, city:"Los Angeles"}
+]
 )
 
-bob_newart.specials.create(
+Comedian.find_by(firstname: "Bob").specials.create(
+  [
   {title: "The Button Down Mind of Bob Newhart", year: 1958, runtime: 67},
   {title: "The Very Funny Bob Newhart", year: 1960, runtime: 64},
   {title: "Bob Newhart Tells Long Jokes", year: 1959, runtime: 90}
-
-
+]
 )

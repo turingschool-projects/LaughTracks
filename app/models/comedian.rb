@@ -1,6 +1,7 @@
 class Comedian < ActiveRecord::Base
   has_many :specials
-  validates_presence_of :name
+  validates_presence_of :firstname
+  validates_presence_of :lastname
   validates_presence_of :age
 
   def image_path

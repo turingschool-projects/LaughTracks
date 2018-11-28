@@ -1,5 +1,5 @@
 <% @comedians.each do |comedian| %>
-  <ul>
+  <ul id="comedian-<%= comedian.id %>">
     <li>Name: <%= comedian.name %></li>
     <li>Age: <%= comedian.age %></li>
     <li>Hometown: <%= comedian.hometown %></li>

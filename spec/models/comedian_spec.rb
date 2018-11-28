@@ -16,7 +16,7 @@ RSpec.describe Comedian do
     describe 'name returns correctly' do
       it 'returns an the right name' do
 
-        comic = Comedian.create(age: 48, firstname: "Bozo Klein")
+        comic = Comedian.create(age: 48, firstname: "Bozo", lastname: "Klein")
         expected_result = "Bozo Klein"
         expect(comic.name).to eq(expected_result)
       end
@@ -26,7 +26,7 @@ RSpec.describe Comedian do
         comic = Comedian.create(age: 48, firstname: "Bozo")
         expected_result = "images/comedians/bozo/profile_pic.jpg"
         expect(comic.image_path).to eq(expected_result)
-        comic = Comedian.create(age: 48, firstname: "Bozo Klein")
+        comic = Comedian.create(age: 48, firstname: "Bozo", lastname: "Klein")
         expected_result = "images/comedians/bozo_klein/profile_pic.jpg"
         expect(comic.image_path).to eq(expected_result)
       end

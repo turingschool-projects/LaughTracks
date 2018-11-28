@@ -4,7 +4,7 @@ class Comedian < ActiveRecord::Base
   validates_presence_of :age
 
   def image_path
-    folder_name = "#{firstname}_#{lastname}".downcase
+    folder_name = name.downcase.gsub(' ', '_')
     "images/comedians/#{folder_name}/profile_pic.jpg"
   end
   def name

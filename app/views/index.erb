@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Justin's Comedians with Specials</title>
+  </head>
+  <body>
+
+    <section id="comics">
+      <% @comedians.each do |comedian| %>
+        <h3><%= comedian.name %></h3>
+        <p>Age: <%= comedian.age %></p>
+        <p>Hometown: <%= comedian.city %></p>
+      <% end %>
+    </section>
+
+  </body>
+</html>

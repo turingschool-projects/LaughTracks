@@ -5,6 +5,11 @@ body {
   color: #5a5a5a;
 }
 
+img {
+  object-fit: cover;
+}
+
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */

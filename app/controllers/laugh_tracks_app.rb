@@ -1,10 +1,10 @@
+# require_relative "../models/comedian"
 class LaughTracksApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
 
   get '/comedians' do
-    @comedians = Comedians.all
+    @comedians = Comedian.all
     erb :index
-    # render_my_page(:index, "Index")
   end
 
   # get '/'

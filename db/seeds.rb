@@ -1,1 +1,12 @@
-
+adam = Comedian.create(name: "Adam Cayton-Holland", age: 38, city: "Denver")
+fred = Comedian.create(name: "Fred Armisen", age: 51, city: "Los Angeles")
+john = Comedian.create(name: "John Mulaney", age: 36, city: "New York City")
+ellen = Comedian.create(name: "Ellen DeGeneres", age: 60, city: "New York City")
+zach = Comedian.create(name: "Zach Galifanakis", age: 49, city: "North Carolina")
+andy = Comedian.create(name: "Andy Samberg", age: 40, city: "Los Angeles")
+demetri = Comedian.create(name: "Demetri Martin", age: 45 , city: "Santa Monica")
+trevor = Comedian.create(name: "Trevor Noah", age: 34 , city: "New York City")
+maria = Comedian.create(name: "Maria Bamford", age: 48, city: "Los Angeles")
+jerry = Comedian.create(name: "Jerry Seinfeld", age: 48, city: "Los Angeles")
+michelle = Comedian.create(name: "Michelle Wolf", age: 33, city: "New York City")
+ali = Comedian.create(name: "Ali Wong", age: 36, city: "Los Angeles")

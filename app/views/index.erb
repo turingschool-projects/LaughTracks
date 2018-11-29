@@ -2,17 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1">
+
     <title>Justin's Comedians with Specials</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
+
   <body>
 
-    <section id="comics">
-      <% @comedians.each do |comedian| %>
-        <h3><%= comedian.name %></h3>
-        <p>Age: <%= comedian.age %></p>
-        <p>Hometown: <%= comedian.city %></p>
-      <% end %>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class= "col-md-4">
+            <% @comedians.each do |comedian| %>
+              <h3><%= comedian.name %></h3>
+              <p>Age: <%= comedian.age %></p>
+              <p>Hometown: <%= comedian.city %></p>
+
+              <% @specials.each do |special| %>
+                <h4><%= special.title %></h4>
+                <p><%= special.year %></p>
+                <p><%= special.runtime %></p>
+                <p><%= special.comedian_id %></p>
+                <img scr=<%= special.image %> alt=<%= special.title %> >
+              <% end %>
+            <% end %>
+            </div>
+        </div>
+      </div
     </section>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

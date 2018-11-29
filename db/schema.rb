@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_150603) do
 
   create_table "specials", force: :cascade do |t|
     t.text "name"
+    t.integer "comedian_id"
   end
 
 end

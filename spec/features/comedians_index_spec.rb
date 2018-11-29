@@ -37,5 +37,12 @@ RSpec.describe "User sees all comedians" do
       expect(page).to have_content(special_3.title)
       expect(page).to have_content(special_4.title)
     end
+
+    it 'also displays comedian statistics' do
+      Comedian.create!(firstname: "Bob", age:40, city:"New York")
+      Comedian.create!(firstname: "Rob", age:41, city:"New York")
+      Comedian.create!(firstname: "Shnob", age:42, city:"New York")
+      expect(page).to have_content("Average Age: 41")
+    end
   end
 end

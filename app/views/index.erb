@@ -20,7 +20,7 @@
               <p>Age: <%= comedian.age %></p>
               <p>Hometown: <%= comedian.city %></p>
 
-              <% @specials.each do |special| %>
+              <% comedian.specials.each do |special| %>
                 <h4><%= special.title %></h4>
                 <p>Year: <%= special.year %></p>
                 <p>Runtime: <%= special.runtime %></p>

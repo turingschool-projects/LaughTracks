@@ -1,0 +1,14 @@
+body {
+  background-color: #afc1e0;
+}
+
+.image-special {
+  display: inline;
+  width: 93px;
+  height: 134px;
+}
+
+.comedian-box {
+  border: 1px solid red;
+  margin: 20px;
+}

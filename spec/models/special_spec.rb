@@ -15,7 +15,7 @@ RSpec.describe Special do
         comic_2 = Comedian.create(name: 'Andrew Bueno', age: 33)
 
         comic_1.specials.create(name: "Hell Yeah", length: 65)
-        comic_1.specials.create(name: "Funny thingT", length: 75)
+        comic_1.specials.create(name: "Funny thing", length: 75)
         comic_2.specials.create(name: "I am Funny", length: 50)
         comic_2.specials.create(name: "You are not Funny", length: 60)
 

@@ -17,8 +17,10 @@ RSpec.describe "As a user" do
 
       visit '/comedians'
 
+      expected = Comedian.average_age
+
       within("#statistics") do
-        expect(page).to have_content(Comedian.all.average_age)
+        expect(page).to have_content(expected)
       end
     end
   end

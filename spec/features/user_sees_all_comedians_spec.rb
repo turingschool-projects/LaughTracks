@@ -6,8 +6,6 @@ RSpec.describe 'As a user' do
 
       visit '/comedians'
 
-      save_and_open_page
-
       within("#comedian-" + "#{comedian_1.id}") do
         expect(page).to have_content("Name: #{comedian_1.name}")
         expect(page).to have_content("Age: #{comedian_1.age}")

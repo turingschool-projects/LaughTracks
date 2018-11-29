@@ -8,8 +8,15 @@ RSpec.describe 'As a User' do
 
       visit '/comedians'
 
-      expect(page).to have_content(comedian_1.special.title)
-      expect(page).to have_content(comedian_1.special.title)
+      within("#special-" + "#{comedian_1.specials.first.id}") do
+        expect(page).to have_content(comedian_1.specials.first.title)
+        expect(page).to have_content(comedian_1.specials.first.runtime)
+      end
+
+      within("#special-" + "#{comedian_2.specials.first.id}") do
+        expect(page).to have_content(comedian_2.specials.first.title)
+        expect(page).to have_content(comedian_2.specials.first.runtime)
+      end
     end
   end
 end

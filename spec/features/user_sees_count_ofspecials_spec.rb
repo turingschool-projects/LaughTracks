@@ -28,7 +28,9 @@ RSpec.describe "As a user" do
 
       visit '/comedians'
 
-      expect(page).to have_content("Total TV Specials: 4")
+      within("#total-specials") do
+        expect(page).to have_content("#{Special.count}")
+      end
     end
   end
 end

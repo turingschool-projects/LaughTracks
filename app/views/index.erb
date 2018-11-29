@@ -28,6 +28,7 @@
         <li>Age: <%= comedian.age %></li>
         <li>Hometown: <%= comedian.hometown %></li>
         <hX>Specials:</hX><br/>
+        <p>Number of Specials: <%= comedian.specials.count %></p>
         <% comedian.specials.each do |special| %>
         <img src="<%= special.image_file %>" alt="<%= special.title %>" class="image-special"/>
           <ul id="special-<%= special.id %>" class="special-info">

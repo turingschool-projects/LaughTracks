@@ -11,10 +11,10 @@ RSpec.describe "As a user" do
       visit '/comedians'
       
       within("#comedian-1") do
-        expect(page).to have_content("Number of Specials: #{comedian_1.specials_count}")
+        expect(page).to have_content("Number of Specials: #{comedian_1.specials.count}")
       end
       within("#comedian-2") do
-        expect(page).to have_content("Number of Specials: #{comedian_1.specials_count}")
+        expect(page).to have_content("Number of Specials: #{comedian_2.specials.count}")
       end
     end
   end

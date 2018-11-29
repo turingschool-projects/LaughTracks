@@ -32,4 +32,15 @@ RSpec.describe Comedian do
       end
     end
   end
+  describe 'Class Methods' do
+    describe 'average_age returns correctly' do
+      Comedian.create(age: 48, firstname: "Bozo")
+      Comedian.create(age: 49, firstname: "Bozo")
+      Comedian.create(age: 50, firstname: "Bozo")
+      Comedian.create(age: 51, firstname: "Bozo")
+      Comedian.create(age: 52, firstname: "Bozo")
+      expect(Comedian.average_age).to eq(50)
+    end
+
+  end
 end

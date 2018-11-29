@@ -5,6 +5,8 @@ body {
   color: #5a5a5a;
 }
 
+
+
 img {
   object-fit: cover;
 }
@@ -75,6 +77,24 @@ img {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -.05rem;
+}
+
+.carousel-center {
+
+}
+
+.slide-background {
+  /* width:1000px;
+  object-fit: cover; */
+}
+
+.vinyl-center {
+  width:250px;
+  height:250px;
+  position: absolute;
+  top:25%;
+  left:35%;
+  z-index: 100;
 }
 
 

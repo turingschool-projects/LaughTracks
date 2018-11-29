@@ -5,16 +5,13 @@
   <div class="row">
     <% @comedians.each do |comedian| %>
     <div class="col-lg-4">
-      <img class="rounded-circle" src=<%= comedian.image_path %> alt="Generic placeholder image" width="140" height="140">
+      <img class="rounded-circle" src=<%= comedian.image_path %> alt="Generic placeholder image">
       <h2><%= comedian.name %></h2>
       <p>Age: <%= comedian.age%></p>
       <p>City: <%= comedian.city%></p>
       <p>Specials:
       <% comedian.specials.each do |special| %>
         <%= special.title %>
-        <% if special.respond_to?(:image_path) && special.image_path %>
-          <img src="<%= special.image_path %>" alt="">
-          <% require 'pry'; binding.pry %>
         <% end %>
       <% end %>
       </p>

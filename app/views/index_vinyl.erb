@@ -1,0 +1,42 @@
+
+
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% @comedians.each do |comedian|  %>
+      <li data-target="#myCarousel" data-slide-to="<%= i.to_s %>" class="active"></li>
+      <% end %>
+    </ol>
+    <div class="carousel-inner">
+      <% @comedians.each do |comedian| %>
+      <div class="carousel-item <%= "active" if i == 0 %>">
+        <img class="slide-background" src="images/vinyl.jpg">
+
+        <div class="container">
+          <div class="carousel-center">
+            <img class="rounded-circle vinyl-center" src="images/comedians/bob_newhart/profile_pic.jpg" alt="Generic placeholder image" width="140" height="140">
+          </div>
+          <div class="carousel-caption text-left">
+            <h2><%= comedian.name %></h2>
+            <p>Age: <%= comedian.age %></p>
+            <p>City: <%= comedian.city %>></p>
+          </div>
+          <<div class="carousel-caption text-right">
+            <h3>Specials</h3>
+            <% comedian.specials.each do |special| %>
+              <p>special.title</p>
+              <img src="<%= special.image_path %>" alt="special image" width="100px" height="100px">
+              <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>

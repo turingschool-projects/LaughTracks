@@ -1,7 +1,7 @@
 <div class="stats bar">
   <h3>Statistics</h3>
   <p>Cities: <%= @cities.join(", ") %></p>
-  <p>Average Age: <%= @average_age %></p>
+  <p>Average Age: <%= @average_age.to_i %></p>
   <p>Total Specials: <%= @total_specials %></p>
   <p>Average Runtime of Specials: <%= @average_runtime.to_i %> minutes</p>
 </div>

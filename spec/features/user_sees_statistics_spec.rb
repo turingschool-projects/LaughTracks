@@ -31,7 +31,7 @@ RSpec.describe "As a user" do
 
       visit '/comedians'
 
-      expected = Comedians.average_runtime
+      expected = Special.average_runtime
       within("#statistics") do
         expect(page).to have_content(expected)
       end

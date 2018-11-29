@@ -8,4 +8,14 @@ RSpec.describe Special do
       end
     end
   end
+
+  describe 'Class Methods' do
+    it 'should return the average run time' do
+      special = Special.create(runtime: 40)
+      special = Special.create(runtime: 50)
+      expect(Special.average_runtime).to eq(45)
+
+    end
+  end
+
 end

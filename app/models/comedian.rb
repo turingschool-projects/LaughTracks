@@ -10,5 +10,13 @@ class Comedian < ActiveRecord::Base
 
   def self.unique_hometowns
     distinct.pluck(:hometown)
-  end 
+  end
+
+  def self.sorter(parameters)
+    if parameters[:age]
+      where(age: parameters[:age])
+    else
+      all
+    end
+  end
 end

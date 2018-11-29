@@ -1,6 +1,6 @@
 class LaughTracksApp < Sinatra::Base
   get '/comedians' do
-    @comedians = Comedian.all
+    @comedians = Comedian.sorter(params)
     @specials = Special.all
     erb :index
   end

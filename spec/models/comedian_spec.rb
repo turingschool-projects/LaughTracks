@@ -41,5 +41,14 @@ RSpec.describe Comedian do
       Comedian.create(age: 52, firstname: "Bozo")
       expect(Comedian.average_age).to eq(50)
     end
+    it 'returns distinct cities correctly' do
+      Comedian.create(age: 48, firstname: "Bozo", city: 'Dublin')
+      Comedian.create(age: 49, firstname: "Bozo", city: 'Dublin')
+      Comedian.create(age: 50, firstname: "Bozo", city: 'Topeka')
+      Comedian.create(age: 51, firstname: "Bozo", city: 'Topeka')
+      Comedian.create(age: 52, firstname: "Bozo", city: 'Topeka')
+      expect(Comedian.cities).to eq(%w(Topeka Dublin))
+    end
+
   end
 end

@@ -23,7 +23,6 @@ Comedian.create([
 Comedian.find_by(firstname: "Bob").specials.create(
   [
   {title: "The Button Down Mind of Bob Newhart", year: 1958, runtime: 67, image_path: "images/comedians/bob_newhart/button.jpg"},
-  {title: "The Very Funny Bob Newhart", year: 1960, runtime: 64},
-  {title: "Bob Newhart Tells Long Jokes", year: 1959, runtime: 90}
+  {title: "The Very Funny Bob Newhart", year: 1960, runtime: 64, image_path: "images/generic_special.jpeg"}
 ]
 )

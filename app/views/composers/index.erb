@@ -2,21 +2,14 @@
 
    <% @composers.each do |composer| %>
     <ul>
-      #<li><%= composer.id %></li>
+      <li><%= composer.id %></li>
 
       <li><%= composer.surname %></li>
-      #<li><%= composer.forename %></li>
-      #<li><%= composer.city %></li>
-      #<li><%= composer.age %></li>
-
+      <li><%= composer.forename %></li>
       <% composer.symphonies.each do |symph| %>
       <li><%= symph.name %></li>
-
       <% end %>
-
-
-
-
+      <img src=<%= composer.thumbnail %>  alt=<%= composer.surname %>>
 
     </ul>
    <% end %>

@@ -34,4 +34,6 @@ RSpec.describe "Comedian's index displays statistics" do
     expect(page).to have_content("Average Runtime of Specials: 100 minutes")
   end
 
+  
+
 end

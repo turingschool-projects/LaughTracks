@@ -1,3 +1,9 @@
+require './app/models/comedian'
+require './app/models/special'
+
+Special.destroy_all
+Comedian.destroy_all
+
 adam = Comedian.create(name: "Adam Cayton-Holland", age: 38, city: "Denver")
 fred = Comedian.create(name: "Fred Armisen", age: 51, city: "Los Angeles")
 john = Comedian.create(name: "John Mulaney", age: 36, city: "New York City")
@@ -13,11 +19,11 @@ ali = Comedian.create(name: "Ali Wong", age: 36, city: "Los Angeles")
 
 adam.specials.create(name: "Comedy Central Stand-up Presents: Adam Cayton-Holland ", length: 30)
 
-fred.specials.create(name: "Fred Armisen: Standup For Drummers", length: 62)
+fred.specials.create(name: "Standup For Drummers", length: 62)
 
-john.specials.create(name: "John Mulaney: The Comeback Kid ", length: 62)
-john.specials.create(name: "John Mulaney: New in Town ", length: 60)
-john.specials.create(name: "John Mulaney: Kid Gorgeous at Radio City ", length: 65)
+john.specials.create(name: "The Comeback Kid ", length: 62)
+john.specials.create(name: "New in Town ", length: 60)
+john.specials.create(name: "Kid Gorgeous at Radio City ", length: 65)
 
 ellen.specials.create(name: "The Beginning", length: 65)
 ellen.specials.create(name: "Here and Now", length: 60)

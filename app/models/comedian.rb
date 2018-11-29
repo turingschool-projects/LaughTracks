@@ -11,4 +11,7 @@ class Comedian < ActiveRecord::Base
     return firstname unless lastname
     firstname + ' ' + lastname
   end
+  def self.average_age
+    average(:age)
+  end
 end

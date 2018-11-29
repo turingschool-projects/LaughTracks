@@ -1,20 +1,20 @@
-
+  <%= erb :stats_bar_partial %>
 
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <% @comedians.each do |comedian|  %>
+      <% @comedians.each_with_index do |comedian, i|  %>
       <li data-target="#myCarousel" data-slide-to="<%= i.to_s %>" class="active"></li>
       <% end %>
     </ol>
     <div class="carousel-inner">
-      <% @comedians.each do |comedian| %>
+      <% @comedians.each_with_index do |comedian, i| %>
       <div class="carousel-item <%= "active" if i == 0 %>">
         <img class="slide-background" src="images/vinyl.jpg">
 
         <div class="container">
           <div class="carousel-center">
-            <img class="rounded-circle vinyl-center" src="images/comedians/bob_newhart/profile_pic.jpg" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle vinyl-center" src="images/comedians/bob_newhart/profile_pic.jpg" alt="Generic placeholder image">
           </div>
           <div class="carousel-caption text-left">
             <h2><%= comedian.name %></h2>

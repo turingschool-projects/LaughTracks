@@ -8,8 +8,8 @@
   <ul id="comic-<%=comic.id%>-specials">
   <% comic.specials.each do |special| %>
     <li>Name: <%= special.name %>,
-    Length: <%= special.length%> min
-  <img src=<%= special.image_url%></li>
+    Length: <%= special.length %> min
+    <img src=<%= special.image_url %>></li>
   <% end %>
   </ul>
   </div>

@@ -16,6 +16,11 @@
         <p><%= @comedians.average_age %> years old</p>
       </section>
 
+      <section id="unique-hometowns">
+        <h5>Hometowns:</h5>
+        <p><%= @comedians.unique_hometowns.join(" ") %></p>
+      </section>
+
     </section>
     <% @comedians.each do |comedian| %>
       <ul id="comedian-<%= comedian.id %>" class="comedian-box">

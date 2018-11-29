@@ -49,7 +49,7 @@ RSpec.describe "As a user" do
 
       expected = Comedian.unique_hometowns
       within("#statistics") do
-        expect(page).to have_content(expected)
+        expect(page).to have_content("#{expected.join(" ")}")
       end
     end
   end

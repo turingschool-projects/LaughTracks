@@ -13,11 +13,10 @@ Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require fil
 # require database configurations
 require File.join(APP_ROOT, 'config', 'database')
 
-# configure LaughTracks settings
-class LaughTracksApp < Sinatra::Base
+# configure Symphonies settings
+class SymphoniesApp < Sinatra::Base
   set :method_override, true
   set :root, APP_ROOT
   set :views, File.join(APP_ROOT, "app", "views")
   set :public_folder, File.join(APP_ROOT, "app", "public")
 end
-

@@ -6,7 +6,7 @@ Bundler.require(:default, :test)
 require File.expand_path('../../config/environment.rb', __FILE__)
 require 'capybara/dsl'
 
-Capybara.app = LaughTracksApp
+Capybara.app = SymphoniesApp
 Capybara.save_path = 'tmp/capybara'
 
 DatabaseCleaner.strategy = :truncation

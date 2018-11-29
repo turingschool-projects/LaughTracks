@@ -1,0 +1,22 @@
+
+
+   <% @composers.each do |composer| %>
+    <ul>
+      #<li><%= composer.id %></li>
+
+      <li><%= composer.surname %></li>
+      #<li><%= composer.forename %></li>
+      #<li><%= composer.city %></li>
+      #<li><%= composer.age %></li>
+
+      <% composer.symphonies.each do |symph| %>
+      <li><%= symph.name %></li>
+
+      <% end %>
+
+
+
+
+
+    </ul>
+   <% end %>

@@ -29,5 +29,13 @@ RSpec.describe Comedian do
 
       expect(actual).to eq("Chicago, IL Saint Paul, MN")
     end
+
+    it "find_by_age" do
+      comedian_1 = Comedian.create(name: "John Mulaney", age: 36, hometown: "Chicago, IL")
+      comedian_2 = Comedian.create(name: "Mitch Hedberg", age: 20, hometown: "Saint Paul, MN")
+      actual = Comedian.find_by_age(36).first
+
+      expect(actual).to be(comedian_1)
+    end
   end
 end

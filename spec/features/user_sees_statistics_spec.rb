@@ -1,7 +1,9 @@
 RSpec.describe "As a user" do
   describe "when I visit /comedians" do
     it "should see a Statistics section" do
-
+      comedian_1 = Comedian.create(name: "John Mulaney", age: 36, hometown: "Chicago, IL")
+      comedian_1.specials.create(title: "Kid Gorgeous", runtime: 65, image_file: "https://m.media-amazon.com/images/M/MV5BOWZlYjE4ZDYtNjhlNi00ZGQ0LTgxZmUtNGRjNDM4YWJmOWNiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY268_CR4,0,182,268_AL_.jpg")
+      
       visit '/comedians'
 
       within("#statistics") do

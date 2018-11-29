@@ -12,4 +12,14 @@ RSpec.describe Comedian do
       end
     end
   end
+
+  describe "instance methods" do
+    it "should caluculate average age" do
+      comedian_1 = Comedian.create(name: "John Mulaney", age: 36, hometown: "Chicago, IL")
+      comedian_2 = Comedian.create(name: "Mitch Hedberg", age: 20, hometown: "Saint Paul, MN")
+      actual = Comedian.all.average_age
+
+      expect(actual).to eq(28)
+    end
+  end
 end

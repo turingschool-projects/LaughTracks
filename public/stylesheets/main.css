@@ -2,6 +2,10 @@ body {
   background-color: #afc1e0;
 }
 
+h1 {
+  text-align: center;
+}
+
 .image-special {
   display: inline;
   width: 93px;
@@ -26,4 +30,9 @@ body {
 .comedian-box {
   border: 1px solid red;
   margin: 20px;
+}
+
+#statistics {
+  text-align: center;
+  border: 1px solid red;
 }

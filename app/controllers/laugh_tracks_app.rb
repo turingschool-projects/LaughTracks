@@ -5,9 +5,13 @@ class LaughTracksApp < Sinatra::Base
   get '/comedians' do
     if params[:age]
       @comedians = Comedian.where(age: params[:age])
+      @cities = @comedians.pluck(:city)
     else
       @comedians = Comedian.all
+      @cities = Comedian.cities
     end
+    @average_age = Comedian.average_age
+    @average_runtime = Special.average_runtime
     erb :index_vinyl
   end
 

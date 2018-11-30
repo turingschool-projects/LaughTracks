@@ -22,6 +22,19 @@ footer {
   grid-auto-flow: dense;
 }
 
+#specials-container {
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  /* overflow: scroll; */
+  justify-content: space-around;
+}
+
+.special-container {
+  background-color: yellow;
+  width: 15rem;
+}
+
 .comedian-container {
   background-color: gray;
   text-align: center;
@@ -29,4 +42,8 @@ footer {
 
 .center {
   text-align: center;
+}
+
+.special-thumb {
+  height: 200px
 }

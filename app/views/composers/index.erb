@@ -1,5 +1,14 @@
 
 
+
+<h2>Great Symphony Composers</h2>
+
+<p>Average Age at Death: <%= Composer.average_age.to_i %></p>
+<p>Average Runtime of All Symphonies <%= Symphony.average_runtime.to_i %></p>
+
+<p>Cities of Residence <%= Composer.distinct.pluck(:city).join(" ")  %></p>
+
+
    <% @composers.each do |composer| %>
     <ul>
       <li><%= composer.id %></li>

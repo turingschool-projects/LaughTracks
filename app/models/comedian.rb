@@ -10,12 +10,19 @@ class Comedian < ActiveRecord::Base
       result[:comedians] = comedians
       result[:cities] = comedians.distinct.pluck(:city)
       result[:average_age] = comedians.average(:age)
-
     else
       result[:comedians] = Comedian.all
       result[:cities] = Comedian.cities
       result[:average_age] = Comedian.average_age
+    end
 
+    case params[:sort]
+    when "age"
+      result[:comedians] = Comedian.order(age: :asc)
+    when "name"
+      result[:comedians] = Comedian.order(firstname: :asc)
+    when "city"
+      result[:comedians] = Comedian.order(city: :asc)
     end
     result
   end

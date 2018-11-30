@@ -6,6 +6,7 @@
         <p class='comedian-name'>Comedian: <%= c.name %></p>
         <p>Age: <%= c.age %></p>
         <p>Hometown: <%= c.city %></p>
+        <p>Number of specials: <%= c.specials.count %></p>
       </div>
       <div class="specials">
         <% c.specials.each do |s| %>

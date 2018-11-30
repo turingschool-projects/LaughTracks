@@ -11,11 +11,14 @@
         <h5>Average TV Special Runtime</h5>
         <p><%= @specials.average_runtime %> minutes</p>
       </section>
+      <section id="total-specials">
+        <h5>Total TV Specials</h5>
+        <p><%= @specials.count %></p>
+      </section>
       <section id="average_age">
         <h5>Average Age</h5>
         <p><%= @comedians.average_age %> years old</p>
       </section>
-
       <section id="unique-hometowns">
         <h5>Hometowns:</h5>
         <p><%= @comedians.unique_hometowns.join(" ") %></p>
@@ -28,6 +31,7 @@
         <li>Age: <%= comedian.age %></li>
         <li>Hometown: <%= comedian.hometown %></li>
         <hX>Specials:</hX><br/>
+        <p>Number of Specials: <%= comedian.specials.count %></p>
         <% comedian.specials.each do |special| %>
         <img src="<%= special.image_file %>" alt="<%= special.title %>" class="image-special"/>
           <ul id="special-<%= special.id %>" class="special-info">

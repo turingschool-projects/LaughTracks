@@ -6,4 +6,8 @@ class Comedian < ActiveRecord::Base
   def self.average_age
     average(:age)
   end
+
+  def self.uniq_hometowns
+    select(:city).distinct
+  end
 end

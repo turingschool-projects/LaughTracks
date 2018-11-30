@@ -5,5 +5,9 @@ class Special < ActiveRecord::Base
 
   def self.average_runtime
     average(:runtime).round(2)
-  end 
+  end
+
+  def self.sorter(comedians)
+    where(comedian_id: comedians.pluck(:id))
+  end
 end

@@ -1,15 +1,18 @@
 
 class LaughTracksApp < Sinatra::Base
   get '/' do
-    'Hello World'
+    redirect('/comedians')
   end
 
   get '/comedians' do
     @comedians = Comedian.all
+    @average_age = Comedian.average_age
+    @average_length = Special.average_length
+
     erb :index
   end
 
   post '/comedians' do
-    # Comedian.create(params)
+    erb :index
   end
 end

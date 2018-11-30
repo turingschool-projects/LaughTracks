@@ -4,4 +4,13 @@ class LaughTracksApp < Sinatra::Base
     @specials = Special.sorter(@comedians)
     erb :index
   end
+
+  get '/comedians/new' do
+    erb :new
+  end
+
+  post "/comedians" do
+    Comedian.create(params[:comedian])
+    redirect '/comedians'
+  end
 end

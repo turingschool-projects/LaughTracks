@@ -41,11 +41,11 @@ RSpec.describe "specials are displayed on comedian index" do
     comedian_2.specials << special_3
 
     visit '/comedians'
-    
-    within 'div#bob-container' do
+
+    within 'div#bob-mcgee-container' do
       expect(page).to have_content("2 Specials")
     end
-    within 'div#rob-container' do
+    within 'div#rob-mcgoo-container' do
       expect(page).to have_content("1 Specials")
     end
 

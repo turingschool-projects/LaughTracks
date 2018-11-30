@@ -33,22 +33,30 @@ RSpec.describe Comedian do
     end
   end
   describe 'Class Methods' do
-    it 'returns average_age correctly' do
-      Comedian.create(age: 48, firstname: "Bozo")
-      Comedian.create(age: 49, firstname: "Bozo")
-      Comedian.create(age: 50, firstname: "Bozo")
-      Comedian.create(age: 51, firstname: "Bozo")
-      Comedian.create(age: 52, firstname: "Bozo")
-      expect(Comedian.average_age).to eq(50)
-    end
-    it 'returns distinct cities correctly' do
+    before(:each) do
       Comedian.create(age: 48, firstname: "Bozo", city: 'Dublin')
-      Comedian.create(age: 49, firstname: "Bozo", city: 'Dublin')
-      Comedian.create(age: 50, firstname: "Bozo", city: 'Topeka')
-      Comedian.create(age: 51, firstname: "Bozo", city: 'Topeka')
-      Comedian.create(age: 52, firstname: "Bozo", city: 'Topeka')
-      expect(Comedian.cities).to eq(%w(Topeka Dublin))
+      Comedian.create(age: 49, firstname: "Bozohead", city: 'Dublin')
+      Comedian.create(age: 50, firstname: "Bozonose", city: 'Topeka')
+      Comedian.create(age: 51, firstname: "Bozotoes", city: 'Topeka')
+      Comedian.create(age: 52, firstname: "Bozohands", city: 'Topeka')
     end
+      it 'returns average_age correctly' do
+        expect(Comedian.average_age).to eq(50)
+      end
+      it 'returns distinct cities correctly' do
 
+        expect(Comedian.cities).to eq(%w(Topeka Dublin))
+      end
+      it 'fetches all data correctly with empty params' do
+        params = {}
+        expected = {
+          comedians: Comedian.all,
+          cities: %w(Topeka Dublin),
+          average_age: 50,
+        }
+        expect(Comedian.fetch_data(params)).to eq(expected)
+
+      end
+
+    end
   end
-end

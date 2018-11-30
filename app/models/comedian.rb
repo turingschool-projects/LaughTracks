@@ -8,14 +8,14 @@ class Comedian < ActiveRecord::Base
     if params[:age]
       comedians = Comedian.where(age: params[:age])
       result[:comedians] = comedians
-      result[:cities] = comedians.pluck(:city)
+      result[:cities] = comedians.distinct.pluck(:city)
       result[:average_age] = comedians.average(:age)
-      
+
     else
       result[:comedians] = Comedian.all
       result[:cities] = Comedian.cities
       result[:average_age] = Comedian.average_age
-      
+
     end
     result
   end

@@ -32,24 +32,18 @@ RSpec.describe "User sees all comedians" do
       comic_4.specials.create(title: "ha", runtime: 100)
       comic_4.specials.create(title: "haha", runtime: 150)
 
-      # <p>Cities: <%= @cities.join(", ") %></p>
-      # <p>Average Age: <%= @average_age.to_i %></p>
-      # <p>Total Specials: <%= @total_specials %></p>
-      # <p>Average Runtime of Specials:
-
 
       visit '/comedians?age=42'
-      save_and_open_page
 
-      expect(page).to have_content("Rob")
-      expect(page).to have_content("Blob")
-      expect(page).to have_content("Cities: Philly, New York")
+      expect(page).to have_content(comic_2.name)
+      expect(page).to have_content(comic_4.name)
+      expect(page).to have_content("Cities: New York, Philly")
       expect(page).to have_content("Average Age: 42")
       expect(page).to have_content("Total Specials: 3")
       expect(page).to have_content("Average Runtime of Specials: 103")
 
-      expect(page).not_to have_content("Bob")
-      expect(page).not_to have_content("Shnob")
+      expect(page).not_to have_content(comic_1.name)
+      expect(page).not_to have_content(comic_3.name)
     end
   end
 

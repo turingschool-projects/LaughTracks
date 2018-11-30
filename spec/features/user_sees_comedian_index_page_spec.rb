@@ -1,6 +1,6 @@
 RSpec.describe 'Comedian Index Page' do
-  it 'As a visitor' do
-    comedian = Comedian.create(name: "Ian Douglas Terry", age: 32, city: "Denver")
+  it 'shows data for comedians' do
+    comedian = Comedian.create(name: "Andrew Bueno", age: 32, city: "Denver")
 
     visit "/comedians"
     within "#comic-#{comedian.id}" do
@@ -11,12 +11,26 @@ RSpec.describe 'Comedian Index Page' do
   end
 
   it 'shows data for specials' do
-    comedian = Comedian.create(name: "Ian Douglas Terry", age: 32, city: "Denver")
-    special = comedian.specials.create(name: "I think I'm Funny", length: 65)
+    comedian = Comedian.create(name: "Andrew Bueno", age: 32, city: "Denver")
+    special = comedian.specials.create(name: "Hell Yeah", length: 65)
 
     visit "/comedians"
     within "#comic-#{comedian.id}-specials" do
       expect(page).to have_content("Name: #{special.name}, Length: #{special.length} min")
     end
   end
+
+  it 'shows statistics for comedians and specials' do
+
+    visit "/comedians"
+
+    within "#statistics" do
+      expect(page).to have_content("Statistics")
+      expect(page).to have_content("Average age of Comedians: #{Comedian.average_age}")
+      expect(page).to have_content("Average TV Special Run Time: #{Special.average_run_time}")
+      expect(page).to have_content("Average TV Special Run Time: #{Comedian.list_unique_cities}")
+
+    end
+  end
+
 end

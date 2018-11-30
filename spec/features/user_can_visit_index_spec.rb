@@ -93,6 +93,7 @@ RSpec.describe 'Comedians index page' do
       Comedian.create(name: 'Trevor Noah', age: 34, city: 'Johannesburg, South Africa')
       Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
       Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
+      Special.create(name: 'Bill Hicks: Revelations', comedian_id: 2, run_time_minutes: 57, image_url: 'https://m.media-amazon.com/images/M/MV5BMjM1OTAwMDE3N15BMl5BanBnXkFtZTgwNjkzMzYwNzE@._V1_.jpg')
 
       visit '/comedians'
 

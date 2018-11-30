@@ -82,8 +82,8 @@ RSpec.describe 'Comedians index page' do
     end
 
     it 'shows a list of comedians and number of specials' do
-      Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
-      Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
+      jerry = Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
+      bill = Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
 
       Special.create(name: 'Bill Hicks: Revelations', comedian_id: 2, run_time_minutes: 57, image_url: 'https://m.media-amazon.com/images/M/MV5BMjM1OTAwMDE3N15BMl5BanBnXkFtZTgwNjkzMzYwNzE@._V1_.jpg')
       Special.create(name: 'Bill Hicks: Relentless', comedian_id: 2, run_time_minutes: 61, image_url: 'https://m.media-amazon.com/images/M/MV5BMjAwNDYyMjg1MV5BMl5BanBnXkFtZTcwNjEwMjEzMQ@@._V1_.jpg')
@@ -94,8 +94,8 @@ RSpec.describe 'Comedians index page' do
 
       visit '/comedians'
 
-      expect(page).to have_content("Jerry Seinfeld: 3")
-      expect(page).to have_content("Bill Hicks: 3")
+      expect(page).to have_content("#{jerry.name}: #{jerry.specials.count}")
+      expect(page).to have_content("#{bill.name}: #{bill.specials.count}")
     end
 
     it 'shows a list of unique hometowns for comedians' do
@@ -112,7 +112,7 @@ RSpec.describe 'Comedians index page' do
       Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
       Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
       Special.create(name: 'Bill Hicks: Revelations', comedian_id: 2, run_time_minutes: 57, image_url: 'https://m.media-amazon.com/images/M/MV5BMjM1OTAwMDE3N15BMl5BanBnXkFtZTgwNjkzMzYwNzE@._V1_.jpg')
-
+      require "pry"; binding.pry
       visit '/comedians'
 
       unique = [

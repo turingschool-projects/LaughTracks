@@ -52,14 +52,15 @@ RSpec.describe 'Comedians index page' do
       expect(page).to have_content("Length(minutes): #{bill_2.run_time_minutes}")
     end
     it 'shows average run time for all specials' do
-      jerry = Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
+      Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
+      Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
 
-      bill_1 = Special.create(name: 'Bill Hicks: Revelations', comedian_id: 2, run_time_minutes: 57, image_url: 'https://m.media-amazon.com/images/M/MV5BMjM1OTAwMDE3N15BMl5BanBnXkFtZTgwNjkzMzYwNzE@._V1_.jpg')
-      bill_2 = Special.create(name: 'Bill Hicks: Relentless', comedian_id: 2, run_time_minutes: 61, image_url: 'https://m.media-amazon.com/images/M/MV5BMjAwNDYyMjg1MV5BMl5BanBnXkFtZTcwNjEwMjEzMQ@@._V1_.jpg')
+      Special.create(name: 'Bill Hicks: Revelations', comedian_id: 2, run_time_minutes: 57, image_url: 'https://m.media-amazon.com/images/M/MV5BMjM1OTAwMDE3N15BMl5BanBnXkFtZTgwNjkzMzYwNzE@._V1_.jpg')
+      Special.create(name: 'Bill Hicks: Relentless', comedian_id: 2, run_time_minutes: 61, image_url: 'https://m.media-amazon.com/images/M/MV5BMjAwNDYyMjg1MV5BMl5BanBnXkFtZTcwNjEwMjEzMQ@@._V1_.jpg')
 
-      jerry_1 = Special.create(name: "Jerry Seinfeld: 'I'm Telling You for the Last Time", comedian_id: 1, run_time_minutes: 75, image_url: 'https://m.media-amazon.com/images/M/MV5BNDM4OTY0NTAyMF5BMl5BanBnXkFtZTcwNTcxMDQyMQ@@._V1_.jpg')
-      jerry_2 = Special.create(name: 'Stand-Up Confidential', comedian_id: 1, run_time_minutes: 55, image_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/45/Stand-Up_Confidential_video_box.jpg/220px-Stand-Up_Confidential_video_box.jpg')
-      jerry_3 = Special.create(name: 'Jerry Before Seinfeld', comedian_id: 1, run_time_minutes: 61, image_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Jerry_Before_Seinfeld_poster.jpg/220px-Jerry_Before_Seinfeld_poster.jpg')
+      Special.create(name: "Jerry Seinfeld: 'I'm Telling You for the Last Time", comedian_id: 1, run_time_minutes: 75, image_url: 'https://m.media-amazon.com/images/M/MV5BNDM4OTY0NTAyMF5BMl5BanBnXkFtZTcwNTcxMDQyMQ@@._V1_.jpg')
+      Special.create(name: 'Stand-Up Confidential', comedian_id: 1, run_time_minutes: 55, image_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/45/Stand-Up_Confidential_video_box.jpg/220px-Stand-Up_Confidential_video_box.jpg')
+      Special.create(name: 'Jerry Before Seinfeld', comedian_id: 1, run_time_minutes: 61, image_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Jerry_Before_Seinfeld_poster.jpg/220px-Jerry_Before_Seinfeld_poster.jpg')
 
       visit '/comedians'
 
@@ -76,7 +77,41 @@ RSpec.describe 'Comedians index page' do
 
       visit '/comedians'
 
-      expect(page).to have_content("Comedian Age: ")
+      expect(page).to have_content("Comedian Age: 37.8")
+    end
+
+    it 'shows a list of unique hometowns for comedians' do
+      Comedian.create(name: 'George Carlin', age: 71, city: 'New York City, New York')
+      Comedian.create(name: 'Richard Pryor', age: 65, city: 'Peoria, Illinois')
+      Comedian.create(name: 'Robin Williams', age: 63, city: 'Chicago, Illinois')
+      Comedian.create(name: 'Demetri Martin', age: 45, city: 'New York City, New York')
+      Comedian.create(name: 'Jim Gaffigan', age: 52, city: 'Chesterson, Indiana')
+      Comedian.create(name: 'Dave Chappelle', age: 45, city: 'Washington, District of Columbia')
+      Comedian.create(name: 'Hasan Minhaj', age: 33, city: 'Davis, California')
+      Comedian.create(name: 'Bo Burnham', age: 28, city: 'Hamilton, Massachusetts')
+      Comedian.create(name: 'John Mulaney', age: 36, city: 'Chicago, Illinois')
+      Comedian.create(name: 'Trevor Noah', age: 34, city: 'Johannesburg, South Africa')
+      Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
+      Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
+
+      visit '/comedians'
+
+      unique = [
+        "New York City, New York",
+        "Peoria, Illinois",
+        "Chesterson, Indiana",
+        "Washington, District of Columbia",
+        "Davis, California",
+        "Hamilton, Massachusetts",
+        "Chicago, Illinois",
+        "Brooklyn, New York City, New York",
+        "Johannesburg, South Africa",
+        "Little Rock, Arkansas"
+      ]
+
+      unique.each do |city_name|
+        expect(page).to have_content(city_name)
+      end
     end
   end
 end

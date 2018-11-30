@@ -20,6 +20,7 @@ RSpec.describe "As a user" do
       comedian_3 = Comedian.create(name: "Blah", age: 20, hometown: "Chicago, IL")
       comedian_1.specials.create(title: "Kid Gorgeous", runtime: 65, image_file: "https://m.media-amazon.com/images/M/MV5BOWZlYjE4ZDYtNjhlNi00ZGQ0LTgxZmUtNGRjNDM4YWJmOWNiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY268_CR4,0,182,268_AL_.jpg")
       comedian_2.specials.create(title: "Comedy Central Presents: Mitch Hedberg", runtime: 30, image_file: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGHGPBMGUNy3WnCVWPyiCQxtRZ_G4KC3Cjv1JiCmsq6rM6lk3q-g")
+      comedians = Comedian.sorter({age: 36})
 
       visit '/comedians?age=36'
 
@@ -28,7 +29,7 @@ RSpec.describe "As a user" do
       end
 
       expected1 = Comedian.average_age
-      within("#statistics") do
+      within("#average-age") do
         expect(page).to have_content(expected1)
       end
 

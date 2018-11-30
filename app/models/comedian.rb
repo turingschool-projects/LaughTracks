@@ -10,4 +10,8 @@ class Comedian < ActiveRecord::Base
   def self.uniq_hometowns
     select(:city).distinct
   end
+
+  def self.find_by_age(age, comparison = false)
+    where("age = '#{age}'")
+  end
 end

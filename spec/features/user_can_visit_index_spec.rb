@@ -8,17 +8,18 @@ RSpec.describe 'Comedians index page' do
 
       visit '/comedians'
 
-      expect(page).to have_content(george.name)
-      expect(page).to have_content(george.age)
-      expect(page).to have_content(george.city)
+      expect(page).to have_content("Comedian: #{george.name}")
+      expect(page).to have_content("Age: #{george.age}")
+      expect(page).to have_content("Hometown: #{george.city}")
+      expect(page).to have_content("Number of specials: #{george.specials.count}")
 
-      expect(page).to have_content(richard.name)
-      expect(page).to have_content(richard.age)
-      expect(page).to have_content(richard.city)
+      expect(page).to have_content("Comedian: #{richard.name}")
+      expect(page).to have_content("Age: #{richard.age}")
+      expect(page).to have_content("Number of specials: #{richard.specials.count}")
 
-      expect(page).to have_content(robin.name)
-      expect(page).to have_content(robin.age)
-      expect(page).to have_content(robin.city)
+      expect(page).to have_content("Comedian: #{robin.name}")
+      expect(page).to have_content("Age: #{robin.age}")
+      expect(page).to have_content("Number of specials: #{robin.specials.count}")
     end
     it 'shows information about specials for comedians' do
       jerry = Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
@@ -78,6 +79,23 @@ RSpec.describe 'Comedians index page' do
       visit '/comedians'
 
       expect(page).to have_content("Comedian Age: 37.8")
+    end
+
+    it 'shows a list of comedians and number of specials' do
+      Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
+      Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
+
+      Special.create(name: 'Bill Hicks: Revelations', comedian_id: 2, run_time_minutes: 57, image_url: 'https://m.media-amazon.com/images/M/MV5BMjM1OTAwMDE3N15BMl5BanBnXkFtZTgwNjkzMzYwNzE@._V1_.jpg')
+      Special.create(name: 'Bill Hicks: Relentless', comedian_id: 2, run_time_minutes: 61, image_url: 'https://m.media-amazon.com/images/M/MV5BMjAwNDYyMjg1MV5BMl5BanBnXkFtZTcwNjEwMjEzMQ@@._V1_.jpg')
+
+      Special.create(name: "Jerry Seinfeld: 'I'm Telling You for the Last Time", comedian_id: 1, run_time_minutes: 75, image_url: 'https://m.media-amazon.com/images/M/MV5BNDM4OTY0NTAyMF5BMl5BanBnXkFtZTcwNTcxMDQyMQ@@._V1_.jpg')
+      Special.create(name: 'Stand-Up Confidential', comedian_id: 1, run_time_minutes: 55, image_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/45/Stand-Up_Confidential_video_box.jpg/220px-Stand-Up_Confidential_video_box.jpg')
+      Special.create(name: 'Jerry Before Seinfeld', comedian_id: 1, run_time_minutes: 61, image_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Jerry_Before_Seinfeld_poster.jpg/220px-Jerry_Before_Seinfeld_poster.jpg')
+
+      visit '/comedians'
+
+      expect(page).to have_content("Jerry Seinfeld: 3")
+      expect(page).to have_content("Bill Hicks: 3")
     end
 
     it 'shows a list of unique hometowns for comedians' do

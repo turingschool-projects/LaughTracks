@@ -28,7 +28,7 @@ RSpec.describe "As a user" do
         expect(page).to have_content("#{Special.count}")
       end
 
-      expected1 = Comedian.average_age
+      expected1 = Comedian.sorter(age: 36).average_age
       within("#average-age") do
         expect(page).to have_content(expected1)
       end

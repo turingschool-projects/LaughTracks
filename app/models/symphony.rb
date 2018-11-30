@@ -5,5 +5,10 @@ class Symphony < ActiveRecord::Base
   validates :key, presence: true
   validates :year, presence: true
   validates :composer_id, presence: true
-  
+
+  def self.average_runtime
+    average(:runtime)
+  end
+
+
 end

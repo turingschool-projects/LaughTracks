@@ -10,4 +10,8 @@ class Composer < ActiveRecord::Base
   validates :thumbnail, presence: true
   validates :age, presence: true
 
+  def self.average_age
+    average(:age)
+  end
+
 end

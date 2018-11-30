@@ -32,7 +32,7 @@ RSpec.describe Comedian do
 
         expected = ["Los Angeles", "New York City", "Denver"]
 
-        expect(Comedian.list_of_unique_cities).to eq(expected)
+        expect(Comedian.list_unique_cities).to eq(expected)
       end
     end
   end

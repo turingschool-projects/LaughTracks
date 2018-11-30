@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Have yourself a laugh!</h1>
-    <h2>Comedians</h2>
-    <% @comedians.each do |c| %>
-    <p><%= c.name %></p>
-    <p><%= c.age %></p>
-    <p><%= c.city %></p>
-    <% end %>
-  </body>
-</html>
+<h3>The Comedians</h3>
+<section class="comedians">
+  <% @comedians.each do |c| %>
+    <section class="comedian">
+      <div class="comedian-info">
+        <p class='comedian-name'>Comedian: <%= c.name %></p>
+        <p>Age: <%= c.age %></p>
+        <p>Hometown: <%= c.city %></p>
+      </div>
+      <div class="specials">
+        <% c.specials.each do |s| %>
+          <div class="special">
+            <p>Special Name: <%= s.name %></p>
+            <p>Length(minutes): <%= s.run_time_minutes %></p>
+            <img class='comedian-img' src="<%= s.image_url %>" alt="<%= s.name %>">
+          </div>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+  <p>Special Run Time: <%= @average_length.round(1) %></p>
+  <p>Comedian Age: <%= @average_age.round(1) %></p>
+</section>

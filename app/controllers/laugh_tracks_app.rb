@@ -8,7 +8,7 @@ class LaughTracksApp < Sinatra::Base
     @comedians = Comedian.all
     @average_age = Comedian.average_age
     @average_length = Special.average_length
-    @uniq_hometowns = Comedian.unique_hometowns
+    @uniq_hometowns = Comedian.uniq_hometowns
 
     erb :index
   end

@@ -4,4 +4,8 @@ class LaughTracksApp < Sinatra::Base
     @specials = Special.sorter(@comedians)
     erb :index
   end
+
+  get '/comedians/new' do
+    erb :new 
+  end
 end

@@ -7,8 +7,8 @@ RSpec.describe 'Comedians index page with search query' do
       hasan = Comedian.create(name: 'Hasan Minhaj', age: 33, city: 'Davis, California')
       Special.create(name: 'Bill Hicks: Revelations', comedian_id: 2, run_time_minutes: 57, image_url: 'https://m.media-amazon.com/images/M/MV5BMjM1OTAwMDE3N15BMl5BanBnXkFtZTgwNjkzMzYwNzE@._V1_.jpg')
 
-      visit '/comedians'
-
+      visit '/comedians?age=45'
+      
       expect(page).to have_content("Comedian: #{demetri.name}")
       expect(page).to have_content("Age: #{demetri.age}")
       expect(page).to have_content("Hometown: #{demetri.city}")

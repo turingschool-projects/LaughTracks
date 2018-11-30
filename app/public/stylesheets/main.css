@@ -1,0 +1,43 @@
+html {
+  font-family: 'Raleway', sans-serif;
+  background-color: #7986AC;
+}
+
+header {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.head-pic {
+  width: 33%;
+  height: 15rem;
+}
+
+h1, h2 { text-align: center; }
+
+.comedian-info {
+  background-color: #50608F;
+}
+
+.comedian-info > * {
+  display: block;
+  text-align: center;
+}
+
+.comedian-info:nth-child(1) { font-size: 2rem;
+}
+
+.comedian-info:nth-child(2) {
+  font-size: 1.2rem;
+}
+
+.comedian-info:nth-child(3) {
+  font-size: 1.6rem;
+}
+
+.special {
+  background-color: white;
+  border-radius: .9rem;
+  text-align: center;
+}

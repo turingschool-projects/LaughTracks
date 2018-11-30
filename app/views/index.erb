@@ -1,0 +1,10 @@
+<h1 class='center'>All Comedians</h1>
+<div id='comedians-container'>
+  <% @comedians.each_with_index do |comedian, cindex| %>
+  <div id='comedian-<%= cindex %>' class='comedian-container'>
+    <div class='comedian-name'><%= comedian.name %></div>
+    <div class='comedian-age'><%= comedian.age %></div>
+    <div class='comedian-city'><%= comedian.city %></div>
+  </div>
+  <% end %>
+</div>

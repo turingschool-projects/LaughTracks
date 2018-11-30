@@ -1,0 +1,32 @@
+body {
+  background-color: lightgray;
+}
+
+header {
+  font-size: 36px;
+  background-color: lightblue;
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+#comedians-container {
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  grid-auto-flow: dense;
+}
+
+.comedian-container {
+  background-color: gray;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}

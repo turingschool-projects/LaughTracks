@@ -3,7 +3,7 @@ class Special < ActiveRecord::Base
 
   validates_presence_of :name, :comedian_id, :run_time_minutes, :image_url
 
-  def self.average_length
-    average(:run_time_minutes)
+  def self.average_length(caller = self)
+    caller.average(:run_time_minutes)
   end
 end

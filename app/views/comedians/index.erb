@@ -1,0 +1,68 @@
+
+<div class="parallax" style="background-image: url('http://englishx.jp/wp-content/uploads/2018/08/gettyimages-841758452.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; height: 100%; background-attachment: fixed;">
+  <header class="container jumbotron">
+    <section class="statistics">
+      <h1 class="mx-auto" style="width: 200px;"><p class="text-primary">Statistics</p></h1>
+    </section>
+    <a class="text-success">
+      <section class="row">
+        <article class="col">
+          <p>Average Age : <%= @average_age %></p>
+        </article>
+        <article class="col">
+          <p>Average Runtime : <%= @average_runtime %></p>
+        </article>
+        <article class="col">
+          <p class="cities">Cities : <%= @cities.join("&nbsp; &nbsp; ") %></p>
+        </article>
+        <article class="col">
+          <p>Total Specials : <%= @total_specials %></p>
+        </article>
+
+      </section>
+    </a>
+  </header>
+
+
+  <section class="container-fluid">
+    <div class="row">
+      <% @comedians.each do |comedian| %>
+        <section class="col-4">
+
+          <articles class="container">
+            <h3 class="mx-auto" style="width: 200px;"><%= comedian.name %></h3>
+            <section class="row">
+
+              <a class="col">Comedian Age: <%= comedian.age %></a>
+              <a class="col">City Of Birth:<p><%= comedian.city %></p></a>
+              <a class="col">Total Specials: <%=comedian.specials.count %> </a>
+
+           </section>
+
+          </articles>
+
+          <articles class="container">
+
+            <div class="container">
+              <% comedian.specials.each do |special|%>
+
+              <section class="media">
+                <% if special.image%>
+                 <img class="mr-3" src="<%= special.image %>" alt="<%= special.name%>"/>
+                <% end %>
+                <div class="media-body">
+                  <h6 class="mt-0"><%= special.name %></h6>
+                  <p>Runtime :<%= special.run_time %> mins</p>
+                </div>
+              </section>
+
+
+              <% end %>
+            </div>
+          </articles>
+
+        </section>
+      <% end %>
+    </div>
+  </section>
+</div>

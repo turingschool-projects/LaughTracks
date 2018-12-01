@@ -4,6 +4,7 @@ gem 'activerecord'
 gem 'pg', '~> 0.18'
 gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-activerecord'
+gem 'bootstrap', '~> 4.1.3'
 
 group :development, :test do
   gem 'capybara', '~> 3.0.3'

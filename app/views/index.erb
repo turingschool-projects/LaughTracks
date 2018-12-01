@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="css/normalize.min.css" title="css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/main.css" title="css" type="text/css">
   </head>
   <body class="container">
-    <h1>Comedians</h1>
+    <h1 class="comedy-header">Comedians</h1>
     <section id="statistics" >
       <h3>Statistics</h3>
       <section class="stats-flex">
@@ -33,16 +34,15 @@
             <ul id="comedian-<%= comedian.id %>" class="comedian-box ui card eight wide column">
               <h4><%= comedian.name %></h4>
               <li>Age: <%= comedian.age %></li>
-              <li>Hometown: <%= comedian.hometown %></li>
-              <hX>Specials:</hX><br/>
+              <li>Hometown: <%= comedian.hometown %></li><br/>
               <p>Number of Specials: <%= comedian.specials.count %></p>
               <section class="specials-list">
                 <% comedian.specials.each do |special| %>
                   <article class="single-special">
-                    <img src="<%= special.image_file %>" alt="<%= special.title %>" class="image-special"/>
+                    <img src="<%= special.image_file %>" alt="<%= special.title %>" id="comedian-<%= special.comedian_id %>-img" class="image-special"/>
                       <ul id="special-<%= special.id %>" class="special-info">
-                        <li>Title: <%= special.title %></li>
-                        <li>Runtime: <%= special.runtime %> min.</li>
+                        <li class="special-li"><%= special.title %></li>
+                        <li class="special-li"><%= special.runtime %> min.</li>
                       </ul>
                   </article>
                 <% end %>

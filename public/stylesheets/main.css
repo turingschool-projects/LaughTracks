@@ -1,9 +1,21 @@
 body {
-  background-color: #afc1e0;
+  background-color: black;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
 }
 
-h1 {
+.comedy-header {
   text-align: center;
+  grid-column: 1 / span 2;
+  grid-row: 1 / 2;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h5 {
+  font-weight: bold;
 }
 
 .container {
@@ -17,13 +29,7 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.single-special {
-  margin: 10px;
-  justify-content: space-between;
-  word-wrap: normal;
+  justify-content: space-around;
 }
 
 .specials-list {
@@ -31,50 +37,58 @@ h1 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
-ul {
-  list-style-type: none;
+.single-special {
+  margin: 10px;
+  justify-content: space-around;
+  word-wrap: normal;
+  align-content: center;
 }
 
-h1 {
-  grid-column: 1 / span 2;
-  grid-row: 1 / 2;
-}
 .comedians-container {
   grid-column: 1 / span 2;
   grid-row: 3 / span 4;
 }
 .comedian-box {
-  background-color: white;
   border-radius: 10px;
-  margin: 20px;
-  width: 30%;
+  text-align: center;
+  width: 45%;
 }
 .image-special {
   display: inline;
   width: 93px;
   height: 134px;
+  border-radius: 10px;
+  background-color: black;
 }
 
-#comedian-2>img {
+.special-li {
+  text-align: left;
+  width: 150px;
+}
+
+#comedian-2 > img {
   width: 129px;
   height: 97px;
 }
 
-#comedian-5>img {
-  width: 225px;
-  height: 60px;
+#comedian-5 > img {
+  width: 150px;
+  height: 228px;
 }
 
-#comedian-6>img {
+#comedian-6 > img {
   width: 113px;
   height: 111px;
 }
 
+#comedian-9 {
+  border-radius: 40px 40px 10px 10px;
+}
+
 #statistics {
-  background-color: grey;
   text-align: center;
   width: 100%;
   grid-column: 1 / span 2;

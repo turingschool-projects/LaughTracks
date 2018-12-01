@@ -1,20 +1,54 @@
+* {
+ box-sizing: border-box
+}
+
 html {
   font-family: 'Raleway', sans-serif;
   background-color: #7986AC;
 }
 
+body {
+  width: 100vw;
+}
+
 header {
-  width: 100%;
   margin: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
-.head-pic {
-  width: 33%;
-  height: 15rem;
+h1, h2, h3, h4 { text-align: center; }
+
+main {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
 }
 
-h1, h2 { text-align: center; }
+.comedian-stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.comedian-stats > div {
+  border: 1px solid black;
+  text-align: center;
+  background-color: white;
+  width: calc(33.3333% - 10px);
+  margin: 5px;
+  padding: 2px;
+}
+
+.comedians {
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+
+.specials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 .comedian-info {
   background-color: #50608F;
@@ -25,7 +59,13 @@ h1, h2 { text-align: center; }
   text-align: center;
 }
 
-.comedian-info:nth-child(1) { font-size: 2rem;
+.comedian-img {
+  max-width: 14rem;
+  max-height: 14rem;
+  border: 1px solid black;
+}
+
+/* .comedian-info:nth-child(1) { font-size: 2rem;
 }
 
 .comedian-info:nth-child(2) {
@@ -34,10 +74,14 @@ h1, h2 { text-align: center; }
 
 .comedian-info:nth-child(3) {
   font-size: 1.6rem;
-}
+} */
 
 .special {
   background-color: white;
   border-radius: .9rem;
   text-align: center;
+  border: 1px solid black;
+  width: calc(33.33333% - 15px);
+  margin: 7.5px;
+  padding: 10px;
 }

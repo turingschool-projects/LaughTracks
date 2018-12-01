@@ -89,31 +89,4 @@ RSpec.describe 'Comedians index page with search query' do
     expect(page).to have_content("Special Run Time: 56")
     expect(page).to have_content("Comedian Age: 45")
   end
-
-  it 'it can create a comedian, update index page, and redirect there' do
-    Comedian.create(name: 'Demetri Martin', age: 45, city: 'New York City, New York')
-    Comedian.create(name: 'Jim Gaffigan', age: 52, city: 'Chesterson, Indiana')
-    Comedian.create(name: 'Dave Chappelle', age: 45, city: 'Washington, District of Columbia')
-    Comedian.create(name: 'Hasan Minhaj', age: 33, city: 'Davis, California')
-
-    Special.create(name: "Demetri Martin: The Overthinker", comedian_id: 1, run_time_minutes: 56, image_url: "https://m.media-amazon.com/images/M/MV5BMGU1N2Q1ZGUtYWY3OC00M2Q5LWIyNGMtMjA3ZDcxMmY2N2M2XkEyXkFqcGdeQXVyMjQzOTM1NTc@._V1_.jpg")
-    expect(Comedian.count).to eq(4)
-
-    visit '/comedians/new'
-
-    fill_in 'comedian[name]', with: "George Carlin"
-    fill_in 'comedian[age]', with: 71
-    fill_in 'comedian[hometown]', with: "New York City, New York"
-
-    click_button "Submit"
-
-    expect(Comedian.count).to eq(5)
-    found = Comedian.where("id = 5")[0]
-    expect(found.name).to eq("George Carlin")
-    expect(found.age).to eq(71)
-    expect(found.city).to eq("New York City, New York")
-
-    expect(current_path).to eq('/comedians')
-
-  end
 end

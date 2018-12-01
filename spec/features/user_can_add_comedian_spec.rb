@@ -37,7 +37,7 @@ RSpec.describe 'Adding a comedian' do
         expect(page).to have_content("#{found.name}: #{found.specials.count}")
       end
 
-      within ".comedian-info-#{found.id}" do
+      within "#comedian-info-#{found.id}" do
         expect(page).to have_content("Comedian: #{found.name}")
         expect(page).to have_content("Age: #{found.age}")
         expect(page).to have_content("Number of specials: #{found.specials.count}")

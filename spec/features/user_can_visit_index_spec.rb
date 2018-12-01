@@ -8,19 +8,26 @@ RSpec.describe 'Comedians index page' do
 
       visit '/comedians'
 
-      expect(page).to have_content("Comedian: #{george.name}")
-      expect(page).to have_content("Age: #{george.age}")
-      expect(page).to have_content("Hometown: #{george.city}")
-      expect(page).to have_content("Number of specials: #{george.specials.count}")
+      within "#comedian-info-#{george.id}" do
+        expect(page).to have_content("Comedian: #{george.name}")
+        expect(page).to have_content("Age: #{george.age}")
+        expect(page).to have_content("Hometown: #{george.city}")
+        expect(page).to have_content("Number of specials: #{george.specials.count}")
+      end
 
-      expect(page).to have_content("Comedian: #{richard.name}")
-      expect(page).to have_content("Age: #{richard.age}")
-      expect(page).to have_content("Number of specials: #{richard.specials.count}")
+      within "#comedian-info-#{richard.id}" do
+        expect(page).to have_content("Comedian: #{richard.name}")
+        expect(page).to have_content("Age: #{richard.age}")
+        expect(page).to have_content("Number of specials: #{richard.specials.count}")
+      end
 
-      expect(page).to have_content("Comedian: #{robin.name}")
-      expect(page).to have_content("Age: #{robin.age}")
-      expect(page).to have_content("Number of specials: #{robin.specials.count}")
+      within "#comedian-info-#{robin.id}" do
+        expect(page).to have_content("Comedian: #{robin.name}")
+        expect(page).to have_content("Age: #{robin.age}")
+        expect(page).to have_content("Number of specials: #{robin.specials.count}")
+      end
     end
+
     it 'shows information about specials for comedians' do
       jerry = Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
       bill = Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
@@ -34,24 +41,46 @@ RSpec.describe 'Comedians index page' do
 
       visit '/comedians'
 
-      expect(page).to have_content("Comedian: #{jerry.name}")
-      expect(page).to have_content("Age: #{jerry.age}")
-      expect(page).to have_content("Hometown: #{jerry.city}")
-      expect(page).to have_content("Special Name: #{jerry_1.name}")
-      expect(page).to have_content("Length(minutes): #{jerry_1.run_time_minutes}")
-      expect(page).to have_content("Special Name: #{jerry_2.name}")
-      expect(page).to have_content("Length(minutes): #{jerry_2.run_time_minutes}")
-      expect(page).to have_content("Special Name: #{jerry_3.name}")
-      expect(page).to have_content("Length(minutes): #{jerry_3.run_time_minutes}")
+      within "#comedian-info-#{jerry.id}" do
+        expect(page).to have_content("Comedian: #{jerry.name}")
+        expect(page).to have_content("Age: #{jerry.age}")
+        expect(page).to have_content("Hometown: #{jerry.city}")
+        expect(page).to have_content("Number of specials: #{jerry.specials.count}")
+      end
 
-      expect(page).to have_content("Comedian: #{bill.name}")
-      expect(page).to have_content("Age: #{bill.age}")
-      expect(page).to have_content("Hometown: #{bill.city}")
-      expect(page).to have_content("Special Name: #{bill_1.name}")
-      expect(page).to have_content("Length(minutes): #{bill_1.run_time_minutes}")
-      expect(page).to have_content("Special Name: #{bill_2.name}")
-      expect(page).to have_content("Length(minutes): #{bill_2.run_time_minutes}")
+      within "#comedian-info-#{bill.id}" do
+        expect(page).to have_content("Comedian: #{bill.name}")
+        expect(page).to have_content("Age: #{bill.age}")
+        expect(page).to have_content("Hometown: #{bill.city}")
+        expect(page).to have_content("Number of specials: #{bill.specials.count}")
+      end
+
+      within "#specials-for-#{jerry.id}" do
+        within "#special-#{jerry_1.id}" do
+          expect(page).to have_content("Special Name: #{jerry_1.name}")
+          expect(page).to have_content("Length(minutes): #{jerry_1.run_time_minutes}")
+        end
+        within "#special-#{jerry_2.id}" do
+          expect(page).to have_content("Special Name: #{jerry_2.name}")
+          expect(page).to have_content("Length(minutes): #{jerry_2.run_time_minutes}")
+        end
+        within "#special-#{jerry_3.id}" do
+          expect(page).to have_content("Special Name: #{jerry_3.name}")
+          expect(page).to have_content("Length(minutes): #{jerry_3.run_time_minutes}")
+        end
+      end
+      within "#specials-for-#{bill.id}" do
+        within "#special-#{bill_1.id}" do
+          expect(page).to have_content("Special Name: #{bill_1.name}")
+          expect(page).to have_content("Length(minutes): #{bill_1.run_time_minutes}")
+        end
+        within "#special-#{bill_2.id}" do
+          expect(page).to have_content("Special Name: #{bill_2.name}")
+          expect(page).to have_content("Length(minutes): #{bill_2.run_time_minutes}")
+        end
+      end
     end
+
     it 'shows average run time for all specials' do
       Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
       Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
@@ -65,8 +94,11 @@ RSpec.describe 'Comedians index page' do
 
       visit '/comedians'
 
-      expect(page).to have_content("Special Run Time: 61.8")
+      within ".averages" do
+        expect(page).to have_content("Special Run Time: 61.8")
+      end
     end
+
     it 'shows average age for all comedians on page' do
       Comedian.create(name: 'Hasan Minhaj', age: 33, city: 'Davis, California')
       Comedian.create(name: 'Bo Burnham', age: 28, city: 'Hamilton, Massachusetts')
@@ -78,7 +110,9 @@ RSpec.describe 'Comedians index page' do
 
       visit '/comedians'
 
-      expect(page).to have_content("Comedian Age: 37.8")
+      within ".averages" do
+        expect(page).to have_content("Comedian Age: 37.8")
+      end
     end
 
     it 'shows a list of comedians and number of specials' do
@@ -94,8 +128,10 @@ RSpec.describe 'Comedians index page' do
 
       visit '/comedians'
 
-      expect(page).to have_content("#{jerry.name}: #{jerry.specials.count}")
-      expect(page).to have_content("#{bill.name}: #{bill.specials.count}")
+      within ".specials-count" do
+        expect(page).to have_content("#{jerry.name}: #{jerry.specials.count}")
+        expect(page).to have_content("#{bill.name}: #{bill.specials.count}")
+      end
     end
 
     it 'shows a list of unique hometowns for comedians' do
@@ -112,7 +148,7 @@ RSpec.describe 'Comedians index page' do
       Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'Brooklyn, New York City, New York')
       Comedian.create(name: 'Bill Hicks', age: 32, city: 'Little Rock, Arkansas')
       Special.create(name: 'Bill Hicks: Revelations', comedian_id: 2, run_time_minutes: 57, image_url: 'https://m.media-amazon.com/images/M/MV5BMjM1OTAwMDE3N15BMl5BanBnXkFtZTgwNjkzMzYwNzE@._V1_.jpg')
-      require "pry"; binding.pry
+
       visit '/comedians'
 
       unique = [
@@ -129,7 +165,9 @@ RSpec.describe 'Comedians index page' do
       ]
 
       unique.each do |city_name|
-        expect(page).to have_content(city_name)
+        within ".hometowns" do
+          expect(page).to have_content(city_name)
+        end
       end
     end
   end

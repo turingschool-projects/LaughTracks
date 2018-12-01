@@ -25,25 +25,22 @@ RSpec.describe 'Comedians index page with search query' do
 
       visit '/comedians?age=45'
 
-      expect(page).to have_content("Comedian: #{demetri.name}")
-      expect(page).to have_content("Age: #{demetri.age}")
-      expect(page).to have_content("Hometown: #{demetri.city}")
-      expect(page).to have_content("Number of specials: #{demetri.specials.count}")
+      within "#comedian-info-#{demetri.id}" do
+        expect(page).to have_content("Comedian: #{demetri.name}")
+        expect(page).to have_content("Age: #{demetri.age}")
+        expect(page).to have_content("Hometown: #{demetri.city}")
+        expect(page).to have_content("Number of specials: #{demetri.specials.count}")
+      end
 
-      expect(page).to have_content("Comedian: #{dave.name}")
-      expect(page).to have_content("Age: #{dave.age}")
-      expect(page).to have_content("Hometown: #{dave.city}")
-      expect(page).to have_content("Number of specials: #{dave.specials.count}")
+      within "#comedian-info-#{dave.id}" do
+        expect(page).to have_content("Comedian: #{dave.name}")
+        expect(page).to have_content("Age: #{dave.age}")
+        expect(page).to have_content("Hometown: #{dave.city}")
+        expect(page).to have_content("Number of specials: #{dave.specials.count}")
+      end
 
-      expect(page).to_not have_content(jim.name)
-      expect(page).to_not have_content(jim.age)
-      expect(page).to_not have_content(jim.city)
-      expect(page).to_not have_content("Number of specials: #{jim.specials.count}")
-
-      expect(page).to_not have_content(hasan.name)
-      expect(page).to_not have_content(hasan.age)
-      expect(page).to_not have_content(hasan.city)
-      expect(page).to_not have_content("Number of specials: #{hasan.specials.count}")
+      expect(page).to_not have_css("#comedian-info-#{jim.id}")
+      expect(page).to_not have_css("#comedian_info-#{hasan.id}")
     end
   end
 
@@ -72,21 +69,25 @@ RSpec.describe 'Comedians index page with search query' do
 
     visit '/comedians?age=45'
 
-    expect(page).to have_content("#{demetri.name}: #{demetri.specials.count}")
-    expect(page).to have_content("#{dave.name}: #{dave.specials.count}")
+    within ".specials-count" do
+      expect(page).to have_content("#{demetri.name}: #{demetri.specials.count}")
+      expect(page).to have_content("#{dave.name}: #{dave.specials.count}")
+    end
 
-    expect(page).to_not have_content("#{hasan.name}: #{hasan.specials.count}")
-    expect(page).to_not have_content("#{jim.name}: #{jim.specials.count}")
-    expect(page).to_not have_content(hasan.name)
-    expect(page).to_not have_content(jim.name)
+    expect(page).to_not have_css("#comedian_info-#{jim.id}")
+    expect(page).to_not have_css("#comedian_info-#{hasan.id}")
 
-    expect(page).to have_content("New York City, New York")
-    expect(page).to have_content("Washington, District of Columbia")
+    within ".hometowns" do
+      expect(page).to have_content("New York City, New York")
+      expect(page).to have_content("Washington, District of Columbia")
+    end
 
     expect(page).to_not have_content("Chesterson, Indiana")
     expect(page).to_not have_content("Davis, California")
 
-    expect(page).to have_content("Special Run Time: 56")
-    expect(page).to have_content("Comedian Age: 45")
+    within ".averages" do
+      expect(page).to have_content("Special Run Time: 56")
+      expect(page).to have_content("Comedian Age: 45")
+    end
   end
 end

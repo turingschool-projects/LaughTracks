@@ -25,19 +25,23 @@ RSpec.describe 'Adding a comedian' do
       fill_in 'comedian[hometown]', with: "New York City, New York"
 
       click_button "submit"
+      expect(current_path).to eq('/comedians')
 
+      expect(Comedian.count).to eq(5)
       found = Comedian.where("id = 5")[0]
       expect(found.name).to eq("George Carlin")
       expect(found.age).to eq(71)
       expect(found.city).to eq("New York City, New York")
 
-      expect(current_path).to eq('/comedians')
+      within '.specials-count' do
+        expect(page).to have_content("#{found.name}: #{found.specials.count}")
+      end
 
-      expect(Comedian.count).to eq(5)
-      expect(page).to have_content("#{found.name}: #{found.specials.count}")
-      expect(page).to have_content("Comedian: #{found.name}")
-      expect(page).to have_content("Age: #{found.age}")
-      expect(page).to have_content("Number of specials: #{found.specials.count}")
+      within ".comedian-info-#{found.id}" do
+        expect(page).to have_content("Comedian: #{found.name}")
+        expect(page).to have_content("Age: #{found.age}")
+        expect(page).to have_content("Number of specials: #{found.specials.count}")
+      end
     end
   end
 end

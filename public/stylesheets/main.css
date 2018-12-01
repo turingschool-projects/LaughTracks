@@ -6,6 +6,52 @@ h1 {
   text-align: center;
 }
 
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 25% auto;
+}
+
+.flex-comedians, .stats-flex, .single-special{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.single-special {
+  margin: 10px;
+  justify-content: space-between;
+  word-wrap: normal;
+}
+
+.specials-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / 2;
+}
+.comedians-container {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 4;
+}
+.comedian-box {
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px;
+  width: 30%;
+}
 .image-special {
   display: inline;
   width: 93px;
@@ -27,12 +73,10 @@ h1 {
   height: 111px;
 }
 
-.comedian-box {
-  border: 1px solid red;
-  margin: 20px;
-}
-
 #statistics {
+  background-color: grey;
   text-align: center;
-  border: 1px solid red;
+  width: 100%;
+  grid-column: 1 / span 2;
+  grid-row: 2 / 3;
 }

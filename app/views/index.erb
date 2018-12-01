@@ -5,7 +5,12 @@
      <p><%= c.name %>: <%= c.specials.count %></p>
     <% end %>
   </div>
-  <p>Comedians Hometowns: <%= @uniq_hometowns %></p>
+  <div class="hometowns">
+    <p>Comedians Hometowns:</p>
+    <% @uniq_hometowns.each do |town| %>
+      <p><%= town %></p>
+    <% end%>
+  </div>
   <div class="averages">
     <p>Averages</p>
     <p>Special Run Time: <%= @average_length.round(1) %></p>

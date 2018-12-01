@@ -1,45 +1,55 @@
 <!DOCTYPE=html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="css/normalize.min.css" title="css" type="text/css">
     <link rel="stylesheet" href="stylesheets/main.css" title="css" type="text/css">
   </head>
-  <body>
+  <body class="container">
     <h1>Comedians</h1>
-    <section id="statistics">
+    <section id="statistics" >
       <h3>Statistics</h3>
-      <section id="average_runtime">
-        <h5>Average TV Special Runtime</h5>
-        <p><%= @specials.average_runtime %> minutes</p>
+      <section class="stats-flex">
+        <article id="average_runtime" class="stats">
+          <h5>Average TV Special Runtime</h5>
+          <p><%= @specials.average_runtime %> minutes</p>
+        </article>
+        <article id="total-specials" class="stats">
+          <h5>Total TV Specials</h5>
+          <p><%= @specials.count %></p>
+        </article>
+        <article id="average-age" class="stats">
+          <h5>Average Age</h5>
+          <p><%= @comedians.average_age %> years old</p>
+        </article>
+        <article id="unique-hometowns" class="stats">
+          <h5>Hometowns:</h5>
+          <p><%= @comedians.unique_hometowns.join(" ") %></p>
+        </article>
       </section>
-      <section id="total-specials">
-        <h5>Total TV Specials</h5>
-        <p><%= @specials.count %></p>
-      </section>
-      <section id="average-age">
-        <h5>Average Age</h5>
-        <p><%= @comedians.average_age %> years old</p>
-      </section>
-      <section id="unique-hometowns">
-        <h5>Hometowns:</h5>
-        <p><%= @comedians.unique_hometowns.join(" ") %></p>
-      </section>
-
     </section>
-    <% @comedians.each do |comedian| %>
-      <ul id="comedian-<%= comedian.id %>" class="comedian-box">
-        <li>Name: <%= comedian.name %></li>
-        <li>Age: <%= comedian.age %></li>
-        <li>Hometown: <%= comedian.hometown %></li>
-        <hX>Specials:</hX><br/>
-        <p>Number of Specials: <%= comedian.specials.count %></p>
-        <% comedian.specials.each do |special| %>
-        <img src="<%= special.image_file %>" alt="<%= special.title %>" class="image-special"/>
-          <ul id="special-<%= special.id %>" class="special-info">
-            <li>Title: <%= special.title %></li>
-            <li>Runtime: <%= special.runtime %> min.</li>
-          </ul>
-        <% end %>
-      </ul>
-    <% end %>
+      <section class="comedians-container">
+        <article class="flex-comedians">
+          <% @comedians.each do |comedian| %>
+            <ul id="comedian-<%= comedian.id %>" class="comedian-box ui card eight wide column">
+              <h4><%= comedian.name %></h4>
+              <li>Age: <%= comedian.age %></li>
+              <li>Hometown: <%= comedian.hometown %></li>
+              <hX>Specials:</hX><br/>
+              <p>Number of Specials: <%= comedian.specials.count %></p>
+              <section class="specials-list">
+                <% comedian.specials.each do |special| %>
+                  <article class="single-special">
+                    <img src="<%= special.image_file %>" alt="<%= special.title %>" class="image-special"/>
+                      <ul id="special-<%= special.id %>" class="special-info">
+                        <li>Title: <%= special.title %></li>
+                        <li>Runtime: <%= special.runtime %> min.</li>
+                      </ul>
+                  </article>
+                <% end %>
+              </section>
+            </ul>
+          <% end %>
+        </article>
+      </section>
   </body>
 </html>

@@ -9,8 +9,40 @@ html, body{
     max-height: 100%;
 }
 
-.new-body {
-  background-color: black;
-  font-family: 'Ubuntu', sans-serif;
-  color: white;
+.new-container {
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  height: 100vh;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "input1"
+    "input2"
+    "input3"
+    "input4";
+}
+
+.inputs {
+  margin: auto;
+}
+
+#name {
+  grid-area: input1;
+
+#age {
+  grid-area: input2;
+}
+
+#hometown {
+  grid-area: input3;
+}
+
+#button {
+  grid-area: input4;
 }

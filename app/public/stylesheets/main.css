@@ -1,10 +1,11 @@
 * {
- box-sizing: border-box
+ box-sizing: border-box;
 }
 
 html {
   font-family: 'Raleway', sans-serif;
   background-color: #7986AC;
+  color: white;
 }
 
 body {
@@ -17,6 +18,16 @@ header {
 }
 
 h1, h2, h3, h4 { text-align: center; }
+
+a {
+  text-decoration: none;
+  color: #eee;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #aaa;
+}
 
 main {
   height: 80%;
@@ -36,6 +47,10 @@ main {
   width: calc(33.3333% - 10px);
   margin: 5px;
   padding: 2px;
+}
+
+.comedian-stats, .specials {
+  color: black;
 }
 
 .comedians {

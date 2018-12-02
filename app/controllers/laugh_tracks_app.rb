@@ -1,7 +1,7 @@
 
 class LaughTracksApp < Sinatra::Base
   get '/' do
-    redirect('/comedians')
+    redirect '/comedians' 
   end
 
   get '/comedians' do
@@ -10,7 +10,7 @@ class LaughTracksApp < Sinatra::Base
 
     @average_age, @average_length = get_averages_for(@comedians)
     @uniq_hometowns = Comedian.uniq_hometowns(@comedians)
-    
+
     erb :index
   end
 

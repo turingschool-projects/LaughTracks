@@ -8,10 +8,10 @@ class Comedian < ActiveRecord::Base
   end
 
   def self.uniq_hometowns(caller = self)
-    caller.select(:city).distinct.pluck(:city)
+    caller.select(:city).pluck(:city).uniq
   end
 
-  def self.find_by_age(age, comparison = false)
-    where("age = '#{age}'")
+  def self.find_by_age(age, caller = self)
+    caller.where("age = '#{age}'")
   end
 end

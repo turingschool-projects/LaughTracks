@@ -3,21 +3,21 @@
 <main>
   <section class="comedian-stats">
     <div class="specials-count">
-      <p>Comedians and number of specials:</p>
+      <p class='label'>Comedians and number of specials:</p>
       <% @comedians.each do |c| %>
        <p><%= c.name %>: <%= c.specials.count %></p>
       <% end %>
     </div>
     <div class="hometowns">
-      <p>Comedians Hometowns:</p>
+      <p class='label'>Comedians Hometowns:</p>
       <% @uniq_hometowns.each do |town| %>
         <p><%= town %></p>
       <% end%>
     </div>
     <div class="averages">
-      <p>Averages:</p>
-      <p>Special Run Time: <%= @average_length.round(1) %></p>
-      <p>Comedian Age: <%= @average_age.round(1) %></p>
+      <p><span class='label'>Averages:</span></p>
+      <p><span class='label'>Special Run Time:</span> <%= @average_length.round(1) %></p>
+      <p><span class='label'>Comedian Age:</span> <%= @average_age.round(1) %></p>
     </div>
   </section>
 
@@ -25,16 +25,16 @@
     <% @comedians.each do |c| %>
       <section class="comedian">
         <div class='comedian-info' id="comedian-info-<%= c.id %>">
-          <p class='comedian-name'>Comedian: <%= c.name %></p>
-          <p>Age: <%= c.age %></p>
-          <p>Hometown: <%= c.city %></p>
-          <p>Number of specials: <%= c.specials.count %></p>
+          <a href='/comedians/<%= c.id%>' id='show-c-<%= c.id %>' class='comedian-name'><span class='label'>Comedian:</span> <%= c.name %></a>
+          <p><span class='label'>Age:</span> <%= c.age %></p>
+          <p><span class='label'>Hometown:</span> <%= c.city %></p>
+          <p><span class='label'>Number of specials:</span> <%= c.specials.count %></p>
         </div>
         <div class='specials' id="specials-for-<%= c.id %>">
           <% c.specials.each do |s| %>
             <div class='special' id="special-<%= s.id %>">
-              <p>Special Name: <%= s.name %></p>
-              <p>Length(minutes): <%= s.run_time_minutes %></p>
+              <p><span class='label'>Special Name:</span> <%= s.name %></p>
+              <p><span class='label'>Length(minutes):</span> <%= s.run_time_minutes %></p>
               <img class='comedian-img' src="<%= s.image_url %>" alt="<%= s.name %>">
             </div>
           <% end %>

@@ -1,0 +1,18 @@
+<a href="/comedians">Back to all comedians</a>
+<section class="comedian">
+  <div class='comedian-info' id="comedian-info-<%= @comedian.id %>">
+    <p class='comedian-name'><span class='label'>Comedian:</span> <%= @comedian.name %></p>
+    <p><span class='label'>Age:</span> <%= @comedian.age %></p>
+    <p><span class='label'>Hometown:</span> <%= @comedian.city %></p>
+    <p><span class='label'>Number of specials:</span> <%= @comedian.specials.count %></p>
+  </div>
+  <div class='specials' id="specials-for-<%= @comedian.id %>">
+    <% @comedian.specials.each do |s| %>
+      <div class='special' id="special-<%= s.id %>">
+        <p><span class='label'>Special Name:</span> <%= s.name %></p>
+        <p><span class='label'>Length(minutes):</span> <%= s.run_time_minutes %></p>
+        <img class='comedian-img' src="<%= s.image_url %>" alt="<%= s.name %>">
+      </div>
+    <% end %>
+  </div>
+</section>

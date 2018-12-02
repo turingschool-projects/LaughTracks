@@ -1,5 +1,16 @@
 RSpec.describe 'Comedians index page' do
   context 'as a user' do
+    it 'redirects to index from root' do
+      Comedian.create(name: 'George Carlin', age: 50, city: 'New York')
+      Comedian.create(name: 'Richard', age: 45, city: 'New York')
+      Comedian.create(name: 'Robin Williams', age: 35, city: 'New York')
+      Special.create(name: 'Bill Hicks: Revelations', comedian_id: 2, run_time_minutes: 57, image_url: 'https://m.media-amazon.com/images/M/MV5BMjM1OTAwMDE3N15BMl5BanBnXkFtZTgwNjkzMzYwNzE@._V1_.jpg')
+
+      visit "/"
+
+      expect(current_path).to eq("/comedians")
+    end
+
     it 'shows information about comedians' do
       george = Comedian.create(name: 'George Carlin', age: 50, city: 'New York')
       richard = Comedian.create(name: 'Richard', age: 45, city: 'New York')

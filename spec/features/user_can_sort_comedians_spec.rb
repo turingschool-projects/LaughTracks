@@ -25,22 +25,22 @@ RSpec.describe 'Comedians sorted by attributes' do
 
   context 'as a user' do
     it 'should return comedians sorted by name' do
-      visit "/comedians"
-      
-      ("comedian-info-#{@bill.id}").should appear_before("comedian-info-#{@jerry.id}")
-      ("comedian-info-#{@jerry.id}").should appear_before("comedian-info-#{@trevor.id}")
+      visit "/comedians?sort=name"
+
+      expect("comedian-info-#{@bill.id}").to appear_before("comedian-info-#{@jerry.id}")
+      expect("comedian-info-#{@jerry.id}").to appear_before("comedian-info-#{@trevor.id}")
     end
     it 'should return comedians sorted by age' do
-      visit "/comedians"
+      visit "/comedians?sort=age"
 
-      ("comedian-info-#{@bill.id}").should appear_before("comedian-info-#{@trevor.id}")
-      ("comedian-info-#{@trevor.id}").should appear_before("comedian-info-#{@jerry.id}")
+      expect("comedian-info-#{@bill.id}").to appear_before("comedian-info-#{@trevor.id}")
+      expect("comedian-info-#{@trevor.id}").to appear_before("comedian-info-#{@jerry.id}")
     end
     it 'should return comedians sorted by city' do
-      visit "/comedians"
+      visit "/comedians?sort=city"
 
-      ("comedian-info-#{@jerry.id}").should appear_before("comedian-info-#{@trevor.id}")
-      ("comedian-info-#{@trevor.id}").should appear_before("comedian-info-#{@bill.id}")
+      expect("comedian-info-#{@jerry.id}").to appear_before("comedian-info-#{@trevor.id}")
+      expect("comedian-info-#{@trevor.id}").to appear_before("comedian-info-#{@bill.id}")
     end
   end
 end

@@ -1,0 +1,18 @@
+    <section class="comedian">
+      <div class='comedian-info' id="comedian-info-<%= @comedian.id %>">
+        <a href='/comedians/<%= @comedian.id%>' id='show-c-<%= @comedian.id %>' class='comedian-name'>Comedian: <%= @comedian.name %></a>
+        <p>Age: <%= @comedian.age %></p>
+        <p>Hometown: <%= @comedian.city %></p>
+        <p>Number of specials: <%= @comedian.specials.count %></p>
+      </div>
+      <div class='specials' id="specials-for-<%= @comedian.id %>">
+        <% @comedian.specials.each do |s| %>
+          <div class='special' id="special-<%= s.id %>">
+            <p>Special Name: <%= s.name %></p>
+            <p>Length(minutes): <%= s.run_time_minutes %></p>
+            <img class='comedian-img' src="<%= s.image_url %>" alt="<%= s.name %>">
+          </div>
+        <% end %>
+      </div>
+    </section>
+</section>

@@ -25,7 +25,7 @@
     <% @comedians.each do |c| %>
       <section class="comedian">
         <div class='comedian-info' id="comedian-info-<%= c.id %>">
-          <p class='comedian-name'>Comedian: <%= c.name %></p>
+          <a href='/comedians/<%= c.id%>' id='show-c-<%= c.id %>' class='comedian-name'>Comedian: <%= c.name %></a>
           <p>Age: <%= c.age %></p>
           <p>Hometown: <%= c.city %></p>
           <p>Number of specials: <%= c.specials.count %></p>

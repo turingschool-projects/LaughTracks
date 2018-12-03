@@ -27,7 +27,7 @@ RSpec.describe 'Comedian show page' do
       expect(current_path).to eq("/comedians/2")
     end
 
-    xit 'has info for one comedian only on show page' do
+    it 'has info for one comedian only on show page' do
       visit "/comedians/1" do
         within "#comedian-info-#{@jerry.id}" do
           expect(page).to have_content("Comedian: #{@jerry.name}")
@@ -35,6 +35,8 @@ RSpec.describe 'Comedian show page' do
           expect(page).to have_content("Hometown: #{@jerry.city}")
           expect(page).to have_content("Number of specials: #{@jerry.specials.count}")
         end
+
+        expect(page).to_not have_css("#comedian-info-#{@bill.id}")
       end
     end
   end

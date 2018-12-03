@@ -29,7 +29,8 @@ html, body{
 }
 
 .inputs {
-  margin: auto;
+  margin: 25px;
+  border-radius: 5px;
 }
 
 #name {
@@ -45,4 +46,15 @@ html, body{
 
 #button {
   grid-area: input4;
+}
+
+@media only screen
+  and (min-device-width: 2000px){
+    body {
+      width: 75%;
+      font-size: 5em;
+    }
+    #name, #age, #hometown {
+      margin: 100px;
+    }
 }

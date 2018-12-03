@@ -94,3 +94,23 @@ h5 {
   grid-column: 1 / span 2;
   grid-row: 2 / 3;
 }
+
+@media only screen
+  and (min-device-width: 2000px){
+    body {
+      width: 75%;
+      font-size: 5em;
+    }
+
+    .image-special, #comedian-1-img, #comedian-2-img, #comedian-3-img,
+    #comedian-4-img, #comedian-5-img, #comedian-6-img, #comedian-7-img,
+    #comedian-8-img, #comedian-9-img, #comedian-10-img, #comedian-11-img,
+    #comedian-12-img{
+      display: inline;
+      width: 417px;
+      height: 603px;
+      border-radius: 10px;
+      background-color: black;
+    }
+
+}

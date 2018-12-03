@@ -40,7 +40,7 @@ RSpec.describe "As a user" do
 
       expected3 = Comedian.unique_hometowns
       within("#statistics") do
-        expect(page).to have_content("#{expected3.join(" ")}")
+        expect(page).to have_content("#{expected3.reverse.join(" ")}")
       end
     end
   end

@@ -5,6 +5,11 @@ RSpec.describe Special do
         special = Special.create
         expect(special).to_not be_valid
       end
+
+      it 'should be invalid if missing a comedian id' do
+        special = Special.create(name: "Cinco")
+        expect(special).to_not be_valid
+      end
     end
   end
 end

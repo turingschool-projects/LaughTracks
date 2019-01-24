@@ -4,7 +4,7 @@ class Special < ActiveRecord::Base
   validates :run_time, presence: true
   validates :image_url, presence: true
   validates :comedian_id, presence: true
-  def average_runtime
-    self.class.average(:run_time)
+  def self.average_runtime
+    average(:run_time)
   end
 end

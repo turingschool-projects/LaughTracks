@@ -1,6 +1,9 @@
 class Comedian < ActiveRecord::Base
   has_many :specials
-  def average_age
-    self.class.average(:age)
+  validates :name, presence: true
+  validates :age, presence: true
+  validates :city, presence: true
+  def self.average_age
+    average(:age)
   end
 end

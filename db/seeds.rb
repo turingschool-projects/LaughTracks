@@ -1,6 +1,9 @@
 require './app/models/comedian'
 require './app/models/special'
 
+Comedian.destroy_all
+Specials.destroy_all
+
 comedians = [
   { name: 'John Mulaney', age: 36, city: 'Chicago' },
   { name: 'Bill Burr', age: 50, city: 'Canton' },

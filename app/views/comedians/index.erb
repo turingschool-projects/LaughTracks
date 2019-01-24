@@ -1,7 +1,7 @@
 <p>Average age: <%= Comedian.average_age %></p>
-<p>Average runtime: <%= @specials.first.average_runtime %> minutes </p>
+<p>Average runtime: <%= Special.average_runtime %> minutes </p>
 <% @comedians.each do |comedian| %>
-  <ul>
+  <ul id="comedian_<%=comedian.id%>">
     <li><%= comedian.name %></li>
     <li><%= comedian.age %></li>
     <li><%= comedian.city %></li>

@@ -1,14 +1,18 @@
 <p>Average age: <%= Comedian.average_age %></p>
 <p>Average runtime: <%= Special.average_runtime %> minutes </p>
 <% @comedians.each do |comedian| %>
-  <ul id="comedian_<%=comedian.id%>">
-    <li><%= comedian.name %></li>
-    <li><%= comedian.age %></li>
-    <li><%= comedian.city %></li>
-    <% comedian.specials.each do |special| %>
-      <li><%= special.title  %><li>
-      <li><%= special.run_time %> minutes<li>
-      <img src="<%= special.image_url %>" alt=" <%= special.title %>" height="150" width="100">
-    <% end %>
-  </ul>
+  <div id="comedian_<%=comedian.id%>">
+    <ul>
+      <li><%= comedian.name %></li>
+      <li><%= comedian.age %></li>
+      <li><%= comedian.city %></li>
+      <div id="comedian_<%=comedian.id%>_specials"
+        <% comedian.specials.each do |special| %>
+          <li><%= special.title  %><li>
+          <li><%= special.run_time %> minutes<li>
+          <img src="<%= special.image_url %>" alt=" <%= special.title %>" height="150" width="100">
+        <% end %>
+      </div>
+    </ul>
+  </div>
 <% end %>

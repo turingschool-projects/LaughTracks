@@ -13,5 +13,6 @@ group :development, :test do
   gem 'rack-test'
   gem 'rspec'
   gem 'shotgun'
+  gem 'simplecov'
   gem 'tux'
 end

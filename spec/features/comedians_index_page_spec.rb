@@ -67,7 +67,6 @@ RSpec.describe "comedians index page" do
       Special.create(title: 'Bill Burr: Walk Your Way Out', run_time: 77, image_url: 'https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_UY268_CR10,0,182,268_AL_.jpg', comedian_id: 2)
 
       visit '/comedians'
-
       within '#comedian_1_specials' do
         expect(page).to have_content(1)
       end

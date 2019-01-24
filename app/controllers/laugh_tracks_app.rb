@@ -1,7 +1,7 @@
 class LaughTracksApp < Sinatra::Base
   get '/' do
-    require 'pry'; binding.pry
     @comedians = Comedian.all
+    @specials = Special.all
     erb :"comedians/index"
   end
 end

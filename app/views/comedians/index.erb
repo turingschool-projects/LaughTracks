@@ -3,5 +3,9 @@
     <li><%= comedian.name %></li>
     <li><%= comedian.age %></li>
     <li><%= comedian.city %></li>
+    <% comedian.specials.each do |special| %>
+      <li><%= special.title  %><li>
+      <li><%= special.run_time %> minutes<li>
+    <% end %>
   </ul>
 <% end %>

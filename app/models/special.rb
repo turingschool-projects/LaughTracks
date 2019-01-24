@@ -1,8 +1,3 @@
 class Special < ActiveRecord::Base
-  attr_reader :name
-
-  def create(name)
-    @name = name
-  end
-
+  belongs_to :comedian
 end

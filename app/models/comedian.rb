@@ -6,4 +6,8 @@ class Comedian < ActiveRecord::Base
   def self.average_age
     average(:age)
   end
+
+  def self.city_list
+    select(:city).map(&:city).uniq.join(", ")
+  end
 end

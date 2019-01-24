@@ -6,6 +6,7 @@
     <% comedian.specials.each do |special| %>
       <li><%= special.title  %><li>
       <li><%= special.run_time %> minutes<li>
+      <img src="<%= special.image_url %>" alt=" <%= special.title %>" height="150" width="100">
     <% end %>
   </ul>
 <% end %>

@@ -1,3 +1,5 @@
+require './app/models/comedian'
+
 comedians = [
   { name: 'John Mulaney', age: 36, city: 'Chicago' },
   { name: 'Bill Burr', age: 50, city: 'Canton' },

@@ -1,6 +1,7 @@
 <h1>Laugh Tracks</h1>
 <h2>Comedians</h2>
 <% @comedians.each do |comedian| %>
+<article id='comic-<%= comedian.id %>'>
   <h3><%= comedian.name %></h3>
   <ul>
     <li><%= comedian.age %></li>

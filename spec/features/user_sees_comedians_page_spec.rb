@@ -4,14 +4,26 @@ RSpec.describe 'as a visitor', type: :feature do
     @comedian_2 = Comedian.create(name: 'Comedian 2', age: 42, city: 'New York')
     @comedian_3 = Comedian.create(name: 'Comedian 3', age: 53, city: 'Los Angeles')
     @comics = [@comedian_1, @comedian_2, @comedian_3]
+
+    @special_1 = @comedian_1.specials.create(name: 'Special 1')
+    @special_2 = @comedian_1.specials.create(name: 'Special 2')
+    @special_3 = @comedian_2.specials.create(name: 'Special 3')
   end
   it 'should see comedians' do
     visit '/comedians'
 
     @comics.each do |comic|
-      expect(page).to have_content(comic.name)
-      expect(page).to have_content(comic.age)
-      expect(page).to have_content(comic.city)
+      within "#comic-#{comic.id}" do
+        expect(page).to have_content(comic.name)
+        expect(page).to have_content(comic.age)
+        expect(page).to have_content(comic.city)
+      end
     end
+  end
+
+  it 'should see specials for comedians' do
+    visit '/comedians'
+
+
   end
 end

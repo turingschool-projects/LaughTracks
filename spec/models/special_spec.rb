@@ -1,4 +1,5 @@
 RSpec.describe Special do
+
   describe 'Validations' do
     describe 'Required Field(s)' do
       it 'should be invalid if missing a name' do
@@ -7,6 +8,18 @@ RSpec.describe Special do
       end
       it 'should be invalid if missing a comedian id' do
         special = Special.create(name: "lol")
+      end
+    end
+  end
+
+  describe 'Class Methods' do
+    describe '.average_length' do
+      it 'returns the average length of all specials' do
+        Special.create(name: "special 1", length: 10)
+        Special.create(name: "special 1", length: 20)
+        Special.create(name: "special 1", length: 30)
+
+        expect(Special.average_length).to eq(20)
       end
     end
   end

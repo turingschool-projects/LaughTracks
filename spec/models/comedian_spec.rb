@@ -20,7 +20,7 @@ RSpec.describe Comedian do
 
   describe 'Class Methods' do
     describe '.average_age' do
-      it 'returns the average age of all comedians'do
+      it 'returns the average age of all comedians' do
         Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 10)
         Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 20)
         Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 30)

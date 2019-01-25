@@ -46,7 +46,7 @@ RSpec.describe Comedian do
         comedian.specials.create(name: "spec 2", length: 30)
         comedian.specials.create(name: "spec 3", length: 30)
 
-        expect(comedian.total_specials).to eq(3)
+        expect(Comedian.total_specials).to eq(3)
       end
     end
   end

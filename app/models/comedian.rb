@@ -18,4 +18,10 @@ class Comedian < ActiveRecord::Base
   def self.unique_cities
     distinct.pluck(:born)
   end
+
+  def self.total_specials
+    all.sum do |comedian|
+      comedian.specials.count
+    end
+  end
 end

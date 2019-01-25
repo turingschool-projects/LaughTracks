@@ -27,8 +27,9 @@ RSpec.describe "as a visitor", type: :feature do
 
     visit '/comedians'
 
-    within '#mitch-hedberg-specials'
+    within '#mitch-hedberg-specials' do
       expect(page).to have_content("Comedy Central Presents")
       expect(page).to have_content("30 minutes")
+    end
   end
 end

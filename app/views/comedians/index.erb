@@ -1,3 +1,12 @@
+<div id="statistics">
+  <h1>Statistics</h1>
+  <p>Average Age: <%= @age %></p>
+  <p>Average Length of Specials: <%= @length %></p>
+  <p>Unique Birthplaces: </p><% @cities.each do |city| %>
+  <p><%= city %></p>
+  <% end %>
+</div>
+
 <ul id="comedian-list">
   <% @comedians.each do |comedian| %>
   <li><%= comedian.name %></li>

@@ -35,8 +35,8 @@ RSpec.describe "as a visitor", type: :feature do
 
   it 'should show statistics for comedians and specials' do
     comedian_1 = Comedian.create(name: 'Mitch Hedberg', age: 30, born: 'St. Paul')
-    comedian_2 = Comedian.create(name: 'Bill Burr', age: 59, born: 'Atlanta')
-    comedian_2 = Comedian.create(name: 'Tom Bob', age: 44.5, born: 'Atlanta')
+    comedian_2 = Comedian.create(name: 'Bill Burr', age: 20, born: 'Atlanta')
+    comedian_2 = Comedian.create(name: 'Tom Bob', age: 10, born: 'Atlanta')
     comedian_1.specials.create(name: "special 1", length: 10)
     comedian_1.specials.create(name: "special 2", length: 20)
     comedian_1.specials.create(name: "special 3", length: 30)
@@ -44,10 +44,24 @@ RSpec.describe "as a visitor", type: :feature do
     visit '/comedians'
 
     within '#statistics' do
-      expect(page).to have_content("44.5")
       expect(page).to have_content("20")
-      expect(page).to have_content("St.Paul")
+      expect(page).to have_content("20")
+      expect(page).to have_content("St. Paul")
       expect(page).to have_content("Atlanta")
+    end
+  end
+
+  it 'should show only comedians of a specific age when i select an age' do
+    comedian_1 = Comedian.create(name: 'Mitch Hedberg', age: 30, born: 'St. Paul')
+    comedian_2 = Comedian.create(name: 'Bill Burr', age: 20, born: 'Atlanta')
+    comedian_2 = Comedian.create(name: 'Tom Bob', age: 10, born: 'Atlanta')
+
+    visit '/comedians'
+    select '20', from: 'age'
+    click_button
+    expect(current_path).to eq('/comedians?age=20')
+    within '#comedian-list' do
+      expect(page).to have_content("Bill Burr")
     end
   end
 end

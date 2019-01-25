@@ -8,9 +8,4 @@ class LaughTracksApp < Sinatra::Base
     @comedians = Comedian.all
     erb :"comedians/index"
   end
-
-  get '/test' do
-    @comedians = Comedian.all
-    erb :"comedians/index"
-  end
 end

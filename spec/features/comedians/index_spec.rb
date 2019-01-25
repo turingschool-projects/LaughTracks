@@ -51,8 +51,6 @@ RSpec.describe 'when I visit /comedians' do
 
       id = Comedian.first.id
 
-      save_and_open_page
-
       within "#comedian-#{id}" do
         expect(page).to have_content("https://m.media-amazon.com/images/G/01/imdb/images/nopicture/medium/name-2135195744._CB470041852_.png")
       end

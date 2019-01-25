@@ -8,6 +8,11 @@ class LaughTracksApp < Sinatra::Base
     erb :comedians
   end
 
+  get '/comedians' do
+    @comedians = Comedian.all
+    erb :comedians
+  end
+
   get '/new' do
     erb :new
   end

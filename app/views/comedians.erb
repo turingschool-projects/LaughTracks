@@ -1,9 +1,14 @@
 <h1>Comedians</h1>
 
-<% @comedians = [comedian1, comedian2, comedian3] %>
-
 <% @comedians.each do |comedian| %>
-  <h3><%= comedian %></h3>
+  <h3>Name: <%= comedian.name %></h3>
+  <p>Age: <%= comedian.age %></p>
+  <p>Birthplace: <%= comedian.city %></p>
+  <p>Specials:
+    <ul> <% comedian.specials.each do |special| %>
+    <li><%= special.name %>, <%= special.run_time %> mins</li>
+    <% end %></ul>
+  <br/>
 <% end %>
 
 <p>Add a new comedian <a href="/new">here</a>.</p>

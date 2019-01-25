@@ -7,12 +7,13 @@ RSpec.describe Special do
       end
 
       it 'should be invalid if missing a comedian id' do
-        special = Special.create(name: "Cinco", runtime: 84))
+        special = Special.create(name: "Cinco", runtime: 84)
         expect(special).to_not be_valid
       end
 
       it "should be invalid if missing a runtime" do
         special = Special.create(name: "Cinco", comedian_id: 1)
+        expect(special).to_not be_valid
       end
     end
   end

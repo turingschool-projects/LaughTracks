@@ -32,4 +32,22 @@ RSpec.describe "as a visitor", type: :feature do
       expect(page).to have_content("30 minutes")
     end
   end
+
+  it 'should show statistics for comedians and specials' do
+    comedian_1 = Comedian.create(name: 'Mitch Hedberg', age: 30, born: 'St. Paul')
+    comedian_2 = Comedian.create(name: 'Bill Burr', age: 59, born: 'Atlanta')
+    comedian_2 = Comedian.create(name: 'Tom Bob', age: 44.5, born: 'Atlanta')
+    comedian_1.specials.create(name: "special 1", length: 10)
+    comedian_1.specials.create(name: "special 2", length: 20)
+    comedian_1.specials.create(name: "special 3", length: 30)
+
+    visit '/comedians'
+
+    within '#statistics' do
+      expect(page).to have_content("44.5")
+      expect(page).to have_content("20")
+      expect(page).to have_content("St.Paul")
+      expect(page).to have_content("Atlanta")
+    end
+  end
 end

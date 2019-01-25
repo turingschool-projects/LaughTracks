@@ -20,11 +20,11 @@ stewart = Comedian.create(name: 'Jon Stewart', age: 56, city: 'New York City', i
 # glover = Comedian.create(name: 'Donald Glover', age: 35, city: 'Edwards Air Force Base')
 # carell = Comedian.create(name: 'Steve Carell', age: 56, city: 'Concord')
 
-seinfeld.specials.create(name: "Jerry Seinfeld: Live On Broadway", run_time: 75)
-schumer.specials.create(name: "Amy Schumer: Live at the Apollo", run_time: 61)
-schumer.specials.create(name: "Amy Schumer: Mostly Sex Stuff", run_time: 60)
-schumer.specials.create(name: "Amy Schumer: The Leather Special", run_time: 57)
-stewart.specials.create(name: "Unleavened", run_time: 52)
+seinfeld.specials.create(name: "Jerry Seinfeld: Live On Broadway", run_time: 75, thumbnail: "https://images-na.ssl-images-amazon.com/images/I/91lctg%2BBq0L._SY679_.jpg")
+schumer.specials.create(name: "Amy Schumer: Live at the Apollo", run_time: 61, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTkzMzU1MTc3M15BMl5BanBnXkFtZTgwNjYyMjQ5NjE@._V1_.jpg")
+schumer.specials.create(name: "Amy Schumer: Mostly Sex Stuff", run_time: 60, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTQxOTI2ODgxNF5BMl5BanBnXkFtZTgwMzc0NDAxMzE@._V1_.jpg")
+schumer.specials.create(name: "Amy Schumer: The Leather Special", run_time: 57, thumbnail: "https://i.ytimg.com/vi/Ux-x1GnUuqY/maxresdefault.jpg")
+stewart.specials.create(name: "Unleavened", run_time: 52, thumbnail: "https://img.reelgood.com/content/movie/3fd29642-dfd8-40f3-aec2-28bd2d6f4dff/poster-780.jpg")
 
 
 #

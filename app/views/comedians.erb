@@ -4,6 +4,7 @@
 
 <% @comedians.each do |comedian| %>
   <h3>Name: <%= comedian.name %></h3>
+  <img src=<% comedian.image %> alt="<%= comedian.name %> image" height="42" width="42">
   <p>Age: <%= comedian.age %></p>
   <p>Birthplace: <%= comedian.city %></p>
   <p>Specials:

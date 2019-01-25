@@ -7,4 +7,10 @@
     <li><%= comedian.age %></li>
     <li><%= comedian.city %></li>
   </ul>
+  <h4>Specials</h4>
+  <ul>
+  <% comedian.specials.each do |special| %>
+    <li><%= special.name %></li>
+  </ul>
+  <% end %>
 <% end %>

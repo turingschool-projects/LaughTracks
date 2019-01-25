@@ -24,6 +24,12 @@ RSpec.describe 'as a visitor', type: :feature do
   it 'should see specials for comedians' do
     visit '/comedians'
 
-
+    @comics.each do |comic|
+      within "#comic-#{comic.id}" do
+        comic.specials.each do |special|
+          expect(page).to have_content(special.name)
+        end
+      end
+    end
   end
 end

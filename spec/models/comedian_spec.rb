@@ -35,7 +35,8 @@ RSpec.describe Comedian do
         Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 20)
         Comedian.create(name: 'Mitch Hedberg', born: 'Atlanta', age: 30)
 
-        expect(Comedian.unique_cities).to eq(['St.Paul', 'Atlanta'])
+        expect(Comedian.unique_cities).to eq(['St. Paul', 'Atlanta'])
+      end
     end
   end
 end

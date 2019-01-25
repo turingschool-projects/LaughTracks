@@ -15,14 +15,16 @@ RSpec.describe 'as a visitor', type: :feature do
     @comics.each do |comic|
       within "#comic-#{comic.id}" do
         expect(page).to have_content(comic.name)
-        expect(page).to have_content(comic.age)
-        expect(page).to have_content(comic.city)
+        expect(page).to have_content("Age: #{comic.age}")
+        expect(page).to have_content("City: #{comic.city}")
       end
     end
   end
 
   it 'should see specials for comedians' do
     visit '/comedians'
+
+    save_and_open_page
 
     @comics.each do |comic|
       within "#comic-#{comic.id}" do

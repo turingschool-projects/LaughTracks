@@ -7,4 +7,8 @@ class Comedian < ActiveRecord::Base
   def name_as_kebab
     name.downcase.gsub(/ /, "-")
   end
+
+  def self.average_age
+    average(:age)
+  end
 end

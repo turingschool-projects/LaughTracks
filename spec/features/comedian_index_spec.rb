@@ -49,6 +49,7 @@ RSpec.describe "as a visitor", type: :feature do
     within '#statistics' do
       expect(page).to have_content("20")
       expect(page).to have_content("20")
+      expect(page).to have_content("3")
       expect(page).to have_content("St. Paul")
       expect(page).to have_content("Atlanta")
     end

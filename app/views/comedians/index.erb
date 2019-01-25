@@ -1,5 +1,9 @@
-<ul id="comedian_list">
+<ul id="comedian-list">
   <% @comedians.each do |comedian| %>
   <li><%= comedian.name %></li>
+  <ul class="comedian-attributes" id="<%= comedian.name_as_kebab%>">
+    <li> <%= comedian.age %><% if comedian.deceased %> - Deceased<% end %></li>
+    <li> <%= comedian.born %></li>
+  </ul>
   <% end %>
 </ul>

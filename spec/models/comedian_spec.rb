@@ -39,17 +39,14 @@ RSpec.describe Comedian do
       end
     end
 
-    describe '.by_params' do
-      xit 'returns a uniqe list of comedians based on set params' do
-        com_1 = Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 10)
-        com_2 = Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 20)
-        com_3 = Comedian.create(name: 'Mitch Hedberg', born: 'Atlanta', age: 30)
+    describe '.total_specials' do
+      it 'returns a count of a comedians total specials' do
+        comedian = Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 10)
+        comedian.specials.create(name: "spec 1", length: 30)
+        comedian.specials.create(name: "spec 2", length: 30)
+        comedian.specials.create(name: "spec 3", length: 30)
 
-        parm_1 = {}
-        expect(Comedian.by_params(param_1)).to eq([com_1, com_2, com_3])
-
-        param_2 = {age: 20}
-        expect(Comedian.by_params(param_2)).to eq([com_2])
+        expect(comedian.total_specials).to eq(3)
       end
     end
   end

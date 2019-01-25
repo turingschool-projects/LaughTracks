@@ -7,9 +7,9 @@
   <% end %>
 </div>
 <form class="querys" action="" method="GET">
-  <select id="age-query" name="comedian[age]">
-    <% @comedians.each do |comedian| %>
-    <option value="<%= comedian.age %>"><%= comedian.age %></option>
+  <select id="age-query" name="age">
+    <% (1..99).to_a.each do |age| %>
+    <option value="<%= age %>"><%= age %></option>
     <% end %>
   </select>
   <input type="submit" value="Submit">

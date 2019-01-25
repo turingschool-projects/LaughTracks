@@ -15,9 +15,10 @@ RSpec.describe Special do
   describe 'Class Methods' do
     describe '.average_length' do
       it 'returns the average length of all specials' do
-        Special.create(name: "special 1", length: 10)
-        Special.create(name: "special 1", length: 20)
-        Special.create(name: "special 1", length: 30)
+        bob = Comedian.create(name: "bob", age: 10, born: "kansas")
+        bob.specials.create(name: "special 1", length: 10)
+        bob.specials.create(name: "special 1", length: 20)
+        bob.specials.create(name: "special 1", length: 30)
 
         expect(Special.average_length).to eq(20)
       end

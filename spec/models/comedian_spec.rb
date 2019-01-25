@@ -23,7 +23,7 @@ RSpec.describe Comedian do
       it 'returns average age of all comedians' do
         Comedian.create(name: 'John Mulaney', age: 36, city: 'Chicago')
         Comedian.create(name: 'Bill Burr', age: 50, city: 'Canton')
-        expect(Comedian.average_age).to eq(43)
+        expect(Comedian.average_age(nil)).to eq(43)
       end
     end
   end

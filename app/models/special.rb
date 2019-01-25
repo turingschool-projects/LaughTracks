@@ -5,12 +5,26 @@ class Special < ActiveRecord::Base
   validates :image_url, presence: true
   validates :comedian_id, presence: true
 
-  def self.average_runtime
-    average(:run_time)
+  def self.average_runtime(age)
+    if age
+      comedians = Comedian.where(age: age)
+      ids = comedians.pluck(:id)
+      specials = Special.where(comedian_id: ids)
+      specials.average(:run_time)
+    else
+      average(:run_time)
+    end
   end
 
-  def self.count_total
-    count(:id)
+  def self.count_total(age)
+    if age
+      comedians = Comedian.where(age: age)
+      ids = comedians.pluck(:id)
+      specials = Special.where(comedian_id: ids)
+      specials.count(:id)
+    else
+      count(:id)
+    end
   end
 
   def self.count_specials(comedian_id)

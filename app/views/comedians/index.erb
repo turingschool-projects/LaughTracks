@@ -1,8 +1,8 @@
 <div id="statistics">
-<p>Average age: <%= Comedian.average_age %></p>
-<p>Average runtime: <%= Special.average_runtime %> minutes </p>
-<p>Comedian Hometowns: <%= Comedian.city_list %></p>
-<p>Total Specials: <%= Special.count_total %></p>
+<p>Average age: <%= @average_age %></p>
+<p>Average runtime: <%= @average_runtime %> minutes </p>
+<p>Comedian Hometowns: <%= @city_list %></p>
+<p>Total Specials: <%= @total_specials %></p>
 </div>
 <% @comedians.each do |comedian| %>
   <div id="comedian_<%=comedian.id%>">

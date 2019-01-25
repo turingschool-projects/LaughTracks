@@ -23,7 +23,7 @@ RSpec.describe "as a visitor", type: :feature do
 
   it 'should show a comedians specials' do
     comedian_1 = Comedian.create(name: 'Mitch Hedberg', age: 30, born: 'St. Paul', deceased: true)
-    special_1 = Special.create(name: "Comedy Central Presents", length: 30)
+    special_1 = Special.create(name: "Comedy Central Presents", length: 30, comedian: 1)
 
     visit '/comedians'
 

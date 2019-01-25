@@ -3,6 +3,10 @@ body {
   color: black;
 }
 
+h1 {
+  text-align: center;
+}
+
 .city {
   font-size: 20px;
 }

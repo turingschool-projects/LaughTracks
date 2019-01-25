@@ -9,23 +9,16 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Comedians
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% @comedians.each do |comedian| %>
-          <a class="dropdown-item" href="#"><%= comedian.name %> </a>
+            <a class="dropdown-item" href="#"><%= comedian.name %> </a>
           <% end %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -34,18 +27,19 @@
     </form>
   </div>
 </nav>
+
+
 <h1><%= "All Comedians" %><h1>
 
 <div class="container-fluid">
-
   <div class="row">
     <% @comedians.each do |comedian| %>
     <div class="col-md-4">
       <ul>
         <img class='comedian-images' src="<%=comedian.image_url%>" alt="<%=comedian.name%>">
-        <li class ="name"><%= comedian.name %> </li>
-        <li class="age">Age: <%= comedian.age %> </li>
-        <li class="city">Birthplace: <%= comedian.city %> </li>
+        <p class ="name"><%= comedian.name %> </p>
+        <p class="age">Age: <%= comedian.age %> </p>
+        <p class="city">Birthplace: <%= comedian.city %> </p>
       </ul>
     </div>
     <% end %>

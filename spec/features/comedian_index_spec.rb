@@ -57,9 +57,8 @@ RSpec.describe "as a visitor", type: :feature do
     comedian_2 = Comedian.create(name: 'Tom Bob', age: 10, born: 'Atlanta')
 
     visit '/comedians'
-    select '20', from: 'age'
-    click_button
-    expect(current_path).to eq('/comedians?age=20')
+    select '20', from: 'age-query'
+    click_on 'Submit'
     within '#comedian-list' do
       expect(page).to have_content("Bill Burr")
     end

@@ -38,5 +38,19 @@ RSpec.describe Comedian do
         expect(Comedian.unique_cities).to eq(['St. Paul', 'Atlanta'])
       end
     end
+
+    describe '.by_params' do
+      xit 'returns a uniqe list of comedians based on set params' do
+        com_1 = Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 10)
+        com_2 = Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 20)
+        com_3 = Comedian.create(name: 'Mitch Hedberg', born: 'Atlanta', age: 30)
+
+        parm_1 = {}
+        expect(Comedian.by_params(param_1)).to eq([com_1, com_2, com_3])
+
+        param_2 = {age: 20}
+        expect(Comedian.by_params(param_2)).to eq([com_2])
+      end
+    end
   end
 end

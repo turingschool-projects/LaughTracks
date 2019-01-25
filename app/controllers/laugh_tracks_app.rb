@@ -8,4 +8,8 @@ class LaughTracksApp < Sinatra::Base
 
     erb :"comedians/index"
   end
+
+  post '/comedians' do
+    require 'pry';binding.pry
+  end
 end

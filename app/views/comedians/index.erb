@@ -6,6 +6,15 @@
   <p><%= city %></p>
   <% end %>
 </div>
+<form class="querys" action="" method="GET">
+  <select id="age-query" name="comedian[age]">
+    <% @comedians.each do |comedian| %>
+    <option value="<%= comedian.age %>"><%= comedian.age %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Submit">
+</form>
+
 
 <ul id="comedian-list">
   <% @comedians.each do |comedian| %>

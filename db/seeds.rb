@@ -1,4 +1,5 @@
 require_relative '../app/models/comedian.rb'
+require_relative '../app/models/special.rb'
 
 # COMEDIANS
 

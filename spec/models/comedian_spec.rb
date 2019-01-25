@@ -38,5 +38,16 @@ RSpec.describe Comedian do
         expect(Comedian.unique_cities).to eq(['St. Paul', 'Atlanta'])
       end
     end
+
+    describe '.total_specials' do
+      it 'returns a count of a comedians total specials' do
+        comedian = Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 10)
+        comedian.specials.create(name: "spec 1", length: 30)
+        comedian.specials.create(name: "spec 2", length: 30)
+        comedian.specials.create(name: "spec 3", length: 30)
+
+        expect(comedian.total_specials).to eq(3)
+      end
+    end
   end
 end

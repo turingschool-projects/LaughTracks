@@ -4,8 +4,17 @@ class Comedian < ActiveRecord::Base
   validates :birthplace, presence: true
   has_many :specials
 
-  def self.average_age(limits = {})
-    limits.keep_if {|key, value| column_names.include?(key.to_s)}
-    where(limits).average(:age).to_i
+  def self.average_age(queries = {})
+    filter_queries(queries)
+    where(queries).average(:age).to_i
+  end
+
+  def self.birthplaces(queries = {})
+    filter_queries(queries)
+    where(queries).select(:birthplace).distinct.map {|comedian| comedian.birthplace}
+  end
+
+  def self.filter_queries(queries)
+    queries.keep_if {|key, value| column_names.include?(key.to_s)}
   end
 end

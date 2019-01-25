@@ -3,4 +3,8 @@ class Special < ActiveRecord::Base
   validates :comedian_id, presence: true
   validates :runtime, presence: true
   belongs_to :comedian
+
+  def self.average_runtime
+
+  end
 end

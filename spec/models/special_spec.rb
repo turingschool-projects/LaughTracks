@@ -21,9 +21,13 @@ RSpec.describe Special do
   describe 'class methods' do
     describe 'average_runtime' do
       it "can give an average of all specials" do
-        Special.create(name: "Cinco",  comedian_id: 1)
-        Special.create(name: "Cinco", comedian_id: 1)
-        Special.average_runtime
+        Special.create(name: "Eighty", runtime: 80, comedian_id: 1)
+        Special.create(name: "Sixty", runtime: 60, comedian_id: 1)
+
+        actual = Special.average_runtime
+        expected = 70
+
+        expect(actual).to eq(expected)
       end
     end
   end

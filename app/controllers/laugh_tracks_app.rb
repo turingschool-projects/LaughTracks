@@ -5,7 +5,7 @@ class LaughTracksApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
 
   get '/' do
-    erb :comedians
+    redirect '/comedians'
   end
 
   get '/comedians' do

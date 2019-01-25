@@ -22,6 +22,7 @@
   <ul class="comedian-attributes" id="<%= comedian.name_as_kebab%>">
     <li> <%= comedian.age %><% if comedian.deceased %> - Deceased<% end %></li>
     <li> <%= comedian.born %></li>
+    <li> <%= comedian.specials.count%></li>
   </ul>
   <ul class="comedian-specials" id="<%= comedian.name_as_kebab%>-specials">
     <% comedian.specials.each do |special| %>

@@ -4,7 +4,7 @@ class Comedian < ActiveRecord::Base
   validates :born, presence: true
 
   has_many :specials
-  
+
   scope :age, -> (age) { where age: age }
 
   def name_as_kebab

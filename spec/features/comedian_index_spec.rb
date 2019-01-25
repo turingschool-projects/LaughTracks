@@ -3,6 +3,8 @@ RSpec.describe "as a visitor", type: :feature do
   it 'should show a list of comedians and there attributes' do
     comedian_1 = Comedian.create(name: 'Mitch Hedberg', age: 30, born: 'St. Paul', deceased: true)
     comedian_2 = Comedian.create(name: 'Bill Burr', age: 59, born: 'Atlanta')
+    comedian_1.specials.create(name: "Comedy Central Presents", length: 30, image_url: "https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2018/06/gettyimages-74714565-h_2018.jpg")
+
     visit '/comedians'
 
     within '#comedian-list' do
@@ -13,6 +15,7 @@ RSpec.describe "as a visitor", type: :feature do
     within '#mitch-hedberg' do
       expect(page).to have_content('30 - Deceased')
       expect(page).to have_content('St. Paul')
+      expect(page).to have_content('1')
     end
 
     within '#bill-burr' do

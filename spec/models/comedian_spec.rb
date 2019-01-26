@@ -26,5 +26,11 @@ RSpec.describe Comedian do
       expect(actual).to eq(expected)
     end
 
+    it 'should list unique cities' do
+      expected = ['Los Angeles', 'New York']
+
+      expect(Comedian.uniq_cities).to eq(expected)
+    end
+
   end
 end

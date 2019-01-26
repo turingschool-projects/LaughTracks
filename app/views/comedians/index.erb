@@ -11,22 +11,25 @@
 
   <body>
 
+    <section class = "jumbotron text-center">
 
-    <div class="jumbotron">
-      <h1 class="display-1 justify-content-center">Comedians</h1>
-      <p class="lead">Comedian Statistics</p>
-      <hr class="my-4">
-      <p> The average age of the comedians is <%= Comedian.average_age %> </p>
-      <p> The average run time of all the specials is <%= Special.average_length %> minutes</p>
-      <p> The comedians come from the following cities: <%= Comedian.unique_cities.join(", ") %>.
+        <h1 class = "jumbotron-heading" id = "page_title"> Comedians </h1>
+        <p class="lead">Comedian Statistics</p>
+        <hr class="my-4">
+        <p> The average age of the comedians is <%= Comedian.average_age %> </p>
+        <p> The average run time of all the specials is <%= Special.average_length %> minutes</p>
+        <p> The comedians come from the following cities: <%= Comedian.unique_cities.join(", ") %>.
 
-      </p>
-    </div>
+        </p>
+
+    </section>
+
+
 
     <%@comedians.each do |comedian|  %>
     <div class = "row">
-      <div class ="col-md-2 col-md-offset-5 col-center border bg-light""
-    <div class="comedian_card" style="width: 18rem;">
+      <div class ="col-md-2 col-md-offset-5 col-center border bg-light">
+    <div class="comedian_card" style="width: 18rem;" id = "comedian-<%= comedian.id%>" >
       <h5> <%= comedian.name %> </h5>
       <img src="<%= comedian.image_source %>" class="card-img-top" alt="<%= comedian.name %>">
       <b>Age:</b> <%= comedian.age %> <br>

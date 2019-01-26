@@ -2,16 +2,19 @@
 
 <h1 class="main-header">Comedians</h1>
 
-<p class="statistics-bar">
+<div class="statistics-bar">
+  <h3>Statistics</h3>
   Average Age: <%= @comedians.average_age %><br/>
   Average Special Length: <%= @specials.average_length %> mins <br/>
-  Home Cities:
-</p>
+  Home Cities: <% @comedians.all_cities.each do |city| %>
+    <%= city %>
+    <% end %><br/>
+</div>
 
 <div class="comedian-info">
   <% @comedians.each do |comedian| %>
     <h3><%= comedian.name %></h3>
-    <img src="<%= comedian.image %>" height="42" width="42">
+    <img src="<% if comedian.image %> <%= comedian.image %> <% else %> https://capestylemag.com/wp-content/uploads/2017/11/comedy-3-1068x910.jpg <% end %>" height="42" width="42">
     <p>Age: <%= comedian.age %></p>
     <p>Birthplace: <%= comedian.city %></p>
     <p>Specials (<%= comedian.specials.count %> total):
@@ -26,4 +29,3 @@
 <p>Add a new comedian <a href="/comedians/new">here</a>.</p>
 
 <body>
-</html>

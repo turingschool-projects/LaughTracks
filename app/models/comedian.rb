@@ -8,8 +8,8 @@ class Comedian < ActiveRecord::Base
     average(:age).round
   end
 
-  def self.uniq_cities
-    distinct.pluck(:city)
+  def self.all_cities
+    pluck(:city).uniq
   end
 
 end

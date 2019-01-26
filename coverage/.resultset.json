@@ -1,20 +1,33 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/teresaknowles/turing/mod_2/projects/LaughTracks/spec/features/user_can_search_for_comedians_of_a_certain_age_spec.rb": [
+
+      ],
       "/Users/teresaknowles/turing/mod_2/projects/LaughTracks/spec/features/user_sees_list_of_comedians_spec.rb": [
         1,
+        1,
         null,
         1,
-        0,
-        0,
         null,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
+        1,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null,
         null
+      ],
+      "/Users/teresaknowles/turing/mod_2/projects/LaughTracks/spec/features/user_sees_stats_at_top_of_page_spec.rb": [
+
       ],
       "/Users/teresaknowles/turing/mod_2/projects/LaughTracks/spec/models/comedian_spec.rb": [
         1,
@@ -50,6 +63,6 @@
         null
       ]
     },
-    "timestamp": 1548473520
+    "timestamp": 1548480966
   }
 }

@@ -1,9 +1,12 @@
 <h1>All Comedians</h1>
 
-<% @comedians.each do |comedian| %>
-  <ul>
-    <li>Name: <%= comedian.name %> </li>
-    <li>Age: <%= comedian.age %> </li>
-    <li>City: <%= comedian.city %> </li>
-  </ul>
-<% end %>
+<section id="comedians">
+
+  <% @comedians.each do |comedian| %>
+    <ul>
+      <li>Name: <%= comedian.name %> </li>
+      <li>Age: <%= comedian.age %> </li>
+      <li>City: <%= comedian.city %> </li>
+    </ul>
+  <% end %>
+</section>

@@ -3,4 +3,5 @@ class LaughTracksApp < Sinatra::Base
     @comedians = Comedian.all
     erb :"comedians/index"
   end
+
 end

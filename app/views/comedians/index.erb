@@ -6,5 +6,16 @@
       <p>Age: <%= comedian.age %></p>
       <p>City: <%= comedian.birthplace %></p>
     </article>
+    <article class="specials">
+      <% @specials.each do |special| %>
+        <% if special.comedian_id == comedian.id %>
+          <section class="special" id="special-#{special.id}">
+            <img src="<%= special.thumbnail %>" alt="<%= special.name %> Thumbnail">
+            <h6><%= special.name %></h6>
+            <p>Runtime: <%= special.runtime %></p>
+          </section>  
+        <% end %>
+      <% end %>
+    </article>
   </section>
 <% end %>

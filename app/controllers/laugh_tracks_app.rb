@@ -16,6 +16,7 @@ class LaughTracksApp < Sinatra::Base
   end
 
   post '/comedians/new' do
+    @comedian = Comedian.create(name: params[:comedian][:name], age: params[:comedian][:age], born: params[:comedian][:born])
 
     redirect '/comedians'
   end

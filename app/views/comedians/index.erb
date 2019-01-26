@@ -10,3 +10,14 @@
     </ul>
   <% end %>
 </section>
+
+<h1>All Specials</h1>
+
+<% @specials.each do |special| %>
+  <ul>
+    <li>Name: <%= special.name %> </li>
+    <li>Length: <%= special.length %> </li>
+    <li><img src= <%= special.image %>> </li>
+
+  </ul>
+<% end %>

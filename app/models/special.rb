@@ -1,2 +1,7 @@
 class Special < ActiveRecord::Base
-end 
+  belongs_to :comedian
+
+  def self.average_length
+    average(:run_time).round(2)
+  end
+end

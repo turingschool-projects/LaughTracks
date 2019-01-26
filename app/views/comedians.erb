@@ -1,17 +1,29 @@
-<h1>Comedians</h1>
+<body>
 
-<img src=>
+<h1 class="main-header">Comedians</h1>
 
-<% @comedians.each do |comedian| %>
-  <h3>Name: <%= comedian.name %></h3>
-  <img src=<% comedian.image %> alt="<%= comedian.name %> image" height="42" width="42">
-  <p>Age: <%= comedian.age %></p>
-  <p>Birthplace: <%= comedian.city %></p>
-  <p>Specials:
-    <ul> <% comedian.specials.each do |special| %>
-    <li><%= special.name %>, <%= special.run_time %> mins</li>
-    <% end %></ul>
-  <br/>
-<% end %>
+<p class="statistics-bar">
+  Average Age: <%= @comedians.average_age %><br/>
+  Average Special Length: <%= @specials.average_length %> mins <br/>
+  Home Cities:
+</p>
 
-<p>Add a new comedian <a href="/new">here</a>.</p>
+<div class="comedian-info">
+  <% @comedians.each do |comedian| %>
+    <h3><%= comedian.name %></h3>
+    <img src="<%= comedian.image %>" height="42" width="42">
+    <p>Age: <%= comedian.age %></p>
+    <p>Birthplace: <%= comedian.city %></p>
+    <p>Specials (<%= comedian.specials.count %> total):
+      <ul> <% comedian.specials.each do |special| %>
+      <li><img src="<%= special.thumbnail %>" height="42" width="42">
+        "<%= special.name %>," <%= special.run_time %> mins</li>
+      <% end %></ul>
+    <br/>
+  <% end %>
+</div>
+
+<p>Add a new comedian <a href="/comedians/new">here</a>.</p>
+
+<body>
+</html>

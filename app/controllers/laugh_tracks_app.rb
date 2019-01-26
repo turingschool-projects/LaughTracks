@@ -9,17 +9,25 @@ class LaughTracksApp < Sinatra::Base
   end
 
   get '/comedians' do
-    @comedians = Comedian.all
-    erb :comedians
+    if params[:age]
+      @comedians = Comedian.where("age = ?", params[:age])
+      @specials = Special.select(specials.*).joins(:comedians).where("comedians.age = ?", params[:age])
+      erb :comedians
+    else
+      @comedians = Comedian.all
+      @specials = Special.all
+      erb :comedians
+    end
   end
 
-  get '/new' do
+  get '/comedians/new' do
     erb :new
   end
 
-  post '/new' do
+  post '/comedians/new' do
     comedian = Comedian.new(params[:comedian])
     comedian.save
     redirect '/'
   end
+
 end

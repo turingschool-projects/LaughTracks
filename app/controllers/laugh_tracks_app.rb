@@ -1,4 +1,8 @@
 class LaughTracksApp < Sinatra::Base
+  get '/' do
+    redirect '/comedians'
+  end
+
   get '/comedians' do
     if params[:age]
       @comedians = Comedian.where(age: params[:age])

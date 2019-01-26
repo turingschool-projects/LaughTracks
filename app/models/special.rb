@@ -7,4 +7,8 @@ class Special < ActiveRecord::Base
   def self.average_runtime
     average(:runtime)
   end
+
+  def self.specials_for_comedians(comedians = [])
+    where(comedian_id: comedians.map {|comedian| comedian.id})
+  end
 end

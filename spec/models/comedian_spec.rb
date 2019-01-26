@@ -35,6 +35,15 @@ RSpec.describe Comedian do
       Comedian.create(name: "Some Guy", age: 50, birthplace: "Somewhere Else")
     end
 
+    describe '.fetch_comedians' do
+      it "can retrieve comedians based on a subselection" do
+        expected = Comedian.first
+        actual = Comedian.fetch_comedians(age: 51).first
+
+        expect(actual).to eq(expected)
+      end
+    end
+
     describe '.average_age' do
       it 'returns an average age of all comedians' do
         expected = 50

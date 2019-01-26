@@ -5,31 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="main.css">
+    
     <title>Comedians</title>
   </head>
 
   <body>
 
-    <section class = "jumbotron text-center">
+<!-- Jumbotron stuff: -->
+  <div class="container">
+    <div class="row">
+    <!-- <div class="col-lg-12"> -->
+    <div class = "jumbotron">
+      <div class="container">
 
-        <h1 class = "jumbotron-heading" id = "page_title"> Comedians </h1>
-        <p class="lead">Comedian Statistics</p>
+
+        <h1 class = "display-2" id = "page_title"> Comedians </h1>
         <hr class="my-4">
         <p> The average age of the comedians is <%= Comedian.average_age %> </p>
         <p> The average run time of all the specials is <%= Special.average_length %> minutes</p>
         <p> The comedians come from the following cities: <%= Comedian.unique_cities.join(", ") %>.
-
         </p>
+        </div>
+    </div>
+    </div>
+    </div>
 
-    </section>
 
 
 
-    <%@comedians.each do |comedian|  %>
+  <div class = "container">
+<% if @comedians.length % 3 == 0 %>
+    <%@comedians.each_slice(3) do |comedians|  %>
+      <div class = "row">
+        <div class ="col-md-4">
+          <div class="comedian_card" style="width: 18rem;" id = "comedian-<%= comedians.first.id%>" >
+            <h5> <%= comedians.first.name %> </h5>
+            <img src="<%= comedians.first.image_source %>" class="card-img-top" alt="<%= comedians.first.name %>">
+            <b>Age:</b> <%= comedians.first.age %> <br>
+            <b>City:</b> <%= comedians.first.city %> <br>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
+              See specials
+            </button>
+
+
+
+          </div>
+          <div class="collapse" id="seeSpecials">
+            <div class="card card-body">
+              <div class="card-body">
+                <b>Stand-up Specials:</b>
+
+                  <% comedians.first.specials.each do |special| %>
+                  <p>
+                    <li> <%= special.name %></li>
+                    <img src="<%= special.image_source %>" height="60" width="60"> <br>
+                    <b>Special run time:</b> <%= special.run_time %> minutes
+                  </p>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class ="col-md-4">
+          <div class="comedian_card" style="width: 18rem;" id = "comedian-<%= comedians[1].id%>" >
+            <h5> <%= comedians[1].name %> </h5>
+            <img src="<%= comedians[1].image_source %>" class="card-img-top" alt="<%= comedians[1].name %>">
+            <b>Age:</b> <%= comedians[1].age %> <br>
+            <b>City:</b> <%= comedians[1].city %> <br>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
+              See specials
+            </button>
+
+
+          </div>
+          <div class="collapse" id="seeSpecials">
+            <div class="card card-body">
+              <div class="card-body">
+                <b>Stand-up Specials:</b>
+
+                  <% comedians[1].specials.each do |special| %>
+                  <p>
+                    <li> <%= special.name %></li>
+                    <img src="<%= special.image_source %>" height="60" width="60"> <br>
+                    <b>Special run time:</b> <%= special.run_time %> minutes
+                  </p>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class ="col-md-4">
+          <div class="comedian_card" style="width: 18rem;" id = "comedian-<%= comedians[2].id%>" >
+            <h5> <%= comedians[2].name %> </h5>
+            <img src="<%= comedians[2].image_source %>" class="card-img-top" alt="<%= comedians[2].name %>">
+            <b>Age:</b> <%= comedians[2].age %> <br>
+            <b>City:</b> <%= comedians[2].city %> <br>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
+              See specials
+            </button>
+
+
+
+          </div>
+          <div class="collapse" id="seeSpecials">
+            <div class="card card-body">
+              <div class="card-body">
+                <b>Stand-up Specials:</b>
+
+                  <% comedians[2].specials.each do |special| %>
+                  <p>
+                    <li> <%= special.name %></li>
+                    <img src="<%= special.image_source %>" height="60" width="60"> <br>
+                    <b>Special run time:</b> <%= special.run_time %> minutes
+                  </p>
+                  <% end %>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+      <% end  %>
+
+      <% else  %>
+      <%@comedians.each do |comedian|  %>
     <div class = "row">
-      <div class ="col-md-2 col-md-offset-5 col-center border bg-light">
-    <div class="comedian_card" style="width: 18rem;" id = "comedian-<%= comedian.id%>" >
+      <div class ="col-md-2 col-md-offset-5 col-center border bg-light""
+    <div class="comedian_card" style="width: 18rem;">
       <h5> <%= comedian.name %> </h5>
       <img src="<%= comedian.image_source %>" class="card-img-top" alt="<%= comedian.name %>">
       <b>Age:</b> <%= comedian.age %> <br>
@@ -63,6 +172,13 @@
     </div>
 
     <% end  %>
+
+      <% end %>
+    </div>
+
+
+
+
 
 
 

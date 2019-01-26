@@ -51,8 +51,17 @@ RSpec.describe 'when I visit /comedians' do
 
       id = Comedian.first.id
 
+      expect(page).to have_xpath("//img[@src='https://m.media-amazon.com/images/G/01/imdb/images/nopicture/medium/name-2135195744._CB470041852_.png']")
+    end
+
+    it "I see a list of each comedian's specials' names" do
+      Special.create(name: 'Uno', runtime: 35, comedian_id: Comedian.first.id)
+      visit '/comedians'
+
+      id = Comedian.first.id
+
       within "#comedian-#{id}" do
-        expect(page).to have_content("https://m.media-amazon.com/images/G/01/imdb/images/nopicture/medium/name-2135195744._CB470041852_.png")
+        expect(page).to have_content("Uno")
       end
     end
   end

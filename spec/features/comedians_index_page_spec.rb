@@ -8,7 +8,7 @@ RSpec.describe "comedians index page" do
         Special.create(title: "Bill Burr: I'm Sorry You Feel That Way", run_time: 80, image_url: 'https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_UX182_CR0,0,182,268_AL_.jpg', comedian_id: 2)
 
         visit '/comedians'
-
+        save_and_open_page
         within '#comedian_1' do
           expect(page).to have_content('John Mulaney')
           expect(page).to have_content(36)

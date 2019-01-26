@@ -1,4 +1,4 @@
-<div id="statistics">
+<!-- <div id="statistics">
 <p>Average age: <%= @average_age %></p>
 <p>Average runtime: <%= @average_runtime %> minutes </p>
 <p>Comedian Hometowns: <%= @city_list %></p>
@@ -20,4 +20,29 @@
       </div>
     </ul>
   </div>
-<% end %>
+<% end %> -->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+
+<div class="comedian-grid">
+  <% @comedians.each do |comedian| %>
+    <div class="grid-square" id="comedian_<%=comedian.id%>">
+      <div class="comedian-name"><p><%= comedian.name %></div>
+      <li>Age: <%= comedian.age %></li>
+      <li>Hometown: <%= comedian.city %></li>
+      <li>Number of Specials: <%= Special.count_specials(comedian.id) %></li>
+      <p><p>
+        <% comedian.specials.each do |special| %>
+          <li><%= special.title  %></li>
+          <div class="thumbnail"><img src="<%= special.image_url %>" alt=" <%= special.title %>"></div>
+          <p><%= special.run_time %> minutes</p>
+        <% end %>
+    </div>
+  <% end %>
+</div>
+
+</body>
+</html>

@@ -14,7 +14,6 @@ class LaughTracksApp < Sinatra::Base
     @average_runtime = Special.average_runtime(params[:age])
     @average_age = Comedian.average_age(params[:age])
     @specials = Special.all
-    require 'pry'; binding.pry
     erb :"comedians/index"
   end
 
@@ -23,7 +22,6 @@ class LaughTracksApp < Sinatra::Base
   end
 
   post '/comedians' do
-    require 'pry'; binding.pry
     comedian = Comedian.new(params[:comedian])
     comedian.save
     redirect '/comedians'

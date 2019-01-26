@@ -6,6 +6,25 @@
     <h1>Welcome to Comedians!!</h1>
     </header>
     <nav>
-      <img src="../images/laughing-monkey-emoji.png" alt="laughing monkey emoji" />
+      <img src="hqdefault.jpg" alt="laughing monkey emoji" />
     </nav>
+    <div>
+      <% @comedians.each do |comedian| %>
+    <ul>
+      <li>Name: <%= comedian.name %></li>
+      <li>Age: <%= comedian.age %></li>
+      <li>City: <%= comedian.city %></li>
+    </ul>
+    <% end %>
+    </div>
+    <%= Comedian.average_age %>
+    <div>
+      <% @specials.each do |special| %>
+      <ul>
+        <li>Special: <%= special.special_name %></li>
+        <li>Length: <%= special.length %></li>
+        <li>ID: <%= special.comedian_id %></li>
+      </ul>
+        <% end %>
+    </div>
   </body>

@@ -28,8 +28,8 @@
 
     <%@comedians.each do |comedian|  %>
     <div class = "row">
-      <div class ="col-md-2 col-md-offset-5 col-center border bg-light""
-    <div class="comedian_card" style="width: 18rem;">
+      <div class ="col-md-2 col-md-offset-5 col-center border bg-light">
+    <div class="comedian_card" style="width: 18rem;" id = "comedian-<%= comedian.id%>" >
       <h5> <%= comedian.name %> </h5>
       <img src="<%= comedian.image_source %>" class="card-img-top" alt="<%= comedian.name %>">
       <b>Age:</b> <%= comedian.age %> <br>

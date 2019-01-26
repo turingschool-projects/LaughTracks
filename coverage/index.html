@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-25T22:36:06-07:00">2019-01-25T22:36:06-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-25T22:54:30-07:00">2019-01-25T22:54:30-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>5</b> files in total.
-    <b>30</b> relevant lines. 
-    <span class="green"><b>30</b> lines covered</span> and
+    <b>32</b> relevant lines. 
+    <span class="green"><b>32</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,9 +63,9 @@
       <tr>
         <td class="strong"><a href="#883a75b795ad416653fbe6ebc1368a58485cef7d" class="src_link" title="spec/features/user_sees_list_of_comedians_spec.rb">spec/features/user_sees_list_of_comedians_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>20</td>
-        <td>12</td>
-        <td>12</td>
+        <td>27</td>
+        <td>14</td>
+        <td>14</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -140,8 +140,8 @@
     <h3>spec/features/user_sees_list_of_comedians_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
+      <b>14</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -170,7 +170,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &quot;should show all comedians&quot; do</code>
+          <code class="ruby">    it &quot;should show all comedians&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -182,31 +182,31 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    Comedian.create!(name: &quot;Bob Comedian&quot;, age:40, city:&quot;New York&quot;)</code>
+          <code class="ruby">      bob = Comedian.create!(name: &quot;Bob Comedian&quot;, age:40, city:&quot;New York&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    Comedian.create!(name: &quot;Jenny Comedian&quot;, age:50, city:&quot;LA&quot;)</code>
+          <code class="ruby">      jenny = Comedian.create!(name: &quot;Jenny Comedian&quot;, age:50, city:&quot;LA&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">    Comedian.create!(name: &quot;Juan Comedian&quot;, age:42, city:&quot;Denver&quot;)</code>
+          <code class="ruby">      juan = Comedian.create!(name: &quot;Juan Comedian&quot;, age:42, city:&quot;Denver&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    Comedian.create!(name: &quot;Larry IDK&quot;, age:42, city:&quot;New York&quot;)</code>
+          <code class="ruby">      larry = Comedian.create!(name: &quot;Larry IDK&quot;, age:42, city:&quot;New York&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">    Special.create!(name:&quot;Very special&quot;, run_time: 144)</code>
+          <code class="ruby">      very = Special.create!(name:&quot;Very special&quot;, run_time: 144)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -218,13 +218,13 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit &#39;/comedians&#39;</code>
+          <code class="ruby">      visit &#39;/comedians&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">    save_and_open_page</code>
+          <code class="ruby">      save_and_open_page</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
@@ -236,34 +236,76 @@
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    within &#39;#page_title&#39; do</code>
+          <code class="ruby">      within &quot;#comedian-#{bob.id}&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page).to have_content(&quot;Comedians&quot;)</code>
+          <code class="ruby">        expect(page).to have_content(&quot;Bob Comedian&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">        expect(page).to have_content(&quot;40&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">        expect(page).to have_content(&quot;New York&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">end</code>

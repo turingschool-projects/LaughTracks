@@ -16,4 +16,8 @@ class LaughTracksApp < Sinatra::Base
     @specials = Special.all
     erb :"comedians/index"
   end
+
+  get '/comedians/new' do
+    erb :"comedians/new"
+  end
 end

@@ -29,20 +29,23 @@
 </nav>
 
 
-<h1><%= "All Comedians" %><h1>
-
 <div class="container-fluid">
+  <h1><%= "All Comedians" %></h1>
   <div class="row">
     <% @comedians.each do |comedian| %>
-    <div class="col-md-4">
-      <ul>
+    <section class="col-md-4">
+      <ul class="comedian-info">
         <img class='comedian-images' src="<%=comedian.image_url%>" alt="<%=comedian.name%>">
-        <p class ="name"><%= comedian.name %> </p>
+        <p class="name"><%= comedian.name %> </p>
         <p class="age">Age: <%= comedian.age %> </p>
         <p class="city">Birthplace: <%= comedian.city %> </p>
-        <p class="specials">Specials: <%= comedian.specials.count %></p>
+        <p>Specials:
+          <% comedian.specials.each do |special| %>
+            <span class="specials">  <%= special.name %> </span>
+            </p>
+          <% end %>
       </ul>
-    </div>
+    </section>
     <% end %>
   </div>
 </div>

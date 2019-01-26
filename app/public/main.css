@@ -1,0 +1,34 @@
+body {
+  background-color: #778899;
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.comedian-images {
+  margin-top: 50px;
+}
+
+.comedian-info {
+  text-align: center;
+}
+
+.name {
+  font-size: 38px;
+}
+
+.city {
+  font-size: 20px;
+}
+
+.age {
+  font-size: 20px;
+}
+
+.specials {
+  font-size: 20px;
+}

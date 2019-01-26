@@ -14,6 +14,11 @@ class Comedian < ActiveRecord::Base
     where(queries).select(:birthplace).distinct.map {|comedian| comedian.birthplace}
   end
 
+  def self.fetch_comedians(queries = {})
+    filter_queries(queries)
+    where(queries)
+  end
+
   def self.filter_queries(queries)
     queries.keep_if {|key, value| column_names.include?(key.to_s)}
   end

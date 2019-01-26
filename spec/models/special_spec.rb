@@ -19,7 +19,7 @@ RSpec.describe Special do
   end
 
   describe 'class methods' do
-    describe 'average_runtime' do
+    describe '.average_runtime' do
       it "can give an average of all specials" do
         Special.create(name: "Eighty", runtime: 80, comedian_id: 1)
         Special.create(name: "Sixty", runtime: 60, comedian_id: 1)
@@ -28,6 +28,22 @@ RSpec.describe Special do
         expected = 70
 
         expect(actual).to eq(expected)
+      end
+    end
+
+    describe '.specials_for_comedians' do
+      it "can return all specials for a selection of comedians" do
+        Comedian.create(name: "Tim", age: 42, birthplace: "Somewhere")
+        comedian = Comedian.first
+        Special.create(name: "Eighty", runtime: 80, comedian_id: comedian.id)
+        Special.create(name: "Sixty", runtime: 60, comedian_id: comedian.id)
+
+        expected = Special.all
+        actual = Special.specials_for_comedians(Comedian.all)
+
+        expect(actual.first).to eq(expected.first)
+        expect(actual.last).to eq(expected.last)
+        expect(actual.count).to eq(expected.count)
       end
     end
   end

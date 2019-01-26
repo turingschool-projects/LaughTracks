@@ -14,17 +14,13 @@
       <li>Name: <%= comedian.name %></li>
       <li>Age: <%= comedian.age %></li>
       <li>City: <%= comedian.city %></li>
+      <% @specials.each do |special| %>
+      <% if special.comedian_id == comedian.id %>
+      <li><%= special.special_name %></li>
+      <% end %>
+      <% end %>
     </ul>
     <% end %>
     </div>
-    <%= Comedian.average_age %>
-    <div>
-      <% @specials.each do |special| %>
-      <ul>
-        <li>Special: <%= special.special_name %></li>
-        <li>Length: <%= special.length %></li>
-        <li>ID: <%= special.comedian_id %></li>
-      </ul>
-        <% end %>
-    </div>
+
   </body>

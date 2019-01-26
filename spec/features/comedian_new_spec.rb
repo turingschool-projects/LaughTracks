@@ -7,10 +7,10 @@ RSpec.describe "as a visitor", type: :feature do
     expect(page).to have_content("New Comedian")
 
     within '#new_comedian' do
-      expect(page).to have_field("Name")
-      expect(page).to have_field("Age")
-      expect(page).to have_field("Birthplace (city, state)")
-      expect(page).to have_field("Picture Url (optional)")
+      expect(page).to have_selector("input[value='Name']")
+      expect(page).to have_selector("input[value='Age']")
+      expect(page).to have_selector("input[value='Birthplace (city, state)']")
+      expect(page).to have_selector("input[value='Picture Url (optional)']")
       expect(page).to have_button("Submit")
     end
 

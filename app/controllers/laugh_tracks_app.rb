@@ -9,4 +9,14 @@ class LaughTracksApp < Sinatra::Base
     @total_specials = Comedian.total_specials
     erb :"comedians/index"
   end
+
+  get '/comedians/new' do
+
+    erb :"comedians/new"
+  end
+
+  post '/comedians/new' do
+
+    redirect '/comedians'
+  end
 end

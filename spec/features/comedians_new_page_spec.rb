@@ -5,7 +5,7 @@ RSpec.describe "comedians index page" do
 
         visit '/comedians/new'
 
-        within 'new_comedian_form' do
+        within '#new_comedian_form' do
           expect(page).to have_field('Name')
           expect(page).to have_field('Age')
           expect(page).to have_field('City')
@@ -18,7 +18,7 @@ RSpec.describe "comedians index page" do
 
           visit '/comedians/new'
 
-          within 'new_comedian_form' do
+          within '#new_comedian_form' do
             fill_in 'Name', with: 'test_name'
             fill_in 'Age', with: '0'
             fill_In 'City', with: 'test_city'
@@ -27,7 +27,7 @@ RSpec.describe "comedians index page" do
 
           expect.(current_path).to eq '/comedians'
 
-          within 'comedian_1' do
+          within '#comedian_1' do
             expect.page.to have_content 'test_name'
             expect.page.to have_content '0'
             expect.page.to have_content 'test_city'

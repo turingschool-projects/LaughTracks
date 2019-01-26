@@ -1,7 +1,7 @@
 <div id="statistics">
   <h1>Statistics</h1>
-  <p>Average Age: <%= @age %></p>
-  <p>Average Length of Specials: <%= @length %></p>
+  <p>Average Age: <%= @age.round(2) %></p>
+  <p>Average Length of Specials: <%= @length.round(2) %></p>
   <p>Total Specials: <%= @total_specials %></p>
   <p>Unique Birthplaces: </p><% @cities.each do |city| %>
   <p><%= city %></p>

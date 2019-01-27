@@ -1,6 +1,9 @@
 require_relative '../app/models/comedian.rb'
 require_relative '../app/models/special.rb'
 
+Comedian.destroy_all
+Special.destroy_all
+
 Comedian.create(name: "Richard Prior", age: 65, city: "Los Angeles, CA")
 Comedian.create(name: "George Carlin", age: 71, city: "Santa Monica, CA")
 Comedian.create(name: "Joan Rivers", age: 81, city: "New York City, NY")
@@ -28,9 +31,9 @@ Special.create(name: "Joan Rivers: Abroad in London (1992)", run_time: 57, thumb
 Special.create(name: "Robin Williams: Weapons of Self Destruction (2009)", run_time: 90, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTc2NTg2OTQ0OV5BMl5BanBnXkFtZTcwNTcyNjgxMw@@._V1_UY268_CR4,0,182,268_AL_.jpg", comedian_id: 4)
 Special.create(name: "Robin Williams Live on Broadway (2002)", run_time: 99, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTc1MTQ4NjcyOF5BMl5BanBnXkFtZTcwODIyNzIyMQ@@._V1_UY268_CR4,0,182,268_AL_.jpg", comedian_id: 4)
 
-Special.create(name: "Bill Burr: You People Are All the Same. (2012)", run_time: 69, thumbnail: "https://m.media-amazon.com/images/M/MV5BMjAyZTI1NjMtNjQ3OC00MDhhLTkxMDgtMDVmMThhNjE5M2NkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY268_CR4,0,182,268_AL_.jpg", comedian_id: 6)
-Special.create(name: "Bill Burr: I'm Sorry You Feel That Way (2014)", run_time: 80, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_UX182_CR0,0,182,268_AL_.jpg", comedian_id: 6)
-Special.create(name: "Bill Burr: Walk Your Way Out (2017)", run_time: 77, thumbnail: "https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_UY268_CR10,0,182,268_AL_.jpg", comedian_id: 6)
+Special.create(name: "Bill Burr: You People Are All the Same. (2012)", run_time: 69, thumbnail: "https://m.media-amazon.com/images/M/MV5BMjAyZTI1NjMtNjQ3OC00MDhhLTkxMDgtMDVmMThhNjE5M2NkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY268_CR4,0,182,268_AL_.jpg", comedian_id: 5)
+Special.create(name: "Bill Burr: I'm Sorry You Feel That Way (2014)", run_time: 80, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_UX182_CR0,0,182,268_AL_.jpg", comedian_id: 5)
+Special.create(name: "Bill Burr: Walk Your Way Out (2017)", run_time: 77, thumbnail: "https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_UY268_CR10,0,182,268_AL_.jpg", comedian_id: 5)
 
 Special.create(name: "Chris Rock: Never Scared (2004)", run_time: 80, thumbnail: "https://m.media-amazon.com/images/M/MV5BMTlhYzMzNzItNWMyYy00ZGRlLWI1N2UtOGI2YjIwOGEwYTViXkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_UX182_CR0,0,182,268_AL_.jpg", comedian_id: 6)
 Special.create(name: "Chris Rock: Kill the Messenger - London, New York, Johannesburg (2008)", run_time: 79, thumbnail: "https://m.media-amazon.com/images/M/MV5BMjAwMjQxNDA5OF5BMl5BanBnXkFtZTcwNTE3MzM5MQ@@._V1_UY268_CR11,0,182,268_AL_.jpg", comedian_id: 6)

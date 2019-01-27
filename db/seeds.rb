@@ -25,6 +25,7 @@ end
 
 Comedian.find_by(name: 'John Mulaney').specials.create(title: 'John Mulaney: New in Town', run_time: 60, image_url: 'https://m.media-amazon.com/images/M/MV5BMjIzNzg5NTA2M15BMl5BanBnXkFtZTgwOTY4NjA2MDE@._V1_UY268_CR9,0,182,268_AL_.jpg')
 Comedian.find_by(name: 'John Mulaney').specials.create(title: 'John Mulaney: The Comeback Kid', run_time: 62, image_url: 'https://m.media-amazon.com/images/M/MV5BMDQ3NjU0NmQtYjgyZS00MzIzLWJjNDEtMWY5YjczYjc0MTMyXkEyXkFqcGdeQXVyMjI0MjUyNTc@._V1_UY268_CR4,0,182,268_AL_.jpg')
+Comedian.find_by(name: 'John Mulaney').specials.create(title: 'John Mulaney: Kid Gorgeous at Radio City', run_time: 65, image_url: 'https://m.media-amazon.com/images/M/MV5BOWZlYjE4ZDYtNjhlNi00ZGQ0LTgxZmUtNGRjNDM4YWJmOWNiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg')
 Comedian.find_by(name: 'Bill Burr').specials.create(title: "Bill Burr: I'm Sorry You Feel That Way", run_time: 80, image_url: 'https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_UX182_CR0,0,182,268_AL_.jpg')
 Comedian.find_by(name: 'Bill Burr').specials.create(title: 'Bill Burr: Walk Your Way Out', run_time: 77, image_url: 'https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_UY268_CR10,0,182,268_AL_.jpg')
 Comedian.find_by(name: 'Nathan Fielder').specials.create(title: "Comedy Central's All-Star Non-Denominational Christmas Special", run_time: 60, image_url: 'https://images-na.ssl-images-amazon.com/images/I/91C4wD7hRxL._RI_SX380_.jpg')

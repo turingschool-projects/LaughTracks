@@ -1,0 +1,30 @@
+.header {
+  display: grid;
+  grid-template-columns: 25vw 25vw 10vw 15vw 25vw;
+}
+
+.comedian-list {
+  display: grid;
+  grid-auto-rows: auto;
+}
+
+.comedian-square {
+  display: grid;
+  grid-template-columns: 25vw 75vw
+}
+
+.comedian-specials {
+  display: flex;
+}
+
+.special {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.thumbnail {
+  max-width:250px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}

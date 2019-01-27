@@ -4,7 +4,7 @@ class Comedian < ActiveRecord::Base
                         :age
 
   def self.average_age
-    average(:age)
+    average(:age).to_i
   end
 
   def self.uniq_cities

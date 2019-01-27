@@ -63,8 +63,6 @@ RSpec.describe 'as a visitor', type: :feature do
   it 'should see statistics' do
     visit '/comedians'
 
-    save_and_open_page
-
     within "nav" do
       expect(page).to have_content("New York")
       expect(page).to have_content("Los Angeles")

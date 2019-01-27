@@ -11,6 +11,7 @@
       <p>Average Age: <%= Comedian.average_age %></p>
         <p>Average TV Special Run Time: <%= Special.run_time %></p>
         <p>Cities Comedians Were Born In: <%= Comedian.cities %></p>
+        <p>Total Number of TV Specials: <%= Special.total_count_of_specials %></p>
     </nav>
     <div>
       <% @comedians.each do |comedian| %>

@@ -37,4 +37,5 @@ RSpec.describe Comedian do
       end
     end
   end
+
 end

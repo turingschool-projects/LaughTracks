@@ -1,3 +1,4 @@
+#saved old statistics bar
 <div class="statistics-bar">
   <h3>Statistics</h3>
   Average Age: <%= @comedians.average_age %><br/>
@@ -6,7 +7,41 @@
     <%= city %>
     <% end %><br/>
 </div>
+
+#buttons
 <p>
   <a href="#" class="btn btn-primary my-2">Add a Comedian</a>
   <a href="#" class="btn btn-secondary my-2">Secondary action</a>
 </p>
+
+#saved old comedian block
+<div class="comedian-info">
+  <% @comedians.each do |comedian| %>
+    <h3><%= comedian.name %></h3>
+    <img src="<% if comedian.image %> <%= comedian.image %> <% else %> https://capestylemag.com/wp-content/uploads/2017/11/comedy-3-1068x910.jpg <% end %>" height="42" width="42">
+    <p>Age: <%= comedian.age %></p>
+    <p>Birthplace: <%= comedian.city %></p>
+    <p>Specials (<%= comedian.specials.count %> total):
+      <ul> <% comedian.specials.each do |special| %>
+      <li><img src="<%= special.thumbnail %>" height="42" width="42">
+        "<%= special.name %>," <%= special.run_time %> mins</li>
+      <% end %></ul>
+    <br/>
+  <% end %>
+</div>
+
+#saved specials block
+<div class="comedian-info">
+
+    <h3></h3>
+    <img src="" height="42" width="42">
+    <p></p>
+    <p>Birthplace: <%= comedian.city %></p>
+    <p>Specials ():
+      <ul> <% comedian.specials.each do |special| %>
+      <li><img src="<%= special.thumbnail %>" height="42" width="42">
+        "<%= special.name %>," <%= special.run_time %> mins</li>
+      <% end %></ul>
+    <br/>
+
+</div>

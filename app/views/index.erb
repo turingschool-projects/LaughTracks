@@ -8,6 +8,11 @@
 </header>
 <nav>
   Statistics
+  Average Age: <%= Comedian.average_age %>
+  Average Runtime: <%= Special.average_runtime %>
+  Cities: <% Comedian.uniq_cities.each do |city| %>
+    <%= city %>
+  <% end %>
 </nav>
 <section>
   <% @comedians.each do |comedian| %>

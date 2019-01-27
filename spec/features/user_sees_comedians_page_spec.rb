@@ -36,18 +36,37 @@ RSpec.describe 'as a visitor', type: :feature do
     end
   end
 
-  it 'should see runtime and thumbnails for each special' do
+  it 'should see runtime for each special' do
     visit '/comedians'
-
-    save_and_open_page
 
     @comics.each do |comic|
       within "#comic-#{comic.id}" do
         comic.specials.each do |special|
           expect(page).to have_content("Runtime: #{special.runtime}")
+        end
+      end
+    end
+  end
+
+  it 'should see thumbnail for each special' do
+    visit '/comedians'
+
+    @comics.each do |comic|
+      within "#comic-#{comic.id}" do
+        comic.specials.each do |special|
           expect(page).to have_xpath(special.thumbnail)
         end
       end
+    end
+  end
+
+  it 'should see statistics' do
+    visit '/comedians'
+
+    save_and_open_page
+
+    within "nav" do
+      expect(page).to have_content("")
     end
   end
 end

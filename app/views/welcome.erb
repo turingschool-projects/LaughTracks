@@ -14,7 +14,7 @@
     </nav>
     <div>
       <% @comedians.each do |comedian| %>
-        <section>
+        <span>
         <ul>
           <li><b>Name:</b> <%= comedian.name %></li>
           <li><b>Age:</b> <%= comedian.age %></li>
@@ -27,8 +27,9 @@
           <% end %>
           <% end %>
         </ul>
+      </span>
+
         <% end %>
-        </section>
     </div>
 
   </body>

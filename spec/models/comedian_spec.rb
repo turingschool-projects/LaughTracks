@@ -12,4 +12,29 @@ RSpec.describe Comedian do
       end
     end
   end
+
+  describe "Class Methods" do
+    describe "average_age" do
+      it "returns average age of comedians" do
+        Comedian.create(name: "Ellen DeGeneres", age: 61, city: "Metairie")
+        Comedian.create(name: "Anjelah Johnson-Reyes", age: 36, city: "San Jose")
+        Comedian.create(name: "Wanda Sykes", age: 54, city: "Portsmouth")
+        Comedian.create(name: "Bob Newhart", age: 89, city: "Oak Park")
+
+        expect(Comedian.average_age).to eq(60)
+      end
+    end
+
+    describe "cities" do
+      it "returns a list of unique cities" do
+        Comedian.create(name: "Ellen DeGeneres", age: 61, city: "Metairie")
+        Comedian.create(name: "Anjelah Johnson-Reyes", age: 36, city: "San Jose")
+        Comedian.create(name: "Wanda Sykes", age: 54, city: "San Jose")
+        Comedian.create(name: "Bob Newhart", age: 89, city: "Oak Park")
+
+        actual = ["Metairie", "San Jose", "Oak Park"]
+        expect(Comedian.cities).to eq(actual)
+      end
+    end
+  end
 end

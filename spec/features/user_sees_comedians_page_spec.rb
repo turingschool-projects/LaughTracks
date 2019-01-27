@@ -66,7 +66,10 @@ RSpec.describe 'as a visitor', type: :feature do
     save_and_open_page
 
     within "nav" do
-      expect(page).to have_content("")
+      expect(page).to have_content("New York")
+      expect(page).to have_content("Los Angeles")
+      expect(page).to have_content("Average Age: 42")
+      expect(page).to have_content("Average Runtime: 70")
     end
   end
 end

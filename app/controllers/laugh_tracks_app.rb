@@ -11,7 +11,7 @@ class LaughTracksApp < Sinatra::Base
     @average_runtime = Special.average_runtime(params[:age])
     @average_age = Comedian.average_age(params[:age])
     @specials = Special.all
-    erb :"comedians/index_new"
+    erb :"comedians/index"
   end
 
   get '/comedians/new' do

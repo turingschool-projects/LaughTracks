@@ -1,0 +1,52 @@
+* {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+body {
+  background-color: #102A5A
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 25vw 25vw 10vw 15vw 25vw;
+  background-color: #EEF3EB;
+  text-align: center;
+}
+
+.comedian-list > div:nth-child(odd){
+  background-color: #054A9E
+}
+
+.comedian-list > div:nth-child(even){
+  background-color: #1296D8
+}
+
+.comedian-list {
+  display: grid;
+  grid-auto-rows: auto;
+}
+
+.comedian-square {
+  display: grid;
+  grid-template-columns: 25vw 75vw;
+  text-align: center;
+}
+
+.comedian-specials {
+  display: flex;
+  margin: 15px 30px 15px 30px;
+  background-color: #EEF3EB
+}
+
+.special {
+  flex-grow: 1;
+}
+
+
+
+.thumbnail {
+  max-width:250px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}

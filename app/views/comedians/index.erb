@@ -1,31 +1,35 @@
-<!-- 
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<div class="statistics">
-  <p>Average age: <br /> <%= @average_age %></p>
-  <p>Average runtime: <%= @average_runtime %> minutes </p>
-  <p>Comedian Hometowns: <%= @city_list %></p>
-  <p>Total Specials: <%= @total_specials %></p>
-</div>
-<div class="comedian-grid">
-  <% @comedians.each do |comedian| %>
-    <div class="grid-square" id="comedian_<%=comedian.id%>">
-      <div class="comedian-name"><p><%= comedian.name %></div>
-      <li>Age: <%= comedian.age %></li>
-      <li>Hometown: <%= comedian.city %></li>
-      <li>Number of Specials: <%= Special.count_specials(comedian.id) %></li>
-      <p><p>
-        <% comedian.specials.each do |special| %>
-          <li><%= special.title  %></li>
-          <div class="thumbnail"><img src="<%= special.image_url %>" alt=" <%= special.title %>"></div>
-          <p><%= special.run_time %> minutes</p>
-        <% end %>
-    </div>
-  <% end %>
-</div>
-
+  <div class="header">
+    <p>Average Age: <%= @average_age %></p>
+    <p>Average Runtime: <%= @average_runtime %> minutes</p>
+    <p>Comedian Hometowns:</p>
+    <p><%= @city_list %></p>
+    <p>Total Specials: <%= @total_specials %></p>
+  </div>
+  <div class="comedian-list">
+    <% @comedians.each do |comedian| %>
+      <div class="comedian-square" id="comedian_<%=comedian.id%>">
+        <div class="comedian-info">
+          <li><%= comedian.name %></li>
+          <li>Age: <%= comedian.age %></li>
+          <li>Hometown: <%= comedian.city %></li>
+          <li>Number of Specials: <%= Special.count_specials(comedian.id) %></li>
+        </div>
+        <div class="comedian-specials">
+          <% comedian.specials.each do |special| %>
+            <div class="special">
+              <p><%= special.title  %></p>
+              <img class="thumbnail" src="<%= special.image_url %>" alt=" <%= special.title %>">
+              <p><%= special.run_time %> minutes</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </body>
-</html> -->
+</html>

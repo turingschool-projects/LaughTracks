@@ -24,7 +24,7 @@ RSpec.describe Special do
     it 'should average the length of runtimes' do
       expected = 63
       actual = Special.average_runtime
-
+      
       expect(actual).to eq(expected)
     end
   end

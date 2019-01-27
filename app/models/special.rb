@@ -6,4 +6,5 @@ class Special < ActiveRecord::Base
   def self.average_runtime
     average(:runtime).to_i
   end
+
 end

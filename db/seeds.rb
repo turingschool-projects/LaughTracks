@@ -12,6 +12,6 @@ Special.destroy_all
 @comedian_3 = Comedian.create(name: 'Comedian 3', age: 53, city: 'Los Angeles')
 @comics = [@comedian_1, @comedian_2, @comedian_3]
 
-@special_1 = @comedian_1.specials.create(name: 'Special 1', runtime: 70, thumbnail: @img_1)
-@special_2 = @comedian_1.specials.create(name: 'Special 2', runtime: 70, thumbnail: @img_2)
-@special_3 = @comedian_2.specials.create(name: 'Special 3', runtime: 70, thumbnail: @img_3)
+@special_1 = @comedian_1.specials.create(name: 'Special 1', runtime: 64, thumbnail: @img_1)
+@special_2 = @comedian_1.specials.create(name: 'Special 2', runtime: 85, thumbnail: @img_2)
+@special_3 = @comedian_2.specials.create(name: 'Special 3', runtime: 41, thumbnail: @img_3)

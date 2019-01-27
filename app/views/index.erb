@@ -6,14 +6,15 @@
 <header>
   <h1>Comedians</h1>
 </header>
+
 <nav>
-  Statistics
-  Average Age: <%= Comedian.average_age %>
-  Average Runtime: <%= Special.average_runtime %>
-  Cities: <% Comedian.uniq_cities.each do |city| %>
-    <%= city %>
-  <% end %>
+  <p>Statistics</p>
+    <p>Average Age: <%= @comedians.average(:age).to_i %></p>
+    <p>Average Runtime: <%= @specials.average_runtime %></p>
+    <p>Total Specials: <%= @specials.count %></p>
+    <p>Cities: <%= @comedians.distinct.pluck(:city) %></p>
 </nav>
+
 <section>
   <% @comedians.each do |comedian| %>
   <article id='comic-<%= comedian.id %>'>
@@ -24,6 +25,7 @@
     </ul>
     <% if comedian.specials.size > 0 %>
     <h4><%= "Specials" %></h4>
+    <p><%= "Count: #{comedian.specials.count}" %>
     <% end %>
     <ul>
     <% comedian.specials.each do |special| %>

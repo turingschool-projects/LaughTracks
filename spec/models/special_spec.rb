@@ -28,6 +28,5 @@ RSpec.describe Special do
         expect(Special.total_count_of_specials).to eq(3)
       end
     end
-
   end
 end

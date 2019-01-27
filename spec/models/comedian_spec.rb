@@ -36,6 +36,18 @@ RSpec.describe Comedian do
         expect(Comedian.cities).to eq(actual)
       end
     end
+
+    describe "find_by" do
+      it "finds comedians based on age" do
+        ellen = Comedian.create(name: "Ellen DeGeneres", age: 61, city: "Metairie")
+        anjelah = Comedian.create(name: "Anjelah Johnson-Reyes", age: 36, city: "San Jose")
+        wanda = Comedian.create(name: "Wanda Sykes", age: 54, city: "San Jose")
+        bob = Comedian.create(name: "Bob Newhart", age: 89, city: "Oak Park")
+
+        expect(Comedian.find_by(age: 54)).to eq(wanda)
+        expect(Comedian.find_by(age: 36)).to eq(anjelah)
+      end
+    end
   end
 
 end

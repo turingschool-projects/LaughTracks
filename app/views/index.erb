@@ -1,0 +1,23 @@
+<h1>Laugh Tracks</h1>
+<nav>
+  Statistics
+</nav>
+<h2>Comedians</h2>
+<% @comedians.each do |comedian| %>
+<article id='comic-<%= comedian.id %>'>
+  <h3><%= comedian.name %></h3>
+  <ul>
+    <li>Age: <%= comedian.age %></li>
+    <li>City: <%= comedian.city %></li>
+  </ul>
+  <% if comedian.specials.size > 0 %>
+  <h4><%= "Specials" %></h4>
+  <% end %>
+  <ul>
+  <% comedian.specials.each do |special| %>
+    <li><%= special.name %></li>
+    <li>Runtime: <%= special.runtime %></li>
+    <img src=<%= special.thumbnail %>>
+  <% end %>
+  </ul>
+<% end %>

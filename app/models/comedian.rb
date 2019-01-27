@@ -17,4 +17,8 @@ class Comedian < ActiveRecord::Base
     city_list
     # require 'pry'; binding.pry
   end
+
+  def self.find_comedians_by_age(comedian_age)
+    where(age: comedian_age)
+  end
 end

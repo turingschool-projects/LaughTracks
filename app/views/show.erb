@@ -1,0 +1,15 @@
+<div class="comedian-info">
+  <h3><%= @comedian.name %></h3>
+  <img src="<% if @comedian.image %> <%= @comedian.image %> <% else %> https://capestylemag.com/wp-content/uploads/2017/11/comedy-3-1068x910.jpg <% end %>" height="42" width="42">
+  <p>Age: <%= @comedian.age %></p>
+  <p>Birthplace: <%= @comedian.city %></p>
+  <p>Specials (<%= @comedian.specials.count %> total):
+    <ul> <% @comedian.specials.each do |special| %>
+    <li><img src="<%= special.thumbnail %>" height="42" width="42">
+      "<%= special.name %>," <%= special.run_time %> mins</li>
+    <% end %></ul>
+  <br/>
+</div>
+
+<p>Edit this comedian <a href="/comedians/new">here</a>.</p>
+<p>Add a new special <a href="/comedians/new">here</a>.</p>

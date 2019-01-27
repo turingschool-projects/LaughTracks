@@ -1,0 +1,12 @@
+<div class="statistics-bar">
+  <h3>Statistics</h3>
+  Average Age: <%= @comedians.average_age %><br/>
+  Average Special Length: <%= @specials.average_length %> mins <br/>
+  Home Cities: <% @comedians.all_cities.each do |city| %>
+    <%= city %>
+    <% end %><br/>
+</div>
+<p>
+  <a href="#" class="btn btn-primary my-2">Add a Comedian</a>
+  <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+</p>

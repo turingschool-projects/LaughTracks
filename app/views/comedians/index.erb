@@ -14,10 +14,10 @@
     <% @comedians.each do |comedian| %>
       <div class="comedian-square" id="comedian_<%=comedian.id%>">
         <div class="comedian-info">
-          <li><%= comedian.name %></li>
-          <li>Age: <%= comedian.age %></li>
-          <li>Hometown: <%= comedian.city %></li>
-          <li>Number of Specials: <%= Special.count_specials(comedian.id) %></li>
+          <p><%= comedian.name %></p>
+          <p>Age: <%= comedian.age %></p>
+          <p>Hometown: <%= comedian.city %></p>
+          <p>Number of Specials: <%= Special.count_specials(comedian.id) %></p>
         </div>
         <div class="comedian-specials">
           <% comedian.specials.each do |special| %>

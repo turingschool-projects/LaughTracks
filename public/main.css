@@ -11,6 +11,7 @@ body {
   grid-template-columns: 25vw 25vw 10vw 15vw 25vw;
   background-color: #EEF3EB;
   text-align: center;
+  align-items: center;
 }
 
 .comedian-list > div:nth-child(odd){
@@ -30,6 +31,10 @@ body {
   display: grid;
   grid-template-columns: 25vw 75vw;
   text-align: center;
+  align-items: center;
+}
+
+.comedian-info {
 }
 
 .comedian-specials {

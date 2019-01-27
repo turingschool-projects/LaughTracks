@@ -1,0 +1,33 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <div class="header">
+    <p>Average Age:</p>
+    <p>Average Runtime</p>
+    <p>Hometowns</p>
+    <p>Chicago, New York, Houston, Miami, St. Paul, Washington, D.C.</p>
+    <p>Number of Specials</p>
+  </div>
+  <div class="comedian-grid">
+    <% @comedians.each do |comedian| %>
+      <div class="comedian-square" id="comedian_<%=comedian.id%>">
+        <div class="comedian-info">
+          <li><%= comedian.name %></li>
+          <li>Age: <%= comedian.age %></li>
+          <li>Hometown: <%= comedian.city %></li>
+          <li>Number of Specials: <%= Special.count_specials(comedian.id) %></li>
+        </div>
+        <div class="comedian-specials">
+          <% comedian.specials.each do |special| %>
+            <li><%= special.title  %></li>
+            <div class="thumbnail"><img src="<%= special.image_url %>" alt=" <%= special.title %>"></div>
+            <p><%= special.run_time %> minutes</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>

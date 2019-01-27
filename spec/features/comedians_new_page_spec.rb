@@ -1,4 +1,4 @@
-RSpec.describe "comedians index page" do
+RSpec.describe "comedians new page" do
   context "as a visitor" do
     context "when I visit '/comedians/new'" do
       it "shows a form to input a new comedian into the database" do

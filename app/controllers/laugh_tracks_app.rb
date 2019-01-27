@@ -4,17 +4,14 @@ class LaughTracksApp < Sinatra::Base
   end
 
   get '/comedians' do
-    if params[:age]
-      @comedians = Comedian.where(age: params[:age])
-    else
-      @comedians = Comedian.all
-    end
+    @comedians = Comedian.all
+    @comedians = Comedian.where(age: params[:age]) if params[:age]
     @total_specials = Special.count_total(params[:age])
     @city_list = Comedian.city_list(params[:age])
     @average_runtime = Special.average_runtime(params[:age])
     @average_age = Comedian.average_age(params[:age])
     @specials = Special.all
-    erb :"comedians/index"
+    erb :"comedians/index_new"
   end
 
   get '/comedians/new' do

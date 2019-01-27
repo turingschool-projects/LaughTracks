@@ -26,7 +26,12 @@
   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-
+<div class="statistics">
+  <p>Average age: <br /> <%= @average_age %></p>
+  <p>Average runtime: <%= @average_runtime %> minutes </p>
+  <p>Comedian Hometowns: <%= @city_list %></p>
+  <p>Total Specials: <%= @total_specials %></p>
+</div>
 <div class="comedian-grid">
   <% @comedians.each do |comedian| %>
     <div class="grid-square" id="comedian_<%=comedian.id%>">

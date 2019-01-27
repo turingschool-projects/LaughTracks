@@ -1,5 +1,10 @@
-body {
-  background-color: blue;
+.statistics {
+  background-color: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100px;
+  width: auto;
+  text-align: center;
 }
 
 .comedian-grid {

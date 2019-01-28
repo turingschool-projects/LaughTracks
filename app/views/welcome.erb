@@ -3,17 +3,15 @@
   </head>
   <body>
     <header>
-    <h1>Welcome to Comedians!!</h1>
-    </header>
-    <nav>
+    <h1 id="greeting">Welcome to Comedians!!</h1>
       <img src="/public/laughing-monkey-emoji.png" alt="laughing monkey emoji" />
       <h2><b>Statistics</b></h2>
       <p>Average Age: <%= Comedian.average_age %></p>
         <p>Average TV Special Run Time: <%= Special.run_time %></p>
         <p>Cities Comedians Were Born In: <%= Comedian.cities %></p>
         <p>Total Number of TV Specials: <%= Special.total_count_of_specials %></p>
-    </nav>
-    <div>
+    </header>
+    <div class="comedian_info">
       <% @comedians.each do |comedian| %>
         <span>
         <ul>

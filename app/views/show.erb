@@ -6,9 +6,6 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2" focusable="false" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
       <strong>Laugh Tracks</strong>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
   </div>
 </div>
 
@@ -19,7 +16,7 @@
         <div class="show-card">
           <div id="show-card" class="card mb-4 shadow-sm">
             <div class="card-pic-box">
-              <img id="show-image" class="card-img-top" src="<%=@comedian.image%>" alt="<%= @comedian.name %>">
+              <img id="show-image" class="card-img-top" src="<% if @comedian.image %> <%= @comedian.image %> <% else %> https://capestylemag.com/wp-content/uploads/2017/11/comedy-3-1068x910.jpg <% end %>" alt="<%= @comedian.name %>">
             </div>
             <div class="card-body">
               <p class="card-text"><%= @comedian.name %><br/>Age: <%= @comedian.age %><br/>Birthplace: <%= @comedian.city %></p>

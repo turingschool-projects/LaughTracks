@@ -2,6 +2,10 @@
     padding: 0;
 }
 
+.city-link {
+  color: gray;
+}
+
 .card-pic-box {
   display: block;
   width: 100%;

@@ -13,6 +13,10 @@ class LaughTracksApp < Sinatra::Base
       @comedians = Comedian.where("age = ?", params[:age])
       @specials = Special.select("specials.*").joins(:comedian).where("comedians.age = ?", params[:age])
       erb :comedians
+    elsif params[:city]
+      @comedians = Comedian.where("city = ?", params[:city])
+      @specials = Special.select("specials.*").joins(:comedian).where("comedians.city = ?", params[:city])
+      erb :comedians
     elsif params[:sort]
       if params[:sort] == "name"
         @comedians = Comedian.order(:name)
@@ -47,10 +51,8 @@ class LaughTracksApp < Sinatra::Base
   set :method_override, true
 
   put '/comedians/:id' do |id|
-    comedian = Comedian.find_by(id: params[:id])
-    comedian.update(params[:comedian])
-    comedian.save
-    redirect "/comedians/#{id}"
+    Comedian.update(id.to_i, params[:comedian])
+    redirect "/comedian/#{id}"
   end
 
   delete '/comedians/:id' do |id|

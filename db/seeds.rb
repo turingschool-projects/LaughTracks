@@ -2,15 +2,15 @@ require_relative '../app/models/comedian.rb'
 require_relative '../app/models/special.rb'
 
 seinfeld = Comedian.create(name: 'Jerry Seinfeld', age: 64, city: 'New York City', image: "https://2l7g9kgsh281akevs49v281d-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/jerry-seinfeld-entertainment-catskills.jpg")
-schumer = Comedian.create(name: 'Amy Schumer', age: 37, city: 'New York City', image: "https://nypdecider.files.wordpress.com/2015/04/amy-schumer-meet-queue-2.png?w=1284")
+schumer = Comedian.create(name: 'Amy Schumer', age: 37, city: 'New York City', image: "http://images6.fanpop.com/image/photos/38400000/Amy-Schumer-amy-schumer-38416273-300-300.jpg")
 stewart = Comedian.create(name: 'Jon Stewart', age: 56, city: 'New York City', image: "https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2015%2F02%2Fjon-stewart-leaving.jpg&w=1600&c=sc&poi=face&q=70")
-silverman = Comedian.create(name: 'Sarah Silverman', age: 48, city: 'Bedford', image: "https://pixel.nymag.com/imgs/daily/vulture/2017/10/04/sarah-silverman/10-sarah-silverman.w512.h600.2x.jpg")
+silverman = Comedian.create(name: 'Sarah Silverman', age: 48, city: 'Bedford', image: "http://pridefest.com/wp-content/uploads/2016/03/Silverman-Headshot_Photo-Credit-Robyn-Von-Swank-1024x854.jpg")
 obrien = Comedian.create(name: "Conan O'Brien", age: 55, city: 'Brookline', image: "https://consequenceofsound.files.wordpress.com/2018/09/conan-obrien.png?w=807")
 degeneres = Comedian.create(name: 'Ellen DeGeneres', age: 60, city: 'Metairie', image: "https://cdn.cliqueinc.com/cache/posts/254244/ellen-degeneres-beverly-hills-home-254244-1523029282469-main.700x0c.jpg")
 williams = Comedian.create(name: 'Robin Williams', age: 63, city: 'Paradise Cay', image: "https://vignette.wikia.nocookie.net/disney/images/4/4d/Robin_Williams.jpg/revision/latest?cb=20180905232738")
 gervais = Comedian.create(name: 'Ricky Gervais', age: 57, city: 'Whitley', image: "https://pbs.twimg.com/profile_images/680051184628011010/j7btF2wo_400x400.jpg")
 ansari = Comedian.create(name: 'Aziz Ansari', age: 35, city: 'Columbia', image: "https://bloximages.chicago2.vip.townnews.com/pressofatlanticcity.com/content/tncms/assets/v3/editorial/2/50/2507f3fe-445b-5091-ad04-2de279e07ab9/5bfbffac184f0.image.jpg?resize=400%2C532")
-schlesinger = Comedian.create(name: 'Iliza Shlesinger', age: 35, city: 'New York City', image: "https://www.glam.com/wp-content/uploads/2017/11/IlizaShlesinger_Shot02_0048_r35b15d-1.jpg")
+schlesinger = Comedian.create(name: 'Iliza Shlesinger', age: 35, city: 'New York City', image: "https://cdn2.lamag.com/wp-content/uploads/sites/6/2018/07/ES_01_20180613_lLIZA_Netflix_00089-1068x709.jpg")
 nanjiani = Comedian.create(name: 'Kumail Nanjiani', age: 40, city: 'Karachi', image: "https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2017/11/gettyimages-654204952_-_h_2017.jpg")
 glover = Comedian.create(name: 'Donald Glover', age: 35, city: 'Edwards Air Force Base', image: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F05%2Fdonald-glover-childish-gambino-performance-skits-snl-may-5-2018-1.jpg?q=75&w=800&cbr=1&fit=max")
 kirkman = Comedian.create(name: 'Jen Kirkman', age: 44, city: 'Concord', image: "https://shepherdexpress.com/downloads/28262/download/jenkirkman.jpg.jpe?cb=64c3ca535d9f20df798a66bad0a14a99&w=640")

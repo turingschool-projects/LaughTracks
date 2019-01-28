@@ -1,10 +1,51 @@
-<form action="/comedians/new" method="post">
-  <p>Enter a new comedian:</p>
-  Name:
-  <input type='text' name='comedian[name]'/><br/>
-  Age:
-  <input type='text' name='comedian[age]'/><br/>
-  City:
-  <input type='text' name='comedian[city]'/><br/>
-  <input type='submit'/>
+
+<!-- <div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">Collapsed content</h4>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div> -->
+
+<div class="pos-f-t"
+  <div class="collapse" id="navbarHeader">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">Collapsed content</h4>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="/comedians" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2" focusable="false" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        <strong>Laugh Tracks</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<form class="new-comedian-form">
+  <div id="form-title" class="form-group">Add a New Comedian</div>
+  <div class="form-group col-md-6">
+    <label for="name">Comedian</label>
+    <input type="email" name='comedian[name]' class="form-control" id="comedianName" placeholder="Seymour Butts">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="age">Age</label>
+    <input type="integer" name='comedian[age]' class="form-control" id="comedianAge" placeholder="35">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="city">City</label>
+    <input type="string" name='comedian[city]' class="form-control" id="comedianCity" placeholder="New York City">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>

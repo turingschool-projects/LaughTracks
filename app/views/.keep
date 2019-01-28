@@ -45,3 +45,24 @@
     <br/>
 
 </div>
+
+#saved card shit
+<div class="row">
+  <% @comedians.each do |comedian| %>
+  <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <svg class="card-img-top" width="100%" height="225" img="<% if comedian.image %> <%= comedian.image %> <% else %> https://capestylemag.com/wp-content/uploads/2017/11/comedy-3-1068x910.jpg <% end %>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Comedian Image"><title>Comedian</title><rect fill="#55595c" width="100%" height="100%"></rect><text fill="#eceeef" dy=".3em" x="50%" y="50%">Thumbnail</text></svg>
+        <div class="card-body">
+          <p class="card-text"><%= comedian.name %><br/>Age: <%= comedian.age %>
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-muted"><%= comedian.specials.count %>
+              <% if comedian.specials.count == 1 %> special <% else %> specials <% end %> </small>
+          </div>
+        </div>
+      </div>
+  </div>

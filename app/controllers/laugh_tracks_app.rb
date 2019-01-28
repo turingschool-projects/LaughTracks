@@ -13,17 +13,20 @@ class LaughTracksApp < Sinatra::Base
       @comedians = Comedian.where("age = ?", params[:age])
       @specials = Special.select("specials.*").joins(:comedian).where("comedians.age = ?", params[:age])
       erb :comedians
-    # elsif params[:sort]
-    #   if params[:sort] == "name"
-    #     @comedians = Comedian.order(:name)
-    #     @specials = Special.all
-    #   elsif params[:sort] == "city"
-    #     @comedians = Comedian.order(:city)
-    #     @specials = Special.all
-    #   elsif params[:sort] == "age"
-    #     @comedians = Comedian.all.sort_by { |comedian| comedian.age}
-    #     @specials = Special.all
-    #   end
+    elsif params[:sort]
+      if params[:sort] == "name"
+        @comedians = Comedian.order(:name)
+        @specials = Special.all
+        erb :comedians
+      elsif params[:sort] == "city"
+        @comedians = Comedian.order(:city)
+        @specials = Special.all
+        erb :comedians
+      elsif params[:sort] == "age"
+        @comedians = Comedian.all.sort_by { |comedian| comedian.age}
+        @specials = Special.all
+        erb :comedians
+      end
     else
       @comedians = Comedian.all
       @specials = Special.all

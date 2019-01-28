@@ -38,6 +38,10 @@
             <img src="<%= comedians.first.image_source %>"  class="card-img-top " alt="<%= comedians.first.name %>">
             <b>Age:</b> <%= comedians.first.age %> <br>
             <b>City:</b> <%= comedians.first.city %> <br>
+            <form method="post" action="/comedians/<%= comedians.first.id %>/delete">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete">
+            </form>
             <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
               See specials
             </button>
@@ -66,6 +70,10 @@
             <img src="<%= comedians[1].image_source %>" class="card-img-top" alt="<%= comedians[1].name %>">
             <b>Age:</b> <%= comedians[1].age %> <br>
             <b>City:</b> <%= comedians[1].city %> <br>
+            <form method="post" action="/comedians/<%= comedians[1].id %>/delete">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete">
+            </form>
             <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
               See specials
             </button>
@@ -95,6 +103,10 @@
             <img src="<%= comedians[2].image_source %>" class="card-img-top " alt="<%= comedians[2].name %>">
             <b>Age:</b> <%= comedians[2].age %> <br>
             <b>City:</b> <%= comedians[2].city %> <br>
+            <form method="post" action="/comedians/<%= comedians[2].id %>/delete">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete">
+            </form>
             <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
               See specials
             </button>
@@ -137,6 +149,10 @@
       <img src="<%= comedian.image_source %>" class="card-img-top" alt="<%= comedian.name %>">
       <b>Age:</b> <%= comedian.age %> <br>
       <b>City:</b> <%= comedian.city %> <br>
+      <form method="post" action="/comedians/<%= comedian.id %>/delete">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete">
+      </form>
       <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
         See specials
       </button>

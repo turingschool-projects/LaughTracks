@@ -32,6 +32,7 @@ nav {
   height: 4vh;
   padding-left: 10px;
   padding-top: 13px;
+  border-bottom: 3px #E7E247 solid;
 }
 
 a {
@@ -56,6 +57,7 @@ article {
   color: #232528;
   background-image: radial-gradient(#009FFD, #5C80BC);
   border-radius: 3px;
+  border: 3px #E7E247 solid;
   width: 19rem;
   height: 64vh;
   overflow: scroll;
@@ -63,7 +65,7 @@ article {
 
 article:hover {
   transform: scale(1.05) translate(-2%, -2%);
-  box-shadow: 5px 10px 10px -2px #FFA400;
+  box-shadow: 10px 10px 10px 10px #FFA400;
 }
 
 ul {
@@ -97,4 +99,18 @@ form {
   background: #3D3D7E;
   color: #EAF6FF;
   text-decoration: none;
+  border: 1px transparent solid;
+  font-size: 17px;
+  text-align: center;
+  padding: 10px;
+}
+
+.home {
+  background: #009FFD;
+  color: #EAF6FF;
+  text-decoration: none;
+  border: 1px transparent solid;
+  font-size: 17px;
+  text-align: center;
+  padding: 10px;
 }

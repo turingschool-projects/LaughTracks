@@ -21,7 +21,7 @@ RSpec.describe Comedian do
     end
     it 'should average all ages' do
       expected = 42
-      actual = Comedian.average_age
+      actual = Comedian.average(:age)
 
       expect(actual).to eq(expected)
     end
@@ -29,7 +29,7 @@ RSpec.describe Comedian do
     it 'should list unique cities' do
       expected = ['New York', 'Los Angeles']
 
-      expect(Comedian.uniq_cities).to eq(expected)
+      expect(Comedian.distinct.pluck(:city)).to eq(expected)
     end
 
     it 'should find comedians by age' do

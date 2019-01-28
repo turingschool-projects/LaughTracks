@@ -3,11 +3,10 @@ RSpec.describe "as a visitor", type: :feature do
 
     it "should show all comedians" do
 
-      bob = Comedian.create!(name: "Bob Comedian", age:40, city:"New York")
-      jenny = Comedian.create!(name: "Jenny Comedian", age:50, city:"LA")
-      juan = Comedian.create!(name: "Juan Comedian", age:42, city:"Denver")
-      larry = Comedian.create!(name: "Larry IDK", age:42, city:"New York")
-      very = Special.create!(name:"Very special", run_time: 144)
+      Comedian.create!(name: "Bob Comedian", age:40, city:"New York").specials.create!(name:"Very special", run_time: 144)
+      Comedian.create!(name: "Jenny Comedian", age:50, city:"LA")
+      Comedian.create!(name: "Juan Comedian", age:42, city:"Denver")
+      Comedian.create!(name: "Larry IDK", age:42, city:"New York")
 
       visit '/comedians'
       save_and_open_page
@@ -19,6 +18,15 @@ RSpec.describe "as a visitor", type: :feature do
     end
 
       it "should show comedians info in their respective section" do
+
+        bob = Comedian.create(name: "Bob Comedian", age:40, city:"New York").specials.create!(name:"Very special", run_time: 144)
+        jenny = Comedian.create(name: "Jenny Comedian", age:50, city:"LA")
+        juan = Comedian.create(name: "Juan Comedian", age:42, city:"Denver")
+        larry = Comedian.create(name: "Larry IDK", age:42, city:"New York")
+
+        visit '/comedians'
+        save_and_open_page
+
 
       within "#comedian-#{bob.id}" do
         expect(page).to have_content("Bob Comedian")

@@ -3,12 +3,12 @@
     <div class="row">
     <!-- <div class="col-lg-12"> -->
     <div class = "jumbotron">
-      <div class="container">
+      <div class="container" id = comedian-stats>
 
 
         <h1 class = "display-2 text-center" id = "page_title"> Comedians </h1>
         <hr class="my-4">
-        <h1><small class = "text-muted">Statistics</small></h1>
+        <h1><small class = "text-muted" id = "stats">Statistics</small></h1>
         <p> The average age of the comedians is <%= @comedians.average_age %> </p>
         <p> The average run time of all the specials is <%= @specials.average_length %> minutes</p>
         <p> The comedians come from the following cities: <%= @comedians.unique_cities.join(", ") %>.</p>
@@ -40,7 +40,7 @@
             <b>City:</b> <%= comedians.first.city %> <br>
             <form method="post" action="/comedians/<%= comedians.first.id %>/delete">
             <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="delete">
+            <input type="submit" value="Delete" class = "text-white bg-info">
             </form>
             <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
               See specials
@@ -70,9 +70,9 @@
             <img src="<%= comedians[1].image_source %>" class="card-img-top" alt="<%= comedians[1].name %>">
             <b>Age:</b> <%= comedians[1].age %> <br>
             <b>City:</b> <%= comedians[1].city %> <br>
-            <form method="post" action="/comedians/<%= comedians[1].id %>/delete">
+            <form method="post" class = "delete_comedian" action="/comedians/<%= comedians[1].id %>/delete">
             <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="delete">
+            <input type="submit" value="Delete" class = "text-white bg-info">
             </form>
             <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
               See specials
@@ -103,9 +103,9 @@
             <img src="<%= comedians[2].image_source %>" class="card-img-top " alt="<%= comedians[2].name %>">
             <b>Age:</b> <%= comedians[2].age %> <br>
             <b>City:</b> <%= comedians[2].city %> <br>
-            <form method="post" action="/comedians/<%= comedians[2].id %>/delete">
+            <form method="post" class = "delete_comedian" action="/comedians/<%= comedians[2].id %>/delete">
             <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="delete">
+            <input type="submit" value="Delete" class = "text-white bg-info">
             </form>
             <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
               See specials
@@ -144,14 +144,14 @@
       <%@comedians.each do |comedian|  %>
     <div class = "row">
       <div class ="col-md-2 col-md-offset-5 col-center border bg-light">
-    <div class="card" style="width: 18rem;">
+      <div class="card bg-dark text-white" style="width: 18rem;" id = "comedian-<%= comedian.id%>" >
       <h5> <%= comedian.name %> </h5>
       <img src="<%= comedian.image_source %>" class="card-img-top" alt="<%= comedian.name %>">
       <b>Age:</b> <%= comedian.age %> <br>
       <b>City:</b> <%= comedian.city %> <br>
-      <form method="post" action="/comedians/<%= comedian.id %>/delete">
+      <form method="post" class = "delete_comedian" action="/comedians/<%= comedian.id %>/delete">
       <input id="hidden" type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="delete">
+      <input type="submit" value="Delete" class = "text-white bg-info">
       </form>
       <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#seeSpecials" aria-expanded="false" aria-controls="seeSpecials">
         See specials

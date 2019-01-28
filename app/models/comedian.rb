@@ -3,7 +3,25 @@ class Comedian < ActiveRecord::Base
   validates :age, presence: true
   validates :born, presence: true
 
+  has_many :specials
+
+  scope :age, -> (age) { where age: age }
+
   def name_as_kebab
     name.downcase.gsub(/ /, "-")
+  end
+
+  def self.average_age
+    average(:age)
+  end
+
+  def self.unique_cities
+    distinct.pluck(:born)
+  end
+
+  def self.total_specials
+    all.sum do |comedian|
+      comedian.specials.count
+    end
   end
 end

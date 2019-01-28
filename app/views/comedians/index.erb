@@ -1,9 +1,80 @@
-<ul id="comedian-list">
-  <% @comedians.each do |comedian| %>
-  <li><%= comedian.name %></li>
-  <ul class="comedian-attributes" id="<%= comedian.name_as_kebab%>">
-    <li> <%= comedian.age %><% if comedian.deceased %> - Deceased<% end %></li>
-    <li> <%= comedian.born %></li>
-  </ul>
-  <% end %>
-</ul>
+<head>
+  <title>Comedian Index</title>
+</head>
+<body>
+  <section class="navbar navbar-default fixed-top">
+    <header class="container-fluid" id="index-head">
+      <h1>Index</h1>
+      <a href="/">Home</a>
+      <a href="/comedians/new">New Comedian</a>
+    </header>
+  </section>
+
+  <div class="container" id="statistics">
+    <h1 class="row text-center">Statistics</h1>
+    <section class="row">
+      <div class="col" id="stats_averages">
+        <% if @age %> <% @age = @age.round(2) %> <% else %> <% @age = 0 %> <% end %>
+        <h3>Average Age: </h3>
+        <p><%= @age%></p>
+        <% if @length %> <% @length = @length.round(2) %> <% else %> <% @length = 0 %> <% end %>
+        <h3>Average Length of Specials: </h3>
+        <p> <%= @length %></p>
+        <h3>Total Specials: </h3>
+        <p> <%= @total_specials %></p>
+      </div>
+      <div class="col" id="stats_cities">
+        <h3 id="birthplace_banner">Unique Birthplaces: </h3>
+          <% @cities.each do |city| %>
+          <p><%= city %></p>
+          <% end %>
+      </div>
+    </section>
+  </div>
+
+  <section class="container" id="age-form">
+    <p>Filter Age: </p>
+    <form class="querys" action="" method="GET">
+      <select id="age-query" name="age">
+        <% (1..99).to_a.each do |age| %>
+        <option value="<%= age %>"><%= age %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+
+  <section class="container" id="comedian-list">
+    <% @comedians.each do |comedian| %>
+    <div class="comedian-box">
+    <div class="row" id="<%=comedian.name_as_kebab%>">
+      <div class="col">
+        <h1><%= comedian.name %></h1>
+      </div>
+      <div class="col">
+        <h6>Age: </h6>
+        <p><%= comedian.age %><% if comedian.deceased %> - Deceased<% end %></p>
+        <h6>Birthplace: </h6>
+        <p><%= comedian.born %></p>
+        <h6>Number of Specials: </h6>
+        <p><%= comedian.specials.count%></p>
+      </div>
+      <div class="col">
+        <img src="<%= comedian.picture_url %>" alt="<%= comedian.name_as_kebab %>">
+      </div>
+    </div>
+    <div class="row" id="comedian-specials">
+      <% comedian.specials.each do |special| %>
+        <div class="col" id="<%=comedian.name_as_kebab%>-specials">
+          <img src="<%= special.image_url %>" alt="<%= comedian.name_as_kebab %>-<%= special.name_as_kebab %>-picture">
+          <p><%= special.name %> - <%= special.length %>minutes</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+    <% end %>
+  </section>
+
+  <footer class="text-center" id="index-head">Laugh Tracks - TM - </footer>
+</body>

@@ -1,7 +1,33 @@
-<form id='new_comedian_form' action="/comedians" method="post">
-  <p>Enter a new comedian:</p>
-  <input id='Name' type='text' name='comedian[name]'/><br/>
-  <input id='Age' type='integer' name='comedian[age]'/><br/>
-  <input id='City' type='text' name='comedian[city]'/><br/>
-  <input id='Submit' type='submit'/>
-</form>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/new.css">
+</head>
+<body>
+  <!-- <div class="form-wrapper">
+    <form id='new_comedian_form' action="/comedians" method="post">
+      <p>Enter a new comedian:</p>
+      <input id='Name' type='text' name='comedian[name]'/><br/>
+      <input id='Age' type='integer' name='comedian[age]'/><br/>
+      <input id='City' type='text' name='comedian[city]'/><br/>
+      <input id='Submit' type='submit'/>
+    </form>
+  </div> -->
+  <div class="container">
+    <form action="/comedians" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="comedian[name]" placeholder="eg. John Mulaney">
+
+      <label for="age">Age</label>
+      <input type="integer" id="age" name="comedian[age]" placeholder="eg. 36">
+
+      <label for="city">City</label>
+      <input type="text" id="city" name="comedian[city]" placeholder="eg. Chicago">
+
+      <label for="image_url">Image URL</label>
+      <input type="text" id="image_url" name="comedian[image_url]" placeholder="eg. http://www.google.com/...">
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

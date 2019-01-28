@@ -1,6 +1,6 @@
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="/index.css">
 </head>
 <body>
   <div class="header">
@@ -14,7 +14,8 @@
     <% @comedians.each do |comedian| %>
       <div class="comedian-square" id="comedian_<%=comedian.id%>">
         <div class="comedian-info">
-          <p><%= comedian.name %></p>
+          <p class="comedian-name"><%= comedian.name %></p>
+          <img class="thumbnail" src="<%= comedian.image_url %>" alt=" <%= comedian.name %>">
           <p>Age: <%= comedian.age %></p>
           <p>Hometown: <%= comedian.city %></p>
           <p>Number of Specials: <%= Special.count_specials(comedian.id) %></p>
@@ -29,7 +30,10 @@
           <% end %>
         </div>
       </div>
-    <% end %>
+      <% end %>
+      <div id="button-wrapper">
+        <button id="button" onclick="window.location.href = '/comedians/new';">Add a Comedian</button>
+      </div>
   </div>
 </body>
 </html>

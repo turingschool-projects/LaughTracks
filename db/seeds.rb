@@ -5,18 +5,18 @@ Comedian.destroy_all
 Special.destroy_all
 
 comedians = [
-  { name: 'John Mulaney', age: 36, city: 'Chicago' },
-  { name: 'Bill Burr', age: 50, city: 'Canton' },
-  { name: 'Nathan Fielder', age: 35, city: 'Vancouver' },
-  { name: 'Brian Regan', age: 60, city: 'Miami' },
-  { name: 'Anthony Jeselnik', age: 40, city: 'Pittsburgh' },
-  { name: 'Mitch Hedberg', age: 37, city: 'Saint Paul' },
-  { name: 'Mike Birbiglia', age: 40, city: 'Shrewsbury' },
-  { name: 'Dave Chapelle', age: 45, city: 'Washington, D.C.' },
-  { name: 'Hannibal Burress', age: 35, city: 'Chicago' },
-  { name: 'Norm Macdonald', age: 59, city: 'Quebec City' },
-  { name: 'Bo Burnham', age: 28, city: 'Hamilton' },
-  { name: 'Demetri Martin', age: 45, city: 'New York City' }
+  { name: 'John Mulaney', age: 36, city: 'Chicago', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/John_Mulaney_at_PaleyFest_2014.jpg/440px-John_Mulaney_at_PaleyFest_2014.jpg' },
+  { name: 'Bill Burr', age: 50, city: 'Canton', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bill_Burr_by_Gage_Skidmore.jpg/440px-Bill_Burr_by_Gage_Skidmore.jpg' },
+  { name: 'Nathan Fielder', age: 35, city: 'Vancouver', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Nathan_Fielder.jpg/440px-Nathan_Fielder.jpg' },
+  { name: 'Brian Regan', age: 60, city: 'Miami', image_url: 'https://m.media-amazon.com/images/M/MV5BMTUzNzAwOTEyMV5BMl5BanBnXkFtZTcwOTMyNDY4NA@@._V1_UY317_CR25,0,214,317_AL_.jpg' },
+  { name: 'Anthony Jeselnik', age: 40, city: 'Pittsburgh', image_url: 'http://www.gstatic.com/tv/thumb/persons/516825/516825_v9_ba.jpg' },
+  { name: 'Mitch Hedberg', age: 37, city: 'Saint Paul', image_url: 'https://upload.wikimedia.org/wikipedia/en/d/d5/Mitch_Hedberg.jpg' },
+  { name: 'Mike Birbiglia', age: 40, city: 'Shrewsbury', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Mike_Birbiglia.jpg/440px-Mike_Birbiglia.jpg' },
+  { name: 'Dave Chapelle', age: 45, city: 'Washington, D.C.', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Dave_Chappelle_%2842791297960%29_%28cropped%29.jpg/440px-Dave_Chappelle_%2842791297960%29_%28cropped%29.jpg' },
+  { name: 'Hannibal Burress', age: 35, city: 'Chicago', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/7.29.12HannibalBuressByEzmosis.jpg/440px-7.29.12HannibalBuressByEzmosis.jpg' },
+  { name: 'Norm Macdonald', age: 59, city: 'Quebec City', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Norm_Macdonald.jpg/440px-Norm_Macdonald.jpg' },
+  { name: 'Bo Burnham', age: 28, city: 'Hamilton', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Bo_Burnham_Montaclair_Film_Festival_%28cropped%29.jpg/440px-Bo_Burnham_Montaclair_Film_Festival_%28cropped%29.jpg' },
+  { name: 'Demetri Martin', age: 45, city: 'New York City', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Demetri_Martin.jpg/440px-Demetri_Martin.jpg' }
 ]
 
 comedians.each do |comedian|

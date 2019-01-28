@@ -62,7 +62,7 @@ RSpec.describe 'as a visitor', type: :feature do
 
   it 'should see statistics' do
     visit '/comedians'
-    binding.pry
+    
     within "nav" do
       expect(page).to have_content("New York")
       expect(page).to have_content("Los Angeles")

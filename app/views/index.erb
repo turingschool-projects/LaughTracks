@@ -1,0 +1,17 @@
+<title>Comedy Decentrilized</title>
+
+<header> </header>
+
+<body class= "persons">
+<% @comedians.each do |comedian|%>
+  <h1><%= comedian.name %></h1>
+  <ul>
+    <li><%= comedian.age %></li>
+    <li><%= comedian.city %></li>
+  </ul>
+  <h2>Comedy Specials</h2>
+  <ul>
+    
+  </ul>
+<% end %>
+</body>

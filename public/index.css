@@ -1,9 +1,10 @@
 * {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 body {
-  background-color: #102A5A
+  background-color: #102A5A;
+  font-size: 13pt
 }
 
 .header {
@@ -82,7 +83,8 @@ body {
   background-color: white;
   color: black;
   border: 2px solid white;
-  transition-duration: 0.4s
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 #button:hover {

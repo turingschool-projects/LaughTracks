@@ -1,7 +1,39 @@
-<% @comedians.each do |comedian| %>
-  <ul>
-    <li><%= comedian.name %></li>
-    <li><%= comedian.age %></li>
-    <li><%= comedian.city %></li>
-  </ul>
-<% end %>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+  <div class="header">
+    <p>Average Age: <%= @average_age %></p>
+    <p>Average Runtime: <%= @average_runtime %> minutes</p>
+    <p>Comedian Hometowns:</p>
+    <p><%= @city_list %></p>
+    <p>Total Specials: <%= @total_specials %></p>
+  </div>
+  <div class="comedian-list">
+    <% @comedians.each do |comedian| %>
+      <div class="comedian-square" id="comedian_<%=comedian.id%>">
+        <div class="comedian-info">
+          <p class="comedian-name"><%= comedian.name %></p>
+          <img class="thumbnail" src="<%= comedian.image_url %>" alt=" <%= comedian.name %>">
+          <p>Age: <%= comedian.age %></p>
+          <p>Hometown: <%= comedian.city %></p>
+          <p>Number of Specials: <%= Special.count_specials(comedian.id) %></p>
+        </div>
+        <div class="comedian-specials">
+          <% comedian.specials.each do |special| %>
+            <div class="special">
+              <p><%= special.title  %></p>
+              <img class="thumbnail" src="<%= special.image_url %>" alt=" <%= special.title %>">
+              <p><%= special.run_time %> minutes</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+      <div id="button-wrapper">
+        <button id="button" onclick="window.location.href = '/comedians/new';">Add a Comedian</button>
+      </div>
+  </div>
+</body>
+</html>

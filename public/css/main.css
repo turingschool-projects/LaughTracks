@@ -1,0 +1,15 @@
+.jumbotron {
+    font-family: "Palatino Linotype";
+    color: black;
+}
+
+.jumbotron h1{
+  font-weight: bold;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    margin-bottom: 10px;
+}

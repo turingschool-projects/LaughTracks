@@ -12,16 +12,41 @@ RSpec.describe "as a visitor", type: :feature do
       visit '/comedians'
       save_and_open_page
 
+      expect(page).to have_content("Bob Comedian")
+      expect(page).to have_content("Jenny Comedian")
+      expect(page).to have_content("Juan Comedian")
+      expect(page).to have_content("Larry IDK")
+    end
+
+      it "should show comedians info in their respective section" do
+
       within "#comedian-#{bob.id}" do
         expect(page).to have_content("Bob Comedian")
         expect(page).to have_content("40")
         expect(page).to have_content("New York")
       end
 
+      within "#comedian-#{jenny.id}" do
+        expect(page).to have_content("Jenny Comedian")
+        expect(page).to have_content("50")
+        expect(page).to have_content("LA")
+      end
+
+      within "#comedian-#{juan.id}" do
+        expect(page).to have_content("Juan Comedian")
+        expect(page).to have_content("42")
+        expect(page).to have_content("Denver")
+      end
+
+      within "#comedian-#{larry.id}" do
+        expect(page).to have_content("Larry IDK")
+        expect(page).to have_content("42")
+        expect(page).to have_content("New York")
+      end
+    end
+
 
 
   end
-
-end
 
 end

@@ -1,8 +1,12 @@
 body {
   background-color: #778899;
-  color: black;
+  color: #303030;
 }
 
+hr {
+  color: #303030;
+  border-width: thick;
+}
 h1 {
   text-align: center;
   margin-top: 15px;
@@ -22,13 +26,106 @@ h1 {
 }
 
 .city {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .age {
+  font-size: 25px;
+}
+
+.specials-count {
+  font-size: 25px;
+}
+
+.special-name {
   font-size: 20px;
 }
 
-.specials {
+.special-image {
+  height: 200px;
+  width: 200px;
+}
+
+.stats-info {
+  text-align: center;
+}
+
+.inline {
+  position: relative;
+  left: -150px;
+  bottom: -38px;
+}
+
+.comedian-name {
+  text-align: center;
+}
+
+.averages {
+  font-size: 30px;
+}
+
+.stats-headers {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.show-headers {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.specials-image-show {
+  flex: auto;
+}
+
+.show-info {
   font-size: 20px;
+}
+
+#show-image {
+  position: relative;
+  left: 450px;
+}
+
+#statistics {
+  margin-top: 30px;
+  padding-bottom: 40px;
+  border-style: dotted;
+  border-width: thick;
+  border-color: #303030;
+}
+
+#stats-cities {
+  text-align: center;
+  font-size: 15px;
+}
+
+#specials-section {
+  display: inline;
+  float: right;
+}
+#new-comedian {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  height: 500px;
+  width: 75%;
+  background-color: black;
+}
+
+#form-h1 {
+  padding-top: 20px;
+  color: white;
+}
+
+
+#new-comedian-form {
+  color: white;
+  position: relative;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  margin: 0 50px 25px 50px;
+  width: 75%;
 }

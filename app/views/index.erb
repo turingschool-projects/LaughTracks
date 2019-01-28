@@ -1,35 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Laugh Tracks</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Comedians
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <% @comedians.each do |comedian| %>
-            <a class="dropdown-item" href="#"><%= comedian.name %> </a>
-          <% end %>
-          <div class="dropdown-divider"></div>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-
 <div class="container-fluid">
+  <section id="statistics">
+    <h1>Statistics</h1>
+    <div class="row">
+      <div class="col-md-6 stats-info">
+        <p class="averages"><span class="stats-headers"> Average Age: </span> <%= @comedians.average_age %></p>
+        <p class="averages"><span class="stats-headers"> Average Special Runtime: </span> <%= @specials.average_runtime %> Minutes</p>
+        <p class="averages"><span class="stats-headers"> Total Specials: </span> <%= @specials.count%> </p>
+      </div>
+      <div class="col-md-6 stats-cities">
+        <article id="stats-cities"> <p class="stats-headers">Comedian Cities: </p> <%= @comedians.get_cities %> </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="container-fluid" id="comedian-section">
   <h1><%= "All Comedians" %></h1>
   <div class="row">
     <% @comedians.each do |comedian| %>
@@ -39,13 +24,20 @@
         <p class="name"><%= comedian.name %> </p>
         <p class="age">Age: <%= comedian.age %> </p>
         <p class="city">Birthplace: <%= comedian.city %> </p>
-        <p>Specials:
-          <% comedian.specials.each do |special| %>
-            <span class="specials">  <%= special.name %> </span>
-            </p>
+        <p class="specials-count">Number of Specials: <%= comedian.specials.count %></p>
+        <article class="specials-section">
+          <p class="averages">Specials:</p>
+          <% @specials.each do |special| %>
+            <% if special.comedian_id == comedian.id %>
+            <img class="special-image" src="<%= special.image_url %>" alt"<%=special.name%>"/>
+              <p class="special-name">  <%= special.name %> </p>
+              <p class="special-runtime">Runtime: <%= special.run_time %> </p>
+              </article>
+            <% end %>
           <% end %>
+          <hr>
       </ul>
     </section>
     <% end %>
   </div>
-</div>
+</section>

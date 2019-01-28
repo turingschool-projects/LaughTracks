@@ -1,0 +1,19 @@
+
+<section id="new-comedian">
+  <h1 id="form-h1">Add A New Comedian</h1>
+  <form action="/comedians" method="post" id="new-comedian-form">
+    <div class="form-group">
+      <label class="inline" for="comedian[name]">Comedian Name</label>
+      <input name="comedian[name]" type="name" class="form-control" id="comedian[name]" aria-describedby="nameHelp" placeholder="Enter Comedian Name">
+    </div>
+    <div class="form-group">
+      <label class="inline" for="comedian[age]">Comedian Age</label>
+      <input name="comedian[age]" type="age" class="form-control" id="comedian[age]" placeholder="Enter Comedian Age">
+    </div>
+    <div class="form-group">
+      <label class="inline" for="comedian[city]">Comedian City</label>
+      <input name="comedian[city]" type="age" class="form-control" id="comedian[city]" placeholder="Enter Comedian City">
+    </div>
+    <button name="submit" type="submit" class="btn btn-primary">Add Comedian</button>
+  </form>
+</section>

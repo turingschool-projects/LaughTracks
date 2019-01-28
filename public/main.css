@@ -1,0 +1,100 @@
+html {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-image: url('https://gortoncenter.org/wp-content/uploads/2018/04/stagefree.jpeg');
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #232528;
+  height: 13vh;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3rem;
+  background: #2A2A72;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 12px 20px;
+  color: #E7E247;
+  text-shadow: 2px 1px #FFA400;
+}
+
+nav {
+  background: #2A2A72;
+  color: #EAF6FF;
+  height: 4vh;
+  padding-left: 10px;
+  padding-top: 13px;
+}
+
+a {
+  font-size: 17px;
+  text-align: center;
+  padding: 10px;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 96vw;
+  justify-content: space-around;
+  overflow: scroll;
+  height: 83vh;
+}
+
+article {
+  margin: 4vh 0px;
+  text-align: center;
+  color: #232528;
+  background-image: radial-gradient(#009FFD, #5C80BC);
+  border-radius: 3px;
+  width: 19rem;
+  height: 64vh;
+  overflow: scroll;
+}
+
+article:hover {
+  transform: scale(1.05) translate(-2%, -2%);
+  box-shadow: 5px 10px 10px -2px #FFA400;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+img {
+  width: 100px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.new-comedian {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 28vw;
+  height: 50vh;
+  border-radius: 3px;
+  background: #009FFD;
+}
+
+.add {
+  background: #3D3D7E;
+  color: #EAF6FF;
+  text-decoration: none;
+}

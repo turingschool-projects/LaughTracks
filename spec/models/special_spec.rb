@@ -13,4 +13,19 @@ RSpec.describe Special do
       end
     end
   end
+
+  describe 'Class Methods' do
+    before :each do
+      Special.create(name: 'Special 1', runtime: 64, thumbnail: 'img', comedian_id: 1)
+      Special.create(name: 'Special 2', runtime: 85, thumbnail: 'img', comedian_id: 1)
+      Special.create(name: 'Special 3', runtime: 41, thumbnail: 'img', comedian_id: 1)
+    end
+
+    it 'should average the length of runtimes' do
+      expected = 63
+      actual = Special.average_runtime
+      
+      expect(actual).to eq(expected)
+    end
+  end
 end

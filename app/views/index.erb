@@ -25,15 +25,17 @@
         <p class="age">Age: <%= comedian.age %> </p>
         <p class="city">Birthplace: <%= comedian.city %> </p>
         <p class="specials-count">Number of Specials: <%= comedian.specials.count %></p>
-        <article class="specials-section">Specials:
+        <article class="specials-section">
+          <p class="averages">Specials:</p>
           <% @specials.each do |special| %>
             <% if special.comedian_id == comedian.id %>
+            <img class="special-image" src="<%= special.image_url %>" alt"<%=special.name%>"/>
               <p class="special-name">  <%= special.name %> </p>
               <p class="special-runtime">Runtime: <%= special.run_time %> </p>
-              <img class="special-image" src="<%= special.image_url %>" alt"<%=special.name%>"/>
               </article>
             <% end %>
           <% end %>
+          <hr>
       </ul>
     </section>
     <% end %>

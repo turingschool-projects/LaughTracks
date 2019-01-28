@@ -1,11 +1,25 @@
-<div class="container-fluid">
-  <h1 id="comedian-name"> <%=@comedian.name%> </h1>
+<div class="container">
   <div class="row">
-    <section class="col-md-12 image-section">
-      <img src="<%=@comedian.image_url%>" alt="<%=@comedian.name%>">
+    <section class="col-md-12 comedian-show">
+      <h1> <%=@comedian.name%> </h1>
+      <img id="show-image" src="<%=@comedian.image_url%>" alt="<%=@comedian.name%>">
+      <h1> Age: <%= @comedian.age%> </h1>
+      <h1> City: <%= @comedian.city%> </h1>
     </section>
-      <h1> <%= @comedian.age%> </h1>
-      <h1> <%= @comedian.city%> </h1>
   </div>
 
+  <hr>
+
+  <div class="container-fluid flex">
+    <h1>Specials</h1>
+    <div class="row">
+      <% @comedian.specials.each do |special| %>
+      <div class="col-md-4">
+          <img class="specials-image-show" src="<%=special.image_url%>" alt="<%=special.name%>">
+          <p class="show-info"><span class="show-headers"> Title: </span> <%= special.name %></p>
+          <p class="show-info"><span class="show-headers"> Runtime: </span> <%= special.run_time %> Minutes</p>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,17 +1,49 @@
-<h1>All Comedians</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cardo" rel="stylesheet">
+  </head>
+
+<body>
+
+<header id="statistics">
+  <h1>Statistics</h1>
+  <nav>
+    <ul>
+      <li>Average age: <%= @comedians.average_age.round(1) %></li>
+      <li>Average length: <%= @specials.average_length %></li>
+      <li>Total Specials Count: <%= @specials.count %></li>
+      <p><li>Cities: <%= @comedians.unique_cities%></li></p>
+    </ul>
+  </nav>
+</header>
 
 <section id="comedians">
   <% @comedians.each do |comedian| %>
 
     <h3><%= comedian.name %></h3>
-      <p>Age: <%= comedian.age %></p>
-      <p>City: <%= comedian.city %></p>
-      <p>Specials: <% comedian.specials.each do |special|%>
-        <ul>
-          <li>Name: <%= special.name %> </li>
-          <li>Length: <%= special.length %> </li>
-          <li><img src= <%= special.image %>> </li>
-        </ul>
-        <% end %></p>
+    <section class="comedian">
+    <article class=info>
+      <ul>
+        <li>Age: <%= comedian.age %></li>
+        <li>City: <%= comedian.city %></li>
+        <li>TV Specials: <%= comedian.specials.count %></article></li>
+      </ul>
+    <img class=image src= <%= comedian.image %>>
+    </section>
+  <section class="specials">
+    <article class=specials><% comedian.specials.each do |special|%>
+      <ul>
+        <li><p class=special_name> <%= special.name %> (<%= special.length %>')</p>
+        <img class=special_image src= <%= special.image %>> </li>
+      </ul>
+      <% end %></article>
+      </section>
     <% end %>
+
 </section>
+</body>
+</html>

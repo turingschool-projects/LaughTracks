@@ -1,0 +1,108 @@
+body {
+  background-color: #EDF2F4;
+}
+
+body {
+  font-family: 'Cardo', sans-serif;
+}
+
+header {
+  background: #2274A5;
+  color: white;
+  height: 180px;
+  padding: 0 20px;
+}
+
+header h1 {
+  float: left;
+  padding-top: 1rem;
+  font-size: 25px;
+}
+
+header nav {
+  float: right;
+  padding-top: 1rem;
+}
+
+nav li {
+  display: inline-block;
+  padding: 17px 10px;
+}
+
+h3 {
+  font-size: 30px;
+  background: #F06449;
+  padding: 17px 10px;
+  text-align: center;
+}
+.comedian {
+  display: grid;
+  grid-template-columns: 50% 50% auto ;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.info li {
+  font-size: 30px;
+  padding: 17px 10px;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+
+.specials {
+  background-color: #EDE6E3;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.special_name {
+  font-weight: bold;
+  display: block;
+  margin-left: 3rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.special_image {
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 3rem;
+  }
+
+  .new_comedian {
+    background: #2274A5;
+    color: white;
+    height: 80px;
+    padding: 0 20px;
+    padding-top: 2rem;
+    font-size: 30px;
+  }
+
+  .create_comedian {
+    background-image: url("images/audience.jpg");
+  }
+
+  .form {
+    background: #F06449;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    font-size: 30px;
+  }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cardo" rel="stylesheet">
+  </head>
+
+<body class=create_comedian>
+
+<h1 class=new_comedian>Create a new Comedian</h1>
+
+<form class=form action="/comedians" method="POST">
+
+  <br>
+
+  <input type="text" name="comedian[name]" value="Name">
+  <input type="integer" name="comedian[age]" value="Age">
+  <input type="text" name="comedian[city]" value="City">
+  <input type="submit" value="Create Comedian">
+</form>
+
+</body>
+</html>

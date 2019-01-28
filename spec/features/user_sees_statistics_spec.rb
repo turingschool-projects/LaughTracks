@@ -1,4 +1,5 @@
-RSpec.describe "user sees comedian specials info", type: :feature do
+RSpec.describe "user sees comedian statistics", type: :feature do
+
   before :each do
     Comedian.create(name: "Ellen DeGeneres", age: 61, city: "Metairie")
     Comedian.create(name: "Anjelah Johnson-Reyes", age: 36, city: "San Jose")
@@ -25,21 +26,32 @@ RSpec.describe "user sees comedian specials info", type: :feature do
   end
 
   context "they visit /comedians" do
-    it "they see comedian's special's name" do
+    it "they see average age of comedians" do
       visit '/comedians'
 
-      within '.comedian_info' do
-        expect(page).to have_content("Big Ass Jokes")
-        expect(page).to_not have_content("Mork & Mindy")
+      within '#avg_age' do
+      expect(page).to have_content(51)
       end
     end
+  end
 
-    it "they see comedian's special's length" do
+  context "they visit /comedians" do
+    it "total number of specials" do
       visit '/comedians'
 
-      within '.comedian_info' do
+      within '#total_num' do
+        # save_and_open_page
+        expect(page).to have_content(10)
+      end
+    end
+  end
+
+  context "they visit /comedians" do
+    it "average runtime of specials" do
+      visit '/comedians'
+
+      within '#avg_runtime' do
         expect(page).to have_content(68)
-        expect(page).to_not have_content(240)
       end
     end
   end

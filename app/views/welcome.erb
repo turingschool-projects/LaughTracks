@@ -6,10 +6,10 @@
     <h1 id="greeting">Welcome to Comedians!!</h1>
       <img src="/public/laughing-monkey-emoji.png" alt="laughing monkey emoji" />
       <h2><b>Statistics</b></h2>
-      <p>Average Age: <%= Comedian.average_age %></p>
-        <p>Average TV Special Run Time: <%= Special.run_time %></p>
+      <p id="avg_age">Average Age: <%= Comedian.average_age %></p>
+        <p id="avg_runtime">Average TV Special Run Time: <%= Special.run_time %></p>
         <p>Cities Comedians Were Born In: <%= Comedian.cities %></p>
-        <p>Total Number of TV Specials: <%= Special.total_count_of_specials %></p>
+        <p id="total_num">Total Number of TV Specials: <%= Special.total_count_of_specials %></p>
     </header>
     <div class="comedian_info">
       <% @comedians.each do |comedian| %>

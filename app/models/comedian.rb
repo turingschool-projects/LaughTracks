@@ -13,13 +13,4 @@ class Comedian < ActiveRecord::Base
     pluck(:city).uniq
   end
 
-  # def self.sort_comedians_by(param)
-  #   if param
-  #     if param[:age]
-  #       where(age: param[:age])
-  #     end
-  #   else
-  #     return all
-  #   end
-  # end
 end

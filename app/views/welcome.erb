@@ -3,9 +3,32 @@
   </head>
   <body>
     <header>
-    <h1>Welcome to Comedians!!</h1>
+    <h1 id="greeting">Welcome to Comedians!!</h1>
+      <img src="/public/laughing-monkey-emoji.png" alt="laughing monkey emoji" />
+      <h2><b>Statistics</b></h2>
+      <p id="avg_age">Average Age: <%= Comedian.average_age %></p>
+        <p id="avg_runtime">Average TV Special Run Time: <%= Special.run_time %></p>
+        <p>Cities Comedians Were Born In: <%= Comedian.cities %></p>
+        <p id="total_num">Total Number of TV Specials: <%= Special.total_count_of_specials %></p>
     </header>
-    <nav>
-      <img src="../images/laughing-monkey-emoji.png" alt="laughing monkey emoji" />
-    </nav>
+    <div class="comedian_info">
+      <% @comedians.each do |comedian| %>
+        <span>
+        <ul>
+          <li><b>Name:</b> <%= comedian.name %></li>
+          <li><b>Age:</b> <%= comedian.age %></li>
+          <li><b>City:</b> <%= comedian.city %></li>
+          <% @specials.each do |special| %>
+          <% if special.comedian_id == comedian.id %>
+          <li><b>Special Name:</b><%= special.special_name %></li>
+          <li><b>Run Time</b><%= special.length %></li>
+          <li><img src=<%= special.image_location %> /></li>
+          <% end %>
+          <% end %>
+        </ul>
+      </span>
+
+        <% end %>
+    </div>
+
   </body>

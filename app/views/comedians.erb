@@ -14,6 +14,7 @@
   </div>
 </div>
 
+<!-- Statistics Bar -->
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Statistics</h1>
@@ -26,6 +27,7 @@
     </p>
   </div>
 </section>
+<!-- End Statistics Bar -->
 
 <div class="album py-5 bg-light">
   <div class="container">
@@ -35,19 +37,23 @@
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <div class="card-pic-box">
-              <img id="card-image" class="card-img-top" src="<%=comedian.image%>" alt="<%= comedian.name %>">
+              <a href="/comedians/<%= comedian.id %>">
+              <img id="card-image" class="card-img-top" src="<% if comedian.image %> <%= comedian.image %> <% else %> https://capestylemag.com/wp-content/uploads/2017/11/comedy-3-1068x910.jpg <% end %>" alt="<%= comedian.name %>">
+              </a>
             </div>
             <div class="card-body">
               <p class="card-text"><%= comedian.name %><br/>Age: <%= comedian.age %>
               </p>
               <div id="collapse-item" class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#modal-id-<%=comedian.id%>">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#modal-id-<%= comedian.id %>">Specials</button>
+                  <a href='/comedians/<%= comedian.id %>'><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button><a/>
                 </div>
                 <small class="text-muted">
                   <%= comedian.specials.count %><% if comedian.specials.count == 1 %> special <% else %> specials <% end %>
                 </small>
+
+                <!-- Modal for Specials pop-up -->
                 <div class="modal fade" id="modal-id-<%=comedian.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -77,6 +83,9 @@
                     </div>
                   </div>
                 </div>
+                <!-- End modal for Specials pop-up -->
+
+
               </div>
             </div>
           </div>

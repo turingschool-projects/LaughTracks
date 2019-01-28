@@ -1,15 +1,120 @@
-<div class="comedian-info">
-  <h3><%= @comedian.name %></h3>
-  <img src="<% if @comedian.image %> <%= @comedian.image %> <% else %> https://capestylemag.com/wp-content/uploads/2017/11/comedy-3-1068x910.jpg <% end %>" height="42" width="42">
-  <p>Age: <%= @comedian.age %></p>
-  <p>Birthplace: <%= @comedian.city %></p>
-  <p>Specials (<%= @comedian.specials.count %> total):
-    <ul> <% @comedian.specials.each do |special| %>
-    <li><img src="<%= special.thumbnail %>" height="42" width="42">
-      "<%= special.name %>," <%= special.run_time %> mins</li>
-    <% end %></ul>
-  <br/>
+<div class="navbar navbar-dark bg-dark shadow-sm">
+  <div class="container d-flex justify-content-between">
+    <a href='/comedians' class="navbar-brand d-flex align-items-center">
+      <!-- <img src='/images/mic-icon.jpg'> -->
+      <!-- <img src='/images/mic-icon.svg'> -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2" focusable="false" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+      <strong>Laugh Tracks</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
 </div>
 
-<p>Edit this comedian <a href="/comedians/new">here</a>.</p>
-<p>Add a new special <a href="/comedians/new">here</a>.</p>
+<div class="album py-5 bg-light">
+  <div id="show-container" class="show-container">
+
+    <div id="show-container" class="row">
+        <div class="show-card">
+          <div id="show-card" class="card mb-4 shadow-sm">
+            <div class="card-pic-box">
+              <img id="show-image" class="card-img-top" src="<%=@comedian.image%>" alt="<%= @comedian.name %>">
+            </div>
+            <div class="card-body">
+              <p class="card-text"><%= @comedian.name %><br/>Age: <%= @comedian.age %><br/>Birthplace: <%= @comedian.city %></p>
+              <div class="card-specials">
+                <p class="card-specials">Comedy Specials:</p>
+                <% @comedian.specials.each do |special| %>
+                <p>
+                  <div class="thumbnail-box">
+                    <img class="special-thumbnail" src="<%= special.thumbnail %>">
+                  </div><br/>
+                  <div class="special-info">
+                  "<%= special.name %>," <%= special.run_time %> mins
+                  </div>
+                <p>
+                </p>
+                <% end %>
+              </div>
+
+            <div class="show-buttons">
+              <form action="/comedians/<%= @comedian.id %>" method="POST">
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#edit-id-<%= @comedian.id %>">Edit</button>
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="delete" class="btn btn-sm btn-outline-secondary" action="/comedians/<%= @comedian.id %>" method="DELETE" class="btn btn-primary" data-dismiss="modal">Delete</button>
+              </form>
+            </div>
+
+            <div class="modal fade" id="edit-id-<%= @comedian.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="comedianName">Edit <%= @comedian.name %></h5><br/>
+                  </div>
+                  <div class="modal-body">
+
+                    <form action="/comedians/<%= @comedian.id %>" method="put" class="new-comedian-form">
+                      <div class="form-group col-md-6">
+                        <label for="name">Comedian</label>
+                        <input type="string" name='comedian[name]' class="form-control" id="comedianName" placeholder="<%= @comedian.name %>">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="age">Age</label>
+                        <input type="integer" name='comedian[age]' class="form-control" id="comedianAge" placeholder="<%= @comedian.age %>">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="city">City</label>
+                        <input type="string" name='comedian[city]' class="form-control" id="comedianCity" placeholder="<%= @comedian.city %>">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="delete" action="/comedians/<%= @comedian.id %>" method="delete" class="btn btn-primary" data-dismiss="modal">Delete</button>
+                    </form>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+                <div class="modal fade" id="modal-id-<%=@comedian.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="@comedianName"><%= @comedian.name %> | Age: <%= @comedian.age %> </h5><br/>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p class="modal-specials">Comedy Specials:</p>
+                        <% @comedian.specials.each do |special| %>
+                        <p>
+                          <div class="thumbnail-box">
+                            <img class="special-thumbnail" src="<%= special.thumbnail %>">
+                          </div><br/>
+                          <div class="special-info">
+                          "<%= special.name %>," <%= special.run_time %> mins
+                          </div>
+                        </p>
+                        <% end %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>

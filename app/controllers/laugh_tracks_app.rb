@@ -38,9 +38,23 @@ class LaughTracksApp < Sinatra::Base
     erb :new
   end
 
-  post '/comedians/new' do
+  post '/comedians' do
     comedian = Comedian.new(params[:comedian])
     comedian.save
+    redirect '/comedians'
+  end
+
+  set :method_override, true
+
+  put '/comedians/:id' do |id|
+    comedian = Comedian.find_by(id: params[:id])
+    comedian.update(params[:comedian])
+    comedian.save
+    redirect "/comedians/#{id}"
+  end
+
+  delete '/comedians/:id' do |id|
+    Comedian.destroy(id.to_i)
     redirect '/comedians'
   end
 

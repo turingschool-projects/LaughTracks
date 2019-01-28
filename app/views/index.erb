@@ -8,11 +8,14 @@
 </header>
 
 <nav>
-  <p>Statistics</p>
-    <p>Average Age: <%= @comedians.average(:age).to_i %></p>
-    <p>Average Runtime: <%= @specials.average_runtime %></p>
-    <p>Total Specials: <%= @specials.count %></p>
-    <p>Cities: <%= @comedians.distinct.pluck(:city) %></p>
+  <a class='add' href='/comedians/new'>Add a Comedian</a>
+  <a>Statistics</a>
+  <a>Average Age: <%= @comedians.average(:age).to_i %></a>
+  <a>Average Runtime: <%= @specials.average_runtime %></a>
+  <a>Total Specials: <%= @specials.count %></a>
+  <a>Cities: <% @cities.each do |city| %>
+  <%= city %>
+  <% end %></a>
 </nav>
 
 <section>
@@ -32,6 +35,8 @@
       <li><%= special.name %></li>
       <li>Runtime: <%= special.runtime %></li>
       <img src=<%= special.thumbnail %>>
+      <br>
+      <br>
     <% end %>
     </ul>
   </article>

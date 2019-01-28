@@ -4,7 +4,7 @@ html {
 
 body {
   margin: 0;
-  background: #232528;
+  background-image: url('https://gortoncenter.org/wp-content/uploads/2018/04/stagefree.jpeg');
 }
 
 header {
@@ -27,12 +27,17 @@ h1 {
 }
 
 nav {
-  display: flex;
-  align-items: center;
   background: #2A2A72;
   color: #EAF6FF;
   height: 4vh;
   padding-left: 10px;
+  padding-top: 13px;
+}
+
+a {
+  font-size: 17px;
+  text-align: center;
+  padding: 10px;
 }
 
 section {
@@ -49,10 +54,11 @@ article {
   margin: 4vh 0px;
   text-align: center;
   color: #232528;
-  background: #009FFD;
+  background-image: radial-gradient(#009FFD, #5C80BC);
   border-radius: 3px;
   width: 19rem;
   height: 64vh;
+  overflow: scroll;
 }
 
 article:hover {
@@ -66,5 +72,29 @@ ul {
 }
 
 img {
-  width: 10%;
+  width: 100px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.new-comedian {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 28vw;
+  height: 50vh;
+  border-radius: 3px;
+  background: #009FFD;
+}
+
+.add {
+  background: #3D3D7E;
+  color: #EAF6FF;
+  text-decoration: none;
 }

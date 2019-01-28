@@ -32,7 +32,7 @@ RSpec.describe "as a visitor", type: :feature do
 
     within '#mitch-hedberg-specials' do
       expect(page).to have_content("Comedy Central Presents")
-      expect(page).to have_content("30 minutes")
+      expect(page).to have_content("30minutes")
     end
   end
 

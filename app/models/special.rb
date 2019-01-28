@@ -7,7 +7,7 @@ class Special < ActiveRecord::Base
     name.downcase.gsub(/ /, "-")
   end
 
-  def self.average_length
-    average(:length)
+  def self.average_length(comedians)
+    where(comedian_id: comedians.pluck(:id)).average(:length)
   end
 end

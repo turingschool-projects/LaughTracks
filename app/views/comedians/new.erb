@@ -1,8 +1,21 @@
-<h1>New Comedian</h1>
+<head>
+  <title>New Comedian</title>
+</head>
+<body>
+  <section class="navbar navbar-default fixed-top">
+    <header class="container-fluid" id="index-head">
+      <h1>New</h1>
+      <a href="/">Home</a>
+      <a href="/comedians/new">New Comedian</a>
+    </header>
+  </section>
+<div class="container h-100 d-flex justify-content-center">
 <form id="new_comedian" action="" method="post">
-  <input type="text" name="comedian[name]" value="Name">
-  <input type="text" name="comedian[age]" value="Age">
-  <input type="text" name="comedian[born]" value="Birthplace (city, state)">
-  <input type="text" name="comedian[picture_url]" value="Picture URL (optional)">
-  <input type="submit" name="" value="Submit">
+  <input class="form-control" type="text" name="comedian[name]" value="Name">
+  <input class="form-control" type="text" name="comedian[age]" value="Age">
+  <input class="form-control" type="text" name="comedian[born]" value="Birthplace (city, state)">
+  <input class="form-control" type="text" name="comedian[picture_url]" value="Picture URL (optional)">
+  <input class="btn btn-primary" type="submit" name="" value="Submit">
 </form>
+</div>
+</body>

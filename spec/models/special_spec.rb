@@ -20,7 +20,7 @@ RSpec.describe Special do
         bob.specials.create(name: "special 1", length: 20)
         bob.specials.create(name: "special 1", length: 30)
 
-        expect(Special.average_length).to eq(20)
+        expect(Special.average_length(Comedian.all)).to eq(20)
       end
     end
   end

@@ -1,0 +1,85 @@
+body {
+    padding-top: 65px;
+    height: 100%;
+    background: #2b2d38;
+}
+
+#index-head {
+  background-color: #374b69;
+  color: #d9f9f1;
+}
+
+#index-head a {
+  text-align: right;
+}
+
+#stats_averages {
+  overflow-y: scroll;
+  text-align: center;
+  height:65px;
+}
+
+#stats_cities {
+  overflow-y: scroll;
+  text-align: center;
+  height:65px;
+}
+
+#age-form {
+  height: 50;
+}
+
+.querys {
+  padding: 10px;
+  align-self: right;
+}
+
+#comedian-list {
+  padding-top: 20px;
+  overflow-y: scroll;
+  height: 465px;
+}
+
+#comedian-list img {
+  height: 200px;
+  width: 200px;
+}
+
+#comedian-specials {
+  overflow-x: scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #8ea8c3;
+}
+
+p {
+  color: ivory;
+}
+
+#stats_averages {
+  background-color: #517b98;
+}
+
+#stats_cities {
+  background-color: #517b98;
+}
+
+#comedian-list {
+  background-color: #40424c;
+}
+
+.comedian-box {
+  border-style: solid;
+  border-width: 5px;
+  margin: 10px;
+}
+
+footer {
+  height: 50px;
+}

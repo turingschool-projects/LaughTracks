@@ -50,19 +50,19 @@ RSpec.describe Comedian do
       end
     end
 
-    describe '.special_length_average' do
-      it 'return the average length of specials based on a selection of comedians' do
-        comedian = Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 10)
-        comedian.specials.create(name: "spec 1", length: 10)
-        comedian.specials.create(name: "spec 2", length: 30)
-
-        expect(Comedian.special_length_average).to eq(20)
-
-        comedian_2 = Comedian.create(name: 'bob bob', born: 'St. Paul', age: 10)
-        comedian_2.specials.create(name: "spec 3", length: 40)
-
-        expect(Comedian.special_length_average).to eq(30)
-      end
-    end
+    # describe '.special_length_average' do
+    #   it 'return the average length of specials based on a selection of comedians' do
+    #     comedian = Comedian.create(name: 'Mitch Hedberg', born: 'St. Paul', age: 10)
+    #     comedian.specials.create(name: "spec 1", length: 10)
+    #     comedian.specials.create(name: "spec 2", length: 30)
+    #
+    #     expect(Comedian.special_length_average).to eq(20)
+    #
+    #     comedian_2 = Comedian.create(name: 'bob bob', born: 'St. Paul', age: 10)
+    #     comedian_2.specials.create(name: "spec 3", length: 40)
+    #
+    #     expect(Comedian.special_length_average).to eq(30)
+    #   end
+    # end
   end
 end

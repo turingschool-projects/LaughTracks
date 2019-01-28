@@ -13,3 +13,17 @@
     object-fit: cover;
     margin-bottom: 10px;
 }
+
+body{
+
+  background-color: #f8f9fa;
+}
+
+
+/*
+.delete_comedian {
+  background-color:  #17a2b8;
+  color: white;
+  width: 50%;
+
+} */

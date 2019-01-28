@@ -15,4 +15,23 @@ class LaughTracksApp < Sinatra::Base
     erb :"comedians/index"
   end
 
+  get '/comedians/new' do
+    erb :'comedians/new'
+  end
+
+  post '/comedians' do
+    Comedian.create(params[:comedian])
+    redirect '/comedians'
+  end
+
+  get '/comedians/:id' do
+    @comedian = Comedian.find(params[:id])
+    erb :show
+  end
+
+  delete '/comedians/:id/delete' do |id|
+      Comedian.destroy(id.to_i)
+      redirect '/comedians'
+  end
+
 end

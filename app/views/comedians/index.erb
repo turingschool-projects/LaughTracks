@@ -1,0 +1,30 @@
+<h1>Comedians</h1>
+
+<article id="stats">
+  <h2>Stats</h2>
+  <ul>
+    <li>Average Age: <% @average_age %></li>
+    <li>Total Specials: <% @specials.count %></li>
+    <li>Average Special Length: <% @average_length %> (It's always 70 :))</li>
+    <li>All Cities: <% @unique_cities %></li>
+  </ul>
+</article>
+
+  <% @comedians.each do |comedian| %>
+    <section id="comedian-<%= comedian.id %>">
+      <ul>
+        <li><%= comedian.name %></li>
+        <li><%= comedian.age %></li>
+        <li><%= comedian.city %></li>
+        <% comedian.specials.each do |special| %>
+      <li> Specials:
+      <ul>
+        <li> <%= special.name %> </li>
+        <li> <%= special.length %> </li>
+        <li> <img class="special image" src=" <%= special.image %>"> </li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+  </section>
+  <% end %>

@@ -1,0 +1,16 @@
+<% @comedians.each do |comedian| %>
+<ul>
+  <li><%= comedian.name %></li>
+  <li>Age: <%= comedian.age %></li>
+  <li>Home Town: <%= comedian.home_town %></li>
+</ul>
+<% end %>
+
+
+<% @specials.each do |special| %>
+<ul>
+  <li><%= special.name %></li>
+  <li>Run Time: <%= special.length %></li>
+  <li>URL: <%= special.thumbnail %></li>
+</ul>
+<% end %>

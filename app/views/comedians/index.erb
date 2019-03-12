@@ -1,7 +1,28 @@
-<% @comedians.each do |comedian| %>
-<ul>
-  <li>Name: <%= comedian.name %></li>
-  <li>Age: <%= comedian.age %></li>
-  <li>City: <%= comedian.city %></li>
-</ul>
-<% end %>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <title>Comedians</title>
+  <link rel="stylesheet" href="../css/reset.css" title="text/css" />
+  <link rel="stylesheet" href="../css/main.css" title="text/css" />
+</head>
+
+<body>
+  <section>
+    <h1>Statistics</h1>
+  </section>
+  <nav>
+    <% @comedians.each do |comedian| %>
+      <a href="#<%= comedian.name %>"><%= comedian.name %></a>
+    <% end %>
+  </nav>
+
+  <% @comedians.each do |comedian| %>
+  <article id="<%= comedian.name %>">
+    <h3><%= comedian.name %></h3>
+    <ul>
+      <li>Age: <%= comedian.age %></li>
+      <li>City: <%= comedian.city %></li>
+    </ul>
+  </article>
+  <% end %>
+</body>

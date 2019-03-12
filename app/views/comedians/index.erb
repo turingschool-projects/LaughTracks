@@ -1,16 +1,29 @@
+<!-- - the average age of all comedians on the page -->
+<!-- - the average run length of every TV special on the page -->
+<!-- - a unique list of cities for each comedian on the page -->
+<ul>
+  <li>Average Comedian Age: <%= @comedians_average_age %></li>
+  <li>Average Run Length of TV Specials: <%= @average_special_length %> mins</li>
+  <li>Unique Cities: <% %>
+  <% @unique_home_towns.each do |comedian| %>
+  <li><%= comedian.home_town %></li>
+  <% end %>
+</ul>
+
+
 <% @comedians.each do |comedian| %>
 <ul>
   <li><%= comedian.name %></li>
   <li>Age: <%= comedian.age %></li>
   <li>Home Town: <%= comedian.home_town %></li>
-</ul>
-<% end %>
-
-
-<% @specials.each do |special| %>
-<ul>
-  <li><%= special.name %></li>
-  <li>Run Time: <%= special.length %></li>
-  <li>URL: <%= special.thumbnail %></li>
+  <% @specials.each do |special| %>
+    <% if special.comedian_id == comedian.id %>
+    <ul>
+      <li>Special Name: <%= special.name %></li>
+      <li>Run Time: <%= special.length %> mins</li>
+      <li>URL: <%= special.thumbnail %></li>
+    </ul>
+    <% end %>
+  <% end %>
 </ul>
 <% end %>

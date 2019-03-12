@@ -14,6 +14,8 @@ Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require fil
 require File.join(APP_ROOT, 'config', 'database')
 
 # configure LaughTracks settings
+SINATRA_ACTIVESUPPORT_WARNING=false
+
 class LaughTracksApp < Sinatra::Base
   set :method_override, true
   set :root, APP_ROOT

@@ -1,0 +1,71 @@
+body {
+  font-family: arial, sans-serif;
+  background-color: #593651;
+}
+
+header {
+  background: #A65293;
+  width: 100%;
+  color: #593651;
+  border-radius: 15px;
+}
+h1 {
+  text-align: center;
+}
+
+#statistics {
+    width: 100%;
+}
+
+th{
+  color: #E3F7DF;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+td{
+  color: #E3F7DF;
+  text-align: center;
+  font-size: 44px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+#comedian {
+  margin-top: 15px;
+  display: inline-block;
+  color: #E3F7DF;
+  width: 100%;
+  background: #44593F;
+  border-radius: 15px;
+}
+
+#specials {
+  display:inline-block;
+  text-align: center;
+  color: #E3F7DF;
+  width: 100%;
+  background: #8BA685;
+  border-radius: 15px;
+  height: 200px;
+}
+
+img {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10%;
+  float: left;
+  border-radius: 50%;
+  width: 15%;
+  height: 250px;
+  object-fit: cover;
+}
+
+p {
+  padding-top: 2%;
+  padding-bottom: 1%;
+  padding-left: 28%;
+  font-size: 18px;
+}

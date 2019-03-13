@@ -8,7 +8,7 @@
   <body>
     <div class="heading">
       <header class="heading-card">
-        <img src="http://www.sazerac.com/Images/BourbonBottles.png">
+        <img src="http://www.sazerac.com/Images/BourbonBottles.png" alt="pretty collection of bourbon bottles">
         <h1>Bourbon Guide</h1>
         <div class="sortby">
           <h2>Sort by:</h2>
@@ -48,7 +48,7 @@
       <div class="bourbon-card">
         <h3><%= bourbon.name %></h3>
         <section class="info">
-          <img src="<%= bourbon.bottle_image %>">
+          <img src="<%= bourbon.bottle_image %>" alt="bottle of <%= bourbon.name %>">
           <section class="text">
             <h3><%= bourbon.distillery %></h3>
             <h3><%= bourbon.location %></h3>
@@ -64,7 +64,7 @@
           <!-- logic for this should be done in the model -->
           <% awards.each do |award|%>
           <div class="award-card">
-            <img src="<%= award.image %>">
+            <img src="<%= award.image %>" alt="<%= award.name%>">
             <!-- will this work this way or should i concatenate it elsewhere? -->
             <p><%= award.year %> <%= award.type %> <%= award.name %></p>
           </div>

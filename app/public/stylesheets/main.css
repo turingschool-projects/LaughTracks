@@ -1,0 +1,167 @@
+body {
+  background-image: url(https://media.daysoftheyear.com/20171223122438/bourbon-day.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+.heading {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.heading-card {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50%;
+}
+
+.heading-card h1 {
+  background-color: rgba(0,0,0,0.87);;
+  color: #fff5b8;
+  margin-top: 0px;
+  margin-bottom: -14px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: center;
+  font-size: 5.5vw;
+}
+
+header img {
+  grid-column-start: 1 / span 1;
+  width: 100%;
+}
+
+.sortby {
+  background-color: rgba(0,0,0,0.87);
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-size: 20px;
+}
+
+div.heading-card h2 {
+  background-color: rgba(0,0,0,0.87);
+  padding: 10px;
+}
+
+h2 {
+  color: #fff5b8;
+  height: 4vw;
+  font-size: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.stats {
+  background-color: rgba(0,0,0,0.87);;
+  color: #fff5b8;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.stats h3 {
+  font-size: 1.75vw;
+}
+
+h3 {
+  font-size: 1.75vw;
+}
+
+#locations {
+  grid-column-start: 2;
+}
+
+p {
+  margin: 2px;
+  color: #fff5b8;
+  font-size: 1.5vw;
+  font-weight: 100;
+  text-align: right;
+}
+
+.bourbons {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.bourbon-card {
+  background-color: rgba(255,245,184,0.87);
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50%;
+}
+
+.bourbon-card h3 {
+  background-color: rgba(0,0,0,0.87);
+  color: #fff5b8;
+  font-weight: 200;
+  margin-top: 0px;
+  text-align: center;
+  padding: 5px;
+  font-size: 2vw;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.info img {
+  height: auto;
+  width: 12.5vw;
+  grid-column-start: 1 / span 1;
+  padding-left: 5px;
+}
+
+.text {
+  grid-column-start: 2 / span 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info h3 {
+  color: #401006;
+  background-color: transparent;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: -5px;
+}
+
+.text p {
+  color: #401006;
+  background-color: transparent;
+  font-size: 1.75vw;
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.awards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.award-card {
+  flex: 0 0 22%;
+  width: 23%;
+  margin: 5px;
+}
+.award-card p {
+  color: #401006;
+  text-align: left;
+  width: 95%;
+}
+.award-card img {
+  width: 95%;
+}

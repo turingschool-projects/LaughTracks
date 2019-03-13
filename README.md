@@ -123,9 +123,9 @@ User Story 7
 As a visitor
 When I visit `/comedians?age=34`
 Then I see a list of all comedians with an age of 34
-Just like a previous User Story, BUT all other statistics 
-information in the 'Statistics' area of the page should be limited 
-to reflect only the information about the comedians listed on 
+Just like a previous User Story, BUT all other statistics
+information in the 'Statistics' area of the page should be limited
+to reflect only the information about the comedians listed on
 the page.
 
 - Testing should ensure that calculated statistics are
@@ -182,20 +182,20 @@ sorted alphabetically by the age of the comedian.
 At the end of this project, write a reflection on what you learned and implemented.
 This will help you review your own code and gain practice explaining/talking through the code and the process/decisions that were made along the way. Include code snippets from the project in your explanations.
 
-We reccommend writing your blog on [Medium](https://medium.com), but if you have a blog site that you already use that is okay too. However, it must be publically accessible and the link should be submitted to your instructors via Direct Message. 
+We recommend writing your blog on [Medium](https://medium.com), but if you have a blog site that you already use that is okay too. However, it must be publicly accessible and the link should be submitted to your instructors via Direct Message.
 
-Here are some questions to think about as you write your post: 
+Here are some questions to think about as you write your post:
 
-- How did you approach this project? 
+- How did you approach this project?
   What sort of planning did you do?
-  
+
 - What was the most challenging part of the project?
-  How did you deal with that challenge? 
-  Were you able to overcome it? 
+  How did you deal with that challenge?
+  Were you able to overcome it?
   If yes, how did you overcome it?
-  If no, what do you think is the reason for not being able to and what would you do differenlty?
-  
-- What did you enjoy most about the project? 
+  If no, what do you think is the reason for not being able to and what would you do differently?
+
+- What did you enjoy most about the project?
 
 - What part of the project are you most proud of and why?
 
@@ -212,8 +212,8 @@ This project is not evaluated. HOWEVER, the following is an example rubric we mi
 
 |   	| 1. Below Standard	| 2. Approaching Standard	| 3. Meets Standard	| 4. Above Standard	|
 |---	|---	|---	|---	|---	|
-| Featrure Completeness | - Fewer than 75% of stories are complete | - 75% of user stories are complete, but not all of them are fully implemented | - All user stories are complete | All user stories are completed and additional extension work was attempted|
-| MVC Responsibilities | - Models, Views, and Controllers do not have clear responsiblities   EX. Views are making calls to the model or database, Controllers are handiling calculations or making database calls | Views contain logic that makes significant calls to the database OR Controllers are handling calcualations OR Models process data ineffciently and is not passing responsiblity to database 	|  - Views only contain `.each` calls, branch logic, and formatted CSS - Controllers push almost all the work to the Models for reading/writing data to the database - Models handle calulcations and interactions with the database | - Views only display data and do not make addiontal calls to the databsae; they may include branch logic - Controllers request all data from Models excepts `.all`, `.find`, `.create`, `.delete` methods - Models read/write all other dta using branch lgoic of smaller methods |
+| Feature Completeness | - Fewer than 75% of stories are complete | - 75% of user stories are complete, but not all of them are fully implemented | - All user stories are complete | All user stories are completed and additional extension work was attempted|
+| MVC Responsibilities | - Models, Views, and Controllers do not have clear responsibilities   EX. Views are making calls to the model or database, Controllers are handling calculations or making database calls | Views contain logic that makes significant calls to the database OR Controllers are handling calculations OR Models process data inefficiently and is not passing responsibility to database 	|  - Views only contain `.each` calls, branch logic, and formatted CSS - Controllers push almost all the work to the Models for reading/writing data to the database - Models handle calculations and interactions with the database | - Views only display data and do not make additional calls to the database; they may include branch logic - Controllers request all data from Models excepts `.all`, `.find`, `.create`, `.delete` methods - Models read/write all other data using branch logic of smaller methods |
 | ActiveRecord	| - No ActiveRecord used | - Using Ruby enumerables where ActiveRecord could be used mixed with some ActiveRecord | - Using ActiveRecord to handle calculations and interactions to the database correctly	| - Using most efficient ActiveRecord queries  	|
-| Testing	| - Below 75% coverage | - Testing coverage is between 75-98% - Models tests are incomplete - Hardcoding values for expectations - Poorly written | - 98% of better test coverage for feature tests - 100% for model tests - Using variable as opposed to hard coding values - Use of within blocks for targeted feature test - Robustly written tests 	| - Clear TDD - Test Filse extremely organized - Utilize `before(:each)` blocks for test setup - 100% coverage for features and models	|
-| Usability/Styling | - Little or no Styling - User workflow is problematic (must type urls) | - Styling is incomplete - Layout does not follow good HTML patterns - Incomplete Navigation | - Purposeful styling pattern (complementary color choices, intentional layout of HTML - Links/Buttons to reach all ares of the site 	|  -Extremley well styled and purposeful layout(production ready) - Excellent color scheme and font usage(not default fonts) - Easy to use and follow application flow (does not have to search for links or buttons on the page) - Utilizes addiontal tooling(ex. SCSS) 	|
+| Testing	| - Below 75% coverage | - Testing coverage is between 75-98% - Models tests are incomplete - Hardcoding values for expectations - Poorly written | - 98% of better test coverage for feature tests - 100% for model tests - Using variable as opposed to hard coding values - Use of within blocks for targeted feature test - Robustly written tests 	| - Clear TDD - Test Files extremely organized - Utilize `before(:each)` blocks for test setup - 100% coverage for features and models	|
+| Usability/Styling | - Little or no Styling - User workflow is problematic (must type urls) | - Styling is incomplete - Layout does not follow good HTML patterns - Incomplete Navigation | - Purposeful styling pattern (complementary color choices, intentional layout of HTML - Links/Buttons to reach all ares of the site 	|  -Extremely well styled and purposeful layout(production ready) - Excellent color scheme and font usage(not default fonts) - Easy to use and follow application flow (does not have to search for links or buttons on the page) - Utilizes additional tooling(ex. SCSS) 	|

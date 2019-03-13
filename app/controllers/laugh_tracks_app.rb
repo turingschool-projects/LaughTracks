@@ -1,10 +1,12 @@
 require_relative "../models/bourbon"
 
 class LaughTracksApp < Sinatra::Base
-  set :root, FIle.expand_path("..", __dir__)
+  set :root, File.expand_path("..", __dir__)
+  set :public_folder, File.dirname(__FILE__) + '../public'
 
   get "/bourbons" do
-    erb :dashboard
+    @bourbons = Bourbon.all
+    erb :index
   end
-  
+
 end

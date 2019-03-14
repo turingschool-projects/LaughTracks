@@ -1,0 +1,8 @@
+<div id="comedians">
+  <% @comedians.each do |comedian| %>
+    <h3><%= comedian.name %></h3>
+    <p>Song length: <%= song.length %></p>
+    <p>Playlist: <%= song.playlist.name %></p>
+    <p>Play Count: $<%= song.play_count %></p>
+  <% end %>
+</div>

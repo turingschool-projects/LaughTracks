@@ -32,13 +32,16 @@
           </ul>
         </section>
 
-        <section class='comedian-specials-row'>
-          <section class='comedian-special'>
-            <ul>
-              <li>John Mulaney: Kid Gorgeous at Radio City (2018)</li>
-              <li><img src="https://m.media-amazon.com/images/M/MV5BOWZlYjE4ZDYtNjhlNi00ZGQ0LTgxZmUtNGRjNDM4YWJmOWNiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY268_CR4,0,182,268_AL_.jpg" alt="John Mulaney: Kid Gorgeous at Radio City poster"></li>
-            </ul>
-          </section>
+        <section class='comedian-specials-row' id='comedian-id-<%= comedian.id %>-specials'>
+          <% comedian.specials.each do |special| %>
+            <section class='comedian-special'>
+              <ul>
+                <li><%= special.name %></li>
+                <li><img src="<%= special.thumbnail_link %>" alt="<%= special.name %> poster"></li>
+                <li><%= special.runtime %> min</li>
+              </ul>
+            </section>
+          <% end %>
         </section>
       </section>
     <% end %>

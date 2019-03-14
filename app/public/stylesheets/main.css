@@ -1,9 +1,9 @@
 body {
   background-image: url(https://media.daysoftheyear.com/20171223122438/bourbon-day.jpg);
-  background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  background-size: cover;
 }
 
 header img {

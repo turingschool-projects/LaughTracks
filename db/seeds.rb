@@ -1,3 +1,11 @@
+# require './app/models/special.rb'
+# require './app/models/comedian.rb'
+#
+# Special.destroy_all
+# Playlist.destroy_all
+#
+# wasn't able to get seeding to work with $rake db: seed
+
 Comedian.create(name: "Adam Sandler",	age: 52,	home_town: "New York, NY",	photo: "https://cdn1.thr.com/sites/default/files/2012/12/6_degrees_of_judd_apatow_adam_sandler.jpg")
 Comedian.create(name: "John Mulaney",	age: 36,	home_town: "Chicago, IL", photo: "https://resizing.flixster.com/zOSxtyjb51wl7o4ceVADrTui2IY=/874x779/v1.cjs0MzU5NTtqOzE3OTgzOzEyMDA7ODc0Ozc3OQ")
 Comedian.create(name: "Dave Chappelle",	age: 45,	home_town: "Washington D.C.",	photo: "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTQzMzA3MzU5NDg4MzIxMDk2/dave-chappelle_gettyimages-481295252jpg.jpg")

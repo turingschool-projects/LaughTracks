@@ -4,6 +4,7 @@ class Comedians < ActiveRecord::Migration[5.2]
       t.text    :name
       t.integer :age
       t.text    :city
+      t.string  :image_url
 
       t.timestamps
     end 

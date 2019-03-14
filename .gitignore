@@ -1,2 +1,4 @@
-Gemfile.lock
 tmp/
+.DS_Store
+app/.DS_Store
+Gemfile.lock

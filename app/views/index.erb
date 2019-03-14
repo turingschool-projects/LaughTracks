@@ -7,17 +7,16 @@
 
   <body>
     <header>
-      <h1>Laughy Tracks</h1>
+      <h1>Laugh Tracks</h1>
       <img src="../public/images/laugh_1.jpeg" alt="Main Logo"/>
     </header>
 
     <section id="statistics">
-      <h1>@comedians</h1>
       <h1>Statistics</h1>
-      <h2>Average Comedian Age</h2>
-      <h2>Total Number of Specials</h2>
-      <h2>Average Run Time</h2>
-      <h2>Hometowns</h2>
+      <h3>Average Comedian Age:<%=  @comedians.average_age %></h3>
+      <h3>Total Specials: <%= @specials.count %></h3>
+      <h3>Average Run Time: <%= @specials.average_run_time %></h3>
+      <h3>Hometowns: <%= @comedians.hometowns %></h3>
     </section>
 
     <section id="profiles">

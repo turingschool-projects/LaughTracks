@@ -28,6 +28,28 @@ RSpec.describe "a user visiting the main page" do
         expect(page).to have_content("Statistics")
       end
 
+      it "shows four statistics" do
+        visit "/bourbons"
+
+        within ".stats" do
+          expect(page).to have_content("Avg Proof:")
+          expect(page).to have_content("Avg Expert Score:")
+          expect(page).to have_content("Avg Rating:")
+          expect(page).to have_content("Distillery Locations:")
+        end
+      end
+
+      it "show five sort options" do
+        visit "/bourbons"
+        within ".sortby" do
+          expect(page).to have_content("Name")
+          expect(page).to have_content("Distillery")
+          expect(page).to have_content("Proof")
+          expect(page).to have_content("Expert Score")
+          expect(page).to have_content("Avg Rating")
+        end
+      end
+
 
     end
   end

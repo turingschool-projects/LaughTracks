@@ -2,11 +2,7 @@ class Comedian < ActiveRecord::Base
   has_many :specials
 
   def self.average_age
-    comedians = Comedian.all
-    combined_age = comedians.sum do |comedian|
-      comedian.age
-    end
-      combined_age / comedians.count
+    average(:age)
   end
 
   def self.hometowns

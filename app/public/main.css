@@ -5,7 +5,7 @@ body {
 
 header {
   color: white;
-  height: 350px;
+  height: 250px;
   padding: 0 25px;
   text-align: center;
 }
@@ -16,38 +16,38 @@ h1 {
 }
 
 h2 {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  display: block;
   font-size: 20px;
   font-weight: 400;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top:10px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 section {
   line-height: 1.5em;
 }
 
-
-header h1 {
-  font-size: 72px;
-  font-weight: 400;
-  font-family: Abril Fatface, serif;
-  margin-bottom: 15px;
-
-}
-
-header section {
-  display: inline;
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-section figure {
+figure {
+  color: white;
   background-color: black;
-  flex: 0 0 200px;
+  flex: 0 0 300px;
   text-align: center;
-  margin: 10px;
+  margin: 20px;
   flex-shrink: 1;
+  padding: 5px;
 }
 
 nav {
@@ -74,6 +74,13 @@ nav a {
   color: white;
 }
 
+.fancy {
+  font-size: 72px;
+  font-weight: 400;
+  font-family: Abril Fatface, serif;
+  margin-bottom: 15px;
+}
+
 .body {
   margin: 20px
   padding: 20px;
@@ -83,6 +90,21 @@ nav a {
 .spacer {
   display: inline-block;
   height: 50px;
+}
+
+.stats {
+  background-color: #f2f2f2;
+  margin-bottom: 50px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stats-flex {
+  display: inline;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #hero {

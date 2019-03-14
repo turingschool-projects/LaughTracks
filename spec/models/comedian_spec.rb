@@ -1,4 +1,3 @@
-
 RSpec.describe Comedian do
   describe 'Validations' do
     it 'should be invalid if missing a name' do

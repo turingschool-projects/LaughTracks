@@ -1,8 +1,10 @@
+<h1> Laugh Tracks </h1>
+
 <% @comedians.each do |comedian| %>
+  <img class="headshot" src="<%= comedian.head_shot %>", alt="headshot", width=200>
   <ul>
     <li>Name: <%= comedian.name %></li>
     <li>Age: <%= comedian.age %></li>
     <li>City: <%= comedian.city %></li>
   </ul>
-  <img class="headshot" src="<%= comedian.head_shot %>", alt="headshot", width=200>
 <% end %>

@@ -229,7 +229,7 @@ jg.specials.create(
 jg.specials.create(
   title: "Obsessed", 
   length: 60, 
-  image_url: "https://m.media-amazon.com/images/M/MV5BMTk3NjU2ODY5NF5BMl5BanBnXkFtZTgwNTEyODkwMzE@._V1_.jpg"
+  image_url: "https://m.media-amazon.com/images/M/MV5BMjA1MDc3NzkyNl5BMl5BanBnXkFtZTgwNDYzNjM3MTE@._V1_.jpg"
 )
 jg.specials.create(
   title: "Cinco", 
@@ -237,12 +237,12 @@ jg.specials.create(
   image_url: "https://m.media-amazon.com/images/M/MV5BYzM5N2YyODQtZTkyMC00ZGVhLWJmZmYtZTI3ZGM2ODAzMzA1L2ltYWdlXkEyXkFqcGdeQXVyMzcwMjcwNQ@@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
 )
 
-ed.specials.create(
+em.specials.create(
   title: "Delirious", 
   length: 69, 
   image_url: "https://m.media-amazon.com/images/M/MV5BMTQ5MDcyODU0Nl5BMl5BanBnXkFtZTcwMTgxNjA0MQ@@._V1_.jpg"
 )
-ed.specials.create(
+em.specials.create(
   title: "Raw", 
   length: 93, 
   image_url: "https://m.media-amazon.com/images/M/MV5BOWEwYTk4YTgtZGVjNi00MmI0LTkwOTItOWUxYzBlN2YwZWFkXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_SY1000_CR0,0,666,1000_AL_.jpg"

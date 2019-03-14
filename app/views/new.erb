@@ -1,0 +1,23 @@
+<h2>Enter a new bourbon!</h2>
+<form class="new-bourbon" action="index.html" method="post">
+  <label for="name"></label>
+    <input type="text" name="bourbon[name]" value="name" required>
+  <label for="distiller"></label>
+    <input type="text" name="bourbon[distillery]" value="distillery" required>
+  <label for="location"></label>
+    <input type="text" name="bourbon[location]" value="location" required>
+  <label for="description"></label>
+    <input type="text" name="bourbon[description]" value="location" required>
+  <label for="proof"></label>
+    <input type="number" name="bourbon[proof]" value="0" min="0" max="200">
+  <label for="expert_score"></label>
+    <input type="number" name="bourbon[expert_score]" value="0" min="0" max="100">
+  <label for="avg_rating"></label>
+    <input type="number" name="bourbon[avg_rating]" value="0" min="0" max="5">
+  <input type="hidden" name="bourbon[bottle_image]" value="https://www.lawlersliquorsonline.com/wp-content/uploads/2018/10/Blank-Bottle-88.png">
+
+  <input id="button" type="submit"/>
+</form>
+
+
+<a href="/bourbon" id="home_button">Home</a>

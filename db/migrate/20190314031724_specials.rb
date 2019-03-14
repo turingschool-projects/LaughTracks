@@ -3,7 +3,7 @@ class Specials < ActiveRecord::Migration[5.2]
     create_table :specials do |t|
       t.text    :title
       t.integer :length
-      t.string  :image_url
+      t.text    :image_url
 
       t.timestamps
     end 

@@ -4,7 +4,7 @@ class Comedians < ActiveRecord::Migration[5.2]
       t.text    :name
       t.integer :age
       t.text    :city
-      t.string  :head_shot
+      t.text    :head_shot
 
       t.timestamps
     end 

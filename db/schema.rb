@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_034605) do
     t.text "name"
     t.integer "age"
     t.text "city"
-    t.string "head_shot"
+    t.text "head_shot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_034605) do
   create_table "specials", force: :cascade do |t|
     t.text "title"
     t.integer "length"
-    t.string "image_url"
+    t.text "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "comedian_id"

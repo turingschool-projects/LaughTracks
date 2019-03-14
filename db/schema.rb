@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 2019_03_14_164355) do
   enable_extension "plpgsql"
 
   create_table "awards", force: :cascade do |t|
+    t.integer "bourbon_id"
     t.text "name"
-    t.text "type"
+    t.text "award_type"
     t.integer "year"
-    t.text "award"
+    t.text "image"
   end
 
   create_table "bourbons", force: :cascade do |t|

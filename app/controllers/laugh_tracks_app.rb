@@ -7,6 +7,7 @@ class LaughTracksApp < Sinatra::Base
 
   get "/bourbons" do
     @bourbons = Bourbon.all
+    @awards = Award.all
     erb :index
   end
 

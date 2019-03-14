@@ -1,0 +1,93 @@
+body {
+  font-family: Heebo, sans-serif;
+  color: black;
+}
+
+header {
+  color: white;
+  height: 350px;
+  padding: 0 25px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+section {
+  line-height: 1.5em;
+}
+
+
+header h1 {
+  font-size: 72px;
+  font-weight: 400;
+  font-family: Abril Fatface, serif;
+  margin-bottom: 15px;
+
+}
+
+header section {
+  display: inline;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section figure {
+  background-color: black;
+  flex: 0 0 200px;
+  text-align: center;
+  margin: 10px;
+  flex-shrink: 1;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  height: 75px;
+  margin-bottom: 25px;
+}
+
+nav li {
+  width: 33%;
+  display: inline-block;
+  padding: 30px 30px;
+  text-align: center;
+}
+
+nav li:hover {
+  background-color: white;
+  color: black;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.body {
+  margin: 20px
+  padding: 20px;
+  text-align: center;
+}
+
+.spacer {
+  display: inline-block;
+  height: 50px;
+}
+
+#hero {
+  background: url('images/hero.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 50px 0;
+}

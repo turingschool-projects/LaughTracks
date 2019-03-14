@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Comedians</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Heebo" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <header id="hero">
+      <h1>LAUGH TRACKS</h1>
+      <h2>From the standup scene to the movie screen. These actors and actresses
+        made their debuts on the small stage.</h2>
+        <section>
+          <figure>Average Runtime</figure>
+          <figure>Total TV Specials</figure>
+          <figure>Average Age</figure>
+          <figure>Cities:</figure>
+        </section>
+
+    </header>
+    <nav>
+      <li><a href="">Sort</a></li>
+      <li><a href="">Filter</a></li>
+      <li><a href="">New</a></li>
+    </nav>
+
+    <section class="body">
+      <% @comedians.each do |comedian| %>
+      <div class="item">
+        <h1><%= comedian.name %></h1><br />
+        Age: <%= comedian.age %><br />
+        City: <%= comedian.city %><br />
+
+        <section>
+        <% comedian.specials.each do |special| %>
+          <article><img src="<%= special.thumb %>" width="25">
+          Special Name: <%= special.name %><br />
+          Runtime: <%= special.runtime %>
+          <% end %>
+          </article>
+        </section>
+        <section class="spacer">&nbsp;</section>
+      </div>
+      <% end %>
+
+
+    </section>
+
+
+  </body>
+
+</html>

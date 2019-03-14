@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Laugh Tracks</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Laugh Tracks</h1>
+      <img src="../public/images/laugh_1.jpeg" alt="Main Logo"/>
+    </header>
+
+    <section id="statistics">
+      <h1>Statistics</h1>
+      <h3>Average Comedian Age:<%=  @comedians.average_age %></h3>
+      <h3>Total Specials: <%= @specials.count %></h3>
+      <h3>Average Run Time: <%= @specials.average_run_time %></h3>
+      <h3>Hometowns: <%= @comedians.hometowns %></h3>
+    </section>
+
+    <section id="profiles">
+      <!-- iterate each per comedian
+      @comedians.each do |comedian| -->
+      <img src="comedian.photo" alt="Comedian Photo"/>
+      <h1>Comedian Name</h1>
+      <h2>Age</h2>
+      <h2>Home Town</h2>
+      <h2># of Specials<h2>
+
+      <section id="specials">
+        <h3>Specials</h3>
+
+        <img src="comedian.special.photo"/>
+        <h4> Name of Special</h4>
+        <h5> Run Time</h5>
+      </section>
+
+    </section>
+
+
+  </body>
+
+
+</html>

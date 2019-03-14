@@ -1,78 +1,58 @@
-<!doctype HTML>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/stylesheets/main.css">
-    <title>Bourbon Guide</title>
-  </head>
-  <body>
-    <div class="heading">
-      <header class="heading-card">
-        <img src="http://www.sazerac.com/Images/BourbonBottles.png" alt="pretty collection of bourbon bottles">
-        <h1>Bourbon Guide</h1>
-        <div class="sortby">
-          <h2>Sort by:</h2>
-          <nav class="options">
-            <p>Proof</p>
-            <p>Expert Score</p>
-            <p>Avg Rating</p>
-          </nav>
-          <br>
-        </div>
-      </header>
-      <div class="heading-card">
-        <header>
-          <h2>Statistics</h2>
-        </header>
-        <div class="stats">
-          <div class="avg">
-            <!-- when given a list of bourbons, finds: -->
-            <h3>Avg Proof: <%=  %></h3>
-            <br>
-            <h3>Avg Expert Score: <%=  %></h3>
-            <br>
-            <h3>Avg Rating: <%=  %></h3>
-            <br>
-          </div>
-          <div class="locations">
-            <h3>Distillery Locations:<h3>
-              <!-- need to find unique locations, logic should be done in the model -->
-              <% @bourbons.each do |bourbon| %>
-                <p><%= bourbon.location %></p>
-              <% end %>
-          </div>
-        </div>
-      </div>
+<header class="heading">
+  <div class="heading-card">
+    <img src="http://www.sazerac.com/Images/BourbonBottles.png" alt="pretty collection of bourbon bottles">
+    <h1>Bourbon Guide</h1>
+    <div class="sortby">
+      <h2>Sort by:</h2>
+      <nav class="options">
+        <p>Name</p>
+        <p>Distillery</p>
+        <p>Proof</p>
+        <p>Expert Score</p>
+        <p>Avg Rating</p>
+      </nav>
+      <br>
     </div>
-    <div class="bourbons">
-      <% @bourbons.each do |bourbon| %>
-      <div class="bourbon-card">
-        <h3><%= bourbon.name %></h3>
-        <section class="info">
-          <img src="<%= bourbon.bottle_image %>" alt="bottle of <%= bourbon.name %>">
-          <section class="text">
-            <h3><%= bourbon.distillery %></h3>
-            <h3><%= bourbon.location %></h3>
-            <br>
-            <h3>Proof: <%= bourbon.proof %></h3>
-            <h3>Expert Score: <%= bourbon.expert_score %></h3>
-            <h3>Average Rating: <%= bourbon.avg_rating %></h3>
-            <h3>Description:</h3>
-            <p><%= bourbon.description %></p>
-          </section>
-        </section>
-        <section class="awards">
-          <!-- logic for this should be done in the model -->
-          <% awards.each do |award|%>
-          <div class="award-card">
-            <img src="<%= award.image %>" alt="<%= award.name%>">
-            <!-- will this work this way or should i concatenate it elsewhere? -->
-            <p><%= award.year %> <%= award.type %> <%= award.name %></p>
+  </div>
+  <div class="heading-card">
+    <h2 id="statistics">Statistics</h2>
+    <div class="stats">
+      <div class="avg">
+        <h3>Avg Proof: <%= @bourbons.avg_proof %></h3>
+        <br>
+        <h3>Avg Expert Score: <%= @bourbons.avg_expert_score %></h3>
+        <br>
+        <h3>Avg Rating: <%= @bourbons.avg_avg_rating %></h3>
+        <br>
+      </div>
+      <div class="locations">
+        <h3>Distillery Locations:<h3>
+          <% @bourbons.cities.each do |city| %>
+            <p><%= city %>
           <% end %>
-          </div>
-        <% end %>
-        </section>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</header>
+
+<div class="bourbons">
+  <% @bourbons.each do |bourbon| %>
+  <div class="bourbon-card">
+    <h3><%= bourbon.name %></h3>
+    <section class="info">
+      <img src="<%= bourbon.bottle_image %>" alt="bottle of <%= bourbon.name %>">
+      <section class="text">
+        <h3><%= bourbon.distillery %></h3>
+        <h3><%= bourbon.location %></h3>
+        <br>
+        <h3>Proof: <%= bourbon.proof %></h3>
+        <h3>Expert Score: <%= bourbon.expert_score %></h3>
+        <h3>Average Rating: <%= bourbon.avg_rating %></h3>
+        <h3>Description:</h3>
+        <p><%= bourbon.description %></p>
+      </section>
+    </section>
+
+  </div>
+  <% end %>
+</div>

@@ -1,15 +1,20 @@
 body {
   background-image: url(https://media.daysoftheyear.com/20171223122438/bourbon-day.jpg);
-  background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  background-size: cover;
+  position: relative;
 }
 
-header img {
-  grid-column-start: 1 / span 1;
-  width: 100%;
+header {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: fixed;
+  margin-top: -400px;
 }
+
 
 h2 {
   color: #fff5b8;
@@ -33,75 +38,26 @@ p {
   text-align: right;
 }
 
-.heading {
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.heading-card {
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 50%;
+.heading-card img {
+  grid-column-start: 1 / span 1;
+  width: 100%;
 }
 
 .heading-card h1 {
   background-color: rgba(0,0,0,0.87);;
   color: #fff5b8;
   margin-top: 0px;
-  margin-bottom: -14px;
+  margin-bottom: -10px;
   padding-top: 3px;
   padding-bottom: 3px;
   text-align: center;
   font-size: 5.5vw;
 }
 
-
-.sortby {
-  background-color: rgba(0,0,0,0.87);
-}
-
-.options {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  font-size: 20px;
-}
-
-div.heading-card h2 {
-  background-color: rgba(0,0,0,0.87);
-  padding: 10px;
-}
-
-.stats {
-  background-color: rgba(0,0,0,0.87);;
-  color: #fff5b8;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
 .stats h3 {
   font-size: 1.75vw;
 }
 
-.locations {
-  grid-column-start: 2;
-}
-
-.bourbons {
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.bourbon-card {
-  background-color: rgba(255,245,184,0.87);
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 50%;
-}
 
 .bourbon-card h3 {
   background-color: rgba(0,0,0,0.87);
@@ -110,12 +66,7 @@ div.heading-card h2 {
   margin-top: 0px;
   text-align: center;
   padding: 5px;
-  font-size: 2vw;
-}
-
-.info {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  font-size: 1.75vw;
 }
 
 .info img {
@@ -123,12 +74,6 @@ div.heading-card h2 {
   width: 12.5vw;
   grid-column-start: 1 / span 1;
   padding-left: 5px;
-}
-
-.text {
-  grid-column-start: 2 / span 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .info h3 {
@@ -148,6 +93,72 @@ div.heading-card h2 {
   padding-right: 5px;
 }
 
+.award-card p {
+  color: #401006;
+  text-align: left;
+  width: 95%;
+}
+
+.award-card img {
+  width: 95%;
+}
+
+.heading-card {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50%;
+}
+
+.sortby {
+  background-color: rgba(0,0,0,0.87);
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-size: 20px;
+  padding-top: 3px;
+}
+
+.stats {
+  background-color: rgba(0,0,0,0.87);;
+  color: #fff5b8;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 4.5vw;
+}
+
+.locations {
+  grid-column-start: 2;
+}
+
+.bourbons {
+  display: flex;
+  margin-top: 380px;
+  margin-bottom: 10px;
+}
+
+.bourbon-card {
+  background-color: rgba(255,245,184,0.87);
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 400px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.text {
+  grid-column-start: 2 / span 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .awards {
   display: flex;
   flex-wrap: wrap;
@@ -158,11 +169,8 @@ div.heading-card h2 {
   width: 23%;
   margin: 5px;
 }
-.award-card p {
-  color: #401006;
-  text-align: left;
-  width: 95%;
-}
-.award-card img {
-  width: 95%;
+
+#statistics {
+  background-color: rgba(0,0,0,0.87);
+  padding-bottom: 5px;
 }

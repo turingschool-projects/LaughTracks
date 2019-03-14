@@ -54,7 +54,7 @@ RSpec.describe "a user visiting the main page" do
         visit "/bourbons"
 
         expect(page).to have_content("Frankfort, KY")
-        # expect(page).to have_link("KY")
+        expect(page).to have_link("KY")
       end
 
       # is this how it should work?

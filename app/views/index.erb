@@ -30,8 +30,10 @@
           <% @bourbons.cities.each do |city| %>
             <p><%= city %>
           <% end %>
-          <% @states = @bourbons.cities.sort.map do |city| %>
-            <% city[-2,2] %>
+          <br>
+          <br>
+          <% @bourbons.list_states.each do |state| %>
+            <a href="/bourbons?select=<%= state %>"><%= state %></a>
           <% end %>
 
       </div>

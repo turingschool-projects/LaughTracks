@@ -30,6 +30,10 @@
           <% @bourbons.cities.each do |city| %>
             <p><%= city %>
           <% end %>
+          <% @states = @bourbons.cities.sort.map do |city| %>
+            <% city[-2,2] %>
+          <% end %>
+
       </div>
     </div>
   </div>

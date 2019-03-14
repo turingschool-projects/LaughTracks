@@ -18,7 +18,7 @@ class LaughTracksApp < Sinatra::Base
 # is this right?
   post "/bourbons" do
     bourbon = Bourbon.create(bourbon_params)
-    redirect: "/bourbons"
+    redirect :"/bourbons"
   end
 
 #so now my @bourbons is sorted, right?
@@ -48,9 +48,9 @@ class LaughTracksApp < Sinatra::Base
   end
 
   # no idea if this will work because it depends on the states available
-  get "bourbons?select=#{state}" do
-    @bourbons = Bourbon.select_state(state)
-    erb :index
-  end
+  # get "bourbons?select=#{state}" do
+  #   @bourbons = Bourbon.select_state(state)
+  #   erb :index
+  # end
 
 end

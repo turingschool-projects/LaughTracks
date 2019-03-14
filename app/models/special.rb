@@ -6,8 +6,4 @@ class Special < ActiveRecord::Base
   def self.average_run_time
     average(:run_time).round().to_i
   end
-
-  def self.average_age
-    average(:age).round().to_i
-  end
 end

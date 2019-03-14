@@ -1,7 +1,7 @@
 RSpec.describe Comedian do
   before :each do
-    @c1 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
-    @c2 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
+    @c1 = Comedian.create(name: 'Mitch Hedberg', age: 50, city:"Los Angeles")
+    @c2 = Comedian.create(name: 'Mitch Hedberg', age: 50, city:"Los Angeles")
     @c3 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
     @c4 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
 
@@ -22,6 +22,14 @@ RSpec.describe Comedian do
         comic = Comedian.create(name: 'Mitch Hedberg')
         expect(comic).to_not be_valid
       end
+    end
+  end
+
+  describe 'Class Methods' do
+    it ".average_age" do
+      expected = 49
+      actual = Comedian.average_age
+      expect(actual).to eq(expected)
     end
   end
 end

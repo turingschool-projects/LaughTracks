@@ -26,11 +26,5 @@ RSpec.describe Special do
       actual = Special.average_run_time
       expect(actual).to eq(expected)
     end
-
-    it ".average_age" do
-      expected = 49
-      actual = Special.average_age
-      expect(actual).to eq(expected)
-    end
   end
 end

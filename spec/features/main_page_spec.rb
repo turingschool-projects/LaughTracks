@@ -18,7 +18,7 @@ RSpec.describe "a user visiting the main page" do
         visit "/bourbons"
 
         within ".sortby" do
-          expect(page).to have_content("Sort by:")
+          expect(page).to have_content("Sort all by:")
         end
       end
 

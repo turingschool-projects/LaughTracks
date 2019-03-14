@@ -43,8 +43,7 @@ RSpec.describe Bourbon, type: :model do
 
     describe ".sort_name" do
       it "creates a list of all bourbons sorted by distillery" do
-
-        expect(Bourbon.sort_distillery).to eq([@b2, @b3, @b1])
+        expect(Bourbon.sort_name).to eq([@b2, @b3, @b1])
       end
     end
 
@@ -73,7 +72,7 @@ RSpec.describe Bourbon, type: :model do
     describe ".sort_expert_score" do
       it "creates a list of all bourbons sorted by expert score descending" do
 
-        expect(Bourbon.sort_expert_score).to eq([@b3, @b2, @b1])
+        expect(Bourbon.sort_expert_score).to eq([@b1, @b2, @b3])
       end
     end
 

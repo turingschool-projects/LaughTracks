@@ -48,9 +48,10 @@ class LaughTracksApp < Sinatra::Base
   end
 
   # no idea if this will work because it depends on the states available
-  # get "bourbons?select=#{state}" do
-  #   @bourbons = Bourbon.select_state(state)
-  #   erb :index
-  # end
+  get "bourbons?select=KY" do
+    binding.pry
+    @bourbons = Bourbon.select_state("KY")
+    erb :index
+  end
 
 end

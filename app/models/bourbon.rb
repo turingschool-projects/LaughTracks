@@ -31,6 +31,26 @@ class Bourbon < ActiveRecord::Base
     # is this going to work?
   end
 
+  def self.sort_name
+    bourbons = Bourbon.order(:name)
+  end
+
+  def self.sort_distillery
+    bourbons = Bourbon.order(:distillery)
+  end
+
+  def self.sort_proof
+    bourbons = Bourbon.order(:proof)
+  end
+
+  def self.sort_expert_score
+    bourbons = Bourbon.order(expert_score: :desc)
+  end
+
+  def self.sort_avg_rating
+    bourbons = Bourbon.order(avg_rating: :desc)
+  end
+
   def self.list_states
     cities = Bourbon.pluck(:location)
     states = cities.map do |city|

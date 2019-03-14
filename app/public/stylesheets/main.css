@@ -49,10 +49,23 @@ td{
   width: 100%;
   background: #8BA685;
   border-radius: 15px;
-  height: 200px;
+  height: 600px;
+}
+h2{
+  margin-bottom: 0px;
+}
+.specials{
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-img {
+.special-card{
+  flex: 0 0 23%;
+  text-align: center;
+  margin: 10px;
+}
+
+.headshot {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-left: 10%;
@@ -62,6 +75,13 @@ img {
   height: 250px;
   object-fit: cover;
 }
+
+.thumbnail{
+  height: auto;
+  width: 90%;
+  object-fit: contain;
+}
+
 
 p {
   padding-top: 2%;

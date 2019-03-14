@@ -1,7 +1,13 @@
 <h1> Laugh Tracks </h1>
 
+<section class="stats">
+  <ul>
+    <li>Average age:<%= @comedians.average_age%></li>
+  </ul>
+</section>
+
 <% @comedians.each do |comedian| %>
-  <img class="headshot" src="<%= comedian.head_shot %>" alt="<%= comedian.head_shot %>" width=200>
+  <img class="headshot" src="<%= comedian.head_shot %>" alt="<%= comedian.head_shot %>" width="200">
   <ul>
     <li>Name: <%= comedian.name %></li>
     <li>Age: <%= comedian.age %></li>
@@ -9,10 +15,10 @@
   </ul>
   <section class="specials">
       <% comedian.specials.each do |special| %>
-        <img class="special_thumbnail" src="<%= special.image_url %>" alt="<%= special.title %>special_image", width=200>
+        <img class="special_thumbnail" src="<%= special.image_url %>" alt="<%= special.title %>" width="200">
         <ul>
-          <li>Title: <%= special.title %></li>
-          <li>Length: <%= special.length %></li>
+          <li><%= special.title %></li>
+          <li>Length: <%= special.length %> mins</li>
         </ul>
       <% end %>
   </section>

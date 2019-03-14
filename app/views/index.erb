@@ -1,7 +1,3 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="INSERTPATH">
-</head>
-
 <header class="heading">
   <div class="heading-card">
     <img src="http://www.sazerac.com/Images/BourbonBottles.png" alt="pretty collection of bourbon bottles">
@@ -19,12 +15,9 @@
     </div>
   </div>
   <div class="heading-card">
-    <header>
-      <h2 id="statistics">Statistics</h2>
-    </header>
+    <h2 id="statistics">Statistics</h2>
     <div class="stats">
       <div class="avg">
-        <!-- when given a list of bourbons, finds: -->
         <h3>Avg Proof: <%= @bourbons.avg_proof %></h3>
         <br>
         <h3>Avg Expert Score: <%= @bourbons.avg_expert_score %></h3>
@@ -37,12 +30,11 @@
           <% @bourbons.cities.each do |city| %>
             <p><%= city %>
           <% end %>
-          <!-- need to find unique locations, logic should be done in the model -->
-
       </div>
     </div>
   </div>
 </header>
+
 <div class="bourbons">
   <% @bourbons.each do |bourbon| %>
   <div class="bourbon-card">

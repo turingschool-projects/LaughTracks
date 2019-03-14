@@ -2,8 +2,8 @@
 # require './app/models/comedian.rb'
 #
 # Special.destroy_all
-# Playlist.destroy_all
-#
+# Comedian.destroy_all
+
 # wasn't able to get seeding to work with $rake db: seed
 
 Comedian.create(name: "Adam Sandler",	age: 52,	home_town: "New York, NY",	photo: "https://cdn1.thr.com/sites/default/files/2012/12/6_degrees_of_judd_apatow_adam_sandler.jpg")

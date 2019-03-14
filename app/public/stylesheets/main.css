@@ -11,6 +11,8 @@ header {
   display: flex;
   top: 0px;
   position: fixed;
+  z-index: 10;
+  background: inherit;
 }
 
 
@@ -94,7 +96,8 @@ p {
 .award-card p {
   color: #401006;
   text-align: left;
-  width: 95%;
+  width: 105%;
+  font-size: 1vw;
 }
 
 .award-card img {
@@ -164,9 +167,9 @@ p {
 }
 
 .award-card {
-  flex: 0 0 22%;
-  width: 23%;
+  /* flex: 0 0 22%; */
   margin: 5px;
+  max-width: 50%;
 }
 
 #statistics {

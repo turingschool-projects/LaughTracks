@@ -1,10 +1,24 @@
 class Comedian < ActiveRecord::Base
   has_many :specials
 
-  def average_age
-    @comedians.sum do |comedian|
-      comedian.age
-    end 
+  validates :name, presence: true
+  validates :age, presence: true
+
+  def self.average_age
+    Comedian.average(:age)
+  end
+
+  def self.all_cities
+    comedians = Comedian.select(:city).distinct
+    cities = ""
+    comedians.each do |comedian|
+      cities.concat(comedian.city + ", ")
+    end
+    cities[0..-3]
+  end
+
+  def self.total_specials(comedian)
+    count(:special)
   end
 
 end

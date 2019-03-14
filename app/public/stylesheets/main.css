@@ -136,6 +136,8 @@ p {
 .bourbons {
   display: flex;
   margin-top: 360px;
+  height: calc(vh-360px);
+  overflow-y: scroll;
 }
 
 .bourbon-card {

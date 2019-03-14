@@ -2,7 +2,7 @@ RSpec.describe Comedian do
   before :each do
     @c1 = Comedian.create(name: 'Mitch Hedberg', age: 50, city:"Los Angeles")
     @c2 = Comedian.create(name: 'Mitch Hedberg', age: 50, city:"Los Angeles")
-    @c3 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
+    @c3 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"San Diego")
     @c4 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
 
     @s1 = @c1.specials.create(title: 'Mitch Hedberg: Funny Stuff', run_time: 10)
@@ -29,6 +29,14 @@ RSpec.describe Comedian do
     it ".average_age" do
       expected = 49
       actual = Comedian.average_age
+
+      expect(actual).to eq(expected)
+    end
+
+    it ".unique_cities" do
+      expected = ['San Diego','Los Angeles']
+      actual = Comedian.unique_cities
+
       expect(actual).to eq(expected)
     end
   end

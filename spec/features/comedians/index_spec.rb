@@ -1,5 +1,5 @@
-RSpec.describe Comedian do
-  before :each do
+RSpec.describe "an unauthenticated user visits comedians page" do
+  before(:each) do
     @c1 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
     @c2 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
     @c3 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
@@ -11,16 +11,12 @@ RSpec.describe Comedian do
     @s4 = @c3.specials.create(title: 'Mitch Hedberg: Funny Stuff', run_time: 5)
   end
 
-  describe 'Validations' do
-    describe 'Required Field(s)' do
-      it 'should be invalid if missing a name' do
-        comic = Comedian.create(age: 48)
-        expect(comic).to_not be_valid
-      end
+  context 'they see statistics for totals' do
+    it 'and correct average run time displayed' do
+      visit '/comedians'
 
-      it 'should be invalid if missing an age' do
-        comic = Comedian.create(name: 'Mitch Hedberg')
-        expect(comic).to_not be_valid
+      within ".statistics" do
+        expect(page).to have_content("Average Runtime: 5")
       end
     end
   end

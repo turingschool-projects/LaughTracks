@@ -1,5 +1,6 @@
-<header>
+<header class='statistics'>
   <h1>Statistics</h1>
+  <p>Average Runtime: <%= Special.average_run_time %></p>
 </header>
 
 <nav class="side-nav">
@@ -10,12 +11,20 @@
 
 <section class='main'>
   <% @comedians.each do |comedian| %>
-  <article id="<%= comedian.name %>">
-    <h3><%= comedian.name %></h3>
-    <ul>
-      <li>Age: <%= comedian.age %></li>
-      <li>City: <%= comedian.city %></li>
-    </ul>
-  </article>
+    <article class="comedian-profile" id="<%= comedian.name %>">
+      <section class="comedian-details">
+        <h3><%= comedian.name %></h3>
+        <p>Age: <%= comedian.age %></p>
+        <p>City: <%= comedian.city %></p>
+      </section>
+
+      <% comedian.specials.each do |special| %>
+      <section class="tv-special">
+        <h3><%= special.title %></h3>
+        <img src= "<%= special.thumbnail %>" alt="tv_special cover">
+        <p>Runtime: <%= special.run_time %></p>
+      </section>
+      <% end %>
+    </article>
   <% end %>
 </section>

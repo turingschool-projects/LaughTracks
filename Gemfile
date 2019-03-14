@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'activerecord'
 gem 'pg', '~> 0.18'
-gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-activerecord'
+gem 'sinatra', require: 'sinatra/base'
 
 group :development, :test do
   gem 'capybara', '~> 3.0.3'

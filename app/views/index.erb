@@ -1,14 +1,6 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Laugh Tracks</title>
-    <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
-  </head>
-
-  <body>
     <header>
       <h1>Laugh Tracks</h1>
-      <img src="../public/images/laugh_1.jpeg" alt="Main Logo"/>
+      <img src="images/laugh_1.jpeg" alt="Main Logo"/>
     </header>
 
     <section id="statistics">
@@ -21,7 +13,8 @@
 
     <section id="profiles">
       <% @comedians.each do |comedian| %>
-      <img><%= comedian.photo %></img>
+      <div id=<%= "comedian-#{comedian.id}" %>>
+        <img><%= comedian.photo %></img>
       <h3><%= comedian.name %></h3>
       <li><%= comedian.age %></li>
       <li><%= comedian.home_town %></li><br/>
@@ -30,11 +23,6 @@
           <li>Name: <%= special.name %></li>
           <li>Run Time: <%= special.run_time %></li><br/>
           <% end %>
+      </div>
       <% end %>
     </section>
-
-
-  </body>
-
-
-</html>

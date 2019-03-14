@@ -1,5 +1,5 @@
 class Bourbon < ActiveRecord::Base
-  # has_many :awards
+  has_many :awards
 
   def self.avg_proof
     avg = Bourbon.average(:proof).round(1)
@@ -17,8 +17,9 @@ class Bourbon < ActiveRecord::Base
     bourbons = Bourbon.pluck(:location).uniq
   end
 
+  def self.sort_state(state)
+    bourbons = Bourbon.where("location LIKE '%#{state}'").pluck(:location).uniq
+    # is this going to work?
+  end
+
 end
-
-
-
-# bourbons = Bourbon.where("location LIKE '%KY'").pluck(:location).uniq

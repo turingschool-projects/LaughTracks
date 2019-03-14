@@ -51,8 +51,17 @@
         <h3>Description:</h3>
         <p><%= bourbon.description %></p>
       </section>
+      <section class="awards">
+        <% @awards.each do |award| %>
+          <% if bourbon.awards.include?(award) %>
+          <!-- need to check this method... -->
+          <div class="award-card">
+            <img src="<%= award.image %>">
+            <p><%= award.year %><%= award.type %><%= award.name %></p>
+          </div>
+        <% end %>
+      </section>
     </section>
-
   </div>
   <% end %>
 </div>

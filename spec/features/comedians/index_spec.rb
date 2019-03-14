@@ -1,7 +1,7 @@
 RSpec.describe "an unauthenticated user visits comedians page" do
   before(:each) do
-    @c1 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
-    @c2 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
+    @c1 = Comedian.create(name: 'Mitch Hedberg', age: 50, city:"Los Angeles")
+    @c2 = Comedian.create(name: 'Mitch Hedberg', age: 50, city:"Los Angeles")
     @c3 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
     @c4 = Comedian.create(name: 'Mitch Hedberg', age: 48, city:"Los Angeles")
 
@@ -17,6 +17,14 @@ RSpec.describe "an unauthenticated user visits comedians page" do
 
       within ".statistics" do
         expect(page).to have_content("Average Runtime: 5")
+      end
+    end
+
+    it 'and correct average age displayed' do
+      visit '/comedians'
+
+      within ".statistics" do
+        expect(page).to have_content("Average Age: 49")
       end
     end
   end

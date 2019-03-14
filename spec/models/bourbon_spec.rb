@@ -2,12 +2,11 @@ RSpec.describe Bourbon, type: :model do
 
   describe "Class Methods" do
     describe ".avg_proof" do
-        it "averages the proof for all bourbons" do
-          b1 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Frankfort, KY" ,description: "tasty" ,proof: 90,expert_score: 91, avg_rating: 3.84,bottle_image: "http://")
-          b2 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Frankfort, KY" ,description: "tasty" ,proof: 80,expert_score: 91, avg_rating: 3.84,bottle_image: "http://")
+      it "averages the proof for all bourbons" do
+        b1 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Frankfort, KY" ,description: "tasty" ,proof: 90,expert_score: 91, avg_rating: 3.84,bottle_image: "http://")
+        b2 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Frankfort, KY" ,description: "tasty" ,proof: 80,expert_score: 91, avg_rating: 3.84,bottle_image: "http://")
 
-          expect(Bourbon.avg_proof).to eq(85.0)
-        end
+        expect(Bourbon.avg_proof).to eq(85.0)
       end
     end
 

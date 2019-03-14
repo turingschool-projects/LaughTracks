@@ -1,14 +1,14 @@
 class Bourbon < ActiveRecord::Base
   has_many :awards
 
-  validates_presence_of :title,
+  validates_presence_of :name,
                         :distillery,
                         :location,
                         :description,
                         :proof,
                         :expert_score,
                         :avg_rating,
-                        :image
+                        :bottle_image
 
   def self.avg_proof
     avg = Bourbon.average(:proof).round(1)

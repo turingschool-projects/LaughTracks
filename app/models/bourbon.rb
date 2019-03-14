@@ -26,8 +26,8 @@ class Bourbon < ActiveRecord::Base
     bourbons = Bourbon.pluck(:location).uniq
   end
 
-  def self.sort_state(state)
-    bourbons = Bourbon.where("location LIKE '%#{state}'").pluck(:location).uniq
+  def self.select_state(state)
+    bourbons = Bourbon.where("location LIKE '%#{state}'")
     # is this going to work?
   end
 

@@ -6,10 +6,14 @@ body {
   background-size: cover;
 }
 
-header img {
-  grid-column-start: 1 / span 1;
-  width: 100%;
+header {
+  background-color: red;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: fixed;
 }
+
 
 h2 {
   color: #fff5b8;
@@ -33,10 +37,9 @@ p {
   text-align: right;
 }
 
-.heading {
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.heading-card img {
+  grid-column-start: 1 / span 1;
+  width: 100%;
 }
 
 .heading-card {
@@ -60,6 +63,9 @@ p {
 .sortby {
   background-color: rgba(0,0,0,0.87);
 }
+.sortby h2 {
+  background-color: transparent;
+}
 
 .options {
   display: flex;
@@ -68,7 +74,7 @@ p {
   font-size: 20px;
 }
 
-div.heading-card h2 {
+.heading-card h2 {
   background-color: rgba(0,0,0,0.87);
   padding: 10px;
 }

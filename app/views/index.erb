@@ -1,6 +1,9 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="INSERTPATH">
+</head>
 
-<div class="heading">
-  <header class="heading-card">
+<header class="heading">
+  <div class="heading-card">
     <img src="http://www.sazerac.com/Images/BourbonBottles.png" alt="pretty collection of bourbon bottles">
     <h1>Bourbon Guide</h1>
     <div class="sortby">
@@ -14,10 +17,10 @@
       </nav>
       <br>
     </div>
-  </header>
+  </div>
   <div class="heading-card">
     <header>
-      <h2>Statistics</h2>
+      <h2 id="statistics">Statistics</h2>
     </header>
     <div class="stats">
       <div class="avg">
@@ -39,7 +42,7 @@
       </div>
     </div>
   </div>
-</div>
+</header>
 <div class="bourbons">
   <% @bourbons.each do |bourbon| %>
   <div class="bourbon-card">

@@ -1,7 +1,13 @@
 <header class='statistics'>
   <h1>Statistics</h1>
-  <p>Average Runtime: <%= Special.average_run_time %></p>
-  <p>Average Age: <%= Comedian.average_age %></p>
+  <h3>Average Runtime: <%= Special.average_run_time %></h3>
+  <h3>Average Age: <%= Comedian.average_age %></h3>
+  <section>
+    <h3>Unique Cities:</h3>
+    <% Comedian.unique_cities.each do |city| %>
+    <p><%= city %></p>
+    <% end %>
+  </section>
 </header>
 
 <nav class="side-nav">

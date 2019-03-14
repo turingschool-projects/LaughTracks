@@ -12,16 +12,9 @@
 
   <body>
     <header id="hero">
-      <h1>LAUGH TRACKS</h1>
-      <h2>From the standup scene to the movie screen. These actors and actresses
-        made their debuts on the small stage.</h2>
-        <section>
-          <figure>Average Runtime</figure>
-          <figure>Total TV Specials</figure>
-          <figure>Average Age</figure>
-          <figure>Cities:</figure>
-        </section>
-
+      <h1 class="fancy">LAUGH TRACKS</h1>
+      <h3>From the standup scene to the movie screen. These actors and actresses
+        made their debuts on the small stage.</h3>
     </header>
     <nav>
       <li><a href="">Sort</a></li>
@@ -29,12 +22,40 @@
       <li><a href="">New</a></li>
     </nav>
 
+    <section class="stats">
+      <h2>Statistics</h2>
+
+    <section class="stats-flex">
+      <figure>
+        <h3>Average Runtime:</h3>
+        <p class="fancy"><%= @specials.average_runtime %></p>
+      </figure>
+
+      <figure>
+        <h3>Total TV Specials</h3>
+          <% @comedians.each do |comedian| %>
+            <%= comedian.name %>: <%= comedian.specials.count %> | 
+            <% end %>
+      </figure>
+
+      <figure>
+        <h3>Average Age:</h3>
+        <p class="fancy"><%= @comedians.average_age %></figure></p>
+      <figure class="stats-item">
+        <h3>Cities:</h3>
+        <%= @comedians.all_cities %>
+      </figure>
+
+    </section>
+      </section>
+
     <section class="body">
       <% @comedians.each do |comedian| %>
-      <div class="item">
-        <h1><%= comedian.name %></h1><br />
+      <div id=<%= comedian.name.downcase.gsub(" ", "-") %>>
+        <h2><%= comedian.name %></h2><br />
         Age: <%= comedian.age %><br />
         City: <%= comedian.city %><br />
+        Total TV Specials: <%= comedian.specials.count %>
 
         <section>
         <% comedian.specials.each do |special| %>

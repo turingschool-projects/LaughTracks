@@ -1,10 +1,8 @@
-# require './app/models/special.rb'
-# require './app/models/comedian.rb'
-#
-# Special.destroy_all
-# Comedian.destroy_all
+require './app/models/special.rb'
+require './app/models/comedian.rb'
 
-# wasn't able to get seeding to work with $rake db: seed
+Special.destroy_all
+Comedian.destroy_all
 
 Comedian.create(name: "Adam Sandler",	age: 52,	home_town: "New York, NY",	photo: "https://cdn1.thr.com/sites/default/files/2012/12/6_degrees_of_judd_apatow_adam_sandler.jpg")
 Comedian.create(name: "John Mulaney",	age: 36,	home_town: "Chicago, IL", photo: "https://resizing.flixster.com/zOSxtyjb51wl7o4ceVADrTui2IY=/874x779/v1.cjs0MzU5NTtqOzE3OTgzOzEyMDA7ODc0Ozc3OQ")

@@ -34,7 +34,7 @@ RSpec.describe Comedian do
     end
 
     it ".unique_cities" do
-      expected = ['San Diego','Los Angeles']
+      expected = ['San Diego','Los Angeles'].sort()
       actual = Comedian.unique_cities
 
       expect(actual).to eq(expected)

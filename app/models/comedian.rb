@@ -11,9 +11,9 @@ class Comedian < ActiveRecord::Base
 
   def self.hometowns
     comedians = Comedian.all
-    towns_string = ""
+    towns_string = " "
     all_towns(comedians).each do |town|
-      towns_string << town << " - "
+      towns_string << " - "<< town
     end
     towns_string
   end

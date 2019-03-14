@@ -16,26 +16,21 @@
       <h3>Average Comedian Age:<%=  @comedians.average_age %></h3>
       <h3>Total Specials: <%= @specials.count %></h3>
       <h3>Average Run Time: <%= @specials.average_run_time %></h3>
-      <h3>Hometowns: <%= @comedians.hometowns %></h3>
+      <h4>Hometowns <%= @comedians.hometowns %></h4>
     </section>
 
     <section id="profiles">
-      <!-- iterate each per comedian
-      @comedians.each do |comedian| -->
-      <img src="comedian.photo" alt="Comedian Photo"/>
-      <h1>Comedian Name</h1>
-      <h2>Age</h2>
-      <h2>Home Town</h2>
-      <h2># of Specials<h2>
-
-      <section id="specials">
-        <h3>Specials</h3>
-
-        <img src="comedian.special.photo"/>
-        <h4> Name of Special</h4>
-        <h5> Run Time</h5>
-      </section>
-
+      <% @comedians.each do |comedian| %>
+      <img><%= comedian.photo %></img>
+      <h3><%= comedian.name %></h3>
+      <li><%= comedian.age %></li>
+      <li><%= comedian.home_town %></li><br/>
+        <% comedian.specials.each do |special| %>
+          <img><%= special.thumbnail %></img>
+          <li>Name: <%= special.name %></li>
+          <li>Run Time: <%= special.run_time %></li><br/>
+          <% end %>
+      <% end %>
     </section>
 
 

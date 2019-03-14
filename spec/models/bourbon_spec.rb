@@ -83,6 +83,14 @@ RSpec.describe Bourbon, type: :model do
         expect(Bourbon.sort_avg_rating).to eq([@b1, @b3, @b2])
       end
     end
+
+    describe ".list_states" do
+      it "creates a list of all the unique states in order" do
+
+        expect(Bourbon.list_states).to eq(["CO","KY"])
+      end
+    end
+
   end
 
   describe 'Validations' do

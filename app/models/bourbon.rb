@@ -31,4 +31,12 @@ class Bourbon < ActiveRecord::Base
     # is this going to work?
   end
 
+  def self.list_states
+    cities = Bourbon.pluck(:location)
+    states = cities.map do |city|
+      city[-2,2]
+    end
+    states.uniq.sort
+  end
+
 end

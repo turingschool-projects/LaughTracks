@@ -19,7 +19,7 @@ class Bourbon < ActiveRecord::Base
   end
 
   def self.avg_avg_rating
-    avg = Bourbon.average(:avg_rating).round(1)
+    avg = Bourbon.average(:avg_rating).round(2)
   end
 
   def self.cities

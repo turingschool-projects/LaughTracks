@@ -6,6 +6,8 @@
     <div class="sortby">
       <h2>Sort by:</h2>
       <nav class="options">
+        <p>Name</p>
+        <p>Distillery</p>
         <p>Proof</p>
         <p>Expert Score</p>
         <p>Avg Rating</p>
@@ -20,15 +22,18 @@
     <div class="stats">
       <div class="avg">
         <!-- when given a list of bourbons, finds: -->
-        <h3>Avg Proof: <%=  %></h3>
+        <h3>Avg Proof: <%= @bourbons.avg_proof %></h3>
         <br>
-        <h3>Avg Expert Score: <%=  %></h3>
+        <h3>Avg Expert Score: <%= @bourbons.avg_expert_score %></h3>
         <br>
-        <h3>Avg Rating: <%=  %></h3>
+        <h3>Avg Rating: <%= @bourbons.avg_avg_rating %></h3>
         <br>
       </div>
       <div class="locations">
         <h3>Distillery Locations:<h3>
+          <% @bourbons.cities.each do |city| %>
+            <p><%= city %>
+          <% end %>
           <!-- need to find unique locations, logic should be done in the model -->
 
       </div>

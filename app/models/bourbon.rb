@@ -1,4 +1,6 @@
 class Bourbon < ActiveRecord::Base
+  # has_many :awards
+
   attr_reader   :name,
                 :distillery,
                 :location,
@@ -7,6 +9,7 @@ class Bourbon < ActiveRecord::Base
                 :expert_score,
                 :avg_rating,
                 :bottle_image
+
   def initialize(bourbon_params)
     @name = bourbon_params["name"]
     @distillery = bourbon_params["distillery"]
@@ -19,6 +22,6 @@ class Bourbon < ActiveRecord::Base
   end
 
   def self.all
-    bourbons = Bourbon.all
+    
   end
 end

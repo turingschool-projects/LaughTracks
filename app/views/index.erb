@@ -37,42 +37,11 @@
           <div class="locations">
             <h3>Distillery Locations:<h3>
               <!-- need to find unique locations, logic should be done in the model -->
-              <% @bourbons.each do |bourbon| %>
-                <p><%= bourbon.location %></p>
-              <% end %>
+
           </div>
         </div>
       </div>
     </div>
-    <div class="bourbons">
-      <% @bourbons.each do |bourbon| %>
-      <div class="bourbon-card">
-        <h3><%= bourbon.name %></h3>
-        <section class="info">
-          <img src="<%= bourbon.bottle_image %>" alt="bottle of <%= bourbon.name %>">
-          <section class="text">
-            <h3><%= bourbon.distillery %></h3>
-            <h3><%= bourbon.location %></h3>
-            <br>
-            <h3>Proof: <%= bourbon.proof %></h3>
-            <h3>Expert Score: <%= bourbon.expert_score %></h3>
-            <h3>Average Rating: <%= bourbon.avg_rating %></h3>
-            <h3>Description:</h3>
-            <p><%= bourbon.description %></p>
-          </section>
-        </section>
-        <section class="awards">
-          <!-- logic for this should be done in the model -->
-          <% awards.each do |award|%>
-          <div class="award-card">
-            <img src="<%= award.image %>" alt="<%= award.name%>">
-            <!-- will this work this way or should i concatenate it elsewhere? -->
-            <p><%= award.year %> <%= award.type %> <%= award.name %></p>
-          <% end %>
-          </div>
-        <% end %>
-        </section>
-      </div>
-    </div>
+    
   </body>
 </html>

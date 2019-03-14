@@ -22,7 +22,7 @@
 
     <% @comedians.each do |comedian| %>
       <section class='comedian-row'>
-        <section class='comedian-info'>
+        <section class='comedian-info' id='comedian-id-<%= comedian.id %>'>
           <ul>
             <li><%= comedian.name %></li>
             <li><img src="<%= comedian.headshot_link %>" alt="<%= comedian.name %> headshot"></li>

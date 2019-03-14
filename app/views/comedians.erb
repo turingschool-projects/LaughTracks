@@ -20,26 +20,27 @@
       </ul>
     </section>
 
-    <section class='comedian-row'>
-      <section class='comedian-info'>
-        <ul>
-          <li>John Mulaney</li>
-          <li><img src="https://m.media-amazon.com/images/M/MV5BMTcyNjU3MjE3MF5BMl5BanBnXkFtZTgwNDk5MzIyMTE@._V1_UY317_CR6,0,214,317_AL_.jpg" alt="John Mulaney headshot"></li>
-          <li>Age: 36</li>
-          <li>Hometown: Chicago</li>
-          <li>Number of specials: 3</li>
-        </ul>
-      </section>
-
-      <section class='comedian-specials-row'>
-        <section class='comedian-special'>
+    <% @comedians.each do |comedian| %>
+      <section class='comedian-row'>
+        <section class='comedian-info'>
           <ul>
-            <li>John Mulaney: Kid Gorgeous at Radio City (2018)</li>
-            <li><img src="https://m.media-amazon.com/images/M/MV5BOWZlYjE4ZDYtNjhlNi00ZGQ0LTgxZmUtNGRjNDM4YWJmOWNiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY268_CR4,0,182,268_AL_.jpg" alt="John Mulaney: Kid Gorgeous at Radio City poster"></li>
+            <li><%= comedian.name %></li>
+            <li><img src="<%= comedian.headshot_link %>" alt="<%= comedian.name %> headshot"></li>
+            <li>Age: <%= comedian.age %></li>
+            <li>Hometown: <%= comedian.hometown %></li>
+            <li>Number of specials: <%= comedian.specials.count %></li>
           </ul>
         </section>
-      </section>
-    </section>
 
+        <section class='comedian-specials-row'>
+          <section class='comedian-special'>
+            <ul>
+              <li>John Mulaney: Kid Gorgeous at Radio City (2018)</li>
+              <li><img src="https://m.media-amazon.com/images/M/MV5BOWZlYjE4ZDYtNjhlNi00ZGQ0LTgxZmUtNGRjNDM4YWJmOWNiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UY268_CR4,0,182,268_AL_.jpg" alt="John Mulaney: Kid Gorgeous at Radio City poster"></li>
+            </ul>
+          </section>
+        </section>
+      </section>
+    <% end %>
   </body>
 </html>

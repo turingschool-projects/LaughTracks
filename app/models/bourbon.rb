@@ -1,6 +1,15 @@
 class Bourbon < ActiveRecord::Base
   has_many :awards
 
+  validates_presence_of :name,
+                        :distillery,
+                        :location,
+                        :description,
+                        :proof,
+                        :expert_score,
+                        :avg_rating,
+                        :bottle_image
+
   def self.avg_proof
     avg = Bourbon.average(:proof).round(1)
   end
@@ -10,15 +19,15 @@ class Bourbon < ActiveRecord::Base
   end
 
   def self.avg_avg_rating
-    avg = Bourbon.average(:avg_rating).round(1)
+    avg = Bourbon.average(:avg_rating).round(2)
   end
 
   def self.cities
     bourbons = Bourbon.pluck(:location).uniq
   end
 
-  def self.sort_state(state)
-    bourbons = Bourbon.where("location LIKE '%#{state}'").pluck(:location).uniq
+  def self.select_state(state)
+    bourbons = Bourbon.where("location LIKE '%#{state}'")
     # is this going to work?
   end
 

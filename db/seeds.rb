@@ -229,7 +229,7 @@ jg.specials.create(
 jg.specials.create(
   title: "Obsessed", 
   length: 60, 
-  image_url: "https://m.media-amazon.com/images/M/MV5BMTk3NjU2ODY5NF5BMl5BanBnXkFtZTgwNTEyODkwMzE@._V1_.jpg"
+  image_url: "https://m.media-amazon.com/images/M/MV5BMjA1MDc3NzkyNl5BMl5BanBnXkFtZTgwNDYzNjM3MTE@._V1_.jpg"
 )
 jg.specials.create(
   title: "Cinco", 

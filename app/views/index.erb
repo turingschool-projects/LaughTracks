@@ -15,31 +15,35 @@
         <th>Average Special Runtime:</th>
       </tr>
       <tr>
-        <td>36</td>
-        <td>Chicago</td>
-        <td>1 hr 4 min</td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
     </table>
 
   </header>
 
-  <div id="comedian">
-    <img src=https://i.pinimg.com/736x/07/31/7d/07317d772dd1e93e1b99c2567da65735.jpg alt="John Mulaney">
-    <p>Name:</p>
-    <p>Age:</p>
-    <p>Hometown:</p>
-    <div id="specials">
-      <h2>Specials</h2>
+  <% @comedians.each do |comedian| %>
+    <div id="comedian">
+      <img src= <%= comedian.image %> class="headshot">
+      <p>Name: <%= comedian.name %></p>
+      <p>Age: <%= comedian.age %></p>
+      <p>Hometown: <%= comedian.hometown %></p>
+      <section id="specials">
+        <h2>Specials</h2>
+        <section class="specials">
+          <% @specials.each do |special| %>
+            <% if special.comedian_id == comedian.id %>
+            <div class="special-card">
+              Title: <%= special.name %><br />
+              <img src=<%= special.image %> alt=comedian.name class="thumbnail">
+              Runtime: <%= special.runtime %> minutes<br/>
+            </div>
+            <% end %>
+          <% end %>
+        </section>
+      </section>
     </div>
-  </div>
-  <div id="comedian">
-    <img src=https://i.pinimg.com/736x/07/31/7d/07317d772dd1e93e1b99c2567da65735.jpg alt="John Mulaney">
-    <p>Name:</p>
-    <p>Age:</p>
-    <p>Hometown:</p>
-    <div id="specials">
-      <h2>Specials</h2>
-    </div>
-  </div>
+  <% end %>
 
 </body>

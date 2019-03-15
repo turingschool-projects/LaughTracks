@@ -5,7 +5,7 @@ class Comedian < ActiveRecord::Base
   validates :age, presence: true
 
   def self.average_age
-    Comedian.average(:age)
+    Comedian.average(:age).round(2)
   end
 
   def self.all_cities
@@ -19,6 +19,10 @@ class Comedian < ActiveRecord::Base
 
   def self.total_specials(comedian)
     count(:special)
+  end
+
+  def self.filter_by_age(age)
+    where(age: age)
   end
 
 end

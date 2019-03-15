@@ -13,28 +13,28 @@ dc = Comedian.create(
 aw = Comedian.create(
   name: "Ali Wong", 
   age: 36, 
-  city: "San Francisco, CA", 
+  city: "San Francisco", 
   head_shot: "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_683,w_1024,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1080/ali-wong-2_wnlx6z.jpg"
 )
 
 is = Comedian.create(
   name: "Iliza Shlesinger", 
   age: 36, 
-  city: "New York City, NY", 
+  city: "New York City", 
   head_shot: "https://brokeass2-9uzlt3u.netdna-ssl.com/wp-content/pictsnShit/2015/09/809D1ADA-C224-6B6B-C1067E721F959902.jpg"
 )
 
 bb = Comedian.create(
   name: "Bill Burr", 
   age: 50, 
-  city: "Canton, MA", 
+  city: "Canton", 
   head_shot: "https://i.pinimg.com/474x/57/36/ca/5736ca9a980e89ba83729c494374bdf3--bill-burr-funny-people.jpg"
 )
 
 mm = Comedian.create(
   name: "Marc Maron", 
   age: 55, 
-  city: "Jersey City, NJ", 
+  city: "Jersey City", 
   head_shot: "https://s3.amazonaws.com/webassets.ticketmob.com/LS/images/ShowPosters/MMSethOlenick5.jpg"
 )
 
@@ -48,42 +48,42 @@ ck = Comedian.create(
 aa = Comedian.create(
   name: "Aziz Ansari", 
   age: 36, 
-  city: "Columbia, S.C.", 
+  city: "Columbia", 
   head_shot: "https://files.list.co.uk/images/2019/01/14/aziz-ansari-b-and-white-LST324894.jpg"
 )
 
 js = Comedian.create(
   name: "Jerry Seinfeld", 
   age: 64, 
-  city: "Portsmouth, V.A.", 
+  city: "Portsmouth", 
   head_shot: "https://i.pinimg.com/474x/8e/cb/ab/8ecbab3c50c7d279b3ac940004302258--jerry-seinfeld-white-people.jpg"
 )
 
 cr = Comedian.create(
   name: "Chris Rock", 
   age: 54, 
-  city: "Andrews, S.C.", 
+  city: "Andrews", 
   head_shot: "https://voodoocomedy.com/wp-content/uploads/2015/06/Chris-Rock-Rolling-Out-8.jpeg"
 )
 
 jg = Comedian.create(
   name: "Jim Gaffigan", 
   age: 52, 
-  city: "Elgin, I.L.", 
+  city: "Elgin", 
   head_shot: "https://www.ocregister.com/wp-content/uploads/migration/ob3/ob36p9-b88758673z.120160729101521000ghghorhk.10.jpg?w=780"
 )
 
 em = Comedian.create(
   name: "Eddie Murphy", 
   age: 57, 
-  city: "New York City, N.Y.", 
+  city: "New York City", 
   head_shot: "https://i.pinimg.com/originals/d6/b7/21/d6b7211f77f385134bf1f705efe6f42c.jpg"
 )
 
 ch = Comedian.create(
   name: "Chelsea Handler", 
   age: 44, 
-  city: "Livingston, N.J.", 
+  city: "Livingston", 
   head_shot: "https://pictures.ozy.com/pictures/440x440/8/6/6/127866_chelsea.jpg"
 )
 

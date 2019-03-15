@@ -28,7 +28,7 @@ RSpec.describe Comedian do
   describe 'Class Methods' do
     it ".average_age" do
       expected = 49
-      actual = Comedian.average_age
+      actual = Comedian.average_age(Comedian)
 
       expect(actual).to eq(expected)
     end

@@ -8,7 +8,16 @@ class Special < ActiveRecord::Base
       selected_specials = Special.includes(:comedian).where(comedians: { age: age })
       selected_specials.average(:run_time)
     else
-      average(:run_time).round().to_i
+      average(:run_time)
+    end
+  end
+
+  def self.special_count(age)
+    if age
+      selected_specials = Special.includes(:comedian).where(comedians: { age: age })
+      selected_specials.all.count
+    else
+      all.count
     end
   end
 end

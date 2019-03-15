@@ -23,7 +23,8 @@ RSpec.describe Special do
   describe 'Class Methods' do
     it ".average_run_time" do
       expected = 5
-      actual = Special.average_run_time
+      params = {age: nil}
+      actual = Special.average_run_time(params[:age])
       expect(actual).to eq(expected)
     end
   end

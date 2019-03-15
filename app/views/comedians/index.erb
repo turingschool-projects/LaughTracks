@@ -2,7 +2,7 @@
   <h1>Statistics</h1>
   <h3>Average Runtime: <%= Special.average_run_time(params[:age]).round() %></h3>
   <h3>Average Age: <%= @comedians.average_age(@comedians).round() %></h3>
-  <h3>TV Specials: <%= Special.all.count %></h3>
+  <h3>TV Specials: <%= Special.special_count(params[:age]) %></h3>
 
   <section>
     <h3>Unique Cities:</h3>

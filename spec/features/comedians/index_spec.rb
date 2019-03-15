@@ -80,7 +80,7 @@ RSpec.describe "an unauthenticated user visits comedians page" do
         end
 
         within '.statistics' do
-          expect(page).to have_content('Average Runtime: 6')
+          expect(page).to have_content('Average Runtime: 5')
           expect(page).to have_content('Average Age: 50')
           expect(page).to have_content('TV Specials: 3')
         end

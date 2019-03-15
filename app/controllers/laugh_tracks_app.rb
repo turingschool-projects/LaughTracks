@@ -11,14 +11,26 @@ class LaughTracksApp < Sinatra::Base
     erb :index
   end
 
+  get "/bourbons/" do
+    @bourbons = Bourbon.all
+    @awards = Award.all
+    erb :index
+  end
+
   get "/bourbons/new" do
     erb :new
   end
 
-# is this right?
+
+  # no idea if this will work because it depends on the states available
+  get "/bourbons?select=KY" do
+    @bourbons = Bourbon.select_state("KY")
+    redirect :"/bourbons?select=KY"
+  end
+
   post "/bourbons" do
-    bourbon = Bourbon.create(bourbon_params)
-    redirect :"/bourbons"
+    bourbon = Bourbon.create(params[:bourbon])
+    redirect "/bourbons"
   end
 
 #so now my @bourbons is sorted, right?
@@ -44,13 +56,6 @@ class LaughTracksApp < Sinatra::Base
 
   get "bourbons?sortby=avg_rating" do
     @bourbons = Bourbon.sort_avg_rating
-    erb :index
-  end
-
-  # no idea if this will work because it depends on the states available
-  get "bourbons?select=KY" do
-    binding.pry
-    @bourbons = Bourbon.select_state("KY")
     erb :index
   end
 

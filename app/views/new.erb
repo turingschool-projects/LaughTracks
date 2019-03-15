@@ -1,37 +1,46 @@
-<h2>Enter a new bourbon!</h2>
-<form class="new-bourbon" action="index.html" method="post">
-  <label for="name">Name:</label>
-    <input type="text" name="bourbon[name]" placeholder="name" required>
-    <br>
+<h2 class="new">Enter a new bourbon!</h2>
+<div class="new_container">
+  <div class="new_form">
+    <form class="new-bourbon" action="/bourbons" method="post">
+      <label for="name">Name:</label>
+        <br>
+        <input type="text" name="bourbon[name]" placeholder="name" required>
+        <br>
 
-  <label for="distillery">Distillery:</label>
-    <input type="text" name="bourbon[distillery]" placeholder="distillery" required>
-    <br>
+      <label for="distillery">Distillery:</label>
+        <br>
+        <input type="text" name="bourbon[distillery]" placeholder="distillery" required>
+        <br>
 
-  <label for="location">Location:</label>
-    <input type="text" name="bourbon[location]" placeholder="location" required>
-    <br>
+      <label for="location">Location:</label>
+        <br>
+        <input type="text" name="bourbon[location]" placeholder="location" required>
+        <br>
 
-  <label for="description">Description:</label>
-    <input type="text" name="bourbon[description]" placeholder="location" required>
-    <br>
+      <label for="description">Description:</label>
+        <br>
+        <input type="text" name="bourbon[description]" placeholder="location" required>
+        <br>
 
-  <label for="proof">Proof:</label>
-    <input type="number" name="bourbon[proof]" value="0" min="0" max="200">
-    <br>
+      <label for="proof">Proof:</label>
+        <br>
+        <input type="number" name="bourbon[proof]" value="0" min="0" max="200">
+        <br>
 
-  <label for="expert_score">Expert Score:</label>
-    <input type="number" name="bourbon[expert_score]" value="0" min="0" max="100">
-    <br>
+      <label for="expert_score">Expert Score:</label>
+        <br>
+        <input type="number" name="bourbon[expert_score]" value="0" min="0" max="100">
+        <br>
 
-  <label for="avg_rating">Average Rating:</label>
-    <input type="number" name="bourbon[avg_rating]" value="0" min="0" max="5">
-    <br>
+      <label for="avg_rating">Average Rating:</label>
+        <br>
+        <input type="number" name="bourbon[avg_rating]" value="0" min="0" max="5">
+        <br>
 
-  <input type="hidden" name="bourbon[bottle_image]" value="https://www.lawlersliquorsonline.com/wp-content/uploads/2018/10/Blank-Bottle-88.png">
+      <input type="hidden" name="bourbon[bottle_image]" value="https://www.lawlersliquorsonline.com/wp-content/uploads/2018/10/Blank-Bottle-88.png">
 
-  <input id="button" type="submit"/>
-</form>
-
-
-<a href="/bourbon" id="home_button">Home</a>
+      <input id="button" type="submit"/>
+    </form>
+    <a href="/bourbons" id="home_button">Home</a>
+  </div>
+</div>

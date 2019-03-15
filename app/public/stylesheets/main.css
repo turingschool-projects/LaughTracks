@@ -38,13 +38,17 @@ p {
   text-align: right;
 }
 
+label {
+  font-color: white;
+}
+
 .heading-card img {
   grid-column-start: 1 / span 1;
   width: 100%;
 }
 
 .heading-card h1 {
-  background-color: rgba(0,0,0,0.87);;
+  background-color: rgba(0,0,0,0.87);
   color: #fff5b8;
   margin-top: 0px;
   margin-bottom: -10px;
@@ -172,7 +176,30 @@ p {
   max-width: 50%;
 }
 
+.new {
+  background-color: rgba(0,0,0,0.87);
+}
+
+.new_container {
+  color: #fff5b8;
+  display: flex;
+  background: rgba(0,0,0,0.77);
+}
+.new_form {
+  left: 50%;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
 #statistics {
   background-color: rgba(0,0,0,0.87);
   padding-bottom: 5px;
+}
+
+#home_button {
+  background-color: rgba(255,245,184,0.87);
+  color: black;
+  padding: 5px;
+  text-align: center;
 }

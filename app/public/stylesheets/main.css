@@ -142,7 +142,7 @@ label {
 
 .bourbons {
   display: flex;
-  margin-top: 360px;
+  margin-top: 380px;
   height: calc(vh-360px);
   overflow-y: scroll;
 }
@@ -192,9 +192,19 @@ label {
   text-align: center;
 }
 
+.state_select {
+  display: inline;
+}
+
 #statistics {
   background-color: rgba(0,0,0,0.87);
   padding-bottom: 5px;
+}
+
+input[type=submit] {
+  background_color: pink;
+  font-weight: 500px;
+  padding: 5px;
 }
 
 #home_button {

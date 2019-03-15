@@ -33,7 +33,9 @@
           <br>
           <br>
           <% @bourbons.list_states.each do |state| %>
-            <a href="/bourbons?select=<%= state %>"><%= state %></a>
+            <form class="state_select" action="/bourbons" method="post">
+              <input id="state_button" type="submit" name="<%= state.upcase %>" value="<%= state.upcase %>">
+            </form>
           <% end %>
 
       </div>

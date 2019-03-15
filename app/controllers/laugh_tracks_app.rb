@@ -6,8 +6,13 @@ class LaughTracksApp < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + '../public'
 
   get "/bourbons" do
-    @bourbons = Bourbon.all
-    @awards = Award.all
+    # if params[asdfasdfa]
+    #   redirect :"/bourbons?select=#{param[:thingy]}"
+    #   @bourbons = Bourbon.select_state(param[:thingy])
+    # else
+      @bourbons = Bourbon.all
+      @awards = Award.all
+    # end
     erb :index
   end
 
@@ -21,25 +26,26 @@ class LaughTracksApp < Sinatra::Base
     erb :new
   end
 
-
-  # no idea if this will work because it depends on the states available
-  get "/bourbons?select=KY" do
-    @bourbons = Bourbon.select_state("KY")
-    redirect :"/bourbons?select=KY"
-  end
-
   post "/bourbons" do
     bourbon = Bourbon.create(params[:bourbon])
     redirect "/bourbons"
   end
 
-#so now my @bourbons is sorted, right?
+
+# no idea if this will work because it depends on the states available
+  get "/bourbons/select=KY" do
+    binding.pry
+    redirect :"/bourbons?select=KY"
+  end
+
+# so now my @bourbons is sorted, right?
   get "/bourbons?sortby=name" do
     @bourbons = Bourbon.sort_name
     erb :index
   end
 
   get "bourbons?sortby=distillery" do
+
     @bourbons = Bourbon.sort_distillery
     erb :index
   end

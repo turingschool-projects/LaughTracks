@@ -41,15 +41,14 @@
           <% @bourbons.cities.each do |city| %>
             <p><%= city %>
           <% end %>
-          <br>
-          <br>
-          <% Bourbon.all.list_states.each do |state| %>
-            <form class="state_select" action="/bourbons" method="get">
-              <input id="state_button" type="submit" name="select" value="<%= state %>">
-            </form>
-          <% end %>
-          <a href="/bourbons" id="state_button">ALL</a>
-
+      </div>
+      <div class="state_buttons">
+        <% Bourbon.all.list_states.each do |state| %>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="select" value="<%= state %>">
+        </form>
+        <% end %>
+        <a href="/bourbons" id="state_button">ALL</a>
       </div>
     </div>
   </div>

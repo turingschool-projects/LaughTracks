@@ -5,6 +5,7 @@ body {
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   background-size: cover;
   position: relative;
+  display: inline-block;
 }
 
 header {
@@ -13,7 +14,6 @@ header {
   position: fixed;
   z-index: 10;
   background: inherit;
-  max-width: 900px;
 }
 
 
@@ -43,6 +43,11 @@ label {
   font-color: white;
 }
 
+a {
+  width: 2.5vw;
+  height: 1.6vw;
+}
+
 .heading-card img {
   grid-column-start: 1 / span 1;
   width: 100%;
@@ -56,7 +61,7 @@ label {
   padding-top: 3px;
   padding-bottom: 3px;
   text-align: center;
-  font-size: 5vw;
+  font-size: 4.75vw;
 }
 
 .stats h3 {
@@ -113,6 +118,8 @@ label {
   margin-left: 10px;
   margin-right: 10px;
   width: 50%;
+  max-height: 300px;
+  max-width: 450px;
 }
 
 .sortby {
@@ -134,11 +141,18 @@ label {
   grid-template-columns: 50% 50%;
   padding-left: 15px;
   padding-right: 15px;
-  min-height: 4vw;
+  max-height: 30wv;
 }
 
 .locations {
   grid-column-start: 2;
+}
+
+.state_buttons {
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .state_select {
@@ -148,7 +162,7 @@ label {
 
 .bourbons {
   display: flex;
-  margin-top: 36vw;
+  margin-top: 35vw;
   height: calc(vh-360px);
   overflow-y: scroll;
 }
@@ -204,6 +218,7 @@ label {
   padding: 4px;
   font-size: 1.3vw;
   border: none;
+  margin-left: 2px;
 }
 
 #state_button:hover {

@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <% if @age != nil %>
+      <% @comedians = @comedians.filter_by_age(@age) %>
+    <% end %>
+    
     <header id="hero">
       <h1 class="fancy">LAUGH TRACKS</h1>
       <h3>From the standup scene to the movie screen. These actors and actresses
@@ -32,9 +36,10 @@
       </figure>
 
       <figure>
+
         <h3>Total TV Specials</h3>
           <% @comedians.each do |comedian| %>
-            <%= comedian.name %>: <%= comedian.specials.count %> | 
+            <%= comedian.name %>: <%= comedian.specials.count %> |
             <% end %>
       </figure>
 

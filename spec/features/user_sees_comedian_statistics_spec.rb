@@ -24,7 +24,7 @@ RSpec.describe 'a user visits comedians page' do
       end
     end
 
-    it 'should show all hometowns of comedians on page' do 
+    it 'should show all hometowns of comedians on page' do
       within "#statistics" do
         expect(page).to have_content('St. Paul')
         expect(page).to have_content('Washington DC')

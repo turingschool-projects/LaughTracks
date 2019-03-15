@@ -17,4 +17,15 @@ RSpec.describe Special do
       expect(special).to_not be_valid
     end
   end
+
+  describe 'class methods' do
+    it 'should calculate statistics of specials' do
+      s1 = Special.create(name: 'special 1', runtime_mins: 1, image_url: 'dostuff')
+      s2 = Special.create(name: 'special 2', runtime_mins: 2, image_url: 'dostuff')
+      s3 = Special.create(name: 'special 3', runtime_mins: 3, image_url: 'dostuff')
+
+      average = Special.average_run_length
+      expect(average).to eq(2)
+    end
+  end
 end

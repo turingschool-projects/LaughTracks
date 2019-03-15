@@ -7,15 +7,23 @@
   </head>
   <body>
     <h1>Welcome to Comedians!</h1>
+    <h2>Statistics:
+      <ul>
+        <li>Average age: <%= Comedian.average(:age).round %></li>
+        <li>Average special length: <%= @specials.average_run_length %></li>
+      </ul>
+    </h2>
     <% @comedians.each do |comedian| %>
       <ul id="comedian-<%=comedian.id%>">
         <li>Name: <%= comedian.name %></li>
         <li>Age: <%= comedian.age %></li>
         <li>Birthplace: <%= comedian.birthplace %></li>
-        <li>Photo: <img src="<%comedian.image_url%>" alt="comedian photo" style="width:100px;height:100px;">
+        <li>Photo: <img src=<%= comedian.image_url %> alt="comedian photo" style="width:100px;height:100px;">
         <li><% comedian.specials.each do |special| %>
           <ul id="special-<%=special.id%>">
             <li>Name: <%= special.name %></li>
+            <li>Runtime: <%= special.runtime_mins %></li>
+            <li><img src=<%= special.image_url %> alt="Special Thumb" style="width:100px;height:100px;"></li>
           </ul>
           <% end %>
         </li>

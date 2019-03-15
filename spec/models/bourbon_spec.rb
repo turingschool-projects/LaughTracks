@@ -41,45 +41,37 @@ RSpec.describe Bourbon, type: :model do
       end
     end
 
-    describe ".sort_name" do
+    describe ".sort_by(name)" do
       it "creates a list of all bourbons sorted by distillery" do
-        expect(Bourbon.sort_name).to eq([@b2, @b3, @b1])
+        expect(Bourbon.sort_by("name")).to eq([@b2, @b3, @b1])
       end
     end
 
-    # This one might be hard...unless I group by twice? jk don't need this..
-    # describe ".sort_location" do
-    #   it "creats a list of all bourbons sorted by location" do
-    #
-    #     expect(Bourbon.sort_location).to eq([@b3,@b1,@b2])
-    #   end
-    # end
-
-    describe ".sort_distillery" do
+    describe ".sort_by(distillery)" do
       it "creates a list of all bourbons sorted by distillery" do
 
-        expect(Bourbon.sort_distillery).to eq([@b1, @b3, @b2])
+        expect(Bourbon.sort_by("distillery")).to eq([@b1, @b3, @b2])
       end
     end
 
-    describe ".sort_proof" do
+    describe ".sort_by(proof)" do
       it "creates a list of all bourbons sorted by proof ascending" do
 
-        expect(Bourbon.sort_proof).to eq([@b2, @b1, @b3])
+        expect(Bourbon.sort_by("proof")).to eq([@b2, @b1, @b3])
       end
     end
 
-    describe ".sort_expert_score" do
+    describe ".sort_by(expert_score)" do
       it "creates a list of all bourbons sorted by expert score descending" do
 
-        expect(Bourbon.sort_expert_score).to eq([@b1, @b2, @b3])
+        expect(Bourbon.sort_by("expert_score")).to eq([@b1, @b2, @b3])
       end
     end
 
-    describe ".sort_avg_rating" do
+    describe ".sort_by(avg_rating)" do
       it "creates a list of all bourbons sorted by avg rating descending" do
 
-        expect(Bourbon.sort_avg_rating).to eq([@b1, @b3, @b2])
+        expect(Bourbon.sort_by("avg_rating")).to eq([@b1, @b3, @b2])
       end
     end
 
@@ -89,7 +81,6 @@ RSpec.describe Bourbon, type: :model do
         expect(Bourbon.list_states).to eq(["CO","KY"])
       end
     end
-
   end
 
   describe 'Validations' do

@@ -26,7 +26,7 @@ RSpec.describe "a user visiting the main page" do
       it "show five sort options" do
         visit "/bourbons"
         within ".sortby" do
-          expect(page).to have_content("Name")
+          expect(page).to have_button("Name")
           expect(page).to have_content("Distillery")
           expect(page).to have_content("Proof")
           expect(page).to have_content("Expert Score")

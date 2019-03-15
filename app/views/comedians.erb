@@ -1,7 +1,8 @@
-<% @comedians.each do |comedian| %>
 <ul>
-  <li><%= comedian.name %></li>
-  <li>Length: <%= comedian.age %></li>
-  <li>Play Count: <%= comedian.city %></li>
+    <% @comedians.each do |comedian| %>
+        <li><%= comedian.name %></li>
+        <li>Length: <%= comedian.age %></li>
+        <li>Play Count: <%= comedian.birthplace %></li>
+        <br>
+    <% end %>     
 </ul>
-<% end %>  

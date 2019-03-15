@@ -5,7 +5,7 @@
   <ul>
     <li>Average age: <%= @comedians.average_age.round(2) %></li>
     <li>Average length: <%= @specials.average_length.to_i %> mins</li>
-  </ul>
+    <li>Cities: <%= @comedians.unique_cities.join("; ") %></li>
 </section>
 
 <% @comedians.each do |comedian| %>

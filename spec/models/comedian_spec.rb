@@ -30,5 +30,28 @@ RSpec.describe Comedian, type: :model do
 
       expect(Comedian.average_age).to eq(40.50)
     end 
+  
+    it '.unique_cities' do
+      dc = Comedian.create(
+        name: "Dave Chappelle", 
+        age: 45, 
+        city: "Washington, D.C.", 
+        head_shot: "https://media2.fdncms.com/portmerc/imager/u/original/10749418/mwbw-chappelle.jpg"
+      )
+      aw = Comedian.create(
+        name: "Ali Wong", 
+        age: 36, 
+        city: "San Francisco, CA", 
+        head_shot: "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_683,w_1024,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1080/ali-wong-2_wnlx6z.jpg"
+      )
+      rw = Comedian.create(
+        name: "Robin Williams", 
+        age: 63,
+        city: "San Francisco, CA", 
+        head_shot: "http://www.gstatic.com/tv/thumb/persons/55875/55875_v9_ba.jpg"
+      )
+     
+      expect(Comedian.unique_cities).to eq("Washington, D.C.", "San Francisco, C.A.")
+    end 
   end
 end

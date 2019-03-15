@@ -22,14 +22,14 @@ RSpec.describe Comedian do
             expect(page).to have_content('Demetri Martin')
             expect(page).to have_content(45)
             expect(page).to have_content('New York City')
-            expect(page).to have_no_content('Waco')
+            expect(page).to_not have_content('Waco')
           end
 
           within '#steve-martin' do
             expect(page).to have_content('Steve Martin')
             expect(page).to have_content(73)
             expect(page).to have_content('Waco')
-            expect(page).to have_no_content('New York City')
+            expect(page).to_not have_content('New York City')
           end
       end
 
@@ -38,13 +38,13 @@ RSpec.describe Comedian do
           within '#demetri-martin #perso' do
             expect(page).to have_content('Person.')
             expect(page).to have_content(42)
-            expect(page).to have_no_content('Live')
+            expect(page).to_not have_content('Live')
           end
 
           within '#demetri-martin #live' do
             expect(page).to have_content('Live')
             expect(page).to have_content(61)
-            expect(page).to have_no_content('Person.')
+            expect(page).to_not have_content('Person.')
           end
       end
     end

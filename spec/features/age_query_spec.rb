@@ -12,7 +12,7 @@ RSpec.describe Comedian do
     c2.specials.create(name: "Steve Martin's Best Show Ever", runtime: 60, image: 'https://m.media-amazon.com/images/M/MV5BOTIwMGZmOGYtYzM1My00YTE1LWI2NTgtY2YwOTYxNGM2YTZkXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_UY268_CR9,0,182,268_AL_.jpg')
     c2.specials.create(name: 'All Commercials... A Steve Martin Special', runtime: 60, image: 'https://m.media-amazon.com/images/M/MV5BOTIwMGZmOGYtYzM1My00YTE1LWI2NTgtY2YwOTYxNGM2YTZkXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_UY268_CR9,0,182,268_AL_.jpg')
   end
-  
+
   describe 'when a user visits comedians with an age query' do
     describe 'for each comedian of the right age' do
       it 'can find comedian attributes' do
@@ -23,9 +23,9 @@ RSpec.describe Comedian do
             expect(page).to have_content(45)
             expect(page).to have_content('New York City')
 
-            expect(page).to have_no_content('Steve Martin')
-            expect(page).to have_no_content(73)
-            expect(page).to have_no_content('Waco')
+            expect(page).to_not have_content('Steve Martin')
+            expect(page).to_not have_content(73)
+            expect(page).to_not have_content('Waco')
           end
       end
 
@@ -37,8 +37,8 @@ RSpec.describe Comedian do
             expect(page).to have_content('Live')
             expect(page).to have_content(61)
 
-            expect(page).to have_no_content("Steve Martin's Best Show Ever")
-            expect(page).to have_no_content(60)
+            expect(page).to_not have_content("Steve Martin's Best Show Ever")
+            expect(page).to_not have_content(60)
           end
       end
 
@@ -50,8 +50,8 @@ RSpec.describe Comedian do
             expect(page).to have_content(3)
             expect(page).to have_content(45.0)
 
-            expect(page).to have_no_content("Waco")
-            expect(page).to have_no_content(6)
+            expect(page).to_not have_content("Waco")
+            expect(page).to_not have_content(6)
           end
       end
     end

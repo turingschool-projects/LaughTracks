@@ -18,8 +18,8 @@ header {
 
 h2 {
   color: #fff5b8;
-  height: 4vw;
-  font-size: 3vw;
+  height: 3.8vw;
+  font-size: 2.8vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@ h3 {
 p {
   margin: 2px;
   color: #FFA227;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   font-weight: 100;
   text-align: right;
 }
@@ -55,7 +55,7 @@ label {
   padding-top: 3px;
   padding-bottom: 3px;
   text-align: center;
-  font-size: 5.5vw;
+  font-size: 5vw;
 }
 
 .stats h3 {
@@ -122,7 +122,7 @@ label {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  font-size: 20px;
+  font-size: 4vw;
   padding-top: 3px;
 }
 
@@ -133,7 +133,7 @@ label {
   grid-template-columns: 50% 50%;
   padding-left: 15px;
   padding-right: 15px;
-  min-height: 4.5vw;
+  min-height: 4vw;
 }
 
 .locations {
@@ -147,7 +147,7 @@ label {
 
 .bourbons {
   display: flex;
-  margin-top: 46vw;
+  margin-top: 36vw;
   height: calc(vh-360px);
   overflow-y: scroll;
 }
@@ -195,12 +195,12 @@ label {
 
 #statistics {
   background-color: rgba(0,0,0,0.87);
-  padding-bottom: 5px;
+  padding-bottom: 4px;
 }
 
 #state_button {
   background-color:#FFA227;
-  padding: 5px;
+  padding: 4px;
   font-size: 1.3vw;
   border: none;
 }

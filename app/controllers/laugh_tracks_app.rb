@@ -8,8 +8,8 @@ class LaughTracksApp < Sinatra::Base
   get "/bourbons" do
     if params.has_key?("sort")
       @bourbons = Bourbon.sort_by(params[:sort].downcase)
-    elsif params.count > 0
-      @bourbons = Bourbon.select_state(params.keys.first)
+    elsif params.has_key?("select")
+      @bourbons = Bourbon.select_state(params[:select])
     else
       @bourbons = Bourbon.all
     end

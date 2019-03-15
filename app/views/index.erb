@@ -8,13 +8,18 @@
         <form class="state_select" action="/bourbons" method="get">
           <input id="state_button" type="submit" name="sort" value="Name">
         </form>
-        <!-- <p>Name</p> -->
-        <p>Distillery</p>
-        <p>Proof</p>
-        <p>Expert Score</p>
-        <p>Avg Rating</p>
-
-
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="sort" value="Distillery">
+        </form>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="sort" value="Proof">
+        </form>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="sort" value="Expert_Score">
+        </form>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="sort" value="Avg_Rating">
+        </form>
 
       </nav>
       <br>
@@ -40,7 +45,7 @@
           <br>
           <% Bourbon.all.list_states.each do |state| %>
             <form class="state_select" action="/bourbons" method="get">
-              <input id="state_button" type="submit" name="<%= state %>" value="<%= state %>">
+              <input id="state_button" type="submit" name="select" value="<%= state %>">
             </form>
           <% end %>
           <a href="/bourbons" id="state_button">ALL</a>

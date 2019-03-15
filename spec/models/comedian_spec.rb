@@ -58,7 +58,9 @@ RSpec.describe Comedian do
         Comedian.create(name: 'Hannibal Buress', age: 36, hometown: 'Chicago', headshot_link: '3.jpg')
         Comedian.create(name: 'John Mulaney', age: 36, hometown: 'Chicago', headshot_link: '4.jpg')
 
-        expect(Comedian.all_hometowns).to eq(['St. Paul', 'Washington DC', 'Chicago'])
+        count_of_chicagos = Comedian.all_hometowns.count("Chicago")
+
+        expect(count_of_chicagos).to eq(1)
       end
     end
 

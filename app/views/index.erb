@@ -5,11 +5,22 @@
     <div class="sortby">
       <h2>Sort all by:</h2>
       <nav class="options">
-        <p>Name</p>
-        <p>Distillery</p>
-        <p>Proof</p>
-        <p>Expert Score</p>
-        <p>Avg Rating</p>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="sort" value="Name">
+        </form>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="sort" value="Distillery">
+        </form>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="sort" value="Proof">
+        </form>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="sort" value="Expert_Score">
+        </form>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="sort" value="Avg_Rating">
+        </form>
+
       </nav>
       <br>
     </div>
@@ -34,8 +45,7 @@
           <br>
           <% Bourbon.all.list_states.each do |state| %>
             <form class="state_select" action="/bourbons" method="get">
-              <input type="hidden" name="<%= state.upcase %>" value="<%= state.upcase %>">
-              <input id="state_button" type="submit" name="<%= state.upcase %>" value="<%= state.upcase %>">
+              <input id="state_button" type="submit" name="select" value="<%= state %>">
             </form>
           <% end %>
           <a href="/bourbons" id="state_button">ALL</a>
@@ -67,7 +77,7 @@
           <!-- need to check this method... -->
           <div class="award-card">
             <img src="<%= award.image %>">
-            <p><%= award.year %><%= award.award_type %><%= award.name %></p>
+            <p><%= award.year %> <%= award.award_type %> <%= award.name %></p>
           </div>
           <% end %>
         <% end %>

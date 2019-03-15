@@ -6,8 +6,10 @@ class LaughTracksApp < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + '../public'
 
   get "/bourbons" do
-    if params.count > 0
-      @bourbons = Bourbon.select_state(params.keys.first)
+    if params.has_key?("sort")
+      @bourbons = Bourbon.sort_by(params[:sort].downcase)
+    elsif params.has_key?("select")
+      @bourbons = Bourbon.select_state(params[:select])
     else
       @bourbons = Bourbon.all
     end

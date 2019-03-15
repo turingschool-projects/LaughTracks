@@ -14,9 +14,9 @@
     <section id='statistics'>
       <h2>Statistics</h2>
       <ul>
-        <li>Average Age: </li>
-        <li>Average Special Length: </li>
-        <li>Home Cities: </li>
+        <li>Average Age: <%= @comedians.average_age.round(1) %></li>
+        <li>Average Special Length: <%= @comedians.average_specials_runtime.round(1) %> min</li>
+        <li>Home Cities: <%= @comedians.all_hometowns_list %></li>
       </ul>
     </section>
 

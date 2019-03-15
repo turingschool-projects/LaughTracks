@@ -1,7 +1,19 @@
-<% @comedians.each do |comedian| %>
 <ul>
-  <li><%= comedian.name %></li>
-  <li>Length: <%= comedian.age %></li>
-  <li>Play Count: <%= comedian.city %></li>
+    <% @comedians.each do |comedian| %>
+        
+        <li><%= comedian.name %></li>
+        <li>Length: <%= comedian.age %></li>
+        <li>Play Count: <%= comedian.city %></li>
+        
+            <% @specials.each do |special| %>
+                <% if special.comedian_id == comedian.comedian_id %>
+                    <li>Title: <%= special.title %></li>
+                    <li>Run Time: <%= special.run_time %></li>
+                    <li><img src="<%=special.thumbnail_url%>"></li>
+                    <br>
+                    <br>
+                <% else %>
+                <% end %>  
+            <% end %>  
+    <% end %>  
 </ul>
-<% end %>  

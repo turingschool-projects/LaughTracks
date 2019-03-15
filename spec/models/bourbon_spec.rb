@@ -9,7 +9,7 @@ RSpec.describe Bourbon, type: :model do
     describe ".avg_proof" do
       it "averages the proof for all bourbons" do
 
-        expect(Bourbon.avg_proof).to eq(88.3)
+        expect(Bourbon.avg_proof.round(1)).to eq(88.3)
       end
     end
 

@@ -1,7 +1,7 @@
 RSpec.describe "a user visiting the main page" do
   before :each do
     @b1 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Frankfort, KY" ,description: "tasty" ,proof: 90,expert_score: 91, avg_rating: 3.80,bottle_image: "http://")
-    @b2 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Frankfort, KY" ,description: "tasty" ,proof: 80,expert_score: 89, avg_rating: 3.84,bottle_image: "http://")
+    @b2 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Dankfort, KY" ,description: "tasty" ,proof: 80,expert_score: 89, avg_rating: 3.84,bottle_image: "http://")
     @b3 = Bourbon.create(name: "Bourbon2", distillery: "Buffalo Trace" ,location: "Frankfort, CO" ,description: "tasty" ,proof: 95,expert_score: 87, avg_rating: 3.2,bottle_image: "http://")
   end
 
@@ -27,10 +27,10 @@ RSpec.describe "a user visiting the main page" do
         visit "/bourbons"
         within ".sortby" do
           expect(page).to have_button("Name")
-          expect(page).to have_content("Distillery")
-          expect(page).to have_content("Proof")
-          expect(page).to have_content("Expert Score")
-          expect(page).to have_content("Avg Rating")
+          expect(page).to have_button("Distillery")
+          expect(page).to have_button("Proof")
+          expect(page).to have_button("Expert_Score")
+          expect(page).to have_button("Avg_Rating")
         end
       end
 
@@ -70,6 +70,12 @@ RSpec.describe "a user visiting the main page" do
         click_button("KY")
 
         expect(page).to have_content("Avg Proof: 85.0")
+      end
+
+      it "shows the cards for bourbon" do
+        visit "/bourbons"
+
+        expect(page).to have_css("div.bourbon-card", count:3)
       end
 
     end

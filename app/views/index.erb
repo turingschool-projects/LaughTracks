@@ -29,11 +29,11 @@
     <h2 id="statistics">Statistics</h2>
     <div class="stats">
       <div class="avg">
-        <h3>Avg Proof: <%= @bourbons.avg_proof %></h3>
+        <h3>Avg Proof: <%= @bourbons.avg_proof.round(1) %></h3>
         <br>
-        <h3>Avg Expert Score: <%= @bourbons.avg_expert_score %></h3>
+        <h3>Avg Expert Score: <%= @bourbons.avg_expert_score.round(1) %></h3>
         <br>
-        <h3>Avg Rating: <%= @bourbons.avg_avg_rating %></h3>
+        <h3>Avg Rating: <%= @bourbons.avg_avg_rating.round(2) %></h3>
         <br>
       </div>
       <div class="locations">
@@ -41,15 +41,14 @@
           <% @bourbons.cities.each do |city| %>
             <p><%= city %>
           <% end %>
-          <br>
-          <br>
-          <% Bourbon.all.list_states.each do |state| %>
-            <form class="state_select" action="/bourbons" method="get">
-              <input id="state_button" type="submit" name="select" value="<%= state %>">
-            </form>
-          <% end %>
-          <a href="/bourbons" id="state_button">ALL</a>
-
+      </div>
+      <div class="state_buttons">
+        <% Bourbon.all.list_states.each do |state| %>
+        <form class="state_select" action="/bourbons" method="get">
+          <input id="state_button" type="submit" name="select" value="<%= state %>">
+        </form>
+        <% end %>
+        <a href="/bourbons" id="state_button">ALL</a>
       </div>
     </div>
   </div>
@@ -71,17 +70,20 @@
         <h3>Description:</h3>
         <p><%= bourbon.description %></p>
       </section>
-      <section class="awards">
-        <% @awards.each do |award| %>
-          <% if bourbon.awards.include?(award) %>
-          <div class="award-card">
-            <img src="<%= award.image %>">
-            <p><%= award.year %> <%= award.award_type %> <%= award.name %></p>
-          </div>
-          <% end %>
+    </section>
+    <section id="awards">
+      <% @awards.each do |award| %>
+        <% if bourbon.awards.include?(award) %>
+        <div class="award-card">
+          <img src="<%= award.image %>">
+          <p><%= award.year %> <%= award.award_type %> <%= award.name %></p>
+        </div>
         <% end %>
-      </section>
+      <% end %>
     </section>
   </div>
   <% end %>
+  <form class="add_new" action="/bourbons/new" method="get">
+    <input id="state_button" type="submit" name="n" value="Can't find your favorite?">
+  </form>
 </div>

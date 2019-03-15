@@ -70,7 +70,6 @@ RSpec.describe "a user visiting the main page" do
         click_button("KY")
 
         expect(page).to have_content("Avg Proof: 85.0")
-        # idk why
       end
 
     end

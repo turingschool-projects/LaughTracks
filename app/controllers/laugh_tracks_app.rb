@@ -31,39 +31,4 @@ class LaughTracksApp < Sinatra::Base
     bourbon = Bourbon.create(params[:bourbon])
     redirect "/bourbons"
   end
-
-
-# no idea if this will work because it depends on the states available
-  # get "/bourbons/select=KY" do
-  #   binding.pry
-  #   redirect :"/bourbons?select=KY"
-  # end
-
-# so now my @bourbons is sorted, right?
-  get "/bourbons?sortby=name" do
-    @bourbons = Bourbon.sort_name
-    erb :index
-  end
-
-  get "bourbons?sortby=distillery" do
-
-    @bourbons = Bourbon.sort_distillery
-    erb :index
-  end
-
-  get "bourbons?sortby=proof" do
-    @bourbons = Bourbon.sort_proof
-    erb :index
-  end
-
-  get "bourbons?sortby=expert_score" do
-    @bourbons = Bourbon.sort_expert_score
-    erb :index
-  end
-
-  get "bourbons?sortby=avg_rating" do
-    @bourbons = Bourbon.sort_avg_rating
-    erb :index
-  end
-
 end

@@ -1,6 +1,6 @@
 RSpec.describe 'a user visits comedians page' do
   context 'they visit /comedians' do
-    it 'should show comedian specials names' do
+    before(:each) do
       tom = Comedian.create(name: 'Tom Segura',
                       age: 39,
                       hometown: 'Cincinnati',
@@ -13,10 +13,19 @@ RSpec.describe 'a user visits comedians page' do
                           thumbnail_link: 'https://m.media-amazon.com/images/M/MV5BZWE2Nzc5N2YtOWM0OS00ZWVmLThhOTctNjNlNGI0NTQzMTU5XkEyXkFqcGdeQXVyMzAzODY0NzE@._V1_.jpg')
 
       visit '/comedians'
+    end
 
+    it 'should show comedian specials names' do
       within '#comedian-id-1-specials' do
         expect(page).to have_content('Tom Segura: Disgraceful')
         expect(page).to have_content('Tom Segura: Mostly Stories')
+      end
+    end
+
+    it 'should show comedian specials runtime' do
+      within '#comedian-id-1-specials' do
+        expect(page).to have_content('71')
+        expect(page).to have_content('73')
       end
     end
   end

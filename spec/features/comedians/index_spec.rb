@@ -36,4 +36,19 @@ RSpec.describe "an unauthenticated user visits comedians page" do
       end
     end
   end
+
+  context 'they input info in the statistics inputs' do
+    it 'input age and page displays correct number of comedians' do
+      visit '/comedians'
+
+      within '#age-input' do
+        fill_in('age', with: 50)
+        click_button('age-submit')
+      end
+
+      within '.main' do
+        expect(page).to have_css('.comedian-profile', count: 2)
+      end
+    end
+  end
 end

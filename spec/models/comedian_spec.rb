@@ -31,7 +31,7 @@ RSpec.describe Comedian, type: :model do
       expect(Comedian.average_age).to eq(40.50)
     end 
   
-    it '.unique_cities' do
+    xit '.unique_cities' do
       dc = Comedian.create(
         name: "Dave Chappelle", 
         age: 45, 
@@ -52,6 +52,6 @@ RSpec.describe Comedian, type: :model do
       )
      
       expect(Comedian.unique_cities).to eq("Washington, D.C.", "San Francisco, C.A.")
-    end 
+    end
   end
 end

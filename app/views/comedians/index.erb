@@ -3,8 +3,9 @@
 <section class="stats">
   <h2>Statistics</h2>
   <ul>
-    <li>Average age: <%= @comedians.average_age.to_i %> years old</li>
-    <li>Average length: <%= @specials.average_length.to_i %> mins</li>
+    <li>Average Age: <%= @comedians.average_age.to_i %> years old</li>
+    <li>Total No. of TV Specials: <%= @specials.count %></li>
+    <li>Average Length: <%= @specials.average_length.to_i %> mins</li>
     <li>Cities: <%= @comedians.unique_cities.join(", ") %></li>
 </section>
 
@@ -14,6 +15,7 @@
     <li>Name: <%= comedian.name %></li>
     <li>Age: <%= comedian.age %></li>
     <li>City: <%= comedian.city %></li>
+    <li>TV Specials: <%= comedian.specials.count%>
   </ul>
   <section class="specials">
       <% comedian.specials.each do |special| %>

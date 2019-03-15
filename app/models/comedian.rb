@@ -4,7 +4,7 @@ class Comedian < ActiveRecord::Base
   validates_presence_of :name, :age, :hometown, :headshot_link
 
   def self.average_age
-    sum(:age) / count.to_f
+    average(:age)
   end
 
   def self.all_hometowns

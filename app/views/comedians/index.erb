@@ -1,8 +1,10 @@
 <h1> Laugh Tracks </h1>
 
 <section class="stats">
+  <h2>Statistics</h2>
   <ul>
-    <li>Average age:<%= @comedians.average_age%></li>
+    <li>Average age: <%= @comedians.average_age.round(2) %></li>
+    <li>Average length: <%= @specials.average_length.to_i %> mins</li>
   </ul>
 </section>
 

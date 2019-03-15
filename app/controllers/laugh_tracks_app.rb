@@ -12,7 +12,7 @@ class LaughTracksApp < Sinatra::Base
   post "/comedians" do
     Comedian.create(
       name: params[:name],
-      age: params[:age],
+      age:  params[:age],
       city: params[:city]
     )
     redirect '/comedians'

@@ -1,14 +1,20 @@
-<h1> Laugh Tracks </h1>
+<header>
+  <h1>Laugh Tracks</h1>
+  <p><em>"It is a curious fact that people are never so trivial as when they take themselves seriously."</em></p>
+  <p>- Oscar Wilde</p>
+</header>  
 
-<section class="stats">
+<section id="stats">
   <h2>Statistics</h2>
-  <ul>
-    <li>Average Age: <%= @comedians.average_age.to_i %> years old</li>
-    <li>Total No. of TV Specials: <%= @specials.count %></li>
-    <li>Average Length: <%= @specials.average_length.to_i %> mins</li>
-    <li>Cities: <%= @comedians.unique_cities.join(", ") %></li>
+  <nav>
+      <p id="age">Average Age: <%= @comedians.average_age.to_i %> years old</p>
+      <p id="specials">Total No. of TV Specials: <%= @specials.count %></p>
+      <p id="length">Average Length: <%= @specials.average_length.to_i %> mins</p>
+      <p id="cities">Cities: <%= @comedians.unique_cities.join(", ") %></p>
+  </nav>
 </section>
 
+<section class="comedian">
 <% @comedians.each do |comedian| %>
   <img class="headshot" src="<%= comedian.head_shot %>" alt="<%= comedian.head_shot %>" width="200">
   <ul>
@@ -17,13 +23,16 @@
     <li>City: <%= comedian.city %></li>
     <li>TV Specials: <%= comedian.specials.count%>
   </ul>
-  <section class="specials">
+  <figure class="specials">
       <% comedian.specials.each do |special| %>
         <img class="special_thumbnail" src="<%= special.image_url %>" alt="<%= special.title %>" width="200">
+        <figcaption>
         <ul>
           <li><%= special.title %></li>
           <li>Length: <%= special.length %> mins</li>
         </ul>
+        </figcaption>
       <% end %>
-  </section>
+  </figure>
+</section> 
 <% end %>

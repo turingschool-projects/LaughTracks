@@ -11,15 +11,15 @@ class Bourbon < ActiveRecord::Base
                         :bottle_image
 
   def self.avg_proof
-    avg = Bourbon.average(:proof).round(1)
+    avg = Bourbon.average(:proof)
   end
 
   def self.avg_expert_score
-    avg = Bourbon.average(:expert_score).round(1)
+    avg = Bourbon.average(:expert_score)
   end
 
   def self.avg_avg_rating
-    avg = Bourbon.average(:avg_rating).round(2)
+    avg = Bourbon.average(:avg_rating)
   end
 
   def self.cities

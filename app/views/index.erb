@@ -29,11 +29,11 @@
     <h2 id="statistics">Statistics</h2>
     <div class="stats">
       <div class="avg">
-        <h3>Avg Proof: <%= @bourbons.avg_proof %></h3>
+        <h3>Avg Proof: <%= @bourbons.avg_proof.round(1) %></h3>
         <br>
-        <h3>Avg Expert Score: <%= @bourbons.avg_expert_score %></h3>
+        <h3>Avg Expert Score: <%= @bourbons.avg_expert_score.round(1) %></h3>
         <br>
-        <h3>Avg Rating: <%= @bourbons.avg_avg_rating %></h3>
+        <h3>Avg Rating: <%= @bourbons.avg_avg_rating.round(2) %></h3>
         <br>
       </div>
       <div class="locations">

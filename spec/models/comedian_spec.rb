@@ -53,7 +53,6 @@ RSpec.describe Comedian do
         expect(actual).to eq(expected)
       end
     end
+    
   end
-
-
 end

@@ -61,5 +61,14 @@ RSpec.describe Comedian do
         expect(Comedian.all_hometowns).to eq(['St. Paul', 'Washington DC', 'Chicago'])
       end
     end
+
+    describe '.all_hometowns_list' do
+      it 'returns list of all hometowns as a string' do
+        Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')
+        Comedian.create(name: 'Dave Chappelle', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
+
+        expect(Comedian.all_hometowns_list).to eq('St. Paul, Washington DC')
+      end
+    end
   end
 end

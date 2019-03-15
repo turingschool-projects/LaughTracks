@@ -7,14 +7,13 @@ RSpec.describe "an unauthenticated user visits comedians page" do
 
     @s1 = @c1.specials.create(title: 'Mitch Hedberg: Funny Stuff', run_time: 10)
     @s2 = @c2.specials.create(title: 'Magic Mike: Funny Stuff', run_time: 2)
-    @s3 = @c2.specials.create(title: 'Danger Dave: Funny Stuff', run_time: 3)
+    @s3 = @c2.specials.create(title: 'Danger Jim: Funny Stuff', run_time: 3)
     @s4 = @c3.specials.create(title: 'Sunny Stella: Funny Stuff', run_time: 5)
   end
 
   context 'they see statistics for totals' do
     it 'and correct average run time displayed' do
       visit '/comedians'
-
       within ".statistics" do
         expect(page).to have_content("Average Runtime: 5")
       end
@@ -22,7 +21,6 @@ RSpec.describe "an unauthenticated user visits comedians page" do
 
     it 'and correct average age displayed' do
       visit '/comedians'
-
       within ".statistics" do
         expect(page).to have_content("Average Age: 49")
       end
@@ -30,9 +28,15 @@ RSpec.describe "an unauthenticated user visits comedians page" do
 
     it 'and correct unique cities displayed' do
       visit '/comedians'
-
       within ".statistics" do
         expect(page).to have_content("Unique Cities:\nLos Angeles\nSan Diego")
+      end
+    end
+
+    it 'and correct total tv specials displayed' do
+      visit '/comedians'
+      within ".statistics" do
+        expect(page).to have_content("TV Specials: ")
       end
     end
   end
@@ -52,25 +56,34 @@ RSpec.describe "an unauthenticated user visits comedians page" do
   end
 
   context 'they input info in the statistics inputs' do
-    it 'input age and page displays correct number of comedians' do
-      visit '/comedians'
+    describe 'user inputs age and page displays correctly' do
+      it 'shows correct number of comedians' do
+        visit '/comedians'
 
-      within '#age-input' do
-        fill_in('age', with: 50)
-        click_button('age-submit')
+        within '#age-input' do
+          fill_in('age', with: 50)
+          click_button('age-submit')
+        end
+
+        within '.main' do
+          expect(page).to have_css('.comedian-profile', count: 2)
+          expect(page).to_not have_content('Danger Dave')
+        end
       end
 
-      within '.main' do
-        expect(page).to have_css('.comedian-profile', count: 2)
-      end
+      it 'page statistics update correctly' do
+        visit '/comedians'
 
-      within '#age-input' do
-        fill_in('age', with: 48)
-        click_button('age-submit')
-      end
+        within '#age-input' do
+          fill_in('age', with: 50)
+          click_button('age-submit')
+        end
 
-      within '.main' do
-        expect(page).to have_css('.comedian-profile', count: 2)
+        within '.statistics' do
+          expect(page).to have_content('Average Runtime: 6')
+          expect(page).to have_content('Average Age: 50')
+          expect(page).to have_content('TV Specials: 3')
+        end
       end
     end
   end

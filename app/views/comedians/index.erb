@@ -2,16 +2,19 @@
   <h1>Statistics</h1>
   <h3>Average Runtime: <%= Special.average_run_time %></h3>
   <h3>Average Age: <%= Comedian.average_age %></h3>
+  <h3>TV Specials: <%= Special.all.count %></h3>
+
   <section>
     <h3>Unique Cities:</h3>
     <% Comedian.unique_cities.each do |city| %>
     <p><%= city %></p>
     <% end %>
   </section>
+
   <section class='input-forms'>
     <form id='age-input' action="/comedians" method='get'>
       <input type="number" min='0' max='116.5'
-             placeholder="Input preferred comedian age"
+             placeholder="Age"
              name="age">
       <br>
       <input id='age-submit' type="submit" name="Submit">
@@ -34,13 +37,14 @@
         <p>City: <%= comedian.city %></p>
       </section>
 
-      <% comedian.specials.each do |special| %>
       <section class="tv-special">
+      <% comedian.specials.each do |special| %>
         <h3><%= special.title %></h3>
         <img src= "<%= special.thumbnail %>" alt="tv_special cover">
         <p>Runtime: <%= special.run_time %></p>
-      </section>
       <% end %>
+        <p>Number of Specials: <%= comedian.specials.count %></p>
+      </section>
     </article>
   <% end %>
 </section>

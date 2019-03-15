@@ -6,4 +6,8 @@ class Comedian < ActiveRecord::Base
   def self.average_age
     sum(:age) / count.to_f
   end
+
+  def self.all_hometowns
+    pluck(:hometown).uniq
+  end
 end

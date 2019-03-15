@@ -16,19 +16,19 @@ ActiveRecord::Schema.define(version: 2019_03_14_174344) do
   enable_extension "plpgsql"
 
   create_table "comedians", force: :cascade do |t|
-    t.integer "comedian_id"
     t.text "name"
     t.integer "age"
-    t.text "city"
+    t.text "birthplace"
+    t.text "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "specials", force: :cascade do |t|
+    t.text "name"
+    t.integer "runtime_mins"
     t.integer "comedian_id"
-    t.text "title"
-    t.integer "run_time"
-    t.text "thumbnail_url"
+    t.text "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

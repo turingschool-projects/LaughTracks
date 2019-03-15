@@ -32,10 +32,18 @@ h3 {
 
 p {
   margin: 2px;
-  color: #fff5b8;
+  color: #FFA227;
   font-size: 1.5vw;
   font-weight: 100;
   text-align: right;
+}
+
+label {
+  font-color: white;
+}
+
+a:visited {
+  color: #093f18;
 }
 
 .heading-card img {
@@ -44,7 +52,7 @@ p {
 }
 
 .heading-card h1 {
-  background-color: rgba(0,0,0,0.87);;
+  background-color: rgba(0,0,0,0.87);
   color: #fff5b8;
   margin-top: 0px;
   margin-bottom: -10px;
@@ -138,7 +146,7 @@ p {
 
 .bourbons {
   display: flex;
-  margin-top: 360px;
+  margin-top: 380px;
   height: calc(vh-360px);
   overflow-y: scroll;
 }
@@ -172,7 +180,42 @@ p {
   max-width: 50%;
 }
 
+.new {
+  background-color: rgba(0,0,0,0.87);
+}
+
+.new_container {
+  color: #fff5b8;
+  display: flex;
+  background: rgba(0,0,0,0.77);
+}
+.new_form {
+  left: 50%;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.state_select {
+  display: inline-block;
+  height: 4vw;
+}
+
 #statistics {
   background-color: rgba(0,0,0,0.87);
   padding-bottom: 5px;
+}
+
+#state_button {
+  background-color:#FFA227;
+  padding: 5px;
+  font-size: 1.3vw;
+  border: none;
+}
+
+#home_button {
+  background-color: rgba(255,245,184,0.87);
+  color: black;
+  padding: 5px;
+  text-align: center;
 }

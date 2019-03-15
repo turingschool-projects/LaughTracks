@@ -3,7 +3,7 @@
     <img src="http://www.sazerac.com/Images/BourbonBottles.png" alt="pretty collection of bourbon bottles">
     <h1>Bourbon Guide</h1>
     <div class="sortby">
-      <h2>Sort by:</h2>
+      <h2>Sort all by:</h2>
       <nav class="options">
         <p>Name</p>
         <p>Distillery</p>
@@ -30,6 +30,16 @@
           <% @bourbons.cities.each do |city| %>
             <p><%= city %>
           <% end %>
+          <br>
+          <br>
+          <% Bourbon.all.list_states.each do |state| %>
+            <form class="state_select" action="/bourbons" method="get">
+              <input type="hidden" name="<%= state.upcase %>" value="<%= state.upcase %>">
+              <input id="state_button" type="submit" name="<%= state.upcase %>" value="<%= state.upcase %>">
+            </form>
+          <% end %>
+          <a href="/bourbons" id="state_button">ALL</a>
+
       </div>
     </div>
   </div>

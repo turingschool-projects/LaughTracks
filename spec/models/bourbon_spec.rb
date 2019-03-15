@@ -1,8 +1,8 @@
 RSpec.describe Bourbon, type: :model do
   before :each do
-    @b1 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Dankfort, KY" ,description: "tasty" ,proof: 90,expert_score: 91, avg_rating: 4.0,bottle_image: "http://")
-    @b2 = Bourbon.create(name: "Bourbon", distillery: "Ruffalo Trace" ,location: "Frankfort, KY" ,description: "tasty" ,proof: 80,expert_score: 89, avg_rating: 3.0,bottle_image: "http://")
-    @b3 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Frankfort, CO" ,description: "tasty" ,proof: 95,expert_score: 87, avg_rating: 3.2,bottle_image: "http://")
+    @b1 = Bourbon.create(name: "Bourbon3", distillery: "Buffalo Trace" ,location: "Dankfort, KY" ,description: "tasty" ,proof: 90,expert_score: 91, avg_rating: 4.0,bottle_image: "http://")
+    @b2 = Bourbon.create(name: "Bourbon1", distillery: "Ruffalo Trace" ,location: "Frankfort, KY" ,description: "tasty" ,proof: 80,expert_score: 89, avg_rating: 3.0,bottle_image: "http://")
+    @b3 = Bourbon.create(name: "Bourbon2", distillery: "Buffalo Trace" ,location: "Frankfort, CO" ,description: "tasty" ,proof: 95,expert_score: 87, avg_rating: 3.2,bottle_image: "http://")
   end
 
   describe "Class Methods" do
@@ -34,20 +34,26 @@ RSpec.describe Bourbon, type: :model do
       end
     end
 
-    # This one might be hard...unless I group by twice?
-    describe ".sort_location" do
-      it "creats a list of all bourbons sorted by location" do
-
-        expect(Bourbon.sort_location).to eq([@b3,@b1,@b2])
-      end
-    end
-
     describe ".select_state(state)" do
       it "creats a list of all bourbons for a chosen state" do
 
         expect(Bourbon.select_state("KY")).to eq([@b1, @b2])
       end
     end
+
+    describe ".sort_name" do
+      it "creates a list of all bourbons sorted by distillery" do
+        expect(Bourbon.sort_name).to eq([@b2, @b3, @b1])
+      end
+    end
+
+    # This one might be hard...unless I group by twice? jk don't need this..
+    # describe ".sort_location" do
+    #   it "creats a list of all bourbons sorted by location" do
+    #
+    #     expect(Bourbon.sort_location).to eq([@b3,@b1,@b2])
+    #   end
+    # end
 
     describe ".sort_distillery" do
       it "creates a list of all bourbons sorted by distillery" do
@@ -66,7 +72,7 @@ RSpec.describe Bourbon, type: :model do
     describe ".sort_expert_score" do
       it "creates a list of all bourbons sorted by expert score descending" do
 
-        expect(Bourbon.sort_expert_score).to eq([@b3, @b2, @b1])
+        expect(Bourbon.sort_expert_score).to eq([@b1, @b2, @b3])
       end
     end
 
@@ -76,6 +82,14 @@ RSpec.describe Bourbon, type: :model do
         expect(Bourbon.sort_avg_rating).to eq([@b1, @b3, @b2])
       end
     end
+
+    describe ".list_states" do
+      it "creates a list of all the unique states in order" do
+
+        expect(Bourbon.list_states).to eq(["CO","KY"])
+      end
+    end
+
   end
 
   describe 'Validations' do

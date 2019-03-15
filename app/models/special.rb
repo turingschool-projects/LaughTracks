@@ -3,7 +3,12 @@ class Special < ActiveRecord::Base
 
   validates_presence_of :title
 
-  def self.average_run_time
-    average(:run_time).round().to_i
+  def self.average_run_time(age)
+    if age
+      selected_specials = Special.includes(:comedian).where(comedians: { age: age })
+      selected_specials.average(:run_time)
+    else
+      average(:run_time).round().to_i
+    end
   end
 end

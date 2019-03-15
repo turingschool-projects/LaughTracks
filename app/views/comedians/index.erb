@@ -1,12 +1,12 @@
 <header class='statistics'>
   <h1>Statistics</h1>
-  <h3>Average Runtime: <%= Special.average_run_time %></h3>
-  <h3>Average Age: <%= Comedian.average_age %></h3>
+  <h3>Average Runtime: <%= Special.average_run_time(params[:age]).round() %></h3>
+  <h3>Average Age: <%= @comedians.average_age(@comedians).round() %></h3>
   <h3>TV Specials: <%= Special.all.count %></h3>
 
   <section>
     <h3>Unique Cities:</h3>
-    <% Comedian.unique_cities.each do |city| %>
+    <% @comedians.unique_cities.each do |city| %>
     <p><%= city %></p>
     <% end %>
   </section>

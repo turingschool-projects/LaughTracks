@@ -5,10 +5,10 @@
 
     <section id="statistics">
       <h1>Statistics</h1>
-      <h3>Average Comedian Age:<%=  @comedians.average_age.round %></h3>
+      <h3>Average Comedian Age:<%=  @comedians.average_age %></h3>
       <h3>Total Specials: <%= @specials.count %></h3>
-      <h3>Average Run Time: <%= @specials.average_run_time.round %></h3>
-      <h4>Hometowns <%= @comedians.hometowns %></h4>
+      <h3>Average Run Time: <%= @specials.average_run_time %></h3>
+      <h4>Hometowns: <%= @comedians.hometowns %></h4>
     </section>
 
     <section id="profiles">

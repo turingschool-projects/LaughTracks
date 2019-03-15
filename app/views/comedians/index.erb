@@ -21,13 +21,13 @@
 
 <nav class="side-nav">
   <% @comedians.each do |comedian| %>
-    <a href="#<%= comedian.name %>"><%= comedian.name %></a>
+    <a href="#<%= comedian.name.downcase.gsub(' ', '-') %>"><%= comedian.name %></a>
   <% end %>
 </nav>
 
 <section class='main'>
   <% @comedians.each do |comedian| %>
-    <article class="comedian-profile" id="<%= comedian.name %>">
+    <article class="comedian-profile" id="<%= comedian.name.downcase.gsub(' ', '-') %>">
       <section class="comedian-details">
         <h3><%= comedian.name %></h3>
         <p>Age: <%= comedian.age %></p>

@@ -14,12 +14,12 @@
 
       <label for="location">Location:</label>
         <br>
-        <input type="text" name="bourbon[location]" placeholder="city, state" required>
+        <input type="text" name="bourbon[location]" placeholder="city, state" onkeyup="this.value = this.value.toUpperCase();" required>
         <br>
 
       <label for="description">Description:</label>
         <br>
-        <input type="text" name="bourbon[description]" placeholder="location" required>
+        <input type="text" name="bourbon[description]" placeholder="description" required>
         <br>
 
       <label for="proof">Proof:</label>

@@ -32,7 +32,7 @@ h3 {
 
 p {
   margin: 2px;
-  color: #fff5b8;
+  color: #FFA227;
   font-size: 1.5vw;
   font-weight: 100;
   text-align: right;
@@ -40,6 +40,10 @@ p {
 
 label {
   font-color: white;
+}
+
+a:visited {
+  color: #093f18;
 }
 
 .heading-card img {
@@ -193,7 +197,8 @@ label {
 }
 
 .state_select {
-  display: inline;
+  display: inline-block;
+  height: 4vw;
 }
 
 #statistics {
@@ -201,10 +206,11 @@ label {
   padding-bottom: 5px;
 }
 
-input[type=submit] {
-  background_color: pink;
-  font-weight: 500px;
+#state_button {
+  background-color:#FFA227;
   padding: 5px;
+  font-size: 1.3vw;
+  border: none;
 }
 
 #home_button {

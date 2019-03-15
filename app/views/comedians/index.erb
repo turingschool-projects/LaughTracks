@@ -3,9 +3,9 @@
 <section class="stats">
   <h2>Statistics</h2>
   <ul>
-    <li>Average age: <%= @comedians.average_age.round(2) %></li>
+    <li>Average age: <%= @comedians.average_age.to_i %> years old</li>
     <li>Average length: <%= @specials.average_length.to_i %> mins</li>
-    <li>Cities: <%= @comedians.unique_cities.join("; ") %></li>
+    <li>Cities: <%= @comedians.unique_cities.join(", ") %></li>
 </section>
 
 <% @comedians.each do |comedian| %>

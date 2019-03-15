@@ -7,7 +7,7 @@ Special.destroy_all
 dc = Comedian.create(
   name: "Dave Chappelle", 
   age: 45, 
-  city: "Washington, D.C.", 
+  city: "Washington, DC", 
   head_shot: "https://media2.fdncms.com/portmerc/imager/u/original/10749418/mwbw-chappelle.jpg"
 )
 aw = Comedian.create(
@@ -41,49 +41,49 @@ mm = Comedian.create(
 ck = Comedian.create(
   name: "Louis C.K.", 
   age: 51, 
-  city: "Washington, D.C.", 
+  city: "Washington, DC", 
   head_shot: "https://cdn.where.ca/wp-content/uploads/2012/09/Louis_CK_Headshot_Tor12.jpg"
 )
 
 aa = Comedian.create(
   name: "Aziz Ansari", 
   age: 36, 
-  city: "Columbia, S.C.", 
+  city: "Columbia, SC", 
   head_shot: "https://files.list.co.uk/images/2019/01/14/aziz-ansari-b-and-white-LST324894.jpg"
 )
 
 js = Comedian.create(
   name: "Jerry Seinfeld", 
   age: 64, 
-  city: "Portsmouth, V.A.", 
+  city: "Portsmouth, VA", 
   head_shot: "https://i.pinimg.com/474x/8e/cb/ab/8ecbab3c50c7d279b3ac940004302258--jerry-seinfeld-white-people.jpg"
 )
 
 cr = Comedian.create(
   name: "Chris Rock", 
   age: 54, 
-  city: "Andrews, S.C.", 
+  city: "Andrews, SC", 
   head_shot: "https://voodoocomedy.com/wp-content/uploads/2015/06/Chris-Rock-Rolling-Out-8.jpeg"
 )
 
 jg = Comedian.create(
   name: "Jim Gaffigan", 
   age: 52, 
-  city: "Elgin, I.L.", 
+  city: "Elgin, IL", 
   head_shot: "https://www.ocregister.com/wp-content/uploads/migration/ob3/ob36p9-b88758673z.120160729101521000ghghorhk.10.jpg?w=780"
 )
 
 em = Comedian.create(
   name: "Eddie Murphy", 
   age: 57, 
-  city: "New York City, N.Y.", 
+  city: "New York City, NY", 
   head_shot: "https://i.pinimg.com/originals/d6/b7/21/d6b7211f77f385134bf1f705efe6f42c.jpg"
 )
 
 ch = Comedian.create(
   name: "Chelsea Handler", 
   age: 44, 
-  city: "Livingston, N.J.", 
+  city: "Livingston, NJ", 
   head_shot: "https://pictures.ozy.com/pictures/440x440/8/6/6/127866_chelsea.jpg"
 )
 

@@ -42,10 +42,6 @@ label {
   font-color: white;
 }
 
-a:visited {
-  color: #093f18;
-}
-
 .heading-card img {
   grid-column-start: 1 / span 1;
   width: 100%;

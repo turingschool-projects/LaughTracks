@@ -121,6 +121,18 @@ of TV specials for every comedian.
 User Story 7
 
 As a visitor
+When I visit `/comedians/new`
+Then I see a form to input a new comedian into the database
+Including fields for their name, age and city.
+When the form is successfully submitted and saved,
+Then I am redirected to `/comedians`
+And I see the new comedian's data on the page.
+```
+
+```
+User Story 8
+
+As a visitor
 When I visit `/comedians?age=34`
 Then I see a list of all comedians with an age of 34
 Just like a previous User Story, BUT all other statistics
@@ -130,18 +142,6 @@ the page.
 
 - Testing should ensure that calculated statistics are
   correct for a limited subset of data
-```
-
-```
-User Story 8
-
-As a visitor
-When I visit `/comedians/new`
-Then I see a form to input a new comedian into the database
-Including fields for their name, age and city.
-When the form is successfully submitted and saved,
-Then I am redirected to `/comedians`
-And I see the new comedian's data on the page.
 ```
 
 ## Extensions

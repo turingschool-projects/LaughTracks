@@ -33,6 +33,17 @@ RSpec.describe Comedian do
       end
     end
 
+    describe '.average_specials_runtime' do
+      it 'returns average run length of every TV special on the page' do
+        c1 = Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')
+        c1.specials.create(name: 'Comedy Central: Mitch Hedberg', runtime: 10, thumbnail_link: '1.jpg')
+        c2 = Comedian.create(name: 'Dave Chappelle', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
+        c2.specials.create(name: 'Dave Chappelle: Equanimity', runtime: 20, thumbnail_link: '2.jpg')
+
+        expect(Comedian.average_specials_runtime).to eq(15)
+      end
+    end
+
     describe '.all_hometowns' do
       it 'returns array of all hometowns' do
         Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')

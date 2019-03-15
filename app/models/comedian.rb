@@ -10,4 +10,8 @@ class Comedian < ActiveRecord::Base
   def self.all_hometowns
     pluck(:hometown).uniq
   end
+
+  def self.average_specials_runtime
+    Special.average(:runtime)
+  end
 end

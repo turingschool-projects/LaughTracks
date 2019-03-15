@@ -9,7 +9,7 @@
     <h1>Welcome to Comedians!</h1>
     <h2>Statistics:
       <ul>
-        <li>Average age: <%= Comedian.average(:age).round %></li>
+        <li>Average age: <%= @comedians.average_age %></li>
         <li>Average special length: <%= @specials.average_run_length %></li>
       </ul>
     </h2>

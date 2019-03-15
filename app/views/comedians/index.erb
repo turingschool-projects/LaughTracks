@@ -8,6 +8,14 @@
     <p><%= city %></p>
     <% end %>
   </section>
+
+  <form action="/comedians/select" method='get'>
+    <input type="number" min='0' max='116.5'
+           placeholder="Input preferred comedian age"
+           name="text[age]">
+    <br>
+    <input type="submit" name="Submit">
+  </form>
 </header>
 
 <nav class="side-nav">

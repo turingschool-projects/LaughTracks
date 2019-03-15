@@ -7,7 +7,7 @@ class Comedian < ActiveRecord::Base
     average(:age).round().to_i
   end
 
-  def self.unique_cities
+  def self.unique_cities()
     uniq_cities = select('DISTINCT city')
     uniq_cities.map { |comedian| comedian.city }.sort()
   end

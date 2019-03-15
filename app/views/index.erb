@@ -16,7 +16,7 @@
         <th>Average Special Runtime:</th>
       </tr>
       <tr>
-        <td><%= @comedians.average("age") %></td>
+        <td><%= @comedians.average("age").round(2) %></td>
         <td id="cities"><% @comedians.select(:hometown).distinct.each do |comedian| %>
           <%= comedian.hometown %>,
         <% end %></td>

@@ -39,5 +39,13 @@ RSpec.describe Comedian do
 
       expect(actual).to eq(expected)
     end
+
+    it ".list_comedians" do
+      expected = [@c1, @c2].sort()
+      params = {age: 50}
+      actual = Comedian.list_comedians(params)
+
+      expect(actual).to eq(expected)
+    end
   end
 end

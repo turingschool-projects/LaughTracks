@@ -11,9 +11,14 @@
       <ul>
         <li>Average age: <%= @comedians.average_age %></li>
         <li>Average special length: <%= @specials.average_run_length %></li>
+        <li>Special counts: <ul><% @comedians.each do |comedian| %>
+            <li> <%= comedian.name %> : <%= comedian.specials.count %></li>
+              <% end %>
+            </ul>
+        </li>
         <li>Hometowns: <ul><% @comedians.each do |comedian| %>
             <li><%= comedian.name %> : <%= comedian.birthplace %></li>
-          <% end %>
+            <% end %>
           </ul>
         </li>
       </ul>
@@ -24,6 +29,7 @@
         <li>Age: <%= comedian.age %></li>
         <li>Birthplace: <%= comedian.birthplace %></li>
         <li>Photo: <img src=<%= comedian.image_url %> alt="comedian photo" style="width:100px;height:100px;">
+        <li>Number of specials: <%= comedian.specials.count %></li>
         <li><% comedian.specials.each do |special| %>
           <ul id="special-<%=special.id%>">
             <li>Name: <%= special.title %></li>

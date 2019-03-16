@@ -42,7 +42,10 @@ RSpec.describe Comedian do
         Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')
         Comedian.create(name: 'Dave Chappelle', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
 
-        expect(Comedian.all_hometowns).to eq(['St. Paul', 'Washington DC'])
+        expected_1 = ['St. Paul', 'Washington DC']
+        expected_2 = ['Washington DC', 'St. Paul']
+
+        expect(Comedian.all_hometowns).to eq(expected_1).or(eq(expected_2))
       end
 
       it 'returns array of all hometowns with duplicates removed' do
@@ -62,7 +65,10 @@ RSpec.describe Comedian do
         Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')
         Comedian.create(name: 'Dave Chappelle', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
 
-        expect(Comedian.all_hometowns_list).to eq('St. Paul, Washington DC')
+        expected_1 = 'St. Paul, Washington DC'
+        expected_2 = 'Washington DC, St. Paul'
+
+        expect(Comedian.all_hometowns_list).to eq(expected_1).or(eq(expected_2))
       end
     end
 

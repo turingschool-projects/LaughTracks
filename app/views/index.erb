@@ -1,11 +1,3 @@
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-  <title>Laugh Tracks</title>
-  <link rel="stylesheet" href="stylesheets/main.css" title="text/css" />
-</head>
-
-<body>
   <header>
     <h1>Statistics</h1>
     <table id="statistics">
@@ -21,7 +13,11 @@
           <%= comedian.hometown %>,
         <% end %></td>
         <td><%= @specials.length %></td>
-        <td><%= @specials.average("runtime").round(2) %></td>
+        <td>
+          <% if @specials.average("runtime") %>
+          <%= @specials.average("runtime").round(2) %>
+          <% end %>
+        </td>
       </tr>
     </table>
 
@@ -49,5 +45,3 @@
       </section>
     </div>
   <% end %>
-
-</body>

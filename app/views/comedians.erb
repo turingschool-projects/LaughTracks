@@ -16,6 +16,7 @@
       <ul>
         <li>Average Age: <%= @comedians.average_age.round(1) %></li>
         <li>Average Special Length: <%= @comedians.average_specials_runtime.round(1) %> min</li>
+        <li>Total number of specials: <%= @comedians.specials_count %></li>
         <li>Home Cities: <%= @comedians.all_hometowns_list %></li>
       </ul>
     </section>

@@ -12,10 +12,22 @@ class Comedian < ActiveRecord::Base
   end
 
   def self.all_hometowns
-    pluck('DISTINCT hometown')
+    pluck(:hometown).uniq
   end
 
   def self.all_hometowns_list
     all_hometowns.join(', ')
+  end
+
+  def self.sorted_by_name
+    order(:name)
+  end
+
+  def self.sorted_by_city
+    order(:hometown)
+  end
+
+  def self.sorted_by_age
+    order(:age)
   end
 end

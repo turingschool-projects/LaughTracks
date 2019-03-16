@@ -3,6 +3,15 @@ class LaughTracksApp < Sinatra::Base
   get '/comedians' do
     if params[:age]
       @comedians = Comedian.where(age: params[:age])
+    elsif params[:sort]
+      case params[:sort]
+      when 'name'
+        @comedians = Comedian.sorted_by_name
+      when 'city'
+        @comedians = Comedian.sorted_by_city
+      when 'age'
+        @comedians = Comedian.sorted_by_age
+      end
     else
       @comedians = Comedian.all
     end

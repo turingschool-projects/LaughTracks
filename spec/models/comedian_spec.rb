@@ -42,7 +42,10 @@ RSpec.describe Comedian do
         Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')
         Comedian.create(name: 'Dave Chappelle', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
 
-        expect(Comedian.all_hometowns).to eq(['St. Paul', 'Washington DC'])
+        expected_1 = ['St. Paul', 'Washington DC']
+        expected_2 = ['Washington DC', 'St. Paul']
+
+        expect(Comedian.all_hometowns).to eq(expected_1).or(eq(expected_2))
       end
 
       it 'returns array of all hometowns with duplicates removed' do
@@ -62,7 +65,40 @@ RSpec.describe Comedian do
         Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')
         Comedian.create(name: 'Dave Chappelle', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
 
-        expect(Comedian.all_hometowns_list).to eq('St. Paul, Washington DC')
+        expected_1 = 'St. Paul, Washington DC'
+        expected_2 = 'Washington DC, St. Paul'
+
+        expect(Comedian.all_hometowns_list).to eq(expected_1).or(eq(expected_2))
+      end
+    end
+
+    describe '.sorted_by_name' do
+      it 'returns all comedians sorted by name' do
+        c1 = Comedian.create(name: 'C', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')
+        c2 = Comedian.create(name: 'B', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
+        c3 = Comedian.create(name: 'A', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
+
+        expect(Comedian.sorted_by_name).to eq([c3, c2, c1])
+      end
+    end
+
+    describe '.sorted_by_city' do
+      it 'returns all comedians sorted by hometown city' do
+        c1 = Comedian.create(name: 'C', age: 48, hometown: 'X', headshot_link: '1.jpg')
+        c2 = Comedian.create(name: 'B', age: 45, hometown: 'Z', headshot_link: '2.jpg')
+        c3 = Comedian.create(name: 'A', age: 45, hometown: 'A', headshot_link: '2.jpg')
+
+        expect(Comedian.sorted_by_city).to eq([c3, c1, c2])
+      end
+    end
+
+    describe '.sorted_by_age' do
+      it 'returns all comedians sorted by age' do
+        c1 = Comedian.create(name: 'C', age: 100, hometown: 'X', headshot_link: '1.jpg')
+        c2 = Comedian.create(name: 'B', age: 1, hometown: 'Z', headshot_link: '2.jpg')
+        c3 = Comedian.create(name: 'A', age: 20, hometown: 'A', headshot_link: '2.jpg')
+
+        expect(Comedian.sorted_by_age).to eq([c2, c3, c1])
       end
     end
   end

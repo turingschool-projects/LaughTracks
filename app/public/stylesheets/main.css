@@ -1,17 +1,18 @@
 body {
   margin: 0;
+  background-color: #4D4861;
 }
 
 header {
-  background-color: #002166;
+  background-color: #4D4861;
   padding: 1px 0px 1px 0px;
 }
 
 header h1 {
+  font-family: "Aileron", sans-serif;
   padding-left: 20px;
   color: white;
   text-align: left;
-  display: inline-block;
   vertical-align: middle;
 }
 
@@ -19,18 +20,62 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 #statistics {
+  display: block;
+  text-align: center;
+  background-color: #F7C4A5;
   border-style: solid;
-  border-width: 1px;
-  margin-bottom: 10px;
+  border-radius: 15px 50px;
+  border-width: 2px;
+  margin: 10px;
+  padding: 10px;
 }
 
 #statistics h2 {
+  font-family: "Aileron", sans-serif;
   padding-left: 20px;
 }
 
 #statistics ul {
+  padding-left: 20px;
+  margin: 1em 0;
+}
+
+#statistics li {
+  margin: 1em 0;
+}
+
+.img-headshot {
+  max-width: 150px;
+  max-height: 200px;
+  height: auto;
+}
+
+.img-special-thumbnail {
+  max-width: 150px;
+  max-height: 200px;
+  height: auto;
+}
+
+.comedian-row {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #EDCB96;
+  border-style: solid;
+  border-radius: 15px 15px;
+  border-width: 2px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.comedian-specials-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.comedian-special {
   padding-left: 20px;
 }

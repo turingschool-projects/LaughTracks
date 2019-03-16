@@ -26,7 +26,7 @@
         <section class='comedian-info' id='comedian-id-<%= comedian.id %>'>
           <ul>
             <li><%= comedian.name %></li>
-            <li><img src="<%= comedian.headshot_link %>" alt="<%= comedian.name %> headshot"></li>
+            <li><img src="<%= comedian.headshot_link %>" alt="<%= comedian.name %> headshot" class='img-headshot'></li>
             <li>Age: <%= comedian.age %></li>
             <li>Hometown: <%= comedian.hometown %></li>
             <li>Number of specials: <%= comedian.specials.count %></li>
@@ -38,7 +38,7 @@
             <section class='comedian-special'>
               <ul>
                 <li><%= special.name %></li>
-                <li><img src="<%= special.thumbnail_link %>" alt="<%= special.name %> poster"></li>
+                <li><img src="<%= special.thumbnail_link %>" alt="<%= special.name %> poster" class='img-special-thumbnail'></li>
                 <li><%= special.runtime %> min</li>
               </ul>
             </section>

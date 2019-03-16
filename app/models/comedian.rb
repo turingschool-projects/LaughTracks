@@ -14,16 +14,4 @@ class Comedian < ActiveRecord::Base
   def self.all_hometowns_list
     all_hometowns.join(', ')
   end
-
-  def self.average_specials_runtime
-    if Special.count > 0
-      Special.average(:runtime)
-    else
-      0
-    end
-  end
-
-  def self.specials_count
-    Special.count
-  end
 end

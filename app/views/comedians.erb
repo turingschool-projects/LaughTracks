@@ -11,6 +11,7 @@
       <ul>
         <li>Average age: <%= @comedians.average_age %></li>
         <li>Average special length: <%= @specials.average_run_length %></li>
+        <li>Hometowns: <%="#{@comedians.name}: #{@comedians.hometown}\n"</li>
       </ul>
     </h2>
     <% @comedians.each do |comedian| %>

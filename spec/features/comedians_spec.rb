@@ -36,14 +36,12 @@ RSpec.describe 'comedian index workflow' do
         within "#special-#{s1.id}" do
           expect(page).to have_content("Name: #{s1.name}")
           expect(page).to have_content("Runtime: #{s1.runtime_mins}")
-          # find(:xpath, "//img[@src='#{s1.image_url}']").should_not be_nil
         end
         within "#special-#{s2.id}" do
           expect(page).to have_content("Name: #{s2.name}")
           expect(page).to have_content("Runtime: #{s2.runtime_mins}")
           # find(:xpath, "//img[@src='#{s2.image_url}']").should_not be_nil
         end
-
         within "#special-#{s3.id}" do
           expect(page).to have_content("Name: #{s3.name}")
           expect(page).to have_content("Runtime: #{s3.runtime_mins}")
@@ -75,7 +73,9 @@ RSpec.describe 'comedian index workflow' do
         expect(page).to have_content("Statistics:")
         expect(page).to have_content("Average age: #{Comedian.average(:age).round}")
         expect(page).to have_content("Average special length: #{Special.average(:runtime_mins).round}")
-        # expect(page).to have_content("Hometowns: #{Comedian.all.each {|com| "#{com.name}: #{com.birthplace}"}}")
+        expect(page).to have_content("Bill Burr: Canton, MA")
+        expect(page).to have_content("Joe Rogan: Newark, NJ")
+        expect(page).to have_content("Louis C.K.: Washington, D.C.")
       end
     end
   end

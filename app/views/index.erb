@@ -1,25 +1,41 @@
     <header>
       <h1>Laugh Tracks</h1>
-      <img src="images/laugh_1.jpeg" alt="Main Logo"/>
+      <img src="images/laugh_1.jpeg" alt="Main Logo"/
+      height = 150>
+
     </header>
+
+    <section id="filter-or-add">
+      <a>Filter By Age</a>
+      <form class="filter" action="/comedians" method="get">
+        <input type="text" name="age">
+        <input type="submit" value="Submit">
+      </form>
+      <a>Add New Comedian</a>
+      <form class="add-new" action="/comedians/new" method="get">
+        <input type="submit" value="Submit">
+      </form>
 
     <section id="statistics">
       <h1>Statistics</h1>
-      <h3>Average Comedian Age:<%=  @comedians.average_age %></h3>
+      <h3>Average Comedian Age: <%= @comedians.average_age.round %></h3>
       <h3>Total Specials: <%= @specials.count %></h3>
-      <h3>Average Run Time: <%= @specials.average_run_time %></h3>
+      <h3>Average Run Time: <%= @specials.average_run_time.round %></h3>
       <h4>Hometowns: <%= @comedians.hometowns %></h4>
-    </section>
+    </section><br/>
 
     <section id="profiles">
       <% @comedians.each do |comedian| %>
       <div id=<%= "comedian-#{comedian.id}" %>>
-        <img><%= comedian.photo %></img>
+        <img src="<%= comedian.photo%>"
+        width = 200>
       <h3><%= comedian.name %></h3>
       <li><%= comedian.age %></li>
-      <li><%= comedian.home_town %></li><br/>
+      <li><%= comedian.home_town %></li>
+      <li><%= comedian.specials.count %></li><br/>
         <% comedian.specials.each do |special| %>
-          <img><%= special.thumbnail %></img>
+          <img src="<%= special.thumbnail %>"
+          width = 100>
           <li>Name: <%= special.name %></li>
           <li>Run Time: <%= special.run_time %></li><br/>
           <% end %>

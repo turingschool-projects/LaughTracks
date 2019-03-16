@@ -1,0 +1,60 @@
+<header class='statistics'>
+  <h1>Statistics</h1>
+  <h3>Average Runtime: <%= Special.average_run_time(params[:age]).round() %></h3>
+  <h3>Average Age: <%= @comedians.average_age(@comedians).round() %></h3>
+  <h3>TV Specials: <%= Special.special_count(params[:age]) %></h3>
+
+  <section>
+    <h3>Unique Cities:</h3>
+    <% @comedians.unique_cities.each do |city| %>
+    <p><%= city %></p>
+    <% end %>
+  </section>
+
+  <section class='input-forms'>
+    <form id='age-input' action="/comedians" method='get'>
+      <input type="number" min='0' max='116.5'
+             placeholder="Age"
+             name="age">
+      <br>
+      <input id='age-submit' type="submit">
+    </form>
+
+    <form action="/comedians/new" method="get">
+      <input type="submit" value="Add Comedian"></input>
+    </form>
+  </section>
+</header>
+
+<nav class="side-nav">
+  <a href="/comedians">Home</a>
+  <% @comedians.each do |comedian| %>
+    <a href="#<%= comedian.name.downcase.gsub(' ', '-') %>"><%= comedian.name %></a>
+  <% end %>
+</nav>
+
+<section class='main'>
+  <% if Special.special_count(params[:age]) == 0%>
+  <h1><%='No Comedians are that age!'%></h1>
+  <% end %>
+
+  <% @comedians.each do |comedian| %>
+    <article class="comedian-profile" id="<%= comedian.name.downcase.gsub(' ', '-') %>">
+      <section class="comedian-details">
+        <h3><%= comedian.name %></h3>
+        <p>Age: <%= comedian.age %></p>
+        <p>City: <%= comedian.city %></p>
+        <img src= "<%= comedian.image %>" alt="actor headshot">
+      </section>
+
+      <section class="tv-special">
+      <% comedian.specials.each do |special| %>
+        <h3><%= special.title %></h3>
+        <img src= "<%= special.thumbnail %>" alt="tv_special cover">
+        <p>Runtime: <%= special.run_time %></p>
+      <% end %>
+        <p>Number of Specials: <%= comedian.specials.count %></p>
+      </section>
+    </article>
+  <% end %>
+</section>

@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100%;
+    top: 0px;
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+header {
+  position: fixed;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  text-align: center;
+  background-color: blue;
+}
+
+.side-nav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 40px;
+  background-color: grey;
+}
+
+.side-nav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  display: block;
+
+}
+
+.side-nav a:hover {
+  color: white;
+  background-color: black;
+}
+
+.main {
+  margin: 0 160px;
+}
+
+.comedian-profile {
+  display: flex;
+  margin: 10px;
+}
+
+.comedian-details {
+  margin: inherit;
+}
+
+.tv-special {
+  margin: inherit;
+  text-align: center;
+}
+
+.tv-special img {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.comedian-details img {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}

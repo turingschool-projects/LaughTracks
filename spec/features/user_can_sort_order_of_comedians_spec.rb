@@ -32,5 +32,21 @@ RSpec.describe 'a user visits comedians page' do
         expect(page).to have_content('Tom Segura')
       end
     end
+
+    it 'should show comedians sorted by hometown city' do
+      visit '/comedians?sort=city'
+
+      within '#comedian-id-3' do
+        expect(page).to have_content('Dave Chappelle')
+      end
+
+      within '#comedian-id-2' do
+        expect(page).to have_content('Mitch Hedberg')
+      end
+
+      within '#comedian-id-1' do
+        expect(page).to have_content('Tom Segura')
+      end      
+    end
   end
 end

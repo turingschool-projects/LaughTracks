@@ -26,4 +26,8 @@ class LaughTracksApp < Sinatra::Base
     redirect '/comedians'
   end
 
+  get '/comedians/:id' do
+    @comedians = Comedian.where(id: params[:id])
+    erb :individual_comedian
+  end
 end

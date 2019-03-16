@@ -6,7 +6,4 @@ class Special < ActiveRecord::Base
   def self.average_run_time
     average(:run_time)
   end
-
 end
-
-# Special.includes(:comedian).where(comedians: { age: age }

@@ -15,11 +15,6 @@ RSpec.describe Comedian do
         comic = Comedian.create(name: 'Mitch Hedberg', age: 48, headshot_link: '1.jpg')
         expect(comic).to_not be_valid
       end
-
-      it 'should be invalid if missing a headshot_link' do
-        comic = Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul')
-        expect(comic).to_not be_valid
-      end
     end
   end
 

@@ -25,5 +25,11 @@ RSpec.describe 'a user visits comedians page with age criteria' do
       expect(page).not_to have_content('39')
       expect(page).not_to have_content('Cincinnati')
     end
+
+    it 'should show average age of 34' do
+      within '#statistics' do
+        expect(page).to have_content('Average Age: 34')
+      end
+    end
   end
 end

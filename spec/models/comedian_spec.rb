@@ -24,6 +24,15 @@ RSpec.describe Comedian do
   end
 
   describe 'Class Methods' do
+    describe '.ids' do
+      it 'returns array of comedian ids' do
+        Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')
+        Comedian.create(name: 'Dave Chappelle', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
+
+        expect(Comedian.ids).to eq([1, 2])
+      end
+    end
+
     describe '.avererage_age' do
       it 'returns average age of all comedians' do
         Comedian.create(name: 'Mitch Hedberg', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')

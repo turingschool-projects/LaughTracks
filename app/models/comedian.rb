@@ -3,6 +3,10 @@ class Comedian < ActiveRecord::Base
 
   validates_presence_of :name, :age, :hometown, :headshot_link
 
+  def self.ids
+    pluck(:id)
+  end
+
   def self.average_age
     average(:age)
   end

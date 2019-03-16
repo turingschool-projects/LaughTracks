@@ -12,7 +12,7 @@ class Comedian < ActiveRecord::Base
   end
 
   def self.all_hometowns
-    pluck('DISTINCT hometown')
+    pluck(:hometown).uniq
   end
 
   def self.all_hometowns_list

@@ -7,13 +7,4 @@ class Comedian < ActiveRecord::Base
   def self.average_age
     average(:age).round
   end
-
-  def self.hometown
-    pluck(:birthplace)
-  #   "#{name}: #{birthplace}\n" put this in view
-  end
-
-  def self.comedian_name
-    pluck(:name)
-  end
 end

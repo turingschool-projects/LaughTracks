@@ -70,7 +70,6 @@ RSpec.describe 'comedian index workflow' do
       visit '/comedians'
 
       within '#statistics' do
-        save_and_open_page
         expect(page).to have_content("Statistics:")
         expect(page).to have_content("Average age: #{Comedian.average(:age).round}")
         expect(page).to have_content("Average special length: #{Special.average(:runtime_mins).round}")

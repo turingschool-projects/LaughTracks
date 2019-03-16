@@ -22,4 +22,8 @@ class Comedian < ActiveRecord::Base
       0
     end
   end
+
+  def self.specials_count
+    Special.count
+  end
 end

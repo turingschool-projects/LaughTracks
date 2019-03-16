@@ -16,6 +16,10 @@ class Comedian < ActiveRecord::Base
   end
 
   def self.average_specials_runtime
-    Special.average(:runtime)
+    if Special.count > 0
+      Special.average(:runtime)
+    else
+      0
+    end
   end
 end

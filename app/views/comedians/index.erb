@@ -17,24 +17,34 @@
              placeholder="Age"
              name="age">
       <br>
-      <input id='age-submit' type="submit" name="Submit">
+      <input id='age-submit' type="submit">
+    </form>
+
+    <form action="/comedians/new" method="get">
+      <input type="submit" value="Add Comedian"></input>
     </form>
   </section>
 </header>
 
 <nav class="side-nav">
+  <a href="/comedians">Home</a>
   <% @comedians.each do |comedian| %>
     <a href="#<%= comedian.name.downcase.gsub(' ', '-') %>"><%= comedian.name %></a>
   <% end %>
 </nav>
 
 <section class='main'>
+  <% if Special.special_count(params[:age]) == 0%>
+  <h1><%='No Comedians are that age!'%></h1>
+  <% end %>
+
   <% @comedians.each do |comedian| %>
     <article class="comedian-profile" id="<%= comedian.name.downcase.gsub(' ', '-') %>">
       <section class="comedian-details">
         <h3><%= comedian.name %></h3>
         <p>Age: <%= comedian.age %></p>
         <p>City: <%= comedian.city %></p>
+        <img src= "<%= comedian.image %>" alt="actor headshot">
       </section>
 
       <section class="tv-special">

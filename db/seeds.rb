@@ -11,7 +11,7 @@ file = File.open(file_path)
 comedians_list = CSV.new(file, headers: true, header_converters: :symbol).read
 
 comedians_list.each do |comedian|
-  Comedian.create(name: comedian[:name], age: comedian[:age], city: comedian[:hometown])
+  Comedian.create(name: comedian[:name], age: comedian[:age], city: comedian[:hometown], image: comedian[:headshot])
 end
 
 file_path = './db/tv_specials.csv'

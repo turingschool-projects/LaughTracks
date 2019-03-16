@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_032312) do
     t.text "name"
     t.integer "age"
     t.text "city"
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

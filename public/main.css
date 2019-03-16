@@ -44,7 +44,7 @@ header {
 }
 
 .main {
-  margin-left: 160px;
+  margin: 0 160px;
 }
 
 .comedian-profile {
@@ -62,6 +62,14 @@ header {
 }
 
 .tv-special img {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.comedian-details img {
   border-radius: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;

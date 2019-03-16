@@ -87,4 +87,26 @@ RSpec.describe "an unauthenticated user visits comedians page" do
       end
     end
   end
+
+  context 'user inputs new comedian' do
+    it 'shows main page with new comedian added' do
+      visit '/comedians'
+
+      click_button("Add Comedian")
+
+      within 'form' do
+        fill_in('name', with: 'Michael Jackson' )
+        fill_in('age', with: 30 )
+        fill_in('city', with: 'Huntington Beach' )
+        click_button('Submit')
+      end
+      
+      expect(page).to have_current_path('/comedians')
+
+      within '.main' do
+        expect(page).to have_content('Michael Jackson')
+        expect(page).to have_content('Huntington Beach')
+      end
+    end
+  end
 end

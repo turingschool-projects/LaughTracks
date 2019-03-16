@@ -4,6 +4,15 @@ class Comedian < ActiveRecord::Base
   validates :name, presence: true
   validates :age, presence: true
 
+  def self.populate(params)
+    @comedians = Comedian.all
+    if @comedians.pluck(:age).include?(params[:age].to_i)
+      @comedians = Comedian.where(age: params[:age])
+    else
+      @comedians = Comedian.all
+    end
+  end
+
   def self.average_age
     average(:age)
   end
@@ -15,16 +24,4 @@ class Comedian < ActiveRecord::Base
       end
     towns_string
   end
-
 end
-
-# def self.populate(params)
-#   @comedians = Comedian.all
-#   if @comedians.pluck(:age).include?(params[:age].to_i)
-#     @comedians = Comedian.where(age: params[:age])
-#     # @specials = Special.where(comedian_id: @comedians.pluck(:id))
-#   else
-#     @comedians = Comedian.all
-#     # @specials = Special.all
-#   end
-# end

@@ -46,7 +46,23 @@ RSpec.describe 'a user visits comedians page' do
 
       within '#comedian-id-1' do
         expect(page).to have_content('Tom Segura')
-      end      
+      end
+    end
+
+    it 'should show comedians sorted by age' do
+      visit '/comedians?sort=age'
+
+      within '#comedian-id-3' do
+        expect(page).to have_content('Dave Chappelle')
+      end
+
+      within '#comedian-id-2' do
+        expect(page).to have_content('Mitch Hedberg')
+      end
+
+      within '#comedian-id-1' do
+        expect(page).to have_content('Tom Segura')
+      end
     end
   end
 end

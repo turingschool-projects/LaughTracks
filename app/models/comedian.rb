@@ -5,7 +5,7 @@ class Comedian < ActiveRecord::Base
   validates :age, presence: true
 
   def self.average_age
-    average(:age).round
+    average(:age)
   end
 
   def self.hometowns
@@ -17,3 +17,14 @@ class Comedian < ActiveRecord::Base
   end
 
 end
+
+# def self.populate(params)
+#   @comedians = Comedian.all
+#   if @comedians.pluck(:age).include?(params[:age].to_i)
+#     @comedians = Comedian.where(age: params[:age])
+#     # @specials = Special.where(comedian_id: @comedians.pluck(:id))
+#   else
+#     @comedians = Comedian.all
+#     # @specials = Special.all
+#   end
+# end

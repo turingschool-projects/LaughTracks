@@ -6,6 +6,9 @@ class LaughTracksApp < Sinatra::Base
     else
       @comedians = Comedian.all
     end
+
+    @specials = Special.where(comedian_id: @comedians.ids)
+
     erb :comedians
   end
 

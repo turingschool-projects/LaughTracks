@@ -15,8 +15,10 @@
       <h2>Statistics</h2>
       <ul>
         <li>Average Age: <%= @comedians.average_age.round(1) %></li>
-        <li>Average Special Length: <%= @specials.average_runtime.round(1) %> min</li>
-        <li>Total number of specials: <%= @specials.count %></li>
+        <% if @specials %>
+          <li>Average Special Length: <%= @specials.average_runtime.round(1) %> min</li>
+          <li>Total number of specials: <%= @specials.count %></li>
+        <% end %>
         <li>Home Cities: <%= @comedians.all_hometowns_list %></li>
       </ul>
     </section>
@@ -25,7 +27,7 @@
       <section class='comedian-row'>
         <section class='comedian-info' id='comedian-id-<%= comedian.id %>'>
           <ul>
-            <li><%= comedian.name %></li>
+            <li><a href='/comedians/<%= comedian.id %>'><%= comedian.name %></a></li>
             <li><img src="<%= comedian.headshot_link %>" alt="<%= comedian.name %> headshot" class='img-headshot'></li>
             <li>Age: <%= comedian.age %></li>
             <li>Hometown: <%= comedian.hometown %></li>

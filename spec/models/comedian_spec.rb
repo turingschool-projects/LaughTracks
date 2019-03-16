@@ -65,5 +65,15 @@ RSpec.describe Comedian do
         expect(Comedian.all_hometowns_list).to eq('St. Paul, Washington DC')
       end
     end
+
+    describe '.sorted_by_name' do
+      it 'returns all comedians sorted by name' do
+        c1 = Comedian.create(name: 'C', age: 48, hometown: 'St. Paul', headshot_link: '1.jpg')
+        c2 = Comedian.create(name: 'B', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
+        c3 = Comedian.create(name: 'A', age: 45, hometown: 'Washington DC', headshot_link: '2.jpg')
+
+        expect(Comedian.sorted_by_name).to eq([c3, c2, c1])
+      end
+    end
   end
 end

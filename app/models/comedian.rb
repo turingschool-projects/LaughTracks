@@ -18,4 +18,8 @@ class Comedian < ActiveRecord::Base
   def self.all_hometowns_list
     all_hometowns.join(', ')
   end
+
+  def self.sorted_by_name
+    order(:name)
+  end
 end

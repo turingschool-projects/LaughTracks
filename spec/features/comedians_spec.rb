@@ -69,13 +69,14 @@ RSpec.describe 'comedian index workflow' do
 
       visit '/comedians'
 
-      within 'h2' do
+      within '#statistics' do
+        save_and_open_page
         expect(page).to have_content("Statistics:")
         expect(page).to have_content("Average age: #{Comedian.average(:age).round}")
         expect(page).to have_content("Average special length: #{Special.average(:runtime_mins).round}")
-        expect(page).to have_content("Bill Burr: Canton, MA")
-        expect(page).to have_content("Joe Rogan: Newark, NJ")
-        expect(page).to have_content("Louis C.K.: Washington, D.C.")
+        expect(page).to have_content("Bill Burr : Canton, MA")
+        expect(page).to have_content("Joe Rogan : Newark, NJ")
+        expect(page).to have_content("Louis C.K. : Washington, D.C.")
       end
     end
   end

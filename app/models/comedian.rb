@@ -22,4 +22,8 @@ class Comedian < ActiveRecord::Base
   def self.sorted_by_name
     order(:name)
   end
+
+  def self.sorted_by_city
+    order(:hometown)
+  end
 end

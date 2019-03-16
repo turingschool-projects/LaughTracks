@@ -40,7 +40,7 @@ RSpec.describe Comedian do
       c2.specials.create(name: "Strange Times", runtime_mins: 63, image_url: "https://m.media-amazon.com/images/M/MV5BNzc2Mzg5YmMtMzM1NC00NDgwLTljYWQtZDdkNzBmNjZkNmJhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg")
       c3.specials.create(name: "Oh My God", runtime_mins: 58, image_url: "https://m.media-amazon.com/images/M/MV5BMjQ4NjQwOTYzNl5BMl5BanBnXkFtZTcwNjU2NjczOQ@@._V1_.jpg")
 
-      expect(Comedian.name).to eq(["Bill Burr", "Joe Rogan", "Louis C.K."])
+      expect(Comedian.comedian_name).to eq(["Bill Burr", "Joe Rogan", "Louis C.K."])
       expect(Comedian.hometown).to eq(["Canton, MA", "Newark, NJ", "Washington, D.C."])
     end
   end

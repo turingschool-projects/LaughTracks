@@ -13,7 +13,7 @@ class Comedian < ActiveRecord::Base
   #   "#{name}: #{birthplace}\n" put this in view
   end
 
-  def self.name
+  def self.comedian_name
     pluck(:name)
   end
 end

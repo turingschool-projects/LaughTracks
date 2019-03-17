@@ -14,4 +14,8 @@ class Comedian < ActiveRecord::Base
         unique_hometowns = unique_comedians.map {|comedian| comedian.birthplace}
         unique_hometowns.join(", ")
     end
+
+    def self.select_by_age(age)
+        Comedian.where(age: age)
+    end
 end

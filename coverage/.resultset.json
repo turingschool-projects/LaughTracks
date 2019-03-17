@@ -1,6 +1,33 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/robertstringer/turing/2module/projects/LaughTracks/spec/features/test_user_can_select_by_age_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/robertstringer/turing/2module/projects/LaughTracks/spec/features/test_user_sees_comedian_info_spec.rb": [
         1,
         1,
@@ -35,7 +62,7 @@
         1,
         1,
         1,
-        null,
+        1,
         null,
         null,
         null,
@@ -83,6 +110,20 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         null,
         null,
@@ -117,6 +158,6 @@
         null
       ]
     },
-    "timestamp": 1552861957
+    "timestamp": 1552864708
   }
 }

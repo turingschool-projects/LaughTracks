@@ -1,7 +1,6 @@
 RSpec.describe "when visiting the new bourbon page" do
   it "has a form" do
     visit "/bourbons/new"
-
     expect(page).to have_content("Enter a new bourbon!")
   end
 
@@ -52,6 +51,4 @@ RSpec.describe "when visiting the new bourbon page" do
 
     expect(page).to have_xpath("//input")
   end
-
-
 end

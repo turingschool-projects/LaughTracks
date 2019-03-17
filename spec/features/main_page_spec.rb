@@ -10,7 +10,6 @@ RSpec.describe "a user visiting the main page" do
     context "when I visit the bourbon index path" do
       it "shows a title of bourbon guide" do
         visit "/bourbons"
-
         within "header" do
           expect(page).to have_content("Bourbon Guide")
         end
@@ -18,7 +17,6 @@ RSpec.describe "a user visiting the main page" do
 
       it "shows a sort by section" do
         visit "/bourbons"
-
         within ".sortby" do
           expect(page).to have_content("Sort all by:")
         end
@@ -37,13 +35,11 @@ RSpec.describe "a user visiting the main page" do
 
       it "shows a statistics section" do
         visit "/bourbons"
-
         expect(page).to have_content("Statistics")
       end
 
       it "shows four statistics" do
         visit "/bourbons"
-
         within ".stats" do
           expect(page).to have_content("Avg Proof: 88.3")
           expect(page).to have_content("Avg Expert Score: 89")
@@ -54,7 +50,6 @@ RSpec.describe "a user visiting the main page" do
 
       it "shows locations" do
         visit "/bourbons"
-
         expect(page).to have_content("Frankfort, KY")
         expect(page).to have_button("KY")
       end
@@ -102,18 +97,15 @@ RSpec.describe "a user visiting the main page" do
       it "links to query that selects bourbons by state" do
         visit "/bourbons"
         click_button("KY")
-
         expect(page).to have_content("Avg Proof: 85.0")
       end
 
       it "shows the cards for bourbon" do
-
         visit "/bourbons"
         expect(page).to have_css("div.bourbon-card", count:3)
       end
 
       it "selects based on state" do
-
         visit "/bourbons"
         click_button("KY")
         expect(page).to have_css("div.bourbon-card", count:2)
@@ -190,8 +182,6 @@ RSpec.describe "a user visiting the main page" do
           expect(page).to have_css("img")
         end
       end
-
     end
   end
-
 end

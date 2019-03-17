@@ -8,35 +8,30 @@ RSpec.describe Bourbon, type: :model do
   describe "Class Methods" do
     describe ".avg_proof" do
       it "averages the proof for all bourbons" do
-
         expect(Bourbon.avg_proof.round(1)).to eq(88.3)
       end
     end
 
     describe ".avg_expert_score" do
       it "averages the expert score for all bourbons" do
-
         expect(Bourbon.avg_expert_score).to eq(89.0)
       end
     end
 
     describe ".avg_avg_rating" do
       it "averages the average rating for all bourbons" do
-
         expect(Bourbon.avg_avg_rating).to eq(3.4)
       end
     end
 
     describe ".cities" do
       it "returns an array of the unique cities" do
-
         expect(Bourbon.cities).to eq(["Dankfort, KY", "Frankfort, KY", "Frankfort, CO"])
       end
     end
 
     describe ".select_state(state)" do
       it "creats a list of all bourbons for a chosen state" do
-
         expect(Bourbon.select_state("KY")).to eq([@b1, @b2])
       end
     end
@@ -49,35 +44,30 @@ RSpec.describe Bourbon, type: :model do
 
     describe ".sort_by(distillery)" do
       it "creates a list of all bourbons sorted by distillery" do
-
         expect(Bourbon.sort_by("distillery")).to eq([@b1, @b3, @b2])
       end
     end
 
     describe ".sort_by(proof)" do
       it "creates a list of all bourbons sorted by proof ascending" do
-
         expect(Bourbon.sort_by("proof")).to eq([@b2, @b1, @b3])
       end
     end
 
     describe ".sort_by(expert_score)" do
       it "creates a list of all bourbons sorted by expert score descending" do
-
         expect(Bourbon.sort_by("expert_score")).to eq([@b1, @b2, @b3])
       end
     end
 
     describe ".sort_by(avg_rating)" do
       it "creates a list of all bourbons sorted by avg rating descending" do
-
         expect(Bourbon.sort_by("avg_rating")).to eq([@b1, @b3, @b2])
       end
     end
 
     describe ".list_states" do
       it "creates a list of all the unique states in order" do
-
         expect(Bourbon.list_states).to eq(["CO","KY"])
       end
     end

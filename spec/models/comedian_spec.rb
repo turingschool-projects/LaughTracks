@@ -2,22 +2,27 @@ RSpec.describe Comedian, type: :model do
   describe 'Validations' do
     describe 'Required Field(s)' do
       it 'should be invalid if missing a name' do
-        comic = Comedian.create(age: 48, city: "San Francisco", head_shot: nil)
+        comic = Comedian.create(age: 48, city: "San Francisco", head_shot: "url")
         expect(comic).to_not be_valid
       end
 
       it 'should be invalid if missing an age' do
-        comic = Comedian.create(name: "Mitch Hedberg", city:"San Francisco", head_shot: nil)
+        comic = Comedian.create(name: "Mitch Hedberg", city:"San Francisco", head_shot: "url")
         expect(comic).to_not be_valid
       end
 
       it 'should be invalid if missing a city' do
-        comic = Comedian.create(name: "Mitch Hedberg", age: 48, head_shot: nil)
+        comic = Comedian.create(name: "Mitch Hedberg", age: 48, head_shot: "url")
         expect(comic).to_not be_valid
       end
 
-      it 'should be valid if there is a name, city, age' do
-        comic = Comedian.create(name: "Mitch Hedberg", age: 48, city:"San Francisco", head_shot: nil)
+      it 'should be invalid if missing a head_shot' do
+        comic = Comedian.create(name: "Mitch Hedberg", age: 48, city: "San Francisco")
+        expect(comic).to_not be_valid
+      end
+
+      it 'should be valid if there is a name, city, age, and headshot' do
+        comic = Comedian.create(name: "Mitch Hedberg", age: 48, city:"San Francisco", head_shot: "url")
         expect(comic).to be_valid
       end 
     end

@@ -14,7 +14,7 @@ RSpec.describe Comedian do
     
     describe 'Class Methods' do
       describe 'Calculations' do
-        it 'calculates average age' do
+        xit 'calculates average age' do
           Comedian.create(name: "Bill Hicks", age: 32, birthplace: "Houston, TX")
           Comedian.create(name: "Mitch Hedberg", age: 37, birthplace: "St. Paul, MN")
           Comedian.create(name: "George Carlin", age: 71, birthplace: "New York City, NY")

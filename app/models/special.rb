@@ -3,25 +3,23 @@ class Special < ActiveRecord::Base
 
   validates_presence_of :title
 
-  def self.average_run_time(age)
-    if age
-      selected_specials = Special.includes(:comedian).where(comedians: { age: age })
-      if selected_specials.average(:run_time)
-        return selected_specials.average(:run_time)
-      else
-        return 0
-      end
+  def self.average_run_time
+    if average(:run_time)
+      return average(:run_time)
     else
-      average(:run_time)
+      0
     end
   end
 
-  def self.special_count(age)
-    if age
-      selected_specials = Special.includes(:comedian).where(comedians: { age: age })
-      selected_specials.all.count
+  def self.special_count
+    all.count
+  end
+
+  def self.list_specials(params)
+    if params[:age]
+      Special.includes(:comedian).where(comedians: { age: params[:age] })
     else
-      all.count
+      Special.all
     end
   end
 end

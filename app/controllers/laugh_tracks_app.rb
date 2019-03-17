@@ -6,6 +6,7 @@ class LaughTracksApp < Sinatra::Base
 
   get '/comedians' do
     @comedians = Comedian.list_comedians(params)
+    @specials = Special.list_specials(params)
     erb :"comedians/index"
   end
 

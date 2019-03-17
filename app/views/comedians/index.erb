@@ -1,25 +1,27 @@
 <header class='statistics nav'>
   <h1>Statistics</h1>
-  <h3>Average Runtime: <%= Special.average_run_time(params[:age]).round() %></h3>
+  <h3>Average Runtime: <%= @specials.average_run_time.round() %></h3>
   <h3>Average Age: <%= @comedians.average_age(@comedians).round() %></h3>
-  <h3>TV Specials: <%= Special.special_count(params[:age]) %></h3>
-
+  <h3>TV Specials: <%= @specials.special_count %></h3>
+  <br>
   <section>
     <h3>Unique Cities:</h3>
     <% @comedians.unique_cities.each do |city| %>
     <p><%= city %></p>
     <% end %>
   </section>
-
+  <br>
   <section class='input-forms'>
     <form id='age-input' action="/comedians" method='get'>
+      Input age of comedian:
+      <br>
       <input type="number" min='0' max='116.5'
              placeholder="Age"
              name="age">
       <br>
       <input id='age-submit' type="submit">
     </form>
-
+    <br>
     <form action="/comedians/new" method="get">
       <input type="submit" value="Add Comedian"></input>
     </form>
@@ -34,7 +36,7 @@
 </nav>
 
 <section class='main'>
-  <% if Special.special_count(params[:age]) == 0%>
+  <% if @specials.special_count == 0%>
   <h1><%='No Comedians are that age!'%></h1>
   <% end %>
 

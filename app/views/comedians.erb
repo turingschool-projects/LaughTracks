@@ -1,8 +1,18 @@
 <ul>
     <% @comedians.each do |comedian| %>
+        <h1>Comedian Info:</h1>
+        <h4>
         <li><%= comedian.name %></li>
         <li>Length: <%= comedian.age %></li>
-        <li>Play Count: <%= comedian.birthplace %></li>
+        <li>Hometown: <%= comedian.birthplace %></li>
+        </h4>
+        <br>
+        <h2>Specials:</h2>
+        <% comedian.specials.each do |special| %>
+            <li>Name:<%=special.name %><li>
+            <li>Runtime Minutes:<%=special.runtime_mins %><li>
+            <li><img src="<%=special.image_url%>"><li>
+        <% end %> 
         <br>
     <% end %>     
 </ul>

@@ -171,13 +171,13 @@ RSpec.describe "a user visiting the main page" do
           expect(page).to have_css(".award-card", count:1)
         end
       end
-      #
-      # it "" do
-      #   visit "/bourbons"
-      #   within ".bourbon-card" do
-      #     expect(page).to
-      #   end
-      # end
+
+      it "" do
+        visit "/bourbons"
+        within first".award-card" do
+          expect(page).to have_content("2013 Gold SF awards")
+        end
+      end
 
     end
   end

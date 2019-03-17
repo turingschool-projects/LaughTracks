@@ -53,6 +53,18 @@ RSpec.describe Artist do
             expect(page).to_not have_content('The Glitch Mob')
           end
       end
+
+      it 'can see album info' do
+        visit '/artists'
+          within '#halestorm .artist_details' do
+            expect(page).to have_content('Vicious')
+            expect(page).to have_content('Into The Wild Life')
+            expect(page).to have_content('The Strange Case Of...')
+            expect(page).to have_content('Halestorm')
+
+            expect(page).to_not have_content('Drink the Sea')
+          end
+      end
     end
   end
 end

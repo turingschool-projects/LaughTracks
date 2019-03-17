@@ -28,7 +28,6 @@ class Bourbon < ActiveRecord::Base
 
   def self.select_state(state)
     bourbons = Bourbon.where("location LIKE '%#{state}'")
-    # is this going to work?
   end
 
   def self.sort_by(param)

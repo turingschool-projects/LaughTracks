@@ -14,12 +14,13 @@
 
       <label for="location">Location:</label>
         <br>
-        <input type="text" name="bourbon[location]" placeholder="city, state" onkeyup="this.value = this.value.toUpperCase();" required>
+        <input type="text" name="bourbon[location]" placeholder="city, ST" onkeyup="this.value = this.value.toUpperCase();" required>
         <br>
 
       <label for="description">Description:</label>
         <br>
-        <input type="text" name="bourbon[description]" placeholder="description" required>
+        <textarea id="description" name="bourbon[description]" required row="5" cols="30">
+        </textarea>
         <br>
 
       <label for="proof">Proof:</label>
@@ -39,7 +40,7 @@
 
       <input type="hidden" name="bourbon[bottle_image]" value="https://www.lawlersliquorsonline.com/wp-content/uploads/2018/10/Blank-Bottle-88.png">
       <br>
-      <input class="submit_button" type="submit"/>
+      <input class="submit_button" type="Submit"/>
     </form>
     <div class="home_container">
       <a href="/bourbons" id="home_button">Home</a>

@@ -75,7 +75,7 @@
       <% @awards.each do |award| %>
         <% if bourbon.awards.include?(award) %>
         <div class="award-card">
-          <img src="<%= award.image %>">
+          <img src="<%= award.image %>" alt="medal for <%= award.year %> <%= award.name %> <%= award.award_type %>">
           <p><%= award.year %> <%= award.award_type %> <%= award.name %></p>
         </div>
         <% end %>

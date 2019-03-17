@@ -22,4 +22,14 @@ RSpec.describe Artist do
       end
     end
   end
+
+  describe 'Methods' do
+    it 'returns photo filename as band name, lowercase with underscores instead of spaces' do
+      halestorm = Artist.create(name: "Halestorm", formation_year: 1997, origin: "Red Lion, PA", album_count: 4)
+      glitch_mob = Artist.create(name: "The Glitch Mob", formation_year: 2006, origin: "Los Angeles, CA", album_count: 5)
+
+      expect(halestorm.photo).to eq 'halestorm'
+      expect(glitch_mob.photo).to eq 'the_glitch_mob'
+    end
+  end
 end

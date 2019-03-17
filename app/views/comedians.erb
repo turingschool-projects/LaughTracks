@@ -13,29 +13,44 @@
   <body>
     <% if @age != nil %>
       <% @comedians = @comedians.filter_by_age(@age) %>
+      <% @specials = @specials.filter_by_age(@age) %>
     <% end %>
-    
+
     <header id="hero">
       <h1 class="fancy">LAUGH TRACKS</h1>
       <h3>From the standup scene to the movie screen. These actors and actresses
         made their debuts on the small stage.</h3>
     </header>
     <nav>
-      <li><a href="">Sort</a></li>
-      <li><a href="">Filter</a></li>
-      <li><a href="">New</a></li>
+      <ul class="nav nav-pills">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">FILTER BY AGE</a>
+    <div class="dropdown-menu">
+      <% @all_ages.each do |comedian |%>
+        <a class="dropdown-item" href="comedians?age=<%= comedian.age %>"><%= comedian.age %></a>
+      <% end %>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">SORT BY CITY</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/comedians/new">NEW</a></li>
+
+
+</ul>
     </nav>
 
     <section class="stats">
       <h2>Statistics</h2>
 
     <section class="stats-flex">
-      <figure>
+      <figure id="average-runtime">
         <h3>Average Runtime:</h3>
         <p class="fancy"><%= @specials.average_runtime %></p>
       </figure>
 
-      <figure>
+      <figure id="total-specials">
 
         <h3>Total TV Specials</h3>
           <% @comedians.each do |comedian| %>
@@ -43,10 +58,12 @@
             <% end %>
       </figure>
 
-      <figure>
+      <figure id="average-age">
         <h3>Average Age:</h3>
-        <p class="fancy"><%= @comedians.average_age %></figure></p>
-      <figure class="stats-item">
+        <p class="fancy"><%= @comedians.average_age %></p>
+      </figure>
+
+      <figure id="cities" class="stats-item">
         <h3>Cities:</h3>
         <%= @comedians.all_cities %>
       </figure>
@@ -71,13 +88,19 @@
           </article>
         </section>
         <section class="spacer">&nbsp;</section>
+        <section class="button-spacer">
+          <button class="btn btn-dark" type="button"><a href="comedians/<%= comedian.id %>">Learn More</a></button>
+          </section>
+        <section class="spacer">&nbsp;</section>
       </div>
       <% end %>
 
 
     </section>
 
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 
 </html>

@@ -21,7 +21,12 @@
           <% @comedians.each do |comedian| %>
           <% @num += comedian.specials.count %>
           <% end %>
-          <li>Average TV Special Run Length: <%= @sum/@num %> mins</li>
+          <% if @num == 0 %>
+          <% @average = 0 %>
+          <% else %>
+          <% @average = @sum / @num %>
+          <% end %>
+          <li>Average TV Special Run Length: <%= @average %> mins</li>
           <li>Birth Cities: </li>
             <% @comedians.each do |comedian| %>
               <ul> <%= comedian.birthplace %></ul>
@@ -40,7 +45,7 @@
       <li><%= comedian.name %></li>
       <li>Age: <%= comedian.age %></li>
       <li>Birthplace: <%= comedian.birthplace %></li>
-      <li>Image Url: <img src=<%= comedian.image_url %>></img></li>
+      <li> <img src=<%= comedian.image_url %>></img></li>
       <li>Special Count: <%= comedian.specials.count %></li>
       <li>Specials: <% comedian.specials.each do |special| %> </li>
       <li> <%= special.name %></li>

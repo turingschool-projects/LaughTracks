@@ -22,7 +22,7 @@ RSpec.describe 'a user visits comedians page' do
 
     it 'should show total count of specials in the statistics' do
       within '#statistics' do
-        expect(page).to have_content('Total number of specials: 3')
+        expect(page).to have_content('3')
       end
     end
   end

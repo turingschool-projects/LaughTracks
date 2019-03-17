@@ -36,6 +36,22 @@ p {
   display: inline-block;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+option {
+  background-color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #e10b04;
+}
+
 section {
   line-height: 1.5em;
 }
@@ -50,11 +66,27 @@ figure {
   padding: 5px;
 }
 
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: green;
+}
+
 nav {
   background-color: black;
   color: white;
-  height: 75px;
+  height: 85px;
   margin-bottom: 25px;
+  display: inline-block;
+  width: 100%;
 }
 
 nav li {
@@ -64,14 +96,23 @@ nav li {
   text-align: center;
 }
 
-nav li:hover {
-  background-color: white;
-  color: black;
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: black;
 }
 
-nav a {
-  text-decoration: none;
-  color: white;
+.dropdown-menu {
+  min-width: 30rem;
+  padding: .5rem 0;
+  margin-left: .125rem 0 0;
+  font-size: 1rem;
+  color: black;
+  text-align: center;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0;
 }
 
 .fancy {
@@ -85,11 +126,12 @@ nav a {
   margin: 20px
   padding: 20px;
   text-align: center;
+  color: black;
 }
 
 .spacer {
   display: inline-block;
-  height: 50px;
+  height: 25px;
 }
 
 .stats {
@@ -105,6 +147,20 @@ nav a {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.form-container {
+  align: center;
+  padding: 20px;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: black;
 }
 
 #hero {

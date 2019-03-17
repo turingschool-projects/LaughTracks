@@ -1,9 +1,11 @@
 RSpec.describe Special do
 
   before(:each) do
-    sp1 = Special.create(name: "Talking for Clapping", runtime: 65)
-    sp2 = Special.create(name: "Tragedy Plus Comedy Equals Time", runtime: 59)
-    sp3 = Special.create(name: "No Reason to Complain", runtime: 42)
+    c1 = Comedian.create(name: "Patton Oswalt", age: 50, city: "Portsmouth")
+
+    c1.specials.create(comedian_id: 1, name: "Talking for Clapping", runtime: 65, thumb: "https://m.media-amazon.com/images/M/MV5BZmMyYzAzMzktOWM4MS00YmI2LThmM2MtNjBkODZkOWQxODNmXkEyXkFqcGdeQXVyNjYzMDA4MTI@._V1_UY268_CR3,0,182,268_AL_.jpg")
+    c1.specials.create(comedian_id: 1, name: "Tragedy Plus Comedy Equals Time", runtime: 59, thumb: "https://m.media-amazon.com/images/M/MV5BODU2MDEyNGYtODE3ZC00YjUyLTk3ODctYTU2MzM5Y2M3NWM4XkEyXkFqcGdeQXVyMTk3NDAwMzI@._V1_UY268_CR0,0,182,268_AL_.jpg")
+    c1.specials.create(comedian_id: 1, name: "No Reason to Complain", runtime: 42, thumb: "https://m.media-amazon.com/images/M/MV5BMTk3MjUxODI5NF5BMl5BanBnXkFtZTcwMjcxMTIzMQ@@._V1_UY268_CR4,0,182,268_AL_.jpg")
   end
 
   describe 'Validations' do
@@ -19,6 +21,17 @@ RSpec.describe Special do
     describe 'Calculations' do
 
       it 'can calculate average runtime' do
+        expected = 55.33
+        actual = Special.average_runtime
+        expect(actual).to eq(expected)
+      end
+    end
+
+    describe 'Filtering' do
+
+      it 'can select specials by comedian age' do
+
+
         expected = 55.33
         actual = Special.average_runtime
         expect(actual).to eq(expected)

@@ -7,4 +7,8 @@ class Special < ActiveRecord::Base
     Special.average(:runtime).to_f.round(2)
   end
 
+  def self.filter_by_age(age)
+    Special.includes(:comedian).where(comedians: { age: age })
+  end
+
 end

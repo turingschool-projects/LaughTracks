@@ -1,4 +1,4 @@
-<header class='statistics'>
+<header class='statistics nav'>
   <h1>Statistics</h1>
   <h3>Average Runtime: <%= Special.average_run_time(params[:age]).round() %></h3>
   <h3>Average Age: <%= @comedians.average_age(@comedians).round() %></h3>
@@ -26,7 +26,7 @@
   </section>
 </header>
 
-<nav class="side-nav">
+<nav class="side-nav nav">
   <a href="/comedians">Home</a>
   <% @comedians.each do |comedian| %>
     <a href="#<%= comedian.name.downcase.gsub(' ', '-') %>"><%= comedian.name %></a>
@@ -39,25 +39,17 @@
   <% end %>
 
   <% @comedians.each do |comedian| %>
+  <section class='comedian-ctn'>
     <article class="comedian-profile" id="<%= comedian.name.downcase.gsub(' ', '-') %>">
       <section class="comedian-details">
         <h3><%= comedian.name %></h3>
         <p>Age: <%= comedian.age %></p>
         <p>City: <%= comedian.city %></p>
         <img src= "<%= comedian.image %>" alt="actor headshot">
+        <p class='num-of-specials'>Number of Specials: <%= comedian.specials.count %></p>
       </section>
 
-      <!-- <section class="tv-special">
-      <% comedian.specials.each do |special| %>
-        <h3><%= special.title %></h3>
-        <img src= "<%= special.thumbnail %>" alt="tv_special cover">
-        <p>Runtime: <%= special.run_time %></p>
-      <% end %>
-
-      </section> -->
-
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <p class='num-of-specials'>Number of Specials: <%= comedian.specials.count %></p>
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <% (comedian.specials.count - 1).times do |specials| %>
@@ -88,5 +80,6 @@
         </div>
       </div>
     </article>
+  </section>
   <% end %>
 </section>

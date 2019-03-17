@@ -8,17 +8,22 @@ body {
     line-height: 1.5;
 }
 
-header {
-  position: fixed;
-  right: 0;
-  width: 200px;
-  height: 100%;
-  text-align: center;
-  background-color: blue;
-}
-
 h1 {
   font-size: 48px;
+}
+
+.nav {
+  background-color: grey;
+}
+
+.statistics {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  text-align: center;
 }
 
 .dashboard {
@@ -53,8 +58,8 @@ h1 {
   top: 0; /* Stay at the top */
   left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
+  display: inline-block;
   padding-top: 40px;
-  background-color: grey;
 }
 
 .side-nav a {
@@ -72,12 +77,25 @@ h1 {
 }
 
 .main {
-  margin: 0 160px;
+  width: 100%;
+  margin: 0 200px;
+  margin-right: 300px;
+}
+
+.comedian-ctn {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  height: 550px;
+  padding: 5px;
 }
 
 .comedian-profile {
   display: flex;
   margin: 10px;
+}
+
+.carousel {
+  margin-left: 30%;
 }
 
 .comedian-details {
@@ -101,7 +119,6 @@ h1 {
 .comedian-details img {
   border-radius: 8px;
   border: 1px solid #ddd;
-  border-radius: 4px;
   padding: 5px;
   width: 250px;
 }

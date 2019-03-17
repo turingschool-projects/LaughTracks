@@ -8,15 +8,48 @@ body {
     line-height: 1.5;
 }
 
-header {
-  position: fixed;
-  right: 0;
-  width: 200px;
-  height: 100%;
-  text-align: center;
-  background-color: blue;
+h1 {
+  font-size: 48px;
 }
 
+.nav {
+  background-color: grey;
+}
+
+.statistics {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  text-align: center;
+}
+
+.dashboard {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://i.imgflip.com/se1ia.jpg')
+
+}
+
+.display {
+  display: inline-block;
+  position: relative;
+  top: 40%;
+  left: 20%;
+  text-align: center;
+}
+
+.display a {
+  font-size: 48px;
+}
+
+/* Index view edit */
 .side-nav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 160px; /* Set the width of the sidebar */
@@ -25,8 +58,8 @@ header {
   top: 0; /* Stay at the top */
   left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
+  display: inline-block;
   padding-top: 40px;
-  background-color: grey;
 }
 
 .side-nav a {
@@ -44,7 +77,16 @@ header {
 }
 
 .main {
-  margin: 0 160px;
+  width: 100%;
+  margin: 0 200px;
+  margin-right: 300px;
+}
+
+.comedian-ctn {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  height: 550px;
+  padding: 5px;
 }
 
 .comedian-profile {
@@ -52,27 +94,35 @@ header {
   margin: 10px;
 }
 
+.carousel {
+  margin-left: 30%;
+}
+
 .comedian-details {
   margin: inherit;
 }
 
-.tv-special {
-  margin: inherit;
-  text-align: center;
-}
-
-.tv-special img {
+.carousel-item {
   border-radius: 8px;
   border: 1px solid #ddd;
-  border-radius: 4px;
   padding: 5px;
-  width: 150px;
+  width: 300px;
+}
+
+.carousel-item div {
+  border: 3px solid #ddd;
+  border-radius: 8px;
+  padding: 2px;
+  background-color: black;
 }
 
 .comedian-details img {
   border-radius: 8px;
   border: 1px solid #ddd;
-  border-radius: 4px;
   padding: 5px;
-  width: 150px;
+  width: 250px;
+}
+
+.carousel {
+  text-align: center;
 }

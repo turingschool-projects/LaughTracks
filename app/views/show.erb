@@ -1,17 +1,3 @@
-<h1>Welcome to Laughtracks!</h1>
-
-<% if @age != nil%>
-    <% @comedians = @comedians.select_by_age(@age) %>
-<% end %>
-
-<div class="stats-box">
-    <h1>Comedian Statistics</h1>
-    <li>Average Age: <%= @comedians.average_age %></li>
-    <li>Average Runtime Minutes: <%= @specials.average_special_runtime %></li>
-    <li>Comedian Cities: <%= @comedians.unique_hometowns %></li>
-</div>
-
-
 <div class="comedian-box">
     <% @comedians.each do |comedian| %>
         <h3>Comedian Info:</h3>

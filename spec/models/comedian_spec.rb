@@ -36,6 +36,20 @@ RSpec.describe Comedian do
 
           expect(actual).to eq(expected)
         end
+
+        it 'should select by age' do
+          c1 = Comedian.create(name: "Bill Hicks", age: 32, birthplace: "Houston")
+          c2 = Comedian.create(name: "Mitch Hedberg", age: 37, birthplace: "St. Paul")
+          c3 = Comedian.create(name: "George Carlin", age: 71, birthplace: "New York City")
+          expected_1 = c1
+          expected_2 = c2
+          expected_3 = c3
+          actual = Comedian.select_by_age(71)
+
+          expect(actual[0]).to eq(expected_3)
+          expect(actual).to_not eq(expected_2)
+          expect(actual).to_not eq(expected_1)
+        end
       end
     end
 

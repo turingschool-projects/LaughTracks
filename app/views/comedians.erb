@@ -1,18 +1,30 @@
-<ul>
+<h1>Welcome to Laughtracks!</h1>
+
+<div class="stats-box">
+    <h1>Comedian Statistics</h1>
+    <li>Average Age: <%= @comedians.average_age %></li>
+    <li>Average Runtime Minutes: <%= @specials.average_special_runtime %></li>
+    <li>Comedian Cities: <%= @comedians.unique_hometowns %></li>
+</div>
+
+
+<div class="comedian-box">
     <% @comedians.each do |comedian| %>
-        <h1>Comedian Info:</h1>
+        <h3>Comedian Info:</h3>
         <h4>
         <li><%= comedian.name %></li>
-        <li>Length: <%= comedian.age %></li>
+        <li>Age: <%= comedian.age %></li>
         <li>Hometown: <%= comedian.birthplace %></li>
         </h4>
         <br>
-        <h2>Specials:</h2>
-        <% comedian.specials.each do |special| %>
-            <li>Name:<%=special.name %><li>
-            <li>Runtime Minutes:<%=special.runtime_mins %><li>
-            <li><img src="<%=special.image_url%>"><li>
-        <% end %> 
-        <br>
+        
+        <div class="special-box">
+            <h4>Specials:</h4>
+                <% comedian.specials.each do |special| %>
+                    <li>Name: <%=special.name %><li>
+                    <li>Runtime Minutes: <%=special.runtime_mins %><li>
+                    <li><img src="<%=special.image_url%>"><li>
+                <% end %> 
+        </div>
     <% end %>     
-</ul>
+</div>

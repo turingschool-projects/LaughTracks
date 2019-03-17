@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-03-16T20:15:04-06:00">2019-03-16T20:15:04-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-03-17T16:32:37-06:00">2019-03-17T16:32:37-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -31,9 +31,9 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>2</b> files in total.
-    <b>44</b> relevant lines. 
-    <span class="green"><b>44</b> lines covered</span> and
+    <b>3</b> files in total.
+    <b>72</b> relevant lines. 
+    <span class="green"><b>72</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -49,6 +49,16 @@
       </tr>
     </thead>
     <tbody>
+      
+      <tr>
+        <td class="strong"><a href="#93bb8abdcd138153993dfab25f03956346b886be" class="src_link" title="spec/features/test_user_sees_comedian_info_spec.rb">spec/features/test_user_sees_comedian_info_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>40</td>
+        <td>28</td>
+        <td>28</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
       
       <tr>
         <td class="strong"><a href="#bda99a54ee57b5d6eed23666c26f1912bf783d54" class="src_link" title="spec/models/comedian_spec.rb">spec/models/comedian_spec.rb</a></td>
@@ -85,6 +95,265 @@
       </div>
     
       <div class="source_files">
+      
+        <div class="source_table" id="93bb8abdcd138153993dfab25f03956346b886be">
+  <div class="header">
+    <h3>spec/features/test_user_sees_comedian_info_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>28</b> relevant lines. 
+      <span class="green"><b>28</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe Comedian do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &#39;when user visits comedians&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        describe &#39;each comedian&#39;  do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">            it &#39;has comedian info and specials&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                c1 = Comedian.create(name: &quot;Bill Burr&quot;, age: 50, birthplace: &quot;Canton, MA&quot;, image_url: &quot;https://image.masslive.com/home/mass-media/width960/img/entertainment/photo/nashville-comedy-festival-21d347107e975672.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                c2 = Comedian.create(name: &quot;Joe Rogan&quot;, age: 51, birthplace: &quot;Newark, NJ&quot;, image_url: &quot;https://www.maxim.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_1400/MTQ4NDk2MjMzNzY0MjM0Nzc2/joe-rogan.webp&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                c1.specials.create(name: &quot;Walk Your Way Out&quot;, runtime_mins: 77, image_url: &quot;https://m.media-amazon.com/images/M/MV5BMGYwNDE4MDItNjQwYi00NWIwLWJmYTYtY2I5NDEyMGUxNWMwL2ltYWdlXkEyXkFqcGdeQXVyMjUwMTM3MTU@._V1_.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                c1.specials.create(name: &quot;I&#39;m Sorry You Feel That Way&quot;, runtime_mins: 80, image_url: &quot;https://m.media-amazon.com/images/M/MV5BMTk0MzI5MjAxNV5BMl5BanBnXkFtZTgwNDY1NzA0NDE@._V1_SY1000_SX675_AL_.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                c1.specials.create(name: &quot;You People Are All The Same&quot;, runtime_mins: 69, image_url: &quot;https://m.media-amazon.com/images/M/MV5BMjAyZTI1NjMtNjQ3OC00MDhhLTkxMDgtMDVmMThhNjE5M2NkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                c2.specials.create(name: &quot;Strange Times&quot;, runtime_mins: 63, image_url: &quot;https://m.media-amazon.com/images/M/MV5BNzc2Mzg5YmMtMzM1NC00NDgwLTljYWQtZDdkNzBmNjZkNmJhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                c2.specials.create(name: &quot;Triggered&quot;, runtime_mins: 63, image_url: &quot;https://m.media-amazon.com/images/M/MV5BYTE0M2FkNGMtYjYxNi00MDRkLWE0YWUtNWI4NWU3NWIzMWIzXkEyXkFqcGdeQXVyMzE5NzI0NjE@._V1_.jpg&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                visit &#39;/comedians&#39; </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">                </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                within &#39;.comedian-box&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Bill Burr&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Age: 50&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Hometown: Canton, MA&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Joe Rogan&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Age: 51&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Hometown: Newark, NJ&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Name: Walk Your Way Out&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Name: I&#39;m Sorry You Feel That Way&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Name: You People Are All The Same&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Name: Strange Times&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Name: Triggered&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">                end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                within &#39;.stats-box&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Comedian Statistics&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Average Age: 51&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">                    expect(page).to have_content(&quot;Average Runtime Minutes: 70&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">                end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">            end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">        end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
       
         <div class="source_table" id="bda99a54ee57b5d6eed23666c26f1912bf783d54">
   <div class="header">

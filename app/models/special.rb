@@ -1,6 +1,6 @@
 class Special < ActiveRecord::Base
   belongs_to :comedian
-  validates_presence_of :name,
+  validates_presence_of :title,
                         :runtime_mins,
                         :image_url
 

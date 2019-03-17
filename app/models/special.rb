@@ -4,11 +4,7 @@ class Special < ActiveRecord::Base
   validates_presence_of :title
 
   def self.average_run_time
-    if average(:run_time)
-      return average(:run_time)
-    else
-      0
-    end
+    if average(:run_time) then average(:run_time) else 0 end
   end
 
   def self.special_count

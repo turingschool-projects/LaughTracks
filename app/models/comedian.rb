@@ -3,12 +3,8 @@ class Comedian < ActiveRecord::Base
 
   validates_presence_of :name, :age
 
-  def self.average_age(comedians_list)
-    if comedians_list.average(:age)
-      comedians_list.average(:age)
-    else
-      0
-    end
+  def self.average_age
+    if average(:age) then average(:age) else 0 end
   end
 
   def self.unique_cities()

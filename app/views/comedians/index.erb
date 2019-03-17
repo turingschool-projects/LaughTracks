@@ -47,14 +47,46 @@
         <img src= "<%= comedian.image %>" alt="actor headshot">
       </section>
 
-      <section class="tv-special">
+      <!-- <section class="tv-special">
       <% comedian.specials.each do |special| %>
         <h3><%= special.title %></h3>
         <img src= "<%= special.thumbnail %>" alt="tv_special cover">
         <p>Runtime: <%= special.run_time %></p>
       <% end %>
-        <p>Number of Specials: <%= comedian.specials.count %></p>
-      </section>
+
+      </section> -->
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <p class='num-of-specials'>Number of Specials: <%= comedian.specials.count %></p>
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <% (comedian.specials.count - 1).times do |specials| %>
+            <li data-target="#carouselExampleIndicators" data-slide-to='<%= specials + 1 %>'></li>
+          <% end %>
+        </ol>
+        <div class="carousel-inner">
+          <% if comedian.specials.first %>
+          <div class="carousel-item active">
+              <img src="<%= comedian.specials.first.thumbnail %>" class="d-block w-100" alt="tv special thumbnail">
+              <div class="carousel-caption d-none d-md-block">
+                <h5><%= comedian.specials.first.title %></h5>
+                <p>Runtime: <%= comedian.specials.first.run_time %></p>
+              </div>
+          </div>
+          <% end %>
+          <% if comedian.specials.second %>
+            <% (comedian.specials.count - 1).times do |special| %>
+              <div class="carousel-item">
+                <img src="<%= comedian.specials[(special + 1)].thumbnail %>" class="d-block w-100" alt="tv special thumbnail">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5><%= comedian.specials[(special + 1)].title %></h5>
+                  <p>Runtime: <%= comedian.specials[(special + 1)].run_time %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </article>
   <% end %>
 </section>

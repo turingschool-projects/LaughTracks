@@ -40,11 +40,11 @@ h1 {
   text-align: center;
 }
 
-
 .display a {
   font-size: 48px;
 }
 
+/* Index view edit */
 .side-nav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 160px; /* Set the width of the sidebar */
@@ -84,17 +84,18 @@ h1 {
   margin: inherit;
 }
 
-.tv-special {
-  margin: inherit;
-  text-align: center;
-}
-
-.tv-special img {
+.carousel-item {
   border-radius: 8px;
   border: 1px solid #ddd;
-  border-radius: 4px;
   padding: 5px;
-  width: 150px;
+  width: 300px;
+}
+
+.carousel-item div {
+  border: 3px solid #ddd;
+  border-radius: 8px;
+  padding: 2px;
+  background-color: black;
 }
 
 .comedian-details img {
@@ -102,5 +103,9 @@ h1 {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
-  width: 150px;
+  width: 250px;
+}
+
+.carousel {
+  text-align: center;
 }

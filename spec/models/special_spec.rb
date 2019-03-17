@@ -2,17 +2,22 @@ RSpec.describe Special, type: :model do
   describe 'Validations' do
     describe 'Required Field(s)' do
       it 'should be invalid if missing a title' do
-        special = Special.create(length: 103)
+        special = Special.create(length: 103, image_url: "url")
         expect(special).to_not be_valid
       end
 
       it 'should be invalid if missing a length' do
-        special = Special.create(title: "Block Party")
+        special = Special.create(title: "Block Party", image_url: "url")
         expect(special).to_not be_valid
       end
 
-      it 'should be valid if it has a title and a length' do
+      it 'should be invalid if missing an image_url' do
         special = Special.create(title: "Block Party", length: 103)
+        expect(special).to_not be_valid
+      end
+
+      it 'should be valid if it has a title, length, and image_url' do
+        special = Special.create(title: "Block Party", length: 103, image_url: "url")
         expect(special).to be_valid
       end
     end

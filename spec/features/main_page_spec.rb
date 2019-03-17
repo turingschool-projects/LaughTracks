@@ -112,8 +112,13 @@ RSpec.describe "a user visiting the main page" do
         expect(page).to have_css("div.bourbon-card", count:3)
       end
 
+      it "selects based on state" do
+
+        visit "/bourbons"
+        click_button("KY")
+        expect(page).to have_css("div.bourbon-card", count:2)
+      end
     end
-@b1 = Bourbon.create(name: "Bourbon", distillery: "Buffalo Trace" ,location: "Frankfort, KY" ,description: "tasty" ,proof: 90,expert_score: 91, avg_rating: 3.80,bottle_image: "http://")
 
     context "in the bourbon cards" do
       it "shows the name of the bourbon" do
@@ -172,10 +177,17 @@ RSpec.describe "a user visiting the main page" do
         end
       end
 
-      it "" do
+      it "shows the award information" do
         visit "/bourbons"
         within first".award-card" do
           expect(page).to have_content("2013 Gold SF awards")
+        end
+      end
+
+      it "shows the award image" do
+        visit "/bourbons"
+        within first".award-card" do
+          expect(page).to have_css("img")
         end
       end
 

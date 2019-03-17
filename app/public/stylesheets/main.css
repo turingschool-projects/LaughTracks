@@ -1,18 +1,18 @@
 body {
   margin: 0;
-  background-color: #4D4861;
+  background-color: #7B0828;
 }
 
 header {
-  background-color: #4D4861;
+  background-color: #7B0828;
   padding: 1px 0px 1px 0px;
 }
 
 header h1 {
   font-family: "Aileron", sans-serif;
-  padding-left: 20px;
+  font-size: 36px;
   color: white;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
 }
 
@@ -24,19 +24,26 @@ ul {
 }
 
 #statistics {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   display: block;
   text-align: center;
-  background-color: #F7C4A5;
+  background-color: #8A8E91;
   border-style: solid;
   border-radius: 15px 50px;
   border-width: 2px;
   margin: 10px;
   padding: 10px;
+  max-width: 50%;
+  margin: auto;
 }
 
 #statistics h2 {
   font-family: "Aileron", sans-serif;
   padding-left: 20px;
+}
+
+#statistics h3 {
+  display: inline;
 }
 
 #statistics ul {
@@ -61,13 +68,15 @@ ul {
 }
 
 .comedian-row {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   display: flex;
-  justify-content: flex-start;
-  background-color: #EDCB96;
+  justify-content: center;
+  max-width: 70%;
+  background-color: #D5D4D2;
   border-style: solid;
   border-radius: 15px 15px;
   border-width: 2px;
-  margin: 10px;
+  margin: 10px auto;
   padding: 10px;
 }
 

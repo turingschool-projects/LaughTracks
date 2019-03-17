@@ -8,6 +8,21 @@
   </header>
   <main>
     <% @artists.each do |artist| %>
+    <section id="<%= artist.photo %>">
+      <div class="artist_glamour">
+        <div>
+          <a href="../artists/<%= artist.id %>">
+            <img src="../img/artists/small/<%= artist.photo %>.jpg"><br>
+            <span class="name"><%= artist.name %></span>
+          </a><br>
+          <ul>
+            <li><span>Formed in</span><%= artist.formation_year %></li>
+            <li><span>Origin</span><%= artist.origin %></li>
+            <li><span>Albums</span><%= artist.album_count %></li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <% end %>
   </main>
 </body>

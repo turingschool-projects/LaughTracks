@@ -26,25 +26,25 @@ RSpec.describe 'a user visits comedians page with age criteria' do
 
     it 'should show average age of 34' do
       within '#statistics' do
-        expect(page).to have_content('Average Age: 34')
+        expect(page).to have_content('34')
       end
     end
 
     it 'should show average special length of only comedians age 34' do
       within '#statistics' do
-        expect(page).to have_content('Average Special Length: 29')
+        expect(page).to have_content('29')
       end
     end
 
     it 'should show count of specials of only comedians age 34' do
       within '#statistics' do
-        expect(page).to have_content('Total number of specials: 2')
+        expect(page).to have_content('2')
       end
     end
 
     it 'should show cities of only comedians age 34' do
       within '#statistics' do
-        expect(page).to have_content('Home Cities: St. Paul')
+        expect(page).to have_content('St. Paul')
         expect(page).not_to have_content('Cincinnati')
       end
     end

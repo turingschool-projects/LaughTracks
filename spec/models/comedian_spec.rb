@@ -17,7 +17,7 @@ RSpec.describe Comedian, type: :model do
       end
 
       it 'should be valid if there is a name, city, age' do
-        comic = Comedian.create(name: "Mitch Hedberg", age: 48, city:"San Francisco", head_shot: "url")
+        comic = Comedian.create(name: "Mitch Hedberg", age: 48, city:"San Francisco")
         expect(comic).to be_valid
       end 
     end

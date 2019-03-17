@@ -25,4 +25,7 @@ class Comedian < ActiveRecord::Base
     where(age: age)
   end
 
+  def self.all_ages
+    comedians = Comedian.select(:age).distinct.order(:age)
+  end
 end

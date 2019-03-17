@@ -127,7 +127,6 @@ a {
   margin-left: 10px;
   margin-right: 10px;
   width: 50%;
-  /* max-height: 300px; */
   max-width: 450px;
 }
 
@@ -260,7 +259,6 @@ a {
 }
 
 #awards {
-  /* grid-column-start: 1 / span 2; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

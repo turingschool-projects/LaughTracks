@@ -5,5 +5,4 @@ class Award < ActiveRecord::Base
                         :award_type,
                         :year,
                         :image
-  # do I need any more methods??
 end

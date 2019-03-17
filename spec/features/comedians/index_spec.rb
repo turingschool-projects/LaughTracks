@@ -85,5 +85,27 @@ RSpec.describe 'comedian index workflow' do
         expect(page).to have_content("Length: #{@js_special.length} mins")
       end 
     end 
+
+    it 'should see all contents for comedians who match age query' do
+      visit 'comedians?age=64' 
+
+      within "#comedian-#{@js.id}" do
+        expect(page).to have_css("img[src*='#{@js.head_shot}']")
+        expect(page).to have_content("Name: #{@js.name}")
+        expect(page).to have_content("Age: #{@js.age}")
+        expect(page).to have_content("City: #{@js.city}")
+        expect(page).to have_content("TV Specials: #{@js.specials.count}")
+        
+        expect(page).to_not have_content("Name: #{@dc.name}")
+      end
+
+      within "#comedian-#{@js_special.id}" do
+        expect(page).to have_css("img[src*='#{@js_special.image_url}']")
+        expect(page).to have_content(@js_special.title)
+        expect(page).to have_content("Length: #{@js_special.length} mins")
+
+        expect(page).to_not have_content(@dc_special.title)
+      end
+    end 
   end
-end
+end 

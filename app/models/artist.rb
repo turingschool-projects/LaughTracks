@@ -18,4 +18,8 @@ class Artist < ActiveRecord::Base
   def self.album_count
     joins(:albums).count
   end
+
+  def self.cities
+    select(:origin).distinct
+  end
 end

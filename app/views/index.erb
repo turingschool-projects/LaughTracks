@@ -5,6 +5,24 @@
 </head>
 <body>
   <header>
+    <div id="statistics">Statistics</div>
+    <div id="avg_years"><span>Average years since formation</span>
+      <%=  @artists.average_age %>
+    </div>
+    <div id="avg_length"><span>Average album length</span>
+      <%= @artists.average_album_length %>
+    </div>
+    <div id="total_albums"><span>Total albums</span>
+      <%= @artists.album_count %>
+    </div>
+    <div id="cities">
+      <span>Cities of origin</span>
+      <ul>
+      <% @artists.cities.each do |artist| %>
+        <li><%= artist.origin %></li>
+      <% end %>
+      </ul>
+    </div>
   </header>
   <main>
     <% @artists.each do |artist| %>

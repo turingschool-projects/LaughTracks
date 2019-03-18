@@ -22,7 +22,7 @@ RSpec.describe Special do
 
       it 'can calculate average runtime' do
         expected = 55.33
-        actual = Special.average_runtime
+        actual = Special.average_runtime.to_f.round(2)
         expect(actual).to eq(expected)
       end
     end
@@ -33,7 +33,7 @@ RSpec.describe Special do
 
 
         expected = 55.33
-        actual = Special.average_runtime
+        actual = Special.average_runtime.to_f.round(2)
         expect(actual).to eq(expected)
       end
     end

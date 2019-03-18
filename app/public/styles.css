@@ -1,0 +1,160 @@
+body {
+  overflow-x: hidden;
+  background-color: #000;
+  color: white;
+}
+
+header {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0px;
+  left: 50%;
+  width: 1024px;
+  height: 200px;
+  margin-left: -512px;
+  padding: 15px;
+  z-index: 1;
+  background: linear-gradient(to bottom, #1d1d1d, #444);
+  border-radius: 0 0 6px 6px;
+  border: 2px solid #888;
+  border-top: 0;
+}
+
+header div span:after{
+  content: ':';
+}
+
+main {
+  margin: 210px auto 0;
+  width: 1008px;
+}
+
+main section {
+  position: relative;
+  margin-top: 10px;
+}
+
+main section {
+  background: radial-gradient(circle at 600px 50%, #444 420px, #1d1d1d 520px);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+main section:before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-width: 2px;
+  background: linear-gradient(to left, #000, #666);
+}
+
+.artist_glamour {
+  margin: 23px 0;
+  width: 200px;
+  display: inline-block;
+  text-align: center;
+}
+
+.artist_glamour div {
+  display: inline-block;
+  width: 190px;
+  padding: 5px;
+}
+
+.artist_glamour span.name {
+  font: bold 18pt sans-serif;
+}
+
+.artist_glamour a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.artist_glamour img {
+  width: 140px;
+  height: 140px;
+  border: 2px solid #fff;
+  border-radius: 70px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.artist_details {
+  margin: 15px 0;
+  vertical-align: top;
+  display: inline-block;
+  width: 800px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.artist_details::-webkit-scrollbar {
+  background-color: transparent;
+  height: 6px;
+}
+
+.artist_details::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+.album {
+  display: inline-block;
+  width: 156px;
+  text-align: center;
+  white-space: normal;
+}
+
+.album:nth-of-type(n+6):last-of-type {
+  margin-right: 5px;
+}
+
+.album figure {
+  margin: 0;
+}
+
+.album figcaption {
+  font-style: italic;
+  font-size: 13pt;
+  margin-bottom: 5px;
+}
+
+.album img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.album ul, .artist_glamour ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.album li span:after, .artist_glamour li span:after {
+  content: ": ";
+}
+
+#statistics {
+  font: 28pt sans-serif;
+}
+
+#avg_years, #avg_length, #total_albums {
+  margin-top: 10px;
+}
+
+#cities {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 50%;
+  margin-top: 15px;
+}
+
+#cities ul {
+  column-count: 2;
+}

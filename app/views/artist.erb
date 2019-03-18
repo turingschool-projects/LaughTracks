@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Top Rock</title>
+  <link rel="stylesheet" href="../artist.css">
+</head>
+<body>
+  <header>
+    <div class="artist_glamour">
+      <div>
+        <img src="../img/artists/small/<%= @artist.photo %>.jpg">
+      </div>
+    </div>
+    <span class="name"><%= @artist.name %></span>
+    <ul>
+      <li><span>Formed in</span><%= @artist.formation_year %></li>
+      <li><span>Origin</span><%= @artist.origin %></li>
+      <li><span>Albums</span><%= @artist.album_count %></li>
+    </ul>
+  </header>
+  <main>
+    <section id="<%= @artist.name.downcase %>">
+      <div class="artist_details">
+        <% @artist.albums.order(release_date: :desc).each do |album| %>
+        <div class="album">
+          <figure>
+            <figcaption><%= album.name %></figcaption>
+            <img src="../img/albums/<%= album.photo %>.jpg">
+          </figure>
+          <ul>
+            <li><span>Released</span><%= album.release_date %></li>
+            <li><span>Tracks</span><%= album.track_count %></li>
+            <li><span>Length</span><%= album.duration %></li>
+          </ul>
+        </div>
+        <% end %>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

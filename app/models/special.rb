@@ -4,7 +4,7 @@ class Special < ActiveRecord::Base
   validates :name, presence: true
 
   def self.average_runtime
-    Special.average(:runtime).to_f.round(2)
+    Special.average(:runtime)
   end
 
   def self.filter_by_age(age)

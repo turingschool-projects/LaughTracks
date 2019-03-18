@@ -33,7 +33,7 @@ RSpec.describe Comedian do
 
         within '#cities' do
           expect(page).to have_content("Cities:")
-          expect(page).to have_content("New York City, Waco, Brooklyn")
+          expect(page).to have_content("Brooklyn, New York City, Waco")
         end
 
       end

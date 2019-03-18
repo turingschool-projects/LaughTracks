@@ -4,11 +4,11 @@ class Special < ActiveRecord::Base
   validates :name, presence: true
 
   def self.average_runtime
-    Special.average(:runtime)
+    average(:runtime)
   end
 
   def self.filter_by_age(age)
-    Special.includes(:comedian).where(comedians: { age: age })
+    includes(:comedian).where(comedians: { age: age })
   end
 
 end

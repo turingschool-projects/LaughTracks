@@ -11,4 +11,9 @@ class LaughTracksApp < Sinatra::Base
     end
     erb :index
   end
+
+  get '/artists/:id' do
+    @artist = Artist.where(id: params[:id]).first
+    erb :artist
+  end
 end

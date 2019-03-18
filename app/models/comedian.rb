@@ -3,9 +3,4 @@ class Comedian < ActiveRecord::Base
   validates_presence_of :name,
                         :age,
                         :birthplace
-                        
-  def self.average_age
-    average(:age).round
-  end
-
 end

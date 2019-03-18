@@ -1,7 +1,7 @@
 class Special < ActiveRecord::Base
   belongs_to :comedians
 
-  vadlidates_presence_of :name,
+  validates_presence_of :name,
                          :runtime_mins,
                          :comedian_id
 

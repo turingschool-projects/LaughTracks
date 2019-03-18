@@ -5,16 +5,11 @@ class Comedian < ActiveRecord::Base
   validates :age, presence: true
 
   def self.average_age
-    Comedian.average(:age).round(2)
+    average(:age)
   end
 
   def self.all_cities
-    comedians = Comedian.select(:city).distinct
-    cities = ""
-    comedians.each do |comedian|
-      cities.concat(comedian.city + ", ")
-    end
-    cities[0..-3]
+    order(:city).pluck(:city).uniq
   end
 
   def self.total_specials(comedian)
@@ -26,6 +21,18 @@ class Comedian < ActiveRecord::Base
   end
 
   def self.all_ages
-    comedians = Comedian.select(:age).distinct.order(:age)
+    select(:age).distinct.order(:age)
+  end
+
+  def self.sort_by_name
+    order(:name)
+  end
+
+  def self.sort_by_age
+    order(:age)
+  end
+
+  def self.sort_by_city
+    order(:city)
   end
 end

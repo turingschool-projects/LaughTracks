@@ -1,0 +1,16 @@
+
+<section class="body">
+  <div class="card" id=<%= @comedian.name.downcase.gsub(" ", "-") %>>
+    <h2><%= @comedian.name %></h2><br />
+    Age: <%= @comedian.age %><br />
+    City: <%= @comedian.city %><br />
+    Total TV Specials: <%= @comedian.specials.count %>
+
+  <section>
+  <% @comedian.specials.each do |special| %>
+    <article><img src="<%= special.thumb %>" width="25">
+    Special Name: <%= special.name %><br />
+    Runtime: <%= special.runtime %>
+    <% end %>
+    </article>
+</section>

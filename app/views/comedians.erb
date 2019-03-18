@@ -1,0 +1,67 @@
+<% if @age != nil %>
+  <% @comedians = @comedians.filter_by_age(@age) %>
+  <% @specials = @specials.filter_by_age(@age) %>
+<% elsif @sort == 'age' %>
+  <% @comedians = @comedians.sort_by_age %>
+<% elsif @sort == 'name' %>
+  <% @comedians = @comedians.sort_by_name %>
+<% elsif @sort == 'city' %>
+  <% @comedians = @comedians.sort_by_city %>
+<% end %>
+
+
+  <section class="stats">
+      <h2>Statistics</h2>
+
+    <section class="stats-flex">
+      <figure id="average-runtime">
+        <h3>Average Runtime:</h3>
+        <p class="fancy"><%= @specials.average_runtime.to_f.round(2) %></p>
+      </figure>
+
+      <figure id="total-specials">
+
+        <h3>Total TV Specials</h3>
+          | <% @comedians.each do |comedian| %>
+              <%= comedian.name %>: <%= comedian.specials.count %> |
+            <% end %>
+      </figure>
+
+      <figure id="average-age">
+        <h3>Average Age:</h3>
+        <p class="fancy"><%= @comedians.average_age.to_f.round(2) %></p>
+      </figure>
+
+      <figure id="cities" class="stats-item">
+        <h3>Cities:</h3> <%= @city_list.join(', ') %>
+      </figure>
+
+    </section>
+      </section>
+
+    <section class="body">
+      <% @comedians.each do |comedian| %>
+      <div class="card" id=<%= comedian.name.downcase.gsub(" ", "-") %>>
+        <h2><%= comedian.name %></h2><br />
+        Age: <%= comedian.age %><br />
+        City: <%= comedian.city %><br />
+        Total TV Specials: <%= comedian.specials.count %>
+
+        <section class="specials">
+        <% comedian.specials.each do |special| %>
+          <article><img src="<%= special.thumb %>"><br />
+          Special Name: <%= special.name %><br />
+          Runtime: <%= special.runtime %>
+          </article>
+          <% end %>
+        </section>
+
+        <section class="button-spacer">
+          <button class="btn btn-dark" type="button"><a href="comedians/<%= comedian.id %>">Learn More</a></button>
+          </section>
+        <section class="spacer">&nbsp;</section>
+      </div>
+      <% end %>
+
+
+    </section>

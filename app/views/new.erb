@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Comedians</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Heebo" rel="stylesheet">
+  </head>
+
+  <body>
+    <section class="form-container">
+      <h1>Add a New Comedian</h1>
+      <form class="new-comedian" action="/comedians" method="post">
+        <input type="text" name="comedian[name]" value="Name" />
+        <input type="text" name="comedian[age]" value="Age" />
+        <input type="text" name="comedian[city]" value="City" />
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
+  </body>
+</html>

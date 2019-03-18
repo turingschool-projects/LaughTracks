@@ -1,0 +1,40 @@
+body {
+  background-color: #E5E4E4;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h3{
+  display: flex;
+  justify-content: center;
+}
+
+.stats-card{
+  border: 3px solid #101010;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#statistics li{
+   display: block;
+}
+
+.comedian-card {
+  display: block;
+  list-style: none;
+}
+
+#specials{
+  display: inline-block;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  border: 3px solid #101010;
+  border-radius: 4px;
+  overflow: hidden;
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

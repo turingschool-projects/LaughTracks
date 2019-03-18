@@ -14,4 +14,8 @@ class Artist < ActiveRecord::Base
     avg_length = joins(:albums).average("split_part(duration,':',1)::int + split_part(duration,':',2)::int / 60")
     "#{avg_length.to_int}:#{((avg_length % 1) * 60).to_i.to_s.rjust(2, "0")}"
   end
+
+  def self.album_count
+    joins(:albums).count
+  end
 end

@@ -6,8 +6,7 @@ class LaughTracksApp < Sinatra::Base
     @comedians = Comedian.all
     @specials = Special.all
     @age = params[:age]
-    @name = params[:name]
-    @city = params[:city]
+    @sort = params[:sort]
     @all_ages = Comedian.all_ages
     @city_list = Comedian.all_cities
     erb :comedians

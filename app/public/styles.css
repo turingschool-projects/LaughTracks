@@ -141,11 +141,7 @@ main section:before {
   font: 28pt sans-serif;
 }
 
-#avg_years {
-  margin-top: 10px;
-}
-
-#avg_length {
+#avg_years, #avg_length, #total_albums {
   margin-top: 10px;
 }
 

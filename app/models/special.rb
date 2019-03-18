@@ -11,7 +11,6 @@ class Special < ActiveRecord::Base
 
   def self.find_runtime_by_comedian_by_age(age)
       comedian = Comedian.where(age: age)
-      # require 'pry'; binding.pry
       Special.where(comedian_id: comedian).average(:runtime).round
   end
 end

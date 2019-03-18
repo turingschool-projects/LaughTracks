@@ -43,7 +43,7 @@ RSpec.describe 'comedian index workflow' do
 
       within "#stats" do
         expect(page).to have_content("Statistics")
-        expect(page).to have_content("Average Age: #{Comedian.average_age.to_i}")
+        expect(page).to have_content("Average Age: #{Comedian.average_age.to_i} years old")
         expect(page).to have_content("Total No. of TV Specials: #{Special.count}")
         expect(page).to have_content("Average Length: #{Special.average_length.to_i}")
         expect(page).to have_content("Cities: #{Comedian.unique_cities.join(", ")}")
@@ -106,6 +106,14 @@ RSpec.describe 'comedian index workflow' do
 
         expect(page).to_not have_content(@dc_special.title)
       end
+
+      within "#stats" do 
+        expect(page).to have_content("Statistics")
+        expect(page).to have_content("Average Age: 64 years old")
+        expect(page).to have_content("Total No. of TV Specials: 1")
+        expect(page).to have_content("Average Length: 75 mins")
+        expect(page).to have_content("Cities: Portsmouth")
+      end 
     end 
   end
 end 

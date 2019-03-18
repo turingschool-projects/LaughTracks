@@ -6,11 +6,15 @@ class LaughTracksApp < Sinatra::Base
     @comedians = Comedian.all
     @specials = Special.all
     @age = params[:age]
+    @name = params[:name]
+    @city = params[:city]
     @all_ages = Comedian.all_ages
+    @city_list = Comedian.all_cities
     erb :comedians
   end
 
   get '/comedians/new' do
+    @all_ages = Comedian.all_ages
     erb :new
   end
 
@@ -23,6 +27,7 @@ class LaughTracksApp < Sinatra::Base
 
   get '/comedians/:id' do
     @comedian = Comedian.find(params["id"])
+    @all_ages = Comedian.all_ages
     erb :show
   end
 

@@ -1,0 +1,68 @@
+
+<html>
+  <head>
+    <title>Comedians</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/start.css">
+  </head>
+  <body>
+    <header>
+      <h1 id="h1">Comedian Info</h1>
+      <nav>
+        <div id="stat_1">
+          Average Comedian Age: <%= @comedians.average(:age).round %> years old
+          </div>
+          <% @sum = 0 %>
+          <% @comedians.each do |comedian| %>
+          <% comedian.specials.sum do |special| %>
+          <% @sum += special.runtime_mins %>
+          <% @sum %>
+          <% end %>
+          <% end %>
+          <% @num = 0 %>
+          <% @comedians.each do |comedian| %>
+          <% @num += comedian.specials.count %>
+          <% end %>
+          <% if @num == 0 %>
+          <% @average = 0 %>
+          <% else %>
+          <% @average = @sum / @num %>
+          <% end %>
+          <div id="stat_2">
+          Average TV Special Run Length: <%= @average %> mins
+          </div>
+          <div id="stat_3">
+           Birth Cities:
+            <% @comedians.each do |comedian| %>
+               <%= comedian.birthplace %>
+          <% end %>
+          </div>
+          <div id="stat_4">
+            Special Count:
+            <% @comedians.each do |comedian| %>
+               <%= comedian.name %>:
+              <%= comedian.specials.count %>
+              <% end %>
+          </div>
+      </nav>
+    </header>
+    <main>
+      <% @comedians.each do |comedian| %>
+      <div id="comedian-<%=comedian.id%>">
+      <li id="name"><%= comedian.name %></li>
+      <li id="age">Age: <%= comedian.age %></li>
+      <li id="birthplace">Birthplace: <%= comedian.birthplace %></li>
+       <img id="image" src=<%= comedian.image_url %>></img>
+    </div>
+     <% comedian.specials.each do |special| %>
+    <div id="special-<%=special.id%>">
+      <li id="special">Special Count: <%= comedian.specials.count %></li>
+      <li>Specials:</li>
+      <li> <%= special.name %></li>
+      <li id="s_run"> Length: <%= special.runtime_mins %></li>
+      <img src=<%= special.image_url %></img>
+      <% end %>
+    <% end %>
+    </div>
+  </body>
+</hmtl>

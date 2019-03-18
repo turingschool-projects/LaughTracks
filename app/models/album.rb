@@ -12,4 +12,9 @@ class Album < ActiveRecord::Base
     name = name.gsub("&", "and").gsub("+", "plus").gsub("#", "no")
     name = name.gsub(/[:!?()',.-]/,"").gsub(/\_\_+/,"_")
   end
+
+  def length
+    puts "Album name: #{name}"
+    select("split_part(duration,':',1)::int + split_part(duration,':',2)::int / 60")
+  end
 end

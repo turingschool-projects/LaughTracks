@@ -1,34 +1,45 @@
-<h1>Welcome to Laughtracks!</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Comedians</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+  </head>
 
-<% if @age != nil%>
-    <% @comedians = @comedians.select_by_age(@age) %>
-<% end %>
+<body>
+    <h1>Welcome to Laughtracks!</h1>
 
-<div class="stats-box">
-    <h1>Comedian Statistics</h1>
-    <li>Average Age: <%= @comedians.average_age %></li>
-    <li>Average Runtime Minutes: <%= @specials.average_special_runtime %></li>
-    <li>Comedian Cities: <%= @comedians.unique_hometowns %></li>
-</div>
+    <% if @age != nil%>
+        <% @comedians = @comedians.select_by_age(@age) %>
+    <% end %>
+
+    <div class="stats-box">
+        <h3>Comedian Statistics:</h3>
+        <li>Average Age: <%= @comedians.average_age %></li>
+        <li>Average Runtime Minutes: <%= @specials.average_special_runtime %></li>
+        <li>Comedian Cities: <%= @comedians.unique_hometowns %></li>
+    </div>
 
 
-<div class="comedian-box">
-    <% @comedians.each do |comedian| %>
-        <h3>Comedian Info:</h3>
-        <h4>
-        <li><%= comedian.name %></li>
-        <li>Age: <%= comedian.age %></li>
-        <li>Hometown: <%= comedian.birthplace %></li>
-        </h4>
-        <br>
-        
-        <div class="special-box">
-            <h4>Specials:</h4>
-                <% comedian.specials.each do |special| %>
-                    <li>Name: <%=special.name %><li>
-                    <li>Runtime Minutes: <%=special.runtime_mins %><li>
-                    <li><img src="<%=special.image_url%>"><li>
-                <% end %> 
-        </div>
-    <% end %>     
-</div>
+    <div class="comedian-box">
+        <% @comedians.each do |comedian| %>
+            <h3>Comedian Info:</h3>
+            <h4>
+            <li><%= comedian.name %></li>
+            <li>Age: <%= comedian.age %></li>
+            <li>Hometown: <%= comedian.birthplace %></li>
+            </h4>
+            <br>
+            
+            <div class="special-box">
+                <h4>Specials:</h4>
+                    <% comedian.specials.each do |special| %>
+                        <li>Name: <%=special.name %><li>
+                        <li>Runtime Minutes: <%=special.runtime_mins %><li>
+                        <li><img src="<%=special.image_url%>"><li>
+                    <% end %> 
+            </div>
+        <% end %>     
+    </div>
+</body>

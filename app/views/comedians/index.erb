@@ -1,0 +1,27 @@
+<h3>Statistics</h3>
+<section class="stats-card">
+    <ul id="statistics">
+      <li>Average Age: <%= @average_age %></li>
+      <li>Average Runtime in Minutes: <%= @specials_avg_runtime %></li>
+      <li>Cities: <%= @cities %></li>
+      <li>Total Number of Specials: <%= @total_number_of_specials %></li>
+    </ul>
+</section>
+
+<section class="comedian-card">
+  <ul>
+  <% @comedians.each do |comedian| %>
+      <li>Name: <%= comedian.name %></li>
+      <li>Age: <%= comedian.age %></li>
+      <li>City: <%= comedian.city %></li>
+      <li>Number of Specials: <%= comedian.specials.count %></li>
+    </ul>
+    <% comedian.specials.each do |special| %>
+      <ul id="specials">
+        <li>Name: <%= special.name %></li>
+        <li>Runtime in Minutes: <%= special.runtime %></li>
+        <li><img src="<%= special.image %>"</li>
+      </ul>
+    <% end %>
+  <% end %>
+</section>

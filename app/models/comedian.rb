@@ -1,12 +1,14 @@
 class Comedian < ActiveRecord::Base
   has_many :specials
 
+  validates_presence_of :name, :age, :home_town
+
   def self.average_comedian_age
-    Comedian.all.average(:age)
+    average(:age)
   end
 
   def self.unique_home_town
-    comedians = Comedian.select(:home_town).distinct
+    select(:home_town).distinct
   end
 
 end

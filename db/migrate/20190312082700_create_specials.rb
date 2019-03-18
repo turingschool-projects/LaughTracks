@@ -4,7 +4,7 @@ class CreateSpecials < ActiveRecord::Migration[5.2]
       t.text    :name
       t.integer :length
       t.text :thumbnail
-      t.references :comedian
+      t.references :comedian, foreign_key: true
     end
   end
 end

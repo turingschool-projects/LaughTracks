@@ -31,4 +31,5 @@ ActiveRecord::Schema.define(version: 2019_03_12_082700) do
     t.index ["comedian_id"], name: "index_specials_on_comedian_id"
   end
 
+  add_foreign_key "specials", "comedians"
 end

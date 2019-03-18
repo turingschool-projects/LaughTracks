@@ -1,29 +1,47 @@
-<!-- - the average age of all comedians on the page -->
-<!-- - the average run length of every TV special on the page -->
-<!-- - a unique list of cities for each comedian on the page -->
-<ul>
-  <li>Average Comedian Age: <%= @comedians_average_age %></li>
-  <li>Average Run Length of TV Specials: <%= @average_special_length %> mins</li>
-  <li>Unique Cities: <% %>
-  <% @unique_home_towns.each do |comedian| %>
-  <li><%= comedian.home_town %></li>
-  <% end %>
-</ul>
-
-
-<% @comedians.each do |comedian| %>
-<ul>
-  <li><%= comedian.name %></li>
-  <li>Age: <%= comedian.age %></li>
-  <li>Home Town: <%= comedian.home_town %></li>
-  <% @specials.each do |special| %>
-    <% if special.comedian_id == comedian.id %>
-    <ul>
-      <li>Special Name: <%= special.name %></li>
-      <li>Run Time: <%= special.length %> mins</li>
-      <li>URL: <%= special.thumbnail %></li>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chonburi|Muli"> -->
+  </head>
+  <body>
+    <ul class="statistics">
+      <li>Average Comedian Age: <%= @comedians_average_age %></li>
+      <li>Average Run Length of TV Specials: <%= @average_special_length %> mins</li>
+      <li>Total Specials: <%= @total_specials %></li>
+      <li>Unique Cities: <% %>
+      <% @unique_home_towns.each do |comedian| %>
+      <li><%= comedian.home_town %></li>
+      <% end %>
     </ul>
-    <% end %>
-  <% end %>
-</ul>
-<% end %>
+
+
+    <% @comedians.each do |comedian| %>
+    <section class='comedian-info'>
+
+        <ul id='comedian-id-<%= comedian.id %>'>
+          <li><%= comedian.name %></li>
+          <li>Age: <%= comedian.age %></li>
+          <li>Home Town: <%= comedian.home_town %></li>
+          <li>Special Count: <%= comedian.specials.count %></li>
+        </ul>
+
+        <% comedian.specials.each do |special| %>
+        <section class='special-info'>
+
+          <ul id='special-id-<%= special.id %>'>
+            <li>Special Name: <%= special.name %></li>
+            <li>Run Time: <%= special.length %> mins</li>
+            <li><img src="<%= special.thumbnail %>"</li>
+          </ul>
+
+        </section>
+
+        <% end %>
+      <% end %>
+      </section>
+
+
+  </body>
+</html>

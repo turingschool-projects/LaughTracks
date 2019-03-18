@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+
 <html>
   <head>
-    <link rel="stylesheet" href="/stylesheets/main.css">
     <title>Comedians</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
   </head>
   <body>
     <header>
-      <h1>Statistics</h1>
+      <h1 id="h1">Comedian Info</h1>
       <nav>
-        <ul>
-          <li>Average Comedian Age: <%= @comedians.average(:age).round %> years old </li>
+        <div id="stat_1">
+          Average Comedian Age: <%= @comedians.average(:age).round %> years old
+          </div>
           <% @sum = 0 %>
           <% @comedians.each do |comedian| %>
           <% comedian.specials.sum do |special| %>
@@ -26,35 +27,41 @@
           <% else %>
           <% @average = @sum / @num %>
           <% end %>
-          <li>Average TV Special Run Length: <%= @average %> mins</li>
-          <li>Birth Cities: </li>
+          <div id="stat_2">
+          Average TV Special Run Length: <%= @average %> mins
+          </div>
+          <div id="stat_3">
+           Birth Cities:
             <% @comedians.each do |comedian| %>
-              <ul> <%= comedian.birthplace %></ul>
+               <%= comedian.birthplace %>
           <% end %>
-          <li>Special Count: </li>
+          </div>
+          <div id="stat_4">
+            Special Count:
             <% @comedians.each do |comedian| %>
-              <ul> <%= comedian.name %></ul>
-              <ul> <%= comedian.specials.count %></ul>
-          <% end %>
-        </ul>
+               <%= comedian.name %>:
+              <%= comedian.specials.count %>
+              <% end %>
+          </div>
       </nav>
     </header>
     <main>
+      <div id="info">
     <% @comedians.each do |comedian| %>
-    <ul>
-      <li><%= comedian.name %></li>
-      <li>Age: <%= comedian.age %></li>
-      <li>Birthplace: <%= comedian.birthplace %></li>
-      <li> <img src=<%= comedian.image_url %>></img></li>
-      <li>Special Count: <%= comedian.specials.count %></li>
+      <li id="name"><%= comedian.name %></li>
+      <li id="age">Age: <%= comedian.age %></li>
+      <li id="birthplace">Birthplace: <%= comedian.birthplace %></li>
+       <img src=<%= comedian.image_url %>></img>
+    </div>
+    <div id="s_info">
+      <li id="special">Special Count: <%= comedian.specials.count %></li>
       <li>Specials: <% comedian.specials.each do |special| %> </li>
-      <li> <%= special.name %></li>
-      <li> <%= special.runtime_mins %></li>
-      <li> <%= special.comedian_id %></li>
-      <li><img src=<%= special.image_url %></img></li>
+      <li id="s_name"> <%= special.name %></li>
+      <li id="s_run"> Length: <%= special.runtime_mins %></li>
+      <img src=<%= special.image_url %></img>
       <% end %>
-    </ul>
     <% end %>
+    </div>
     </main>
       <section>
         <article></article>
@@ -65,4 +72,3 @@
       <footer></footer>
   </body>
 </hmtl>
-<!-- Special.average(:runtime_mins).round -->

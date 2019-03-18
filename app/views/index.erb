@@ -22,6 +22,23 @@
           </ul>
         </div>
       </div>
+      <div class="artist_details">
+        <div class="albums">
+          <% artist.albums.order(release_date: :desc).each do |album| %>
+          <div class="album">
+            <figure>
+              <figcaption><%= album.name %></figcaption>
+              <img src="../img/albums/<%= album.photo %>.jpg">
+            </figure>
+            <ul>
+              <li><span>Released</span><%= album.release_date %></li>
+              <li><span>Tracks</span><%= album.track_count %></li>
+              <li><span>Length</span><%= album.duration %></li>
+            </ul>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </section>
     <% end %>
   </main>

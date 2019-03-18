@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Comedians</title>
+    <link rel="stylesheet" type=text/css href="<%= url('/stylesheets/main.css') %>">
+  </head>
+
+  <body>
+    <header>
+      <h1>Laugh Tracks</h1>
+      <h1><a href="/comedians">Return to home page</a></h1>
+    </header>
+
+    <% @comedians.each do |comedian| %>
+      <section class='comedian-row'>
+        <section class='comedian-info' id='comedian-id-<%= comedian.id %>'>
+          <ul>
+            <li><a href='/comedians/<%= comedian.id %>'><%= comedian.name %></a></li>
+            <li><img src="<%= comedian.headshot_link %>" alt="<%= comedian.name %> headshot" class='img-headshot'></li>
+            <li>Age: <%= comedian.age %></li>
+            <li>Hometown: <%= comedian.hometown %></li>
+            <li>Number of specials: <%= comedian.specials.count %></li>
+          </ul>
+        </section>
+
+        <section class='comedian-specials-row' id='comedian-id-<%= comedian.id %>-specials'>
+          <% comedian.specials.each do |special| %>
+            <section class='comedian-special'>
+              <ul>
+                <li><%= special.name %></li>
+                <li><img src="<%= special.thumbnail_link %>" alt="<%= special.name %> poster" class='img-special-thumbnail'></li>
+                <li><%= special.runtime %> min</li>
+              </ul>
+            </section>
+          <% end %>
+        </section>
+      </section>
+    <% end %>
+  </body>
+</html>

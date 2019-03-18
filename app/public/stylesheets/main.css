@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  background-color: #7B0828;
+}
+
+header {
+  background-color: #7B0828;
+  padding: 1px 0px 1px 0px;
+}
+
+header h1 {
+  font-family: "Aileron", sans-serif;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#statistics {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  display: block;
+  text-align: center;
+  background-color: #8A8E91;
+  border-style: solid;
+  border-radius: 15px 50px;
+  border-width: 2px;
+  margin: 10px;
+  padding: 10px;
+  max-width: 50%;
+  margin: auto;
+}
+
+#statistics h2 {
+  font-family: "Aileron", sans-serif;
+  padding-left: 20px;
+}
+
+#statistics h3 {
+  display: inline;
+}
+
+#statistics ul {
+  padding-left: 20px;
+  margin: 1em 0;
+}
+
+#statistics li {
+  margin: 1em 0;
+}
+
+.img-headshot {
+  max-width: 150px;
+  max-height: 200px;
+  height: auto;
+}
+
+.img-special-thumbnail {
+  max-width: 150px;
+  max-height: 200px;
+  height: auto;
+}
+
+.comedian-row {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  display: flex;
+  justify-content: center;
+  max-width: 70%;
+  background-color: #D5D4D2;
+  border-style: solid;
+  border-radius: 15px 15px;
+  border-width: 2px;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.comedian-specials-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.comedian-special {
+  padding-left: 20px;
+}

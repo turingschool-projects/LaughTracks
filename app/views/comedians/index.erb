@@ -1,16 +1,23 @@
 <header class='statistics nav'>
-  <h1>Statistics</h1>
-  <h3>Average Runtime: <%= @specials.average_run_time.round() %></h3>
-  <h3>Average Age: <%= @comedians.average_age.round() %></h3>
-  <h3>TV Specials: <%= @specials.special_count %></h3>
-  <br>
-  <section>
-    <h3>Unique Cities:</h3>
+  <h2>Statistics</h2>
+  <div>
+    <h4>Average Runtime:</h4>
+    <%= @specials.average_run_time.round() %>
+  </div>
+  <div>
+    <h4>Average Age:</h4>
+    <%= @comedians.average_age.round() %>
+  </div>
+  <div>
+    <h4>TV Specials:</h4>
+    <%= @specials.special_count %>
+  </div>
+  <div>
+    <h4>Unique Cities:</h4>
     <% @comedians.unique_cities.each do |city| %>
     <p><%= city %></p>
     <% end %>
-  </section>
-  <br>
+  </div>
   <section class='input-forms'>
     <form id='age-input' action="/comedians" method='get'>
       Input age of comedian:
@@ -45,10 +52,15 @@
     <article class="comedian-profile" id="<%= comedian.name.downcase.gsub(' ', '-') %>">
       <section class="comedian-details">
         <h3><%= comedian.name %></h3>
-        <p>Age: <%= comedian.age %></p>
-        <p>City: <%= comedian.city %></p>
+        <div class="comedian-details-box">
+          <h4>Age:<br><%= comedian.age %></h4>
+        </div>
+        <div class="comedian-details-box">
+          <h4>City:<br><%= comedian.city %></h4>
+        </div>
+        <br>
         <img src= "<%= comedian.image %>" alt="actor headshot">
-        <p class='num-of-specials'>Number of Specials: <%= comedian.specials.count %></p>
+        <h4 class='num-of-specials'>Number of Specials: <%= comedian.specials.count %></h4>
       </section>
 
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

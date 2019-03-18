@@ -1,0 +1,57 @@
+<head>
+<title>Laugh Tracks</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+  <body>
+    <h1>Laugh Tracks</h1>
+    <h2>
+      Average Age: <%= @comedians.average(:age).round %>
+      <br>
+      Average Special Length: <%= @specials.average(:runtime_mins).round%> Minutes
+      <br>
+      Comedian Hometowns:
+      <ul>
+        <% places = [] %>
+        <% @comedians.select(:birthplace).uniq.each do |comedian| %>
+          <% if places.include?(comedian.birthplace) == false %>
+            <li>
+              <%= comedian.birthplace %>
+              <% places << comedian.birthplace %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </h2>a
+    <ul>
+      <% @comedians.each do |comedian|%>
+        <li>
+          <img src = <%= comedian.image_url %>>
+          <ul>
+            <li>
+              <%= comedian.name %>
+            </li>
+            <li>
+              <%= comedian.age %>
+            </li>
+            <li>
+              <%= comedian.birthplace %>
+            </li>
+            <li>
+              Specials:
+            </li>
+          </ul>
+          <ul>
+          <% comedian.specials.each do |special| %>
+            <li>
+              Special: <%= special.name %>
+            </li>
+            <li>
+              Duration: <%= special.runtime_mins %>
+            </li>
+          <% end %>
+        </ul>
+        </li>
+      <% end %>
+    </ul>
+    <a href = '/comedians/new'>New Comedian</a>
+  </body>

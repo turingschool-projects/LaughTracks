@@ -18,10 +18,13 @@ RSpec.describe 'comedian info workflow' do
 
       visit '/comedians'
 
+      within '#h1' do
       expect(page).to have_content('Comedian Info')
+      end
     end
   end
 end
+
 
 # SEAT
 # Setup

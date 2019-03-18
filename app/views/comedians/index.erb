@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Comedians</title>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/start.css">
   </head>
   <body>
     <header>
@@ -46,29 +47,22 @@
       </nav>
     </header>
     <main>
-      <div id="info">
-    <% @comedians.each do |comedian| %>
+      <% @comedians.each do |comedian| %>
+      <div id="comedian-<%=comedian.id%>">
       <li id="name"><%= comedian.name %></li>
       <li id="age">Age: <%= comedian.age %></li>
       <li id="birthplace">Birthplace: <%= comedian.birthplace %></li>
-       <img src=<%= comedian.image_url %>></img>
+       <img id="image" src=<%= comedian.image_url %>></img>
     </div>
-    <div id="s_info">
+     <% comedian.specials.each do |special| %>
+    <div id="special-<%=special.id%>">
       <li id="special">Special Count: <%= comedian.specials.count %></li>
-      <li>Specials: <% comedian.specials.each do |special| %> </li>
-      <li id="s_name"> <%= special.name %></li>
+      <li>Specials:</li>
+      <li> <%= special.name %></li>
       <li id="s_run"> Length: <%= special.runtime_mins %></li>
       <img src=<%= special.image_url %></img>
       <% end %>
     <% end %>
     </div>
-    </main>
-      <section>
-        <article></article>
-        <article></article>
-        <article></article>
-      </section>
-
-      <footer></footer>
   </body>
 </hmtl>

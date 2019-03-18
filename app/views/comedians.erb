@@ -1,11 +1,11 @@
-<% if @age == 'true' %>
-  <% @comedians = @comedians.sort_by_age %>
-<% elsif @age != nil %>
+<% if @age != nil %>
   <% @comedians = @comedians.filter_by_age(@age) %>
   <% @specials = @specials.filter_by_age(@age) %>
-<% elsif @name != nil %>
+<% elsif @sort == 'age' %>
+  <% @comedians = @comedians.sort_by_age %>
+<% elsif @sort == 'name' %>
   <% @comedians = @comedians.sort_by_name %>
-<% elsif @city != nil %>
+<% elsif @sort == 'city' %>
   <% @comedians = @comedians.sort_by_city %>
 <% end %>
 

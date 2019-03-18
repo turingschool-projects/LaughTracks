@@ -1,0 +1,47 @@
+  <header>
+    <h1>Statistics</h1>
+    <table id="statistics">
+      <tr>
+        <th>Average Age: </th>
+        <th>Unique Cities: </th>
+        <th>Number of Specials:</th>
+        <th>Average Special Runtime:</th>
+      </tr>
+      <tr>
+        <td><%= @comedians.average("age").round(2) %></td>
+        <td id="cities"><% @comedians.select(:hometown).distinct.each do |comedian| %>
+          <%= comedian.hometown %>,
+        <% end %></td>
+        <td><%= @specials.length %></td>
+        <td>
+          <% if @specials.average("runtime") %>
+          <%= @specials.average("runtime").round(2) %>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+
+  </header>
+
+  <% @comedians.each do |comedian| %>
+    <div class=comedian id=<%= comedian.name.downcase.gsub(" ", "-") %>>
+      <img src= <%= comedian.image %> class="headshot">
+      <p>Name: <%= comedian.name %></p>
+      <p>Age: <%= comedian.age %></p>
+      <p>Hometown: <%= comedian.hometown %></p>
+      <p>Number of Specials: <%= comedian.specials.length %>
+
+      <section id="specials">
+        <h2>Specials</h2>
+        <section class="specials">
+          <% comedian.specials.each do |special| %>
+            <div class="special-card" id=<%= special.abbreviation %>>
+              Title: <%= special.name %><br />
+              <img src=<%= special.image %> alt=comedian.name class="thumbnail">
+              Runtime: <%= special.runtime %> minutes<br/>
+            </div>
+          <% end %>
+        </section>
+      </section>
+    </div>
+  <% end %>

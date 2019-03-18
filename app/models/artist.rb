@@ -5,4 +5,8 @@ class Artist < ActiveRecord::Base
   def photo
     name.downcase.gsub(" ", "_")
   end
+
+  def self.average_age
+    average("date_part('year',age(make_timestamp(formation_year,1,1,0,0,0.0)))").to_i
+  end
 end

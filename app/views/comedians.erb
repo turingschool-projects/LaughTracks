@@ -15,31 +15,40 @@
     <% end %>
 
     <div class="stats-box">
-        <h3>Comedian Statistics:</h3>
-        <li>Average Age: <%= @comedians.average_age %></li>
-        <li>Average Runtime Minutes: <%= @specials.average_special_runtime %></li>
-        <li>Comedian Cities: <%= @comedians.unique_hometowns %></li>
+        <h3><b>Comedian Statistics:</b></h3>
+            <br>
+                <li><b>Average Age: </b><%= @comedians.average_age %></li>
+                    <br>
+                <li><b>Average Runtime Minutes: </b><%= @specials.average_special_runtime %></li>
+                    <br>
+                <li><b>Comedian Cities: <b><%= @comedians.unique_hometowns %></li>
+                    <br>
     </div>
-
 
     <div class="comedian-box">
         <% @comedians.each do |comedian| %>
-            <h3>Comedian Info:</h3>
-            <h4>
-            <li><%= comedian.name %></li>
-            <li>Age: <%= comedian.age %></li>
-            <li>Hometown: <%= comedian.birthplace %></li>
-            </h4>
-            <br>
+            <div class="comedian-info">
+                <h3><b>Comedian Info:</b></h3>
+                    <li><b><%= comedian.name %></b></li>
+                    <br>
+                    <li><b>Age: </b><%= comedian.age %></li>
+                    <br>
+                    <li><b>Hometown: </b><%= comedian.birthplace %></li>
+                    <br>
+                <br>
+            </div>
             
             <div class="special-box">
-                <h4>Specials:</h4>
-                    <% comedian.specials.each do |special| %>
-                        <li>Name: <%=special.name %><li>
-                        <li>Runtime Minutes: <%=special.runtime_mins %><li>
-                        <li><img src="<%=special.image_url%>"><li>
-                    <% end %> 
+                <% comedian.specials.each do |special| %>
+                    <li><b>Name: <br></b><%=special.name %><li>
+                    <br>
+                    <li><b>Runtime Minutes: <br></b><%=special.runtime_mins %><li>
+                    <br>
+                    <li><img src="<%=special.image_url%>"><li>
+                    <br>
+                <% end %> 
             </div>
         <% end %>     
     </div>
+    
 </body>

@@ -1,12 +1,14 @@
 body {
-    background: darkolivegreen;
-    display: flex;
-    flex-direction: column;
+    background: rgba(82, 78, 78, 0.527);
     border: solid;
     border-width: 20px;
-    border-color: indigo;
+    border-color: lavender;
     margin: auto;
   
+}
+
+title {
+    text-align: center;
 }
 
 li { 
@@ -14,14 +16,14 @@ li {
 }
 
 h1 {
-    display: inline;
     text-align: center;
-    font-family: cursive;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     font-size: 5rem;
 }
 
 img {
+    display: flex;
     position: relative;
     width: 300px;
     height: 300px;
@@ -30,34 +32,34 @@ img {
 }
 
 .stats-box {
-    font-family: cursive;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: column;
+    border: solid;
+    border-color: black;
+    border-width: medium;
     margin: auto;
 }
 
 .comedian-box {
-    font-family: cursive;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid;
-    border-width: 20px;
-    border-color: indigo;
     justify-content: space-evenly;
     margin: auto;
   
 }
 
 .special-box {
-    font-family: cursive;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: solid;
-    border-width: 10px;
-    border-color: black;
     margin: auto;
+    border: solid;
+    border-color: black;
+    border-width: 3rem;
     
 
 }
